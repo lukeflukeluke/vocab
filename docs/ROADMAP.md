@@ -59,8 +59,8 @@ is the memory. Each session starts by reading these files:
 
 - [x] **Make a new GitHub repository called `vocab`** with a `main` branch. (Done.)
 - [x] **Give Claude access to it.** (Done.)
-- [ ] **Make a free Cloudflare account** at dash.cloudflare.com. The steps to connect it
-  are in [SETUP-CLOUDFLARE.md](SETUP-CLOUDFLARE.md).
+- [x] **Make a free Cloudflare account** and connect it
+  ([SETUP-CLOUDFLARE.md](SETUP-CLOUDFLARE.md)). (Done: `vocab-building.pages.dev`.)
 
 ---
 
@@ -109,9 +109,9 @@ Claude builds:
 - A placeholder home screen.
 
 You:
-- Connect the repo to Cloudflare Pages: [SETUP-CLOUDFLARE.md](SETUP-CLOUDFLARE.md),
+- [x] Connect the repo to Cloudflare Pages: [SETUP-CLOUDFLARE.md](SETUP-CLOUDFLARE.md),
   about 10 min. The live app follows `main`, and every pull request gets a preview link.
-- On your iPhone: open the live link in Safari, then Share, then **Add to Home Screen**.
+- [x] On your iPhone: open the live link in Safari, then Share, then **Add to Home Screen**.
   Then open it in airplane mode to check it works offline.
 
 Done when: the app icon on your home screen opens, even offline.

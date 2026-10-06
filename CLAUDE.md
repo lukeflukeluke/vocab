@@ -76,7 +76,14 @@ At the end (the owner set up this routine and wants it every session):
 
 ## Deploy
 
-Cloudflare Pages builds `main` as the live app and every other branch as a preview.
+Cloudflare Pages project `vocab-building`: the live app is **https://vocab-building.pages.dev**,
+built from `main`; every other branch and pull request gets a preview link. The owner's
+iPhone runs the live app from the home screen, and its data is tied to that address, so
+never change the project name or domain without a data export/import plan.
+
 Build command `npm run build`, output `dist`, Node version from `.node-version`.
 Response headers are in `public/_headers`. The app shows the version, commit and
 branch it was built from (`CF_PAGES_COMMIT_SHA`, `CF_PAGES_BRANCH`).
+
+Cloud sessions' network policy blocks `pages.dev`, so sessions cannot open the live site;
+the owner checks previews on the iPhone.
