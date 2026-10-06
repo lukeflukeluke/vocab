@@ -76,7 +76,7 @@ At the end (the owner set up this routine and wants it every session):
 
 ## Deploy
 
-Cloudflare Pages project `vocab-building`: the live app is **https://vocab-building.pages.dev**,
+Cloudflare Pages project `vocab-build`: the live app is **https://vocab-build.pages.dev**,
 built from `main`; every other branch and pull request gets a preview link. The owner's
 iPhone runs the live app from the home screen, and its data is tied to that address, so
 never change the project name or domain without a data export/import plan.

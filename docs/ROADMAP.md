@@ -60,7 +60,7 @@ is the memory. Each session starts by reading these files:
 - [x] **Make a new GitHub repository called `vocab`** with a `main` branch. (Done.)
 - [x] **Give Claude access to it.** (Done.)
 - [x] **Make a free Cloudflare account** and connect it
-  ([SETUP-CLOUDFLARE.md](SETUP-CLOUDFLARE.md)). (Done: `vocab-building.pages.dev`.)
+  ([SETUP-CLOUDFLARE.md](SETUP-CLOUDFLARE.md)). (Done: `vocab-build.pages.dev`.)
 
 ---
 

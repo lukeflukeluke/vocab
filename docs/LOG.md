@@ -7,9 +7,13 @@ Newest first. Every session adds an entry at the top.
 ## 2026-10-06 · Setup: Cloudflare and iPhone
 
 **Done**
-- The owner connected Cloudflare Pages: project `vocab-building`, live at
-  https://vocab-building.pages.dev, built from `main`.
-- The owner installed the app on the iPhone home screen.
+- The owner connected Cloudflare Pages: project `vocab-build`, live at
+  https://vocab-build.pages.dev, built from `main`.
+- The owner installed the app on the iPhone home screen. "Works offline" shows Ready, and
+  the app opens in Airplane Mode.
+- Pull request previews work: the Cloudflare bot comments on each pull request with a
+  per-commit Preview URL and a Branch Preview URL (the branch name, shortened, e.g.
+  `claude-vocab-app-design-gz0b.vocab-build.pages.dev`).
 - Recorded the address in `CLAUDE.md` and ticked Day 0 and S1's owner steps in the ROADMAP.
 
 **Notes for later sessions**
@@ -20,8 +24,7 @@ Newest first. Every session adds an entry at the top.
   the environment's Network access settings if a session ever needs to check the live
   site.
 
-**Owner to-do:** check this pull request has a Cloudflare preview link (it proves
-previews work), then say "merge".
+**Owner to-do:** say "merge".
 
 **Next:** S2, the scheduler and time tailoring.
 
