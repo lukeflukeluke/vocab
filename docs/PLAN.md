@@ -237,8 +237,8 @@ Two scheduled tracks per word: **Recognition** (word to meaning) and **Productio
 
 ### Which exercise a review uses
 
-- Recognition with stability under 7 days: R1 or R4. After that: R2 and R3 (R3 at most
-  1 in 5 recognition reviews).
+- Recognition reviews only happen until production takes over (6.3), usually one or two
+  after the introduction: R1, R2 or R4, with R3 as a quick option in 2-minute mode.
 - Production, first one or two reviews: P3, or P1 with the first letter shown. Stability
   under 21 days: P1. After that: P1 and P2 mixed, and P1 prefers your own sentences once
   you have written some.
@@ -274,24 +274,30 @@ and to phone versus PC typing speed.
 
 ### 6.3 Unlocking and the sibling rule
 
-- Production unlocks once recognition stability reaches 4 days.
-- If both tracks of a word are due on the same day, only production is shown, and
-  passing it also counts as a recognition pass (producing a word proves you recognise
-  it). A word never appears twice in one session for review.
+- Production unlocks once recognition stability reaches 4 days. Its first review comes
+  the next study day.
+- Producing a word proves you recognise it. So if both tracks of a word are due on the
+  same day, only production is shown, and passing it also counts as a recognition pass.
+- **Once a production review has been passed, recognition is not reviewed on its own any
+  more.** The S2 simulation showed this cuts daily reviews by about a quarter with no loss
+  of recall, which leaves more of each day for new words and writing.
+- A word never appears twice in one session for review.
 
 ### 6.4 Daily load
 
 - The day rolls over at 4am local time, so late-night study counts for the same day.
-- You set a daily time budget (default 15 minutes) and a new-word target (default 5).
+- You set a daily time budget (default 15 minutes). The most new words a day comes from
+  that time (6.7).
 - The app predicts session length from your own average seconds per exercise type.
 - New words shrink automatically when reviews are heavy: if today's reviews exceed 1.3x
   your 14-day average, new words are halved; above 2x, zero.
 - **Catch-up mode** after missed days: no new words; the backlog is ordered most at-risk
   first (lowest recall chance) and spread over several days within your budget, instead
   of a 300-review wall.
-- Rough expectation: 5 new words a day settles at about 50-70 reviews a day, around
-  15 minutes. Before building the interface, we run a simulation of the scheduler to
-  tune these defaults.
+- Each day's order of priority: due reviews first, then writing tasks, then new words.
+  New words fill the time that is left, up to the day's most.
+- The S2 simulation (docs/SIMULATION.md) settled the numbers: at 15 minutes a day, about
+  33 reviews, 3 writing tasks and 3 new words a day once things are steady.
 
 ### 6.5 Leeches: words that will not stick
 
@@ -313,17 +319,26 @@ item, scheduled like everything else. Classic confusables tagged in the bank
 ### 6.7 Your daily time, tailored
 
 You choose how many minutes a day (5 to 45), optionally different on weekdays and
-weekends. The app builds each day's session to fit what you chose. Starting defaults
-below are provisional; the scheduler simulation (build session S2) sets the real
-numbers, and after that the app adjusts to your own measured pace.
+weekends. The app builds each day's session to fit what you chose, using your own
+measured pace. The numbers below come from the scheduler simulation (build session S2,
+docs/SIMULATION.md): a virtual learner studying about six days a week for six months.
 
-| Daily time | New words/day | Also included |
-|---|---|---|
-| 5 min | 1 | Writing task every 3rd day |
-| 10 min | 3 | Writing task every other day |
-| 15 min (default) | 5 | 1 writing task a day |
-| 20 min | 7 | 1 writing task + contrast drills |
-| 30 min | 10 | 2 writing tasks + a suggested reading-companion text |
+| Daily time | Most new words in a day | Typical day once steady | Words at Use or Owned after 6 months |
+|---|---|---|---|
+| 5 min | 3 | 11 reviews, 1 writing task, 1 new word most days | about 130 |
+| 10 min | 3 | 23 reviews, 2 writing tasks, 2 new words | about 270 |
+| 15 min (default) | 5 | 33 reviews, 3 writing tasks, 3 new words | about 410 |
+| 20 min | 6 | 45 reviews, 4 writing tasks, 4 new words | about 550 |
+| 30 min | 7 | 67 reviews, 7 writing tasks, 5-6 new words | about 790 |
+| 45 min | 10 | 101 reviews, 10 writing tasks, 8 new words | about 1,190 |
+
+In the first weeks there are few reviews, so new words reach the day's most. As reviews
+build up, the number of new words settles to the typical figure.
+
+**Writing is a real part of every day.** Every word gets one writing task on its way to
+Use, so there is roughly one writing task per new word, about a minute each. That is the
+price of words you can actually use, and why 15 minutes gives about 3 new words a day
+rather than 5.
 
 How it holds you to it:
 - **The session fits the time.** When your time is nearly up, it stops adding new words
@@ -341,13 +356,13 @@ How it holds you to it:
 ## 7. A daily session (15 minutes)
 
 ```
-Start:  "Today: 41 reviews, 5 new words, 1 writing task (about 15 min)"
+Start:  "Today: 33 reviews, 3 new words, 3 writing tasks (about 15 min)"
   1. Reviews: about 10 items, most at-risk first, recognition and production mixed
   2. New word 1: guess, word page, immediate check
   3. Reviews: about 5 items
   4. New word 2 (new word 1's fill-in-the-blank step turns up in here)
   5. ...and so on until all new words are in, reviews spread between them
-  6. Writing task (U1) for a word that just reached Use
+  6. Writing tasks (U1) for words ready to move up to Use
   7. Wrap-up: a final recognition check on today's new words
 End:    accuracy, words that moved up a stage, "Use today: laconic, mitigate"
 ```
@@ -652,7 +667,7 @@ Every phase ends with something you use daily.
 
 | Phase | What gets built | Done when |
 |---|---|---|
-| 0. Content foundations | Word-list selection, entry format, quality checks, first ~150 entries, Wiktionary import for captured words, scheduler simulation to set defaults | 150 entries pass checks; simulation confirms 5 new/day is about 15 min |
+| 0. Content foundations | Word-list selection, entry format, quality checks, first ~150 entries, Wiktionary import for captured words, scheduler simulation to set defaults | 150 entries pass checks; simulation sets new words per daily time (done in S2) |
 | 1. Core loop (on-device) | Placement test, new-word introduction, R1 R3 P1 P3, two-track FSRS with stages, daily session with load balancing, basic stats, export | You do a real daily session in the phone browser and on PC for 2 weeks |
 | 2. One app, two devices | Installable PWA + offline, sync server, Inbox and capture (share target, iOS Shortcut, bookmarklet) | Review on the phone, see it on the PC; capture works from both |
 | 3. Depth | R2 R4 P2 P4, confusion tracking, leeches, writing tasks with self-check, optional AI grading, use-it challenges, your sentences as blanks, bank to ~1,500 | Words start reaching Owned |

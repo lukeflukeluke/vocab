@@ -116,7 +116,7 @@ You:
 
 Done when: the app icon on your home screen opens, even offline.
 
-### [ ] S2: The scheduler and time tailoring
+### [x] S2: The scheduler and time tailoring
 Claude builds:
 - FSRS (the ts-fsrs library) with two tracks per word (recognising and producing).
 - The stage machine, from Queued to Owned, including dropping back down.
@@ -191,7 +191,7 @@ Claude builds:
 - The placement test: yes/no with fake words, then verification and scoring, then a
   results screen.
 - Onboarding: placement test, then choosing your daily time, then your first session.
-- The Today screen ("about 15 min: 38 reviews, 5 new, 1 writing"), a Start button and
+- The Today screen ("about 15 min: 33 reviews, 3 new, 3 writing"), a Start button and
   2-minute mode.
 - Stats v1: Words Owned, the stage funnel, retention, the review forecast and the weekly
   streak.

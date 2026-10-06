@@ -26,6 +26,12 @@ export interface Settings {
   weekendMinutes: number | null;
   /** Target probability of recall when a review falls due. */
   targetRetention: number;
+  /**
+   * "Busy week ahead": local dates (YYYY-MM-DD) of a busy period, or null. New words
+   * pause a few days before it starts and until it ends, so the busy days stay light.
+   */
+  busyStart: string | null;
+  busyEnd: string | null;
 }
 
 export interface EventMeta {
@@ -83,12 +89,24 @@ export interface ReviewDone {
   chose?: string;
 }
 
+/** A sentence written for a usage task (U1 or U3), with its verdict. */
+export interface SentenceWritten {
+  type: 'sentence_written';
+  entryId: string;
+  /** Exercise id from PLAN.md section 5: "U1" or "U3". */
+  exercise: string;
+  text: string;
+  /** Whether it used the word correctly (from the self-check or AI feedback). */
+  accepted: boolean;
+}
+
 export interface SettingsChanged {
   type: 'settings_changed';
   patch: Partial<Settings>;
 }
 
-export type EventBody = WordAdded | WordStatusSet | NoteSet | ReviewDone | SettingsChanged;
+export type EventBody =
+  WordAdded | WordStatusSet | NoteSet | ReviewDone | SentenceWritten | SettingsChanged;
 
 export type VocabEvent = EventMeta & EventBody;
 

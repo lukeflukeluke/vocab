@@ -1,4 +1,5 @@
 import type { NoteField, Rating, Settings, Track, WordSource, WordStatus } from '../events/types';
+import type { Memory } from '../scheduler/memory';
 
 /** Everything the app knows, rebuilt by replaying the event log. Never stored. */
 export interface State {
@@ -20,10 +21,16 @@ export interface UserWord {
   contexts: string[];
   notes: Partial<Record<NoteField, string>>;
   reviews: Record<Track, ReviewRecord[]>;
+  /** FSRS memory per track, or null before the track's first review. */
+  memory: Record<Track, Memory | null>;
+  /** Sentences written for usage tasks, oldest first. */
+  sentences: SentenceRecord[];
 }
 
 export interface ReviewRecord {
   t: number;
+  /** Device the review was done on (typing speed differs between phone and PC). */
+  device: string;
   exercise: string;
   correct: boolean;
   rating: Rating;
@@ -34,10 +41,19 @@ export interface ReviewRecord {
   chose?: string;
 }
 
+export interface SentenceRecord {
+  t: number;
+  exercise: string;
+  text: string;
+  accepted: boolean;
+}
+
 export const DEFAULT_SETTINGS: Settings = {
   dailyMinutes: 15,
   weekendMinutes: null,
   targetRetention: 0.9,
+  busyStart: null,
+  busyEnd: null,
 };
 
 export function emptyState(): State {

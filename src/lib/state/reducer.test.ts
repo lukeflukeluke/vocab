@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import type { EventBody, ReviewDone, VocabEvent } from '../events/types';
 import { makeEvent, seededRandom, shuffled } from '../testing/factories';
-import { applyEvent, replay } from './reducer';
+import { DAY_MS, remember } from '../scheduler/memory';
+import { at, introduced, reviewed, sentence } from '../testing/history';
+import { applyEvent, applyEvents, replay } from './reducer';
 import { DEFAULT_SETTINGS, emptyState } from './state';
 
 const added = (entryId: string, context?: string): EventBody => ({
@@ -49,6 +51,7 @@ describe('replay', () => {
     expect(word.reviews.production).toEqual([
       {
         t: 30,
+        device: 'test-device',
         exercise: 'P1',
         correct: false,
         rating: 1,
@@ -156,5 +159,53 @@ describe('applyEvent', () => {
     const next = applyEvent(after, makeEvent(review('salient#adj', false), { t: 4 }));
     expect(after.words['salient#adj']!.reviews.recognition).toHaveLength(1);
     expect(next.words['salient#adj']!.reviews.recognition).toHaveLength(2);
+  });
+});
+
+describe('memory', () => {
+  it('updates FSRS memory per track as reviews replay', () => {
+    const state = replay([
+      makeEvent(added('w'), { t: 1 }),
+      makeEvent(review('w', true), { t: 2 }),
+      makeEvent(review('w', false), { t: 2 + 3 * DAY_MS }),
+    ]);
+    const word = state.words['w']!;
+    expect(word.memory.recognition).toEqual(remember(remember(null, 2, 3), 2 + 3 * DAY_MS, 1));
+    expect(word.memory.recognition!.lapses).toBe(1);
+    expect(word.memory.production).toBeNull();
+  });
+
+  it('counts a production pass as a recognition pass when recognition is due', () => {
+    // Recognition is due around day 12 after these reviews.
+    const base = [...introduced('w', 0), reviewed('w', 'recognition', at(2), 3)];
+    const before = replay(base).words['w']!.memory.recognition!;
+
+    const early = replay([...base, reviewed('w', 'production', at(3), 3)]).words['w']!;
+    expect(early.memory.recognition).toEqual(before);
+
+    const later = replay([...base, reviewed('w', 'production', at(40), 3)]).words['w']!;
+    expect(later.memory.recognition!.lastReview).toBe(at(40));
+    expect(later.memory.recognition!.stability).toBeGreaterThan(before.stability);
+
+    const failed = replay([...base, reviewed('w', 'production', at(40), 1)]).words['w']!;
+    expect(failed.memory.recognition).toEqual(before);
+  });
+});
+
+describe('sentences', () => {
+  it('records sentences with their verdicts', () => {
+    const state = replay([...introduced('w', 0), sentence('w', 1, false), sentence('w', 2)]);
+    expect(state.words['w']!.sentences.map((s) => s.accepted)).toEqual([false, true]);
+    expect(replay([sentence('ghost', 1)]).words).toEqual({});
+  });
+});
+
+describe('applyEvents', () => {
+  it('matches a full replay for a batch of later events', () => {
+    const first = introduced('a', 0);
+    const later = [reviewed('a', 'recognition', at(2), 3), ...introduced('b', 2)];
+    const before = replay(first);
+    expect(applyEvents(before, later)).toEqual(replay([...first, ...later]));
+    expect(before).toEqual(replay(first));
   });
 });
