@@ -37,6 +37,7 @@ At the end (the owner set up this routine and wants it every session):
 | `npm run check` | svelte-check and TypeScript |
 | `npm run test:unit` | Vitest (`src/**/*.test.ts`) |
 | `npm run test:e2e` | Playwright on an iPhone-size screen and a desktop screen (builds first) |
+| `npm run simulate` | 180-day learner simulation; rewrites `docs/SIMULATION.md` (about 40 s) |
 | `python3 scripts/make_icons.py` | Redraws the PNG icons (needs Pillow) |
 
 ## Architecture rules
@@ -53,6 +54,23 @@ At the end (the owner set up this routine and wants it every session):
   mutating them; `applyEvent` depends on that.
 - The UI reads `vocab.state` and writes with `vocab.record(...)`
   (`src/lib/state/store.svelte.ts`).
+
+## Scheduler (`src/lib/scheduler/`)
+
+- `memory.ts`: FSRS (ts-fsrs) memory per word per track. The reducer updates it on every
+  review, so it is part of replayed state. Minute-based learning steps and fuzz are off.
+- `planner.ts`: `planDay()` builds what is left of today: due reviews (most at risk
+  first), writing tasks, new words, within the day's minutes. Pure: pass in `now` and the
+  time-zone offset. Never store a plan; compute it when needed.
+- `stages.ts`: the ladder (Queued to Owned) worked out from memory, never stored.
+- `rating.ts`: turns an answer into an FSRS rating (PLAN 6.2).
+- `budget.ts`: minutes per day, pace, and `NEW_WORDS_BY_MINUTES`.
+- `simulation.ts` + `scripts/simulate.ts`: the virtual learner. After changing the
+  planner or scheduler, run `npm run simulate`; if the chosen new-word targets change,
+  copy them into `NEW_WORDS_BY_MINUTES` and the PLAN 6.7 table.
+- A study day runs from 4am to 4am local time (`day.ts`).
+- During a word's introduction (PLAN 4), every check is recorded on the recognition track.
+  The production track starts the study day after recognition stability reaches 4 days.
 
 ## Conventions
 

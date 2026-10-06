@@ -4,6 +4,73 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-06 · S2: The scheduler and time tailoring
+
+**Done**
+- `src/lib/scheduler/`:
+  - FSRS memory per track (ts-fsrs 5, FSRS-6), updated by the reducer on every review
+  - the 4am study day
+  - ratings from answers (PLAN 6.2), with the usual answer time per exercise and device
+  - the stage ladder, including dropping back down
+  - the unlock and sibling rules
+  - the daily planner: due reviews most at risk first, writing tasks, new words; time
+    budget from your pace; heavy-day throttle; catch-up mode; "busy week ahead" mode;
+    weekend minutes; "what's left today" after studying
+- The simulation (`src/lib/scheduler/simulation.ts`, `npm run simulate`): a virtual
+  learner on the real planner and reducer. Results in `docs/SIMULATION.md`; they set
+  `NEW_WORDS_BY_MINUTES` and the PLAN 6.7 table.
+- New event type `sentence_written` (U1/U3 sentence with an accepted verdict), needed for
+  the Use and Owned stages. New settings `busyStart` and `busyEnd`. `ReviewRecord` now
+  keeps the device. No review events have been written anywhere yet, so nothing old
+  needed migrating.
+- Tests: 76 unit tests, including the planner rules, FSRS matching ts-fsrs run directly,
+  and a simulation whose day-by-day state equals a full replay of its events.
+
+**Decisions**
+- **Recognition retires once production has been passed.** After the first passed
+  production review, recognition is not scheduled on its own. The simulation showed about
+  25% fewer daily reviews and more words reaching Use and Owned, with the same recall.
+  PLAN 5 and 6.3 updated.
+- **Priority each day: reviews, then writing tasks, then new words**, which fill the time
+  left up to the day's most. Writing tasks are capped at the day's new-word target + 2.
+- **New-word targets (most per day): 5 min 3, 10 min 3, 15 min 5, 20 min 6, 30 min 7,
+  45 min 10.** These are the smallest targets within 10% of the best "Use or Owned after
+  6 months" (steadier days than the very best). Typical steady day at 15 min: 33 reviews,
+  3 writing tasks, 3 new words.
+- Every word needs one accepted sentence to reach Use, so writing costs about a minute
+  per word. That is the main reason 15 minutes gives about 3 new words a day, not the 5
+  the plan first guessed.
+- FSRS minute-based learning steps are off. The session runner places in-session repeats,
+  and FSRS-6 handles same-day reviews. Lapses only count failed reviews at least 12 hours
+  after the previous one.
+- Heavy-day throttle: compares today's due reviews with the average reviews per study
+  day over the last 14 days (introduction days excluded); only active after 14 days of
+  history.
+
+**Notes for later sessions**
+- S3/S5: the planner takes `candidates` (bank entry ids, best first). Priority scoring and
+  the 7-day interference rule for confusables (PLAN 3.4, 6.6) belong in building that list.
+- S4: during an introduction, record every check on the **recognition** track (including
+  the first-letter blank). Use `rateAnswer` with `usualResponseMs(state, exercise,
+  deviceId)`. Exercise choice per review (PLAN 5) is not built yet.
+- S5: pass `tzOffsetMinutes = -new Date().getTimezoneOffset()`. Plans can include
+  writing tasks before S10 builds them; show them as "coming soon" or leave them out of
+  the session until then. Busy-period and weekend settings need UI.
+- S9: contrast drills are not in the planner yet. Leech counts are in `Memory.lapses`.
+- S15: memory is computed with default FSRS parameters. When personal parameters arrive,
+  replay should read the final parameters first, then rebuild every memory with them.
+- ts-fsrs counts elapsed days by UTC calendar day, so a review just after UTC midnight
+  can look a day later to FSRS. That only matters for late-night study, and it is small.
+
+**Owner to-do**
+1. Read the Results table in `docs/SIMULATION.md` (2 minutes) and tell me your daily
+   time. 15 minutes means about 3 new words, 3 sentences and 33 reviews on a typical day.
+2. Say "merge". Nothing changes on screen yet; the planner is used from S4.
+
+**Next:** S3, the word bank pipeline.
+
+---
+
 ## 2026-10-06 · Setup: Cloudflare and iPhone
 
 **Done**

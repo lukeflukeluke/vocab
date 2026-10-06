@@ -1,6 +1,7 @@
 import { sortEvents } from '../events/order';
-import type { VocabEvent } from '../events/types';
-import { emptyState, type ReviewRecord, type State } from './state';
+import type { ReviewDone, VocabEvent } from '../events/types';
+import { DAY_MS, dueTime, remember } from '../scheduler/memory';
+import { emptyState, type ReviewRecord, type State, type UserWord } from './state';
 
 /**
  * Applies one event to a state, changing `state` and `state.words` in place. Nested
@@ -26,6 +27,8 @@ function applyInPlace(state: State, event: VocabEvent): void {
           contexts: event.context ? [event.context] : [],
           notes: {},
           reviews: { recognition: [], production: [] },
+          memory: { recognition: null, production: null },
+          sentences: [],
         };
       } else if (event.context && !existing.contexts.includes(event.context)) {
         // Added again, e.g. captured on two devices: keep the first, collect the sentence.
@@ -53,22 +56,20 @@ function applyInPlace(state: State, event: VocabEvent): void {
     }
     case 'review': {
       const word = state.words[event.entryId];
-      if (!word) return;
-      const record: ReviewRecord = {
-        t: event.t,
-        exercise: event.exercise,
-        correct: event.correct,
-        rating: event.rating,
-        ms: event.ms,
-        hintsUsed: event.hintsUsed,
-        ...(event.answer !== undefined && { answer: event.answer }),
-        ...(event.promptId !== undefined && { promptId: event.promptId }),
-        ...(event.chose !== undefined && { chose: event.chose }),
-      };
-      state.words[event.entryId] = {
-        ...word,
-        reviews: { ...word.reviews, [event.track]: [...word.reviews[event.track], record] },
-      };
+      if (word) state.words[event.entryId] = applyReview(word, event, state);
+      return;
+    }
+    case 'sentence_written': {
+      const word = state.words[event.entryId];
+      if (word) {
+        const sentence = {
+          t: event.t,
+          exercise: event.exercise,
+          text: event.text,
+          accepted: event.accepted,
+        };
+        state.words[event.entryId] = { ...word, sentences: [...word.sentences, sentence] };
+      }
       return;
     }
     case 'settings_changed': {
@@ -80,6 +81,43 @@ function applyInPlace(state: State, event: VocabEvent): void {
     default:
       return;
   }
+}
+
+function applyReview(word: UserWord, event: VocabEvent & ReviewDone, state: State): UserWord {
+  const record: ReviewRecord = {
+    t: event.t,
+    device: event.device,
+    exercise: event.exercise,
+    correct: event.correct,
+    rating: event.rating,
+    ms: event.ms,
+    hintsUsed: event.hintsUsed,
+    ...(event.answer !== undefined && { answer: event.answer }),
+    ...(event.promptId !== undefined && { promptId: event.promptId }),
+    ...(event.chose !== undefined && { chose: event.chose }),
+  };
+  const memory = {
+    ...word.memory,
+    [event.track]: remember(word.memory[event.track], event.t, event.rating),
+  };
+
+  // Sibling rule (PLAN 6.3): producing a word proves you recognise it, so a passed
+  // production review also counts as a recognition pass when recognition is due by then.
+  const recognition = word.memory.recognition;
+  if (
+    event.track === 'production' &&
+    event.correct &&
+    recognition &&
+    dueTime(recognition, state.settings.targetRetention) <= event.t + DAY_MS
+  ) {
+    memory.recognition = remember(recognition, event.t, 3);
+  }
+
+  return {
+    ...word,
+    reviews: { ...word.reviews, [event.track]: [...word.reviews[event.track], record] },
+    memory,
+  };
 }
 
 /** Rebuilds the state from scratch. The input order does not matter. */
@@ -94,7 +132,12 @@ export function replay(events: readonly VocabEvent[]): State {
  * for an event that sorts after every event already in `state`; otherwise replay instead.
  */
 export function applyEvent(state: State, event: VocabEvent): State {
+  return applyEvents(state, [event]);
+}
+
+/** `applyEvent` for a batch: copies the state once, however many events there are. */
+export function applyEvents(state: State, events: readonly VocabEvent[]): State {
   const next: State = { ...state, words: { ...state.words } };
-  applyInPlace(next, event);
+  for (const event of sortEvents(events)) applyInPlace(next, event);
   return next;
 }
