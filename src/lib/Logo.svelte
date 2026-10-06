@@ -1,0 +1,14 @@
+<script lang="ts">
+  // The ladder: knowing a word is a climb from recognising it to owning it.
+  // Same drawing as public/favicon.svg and the PNG icons (scripts/make_icons.py).
+  let { size = 32 }: { size?: number } = $props();
+</script>
+
+<svg width={size} height={size} viewBox="0 0 512 512" aria-hidden="true">
+  <rect width="512" height="512" rx="112" fill="#312e81" />
+  <rect x="168" y="112" width="40" height="288" rx="20" fill="#c7d2fe" />
+  <rect x="304" y="112" width="40" height="288" rx="20" fill="#c7d2fe" />
+  <rect x="168" y="324" width="176" height="32" rx="16" fill="#c7d2fe" />
+  <rect x="168" y="240" width="176" height="32" rx="16" fill="#c7d2fe" />
+  <rect x="168" y="156" width="176" height="32" rx="16" fill="#fbbf24" />
+</svg>

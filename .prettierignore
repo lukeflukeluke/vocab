@@ -1,0 +1,8 @@
+dist
+dev-dist
+node_modules
+package-lock.json
+test-results
+playwright-report
+# Docs are hand-written; keep their formatting as authored.
+*.md

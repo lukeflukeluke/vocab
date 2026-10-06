@@ -1,0 +1,82 @@
+# Vocab
+
+A personal vocabulary app for one person (the repo owner). The main device is an iPhone,
+the second a PC. It is a local-first PWA: all logic runs on the device; a small sync
+server comes later (build session S6).
+
+- Design: `docs/PLAN.md`
+- Build order and progress: `docs/ROADMAP.md`
+- What each session did: `docs/LOG.md`
+- Hosting: `docs/SETUP-CLOUDFLARE.md`
+
+## Session routine
+
+The owner starts sessions with prompts from `docs/ROADMAP.md` ("How we work"). Sessions
+are build (S1, S2, ... in order), content (C1, C2, ...), feedback (F1, ...) or fix.
+
+At the start:
+1. Read the newest 2-3 entries in `docs/LOG.md`.
+2. Read this session's item in `docs/ROADMAP.md` and the `docs/PLAN.md` sections it uses.
+
+At the end (the owner set up this routine and wants it every session):
+1. `npm test` passes.
+2. Tick the ROADMAP checkbox and add a LOG entry **at the top**: date, session, what
+   changed, decisions, notes for later sessions, owner to-dos, what's next.
+3. Commit, push the session branch, and open a pull request into `main`. Cloudflare adds
+   a preview link. Merge only when the owner says so.
+4. Tell the owner, in plain words, what to test on the iPhone.
+
+## Commands
+
+| Command | Does |
+|---|---|
+| `npm run dev` | Dev server (no service worker) |
+| `npm run build` / `npm run preview` | Production build in `dist/` / serve it |
+| `npm test` | Everything below, in order |
+| `npm run format:check` / `npm run format` | Prettier |
+| `npm run check` | svelte-check and TypeScript |
+| `npm run test:unit` | Vitest (`src/**/*.test.ts`) |
+| `npm run test:e2e` | Playwright on an iPhone-size screen and a desktop screen (builds first) |
+| `python3 scripts/make_icons.py` | Redraws the PNG icons (needs Pillow) |
+
+## Architecture rules
+
+- **The event log is the only source of truth** (`src/lib/events/types.ts`,
+  `src/lib/db/eventLog.ts`). Stored events are never edited or deleted.
+- **Never change an existing event payload shape.** Add a new event type. The reducer
+  must keep reading every type ever written and ignore types it does not know.
+- **Events are created only by `EventLog.append`** (tests aside). It sets the time to
+  `max(clock, latest event + 1)`, so causes sort before effects across devices with
+  wrong clocks.
+- **State is derived by replay** (`src/lib/state/reducer.ts`). The reducer is pure and
+  deterministic: no clock reads, no randomness. It replaces nested objects instead of
+  mutating them; `applyEvent` depends on that.
+- The UI reads `vocab.state` and writes with `vocab.record(...)`
+  (`src/lib/state/store.svelte.ts`).
+
+## Conventions
+
+- TypeScript strict with `noUncheckedIndexedAccess`; Svelte 5 runes.
+- Unit tests sit next to the code as `*.test.ts`. IndexedDB tests use `fake-indexeddb`.
+  End-to-end tests live in `e2e/`.
+- Prettier: 100 columns, single quotes. Markdown is not auto-formatted.
+- **Mobile first.** Check every screen at iPhone size. Text inputs need a font size of at
+  least 16px or iOS zooms in. Respect `env(safe-area-inset-*)`. Answer boxes turn off
+  autocorrect, autocapitalize and spellcheck.
+- UI text is plain, short and friendly.
+- **No em dashes or en dashes anywhere** (UI text, docs, comments, commit messages). The
+  owner prefers a normal hyphen, or a rewritten sentence.
+
+## Pinned versions (check before upgrading)
+
+- `@playwright/test` is pinned to **1.56.1** because its Chromium build (1194) is the
+  one preinstalled in Claude Code cloud sessions (`/opt/pw-browsers`). Do not run
+  `playwright install`.
+- `typescript` stays on **6.x**: svelte-check does not support 7 yet.
+
+## Deploy
+
+Cloudflare Pages builds `main` as the live app and every other branch as a preview.
+Build command `npm run build`, output `dist`, Node version from `.node-version`.
+Response headers are in `public/_headers`. The app shows the version, commit and
+branch it was built from (`CF_PAGES_COMMIT_SHA`, `CF_PAGES_BRANCH`).
