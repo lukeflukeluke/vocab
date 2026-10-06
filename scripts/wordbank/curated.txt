@@ -1,0 +1,240 @@
+# Editorial list: high-value words for academic reading and writing, and for a rich
+# general vocabulary, chosen for an educated native English speaker. Written by Claude in
+# build session S3 and checked against the open data by build.py, which reports any word
+# it cannot find. A "# tag" line starts a group; its words get that tag.
+#
+# These words rank above the automatic ones, and the build learns what makes a word
+# "academic" from this list to rank the rest. Very common words are left out on purpose.
+
+# argument
+posit contend aver avow affirm allege concede refute rebut repudiate disprove debunk
+discredit invalidate negate gainsay contradict corroborate substantiate vindicate bolster
+buttress underpin undergird undermine undercut subvert espouse advocate endorse champion
+eschew disavow renounce recant retract stipulate postulate hypothesize conjecture
+speculate surmise infer deduce extrapolate generalize presuppose presume insinuate
+intimate allude connote denote signify epitomize exemplify typify embody elucidate
+explicate expound delineate articulate adumbrate reiterate underscore accentuate
+foreground marginalize downplay belittle trivialize overstate understate equivocate
+prevaricate obfuscate dissemble misconstrue misrepresent caricature propound formulate
+qualify assert dispute contest challenge counter concur dissent acquiesce capitulate
+
+# reasoning
+premise inference deduction fallacy fallacious tautology paradox paradoxical dichotomy
+antithesis corollary axiom axiomatic conjecture caveat proviso presupposition contingency
+causality causation correlation correlate coherent incoherent cogent tenable untenable
+plausible implausible specious spurious tendentious dubious moot salient pertinent
+germane extraneous peripheral tangential incidental ancillary auxiliary subsidiary
+cursory perfunctory rigorous exhaustive empirical anecdotal heuristic normative
+prescriptive descriptive qualitative quantitative conclusive inconclusive definitive
+provisional tentative incontrovertible irrefutable indisputable unequivocal equivocal
+ambiguous ambiguity reductive simplistic facile superficial arbitrary contingent
+conditional inherent intrinsic extrinsic implicit tacit latent manifest overt covert
+ostensible putative purported nominal inexorable rationale rationalize logical sophistry
+syllogism premise analogous analogy induction deductive inductive validity concomitant
+
+# hedging
+arguably ostensibly purportedly allegedly seemingly conceivably plausibly presumably
+ nominally invariably inherently intrinsically predominantly largely
+tentatively provisionally notably markedly appreciably marginally profoundly
+inadvertently ostensibly ultimately virtually relatively comparatively ostensibly
+ admittedly undoubtedly unquestionably indubitably evidently manifestly
+patently ostensibly implicitly explicitly ostensibly categorically emphatically
+
+# connecting
+albeit whereas whilst notwithstanding nonetheless nevertheless hence thereby whereby
+therein thereafter hitherto heretofore henceforth insofar inasmuch conversely
+furthermore moreover accordingly ergo lest amid amidst concurrently
+subsequently likewise thus
+
+# language
+laconic terse succinct concise pithy verbose prolix loquacious garrulous taciturn
+reticent candid forthright eloquent articulate inarticulate rhetorical rhetoric
+grandiloquent bombastic pompous didactic pedantic polemical polemic diatribe tirade
+harangue invective vitriol vitriolic acerbic caustic scathing sardonic wry droll
+facetious flippant glib euphemism euphemistic platitude cliche banal trite hackneyed
+insipid vapid jargon vernacular colloquial idiom idiomatic lexicon semantic semantics
+syntax discourse discursive digression digress anecdote allusion allegory analogy
+oxymoron hyperbole understatement innuendo insinuation equivocation obfuscation lucid
+convoluted opaque abstruse arcane esoteric recondite aphorism maxim adage mantra epithet
+moniker eponymous verbatim paraphrase synopsis compendium treatise manifesto screed
+missive interlocutor raconteur orator oratory eulogy elegy panegyric soliloquy
+monologue vernacular parlance nomenclature terminology lexical connotation denotation
+etymology neologism archaism malapropism pun irony ironic satire satirical parody
+
+# character
+magnanimous benevolent malevolent altruistic philanthropic misanthropic gregarious
+affable amiable genial convivial cordial aloof diffident intrepid audacious brazen
+impudent insolent obsequious sycophantic sycophant servile deferential condescending
+patronizing supercilious haughty conceited narcissistic pretentious ostentatious
+unassuming petulant peevish irascible cantankerous querulous belligerent bellicose
+truculent pugnacious combative contentious fractious recalcitrant obstinate
+intransigent obdurate tenacious resolute steadfast indefatigable diligent assiduous
+industrious conscientious meticulous fastidious punctilious scrupulous unscrupulous
+devious duplicitous disingenuous ingenuous credulous gullible sceptical skeptical jaded
+pragmatic idealistic quixotic dogmatic doctrinaire fanatical zealous zealot ardent
+fervent avid apathetic indifferent nonchalant insouciant complacent smug sanguine
+morose sullen dour lugubrious ebullient exuberant effervescent vivacious jovial buoyant
+capricious mercurial volatile erratic impetuous rash prudent judicious circumspect wary
+shrewd astute perspicacious sagacious erudite scholarly dilettante polymath autodidact
+charlatan demagogue pundit iconoclast maverick contrarian partisan ideologue acolyte
+lackey stalwart luminary pariah recluse hedonist ascetic stoic stoical philistine
+connoisseur aesthete misanthrope curmudgeon braggart disinterested uninterested
+magnanimity integrity callous candour candor stolid phlegmatic garrulous vain humble
+
+# judgement
+exemplary laudable commendable meritorious egregious flagrant blatant heinous abhorrent
+reprehensible deplorable despicable contemptible odious repugnant unconscionable
+indefensible inexcusable culpable complicit venal nefarious insidious pernicious
+deleterious detrimental noxious benign innocuous salutary efficacious efficacy potent
+viable feasible credible preposterous ludicrous risible farcical frivolous
+inconsequential negligible paltry meagre meager scant sparse ample copious abundant
+profuse prodigious prolific myriad manifold plethora dearth paucity surfeit glut
+superfluous redundant gratuitous requisite prerequisite indispensable integral pivotal
+paramount preeminent seminal quintessential archetypal archetype exemplar benchmark
+hallmark touchstone yardstick criterion admirable dismal abysmal mediocre lacklustre
+lackluster sterling consummate impeccable flawless shoddy slipshod cavalier exemplify
+
+# change
+exacerbate aggravate ameliorate alleviate mitigate assuage allay mollify placate
+appease pacify quell quash stifle suppress curtail curb constrain impede hinder hamper
+obstruct thwart stymie forestall preempt avert obviate preclude precipitate catalyze
+catalyst engender foster cultivate nurture galvanize spur instigate provoke incite
+foment kindle elicit evoke induce entail necessitate beget spawn proliferate burgeon
+flourish wane dwindle diminish abate subside recede attenuate dilute erode deteriorate
+degenerate atrophy stagnate languish ossify entrench consolidate augment amplify
+supplement escalate intensify expedite hasten protract prolong perpetuate sustain
+salvage rectify remedy redress overhaul revamp transmute metamorphose evolve modify
+calibrate fluctuate oscillate vacillate waver falter founder flounder culminate
+converge diverge coalesce amalgamate integrate assimilate synthesize fragment
+disintegrate dismantle supplant supersede usurp displace relegate circumvent bypass
+evade elude forgo relinquish cede abdicate waive rescind revoke repeal annul nullify
+abrogate abolish eradicate extirpate obliterate decimate ravage devastate catalyse
+enhance mitigation augment exacerbation deterioration proliferation stagnation
+
+# thought
+cognition cognitive perception intuition insight epiphany revelation discern
+discernment perceive apprehend fathom ascertain gauge appraise evaluate scrutinize
+scrutinise scrutiny peruse ponder ruminate deliberate cogitate muse introspection
+introspective reflective pensive rational rationale intellect erudition pedantry
+acumen sagacity prudence epistemology epistemic ontology ontological metaphysical
+empiricism pragmatism scepticism skepticism nihilism relativism determinism
+utilitarian teleological existential zeitgeist ethos milieu purview remit ambit
+cognizant cognisant oblivious heedless mindful naive lucid muddled befuddled bewildered
+perplexed baffled confound conundrum quandary dilemma enigma enigmatic inscrutable
+impenetrable unfathomable cryptic contemplate contemplation hypothesis hypothetical
+presumption assumption speculation notion conception misconception preconception
+predisposition inclination propensity proclivity penchant predilection aptitude
+faculty discerning perceptive astute imperceptible tangible intangible abstract
+concrete conceptual abstraction paradigm framework construct schema
+
+# society
+hegemony sovereignty autonomy autonomous autocracy autocratic despot
+despotic tyranny totalitarian authoritarian oligarchy plutocracy meritocracy
+bureaucracy bureaucratic technocrat populist populism bipartisan faction
+ schism sectarian insurgent insurrection sedition subversive dissident
+dissent dissenter polarize polarise polarization disenfranchise enfranchise ostracize
+ostracise disparity inequity egalitarian elitist patronage nepotism cronyism graft
+embezzle malfeasance impunity accountability transparency legitimacy mandate
+jurisdiction statute ordinance edict decree fiat precedent jurisprudence judicial
+adjudicate arbitrate mediate litigate litigation prosecute exonerate acquit indict
+incriminate liable liability sanction embargo protectionism austerity fiscal monetary
+commodity commodify gentrification urbanization diaspora assimilation multicultural
+pluralism pluralistic secular secularism theocracy dogma orthodoxy orthodox heterodox
+unorthodox heresy heretical propaganda indoctrinate censorship demagoguery ideology
+ideological utopia utopian dystopia dystopian reactionary libertarian paternalism
+paternalistic philanthropy altruism civic consensus concession diplomacy rapprochement
+coalition hierarchy hierarchical stratification marginalised marginalized disenfranchised
+subjugate subjugation oppression emancipate emancipation enfranchisement suffrage
+referendum plebiscite constituency electorate partisanship patriarchy
+patriarchal matriarchal colonial colonialism imperialism imperialist nationalism
+xenophobia xenophobic jingoism chauvinism bigotry prejudice discrimination
+stereotype stigma stigmatize disenchantment
+
+# feeling
+ambivalence apprehension trepidation consternation dismay chagrin indignation
+resentment rancour rancor animosity enmity antipathy aversion disdain contempt scorn
+derision ridicule mockery cynicism nostalgia wistful melancholy ennui malaise angst
+anguish remorse contrition contrite penitent rueful elation euphoria exhilaration
+jubilant serene serenity equanimity composure poise aplomb stoicism fortitude
+resilience tenacity perseverance complacency apathy empathy compassion solace
+consolation catharsis cathartic vicarious visceral poignant plaintive maudlin mawkish
+saccharine cloying zeal fervour fervor ardour ardor avarice covet hubris humility
+vanity ignominy infamy notoriety renown acclaim accolade kudos plaudits approbation
+opprobrium censure rebuke reprimand admonish chastise castigate berate excoriate
+lambaste deride disparage denigrate vilify malign slander libel defame impugn
+besmirch laud extol exalt venerate revere idolize lionize eulogize commend
+exasperation exasperate vexation vex irk rankle placid tranquil disquiet unease
+foreboding dread despondent forlorn disconsolate crestfallen elated ecstatic
+
+# time
+ephemeral transient transitory fleeting evanescent perennial perpetual enduring
+abiding immutable incipient nascent embryonic burgeoning fledgling inchoate
+rudimentary vestigial obsolete outmoded antiquated archaic anachronistic anachronism
+precursor forerunner harbinger antecedent predecessor aftermath interim hiatus respite
+lull moratorium protracted interminable incessant ceaseless unremitting relentless
+sporadic intermittent episodic periodic cyclical recurrent chronic imminent impending
+inevitable unprecedented contemporaneous concurrent simultaneous synchronous belated
+premature prescient foresight hindsight retrospect retrospective posterity vestige
+relic remnant epoch era advent dawn twilight
+
+# degree
+immense colossal gargantuan monumental momentous marginal minuscule infinitesimal
+finite exponential incremental commensurate proportionate disproportionate analogous
+akin tantamount parity discrepancy divergence variance deviation anomaly anomalous
+aberration aberrant outlier idiosyncrasy idiosyncratic singular ubiquitous pervasive
+prevalent rampant endemic saturated replete rife fraught laden devoid bereft destitute
+impoverished affluent opulent lavish extravagant frugal parsimonious austere spartan
+modicum smattering preponderance multitude magnitude threshold zenith nadir apex
+pinnacle culmination acme apogee
+
+# style
+aesthetic aesthetics eclectic derivative evocative emotive provocative sublime
+transcendent ethereal mundane prosaic pedestrian humdrum quotidian ornate florid
+baroque grandiose flamboyant understated minimalist stark bleak sombre somber macabre
+grotesque surreal whimsical pastiche homage motif leitmotif trope canon canonical
+oeuvre opus juxtapose juxtaposition symmetry asymmetry cohesion coherence dissonance
+cacophony discordant resonance resonate subtext symbolism imagery protagonist
+antagonist denouement vignette epigraph epilogue prologue lyrical poetic idyllic
+pastoral bucolic rustic ornamentation embellish embellishment kitsch genre
+melodrama melodramatic histrionic theatrical burlesque farce slapstick tragicomic
+
+# ethics
+probity rectitude virtue virtuous unethical amoral scruple hypocrisy hypocritical
+sanctimonious pious piety devout sanctity sacrosanct inviolable profane sacrilege
+blasphemy transgression transgress culpability complicity retribution reparation
+restitution atonement redemption absolution clemency leniency lenient punitive
+draconian stringent lax permissive indulgent expedient expediency principled
+unprincipled mores taboo propriety impropriety decorum decency integrity conscience
+moral morality ethic ethical dilemma justice equity fairness impartial impartiality
+partiality bias prejudiced objectivity subjectivity
+
+# research
+methodology methodological causal confounding subjective objective objectivity
+replicate replication rigour rigor synthesis critique appraisal inquiry enquiry
+citation cite attribute plagiarism plagiarize plagiarise annotate annotation thesis
+dissertation monograph anthology bibliography glossary appendix footnote construct
+conceptual conceptualize conceptualise quantify categorize categorise differentiate
+taxonomy typology parameter metric interpolate approximate formulate elaborate
+falsify falsifiable longitudinal robust skew skewed corroboration substantiation
+validation verification hypothesis hypothesize theorize theoretical empirically
+qualitatively quantitatively systematic systematically comprehensive exhaustive
+ nuance discrepancy inconsistency contradiction anomaly evaluate evaluation
+interpretation interpret reinterpret holistic
+interdisciplinary paradigmatic seminal scholarship pedagogy
+pedagogical curriculum
+
+# describing
+ubiquitous ineffable inimitable indelible incorrigible intractable insurmountable
+implacable impervious impeccable inextricable ineluctable indomitable irrevocable
+irreconcilable irreparable unassailable unimpeachable unwieldy untoward unwarranted
+unfounded unbridled unfettered unmitigated unscathed unflappable unruly unkempt
+ungainly uncanny unwitting unwittingly inadvertent serendipity serendipitous
+quintessential juxtaposed palpable tangible discernible conspicuous inconspicuous
+salient obtrusive unobtrusive innocuous insidious surreptitious clandestine covert
+furtive stealthy overt blatant brazen nebulous amorphous ambiguous vague tenuous
+tenacious precarious perilous tenuous volatile pristine immaculate dilapidated
+derelict decrepit desolate barren arid fecund fertile lush verdant languid listless
+lethargic sluggish torpid indolent sedentary nomadic peripatetic itinerant transient
+cosmopolitan parochial provincial insular myopic sanguine dire grim
+ominous portentous auspicious propitious fortuitous providential calamitous
+cataclysmic catastrophic dire bleak sombre benign
