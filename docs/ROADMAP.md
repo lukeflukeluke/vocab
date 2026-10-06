@@ -134,7 +134,7 @@ You: read the simulation table (2 min) and confirm your daily time.
 
 Done when: the simulation results are committed and the tests pass.
 
-### [ ] S3: Word bank pipeline
+### [x] S3: Word bank pipeline
 Can run on the same day as S2, in a second session (it touches different files).
 
 Claude builds:

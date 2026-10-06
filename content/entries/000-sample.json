@@ -1,0 +1,861 @@
+[
+  {
+    "id": "laconic#adj",
+    "headword": "laconic",
+    "pos": "adj",
+    "sense": "using very few words",
+    "forms": [],
+    "definition": "Using very few words, often in a calm or dryly humorous way.",
+    "register": "formal",
+    "nuance": "Laconic describes people, replies or styles that say a lot with very little. It often has a cool, understated or dry feel and is usually approving. Unlike rude, it suggests economy rather than unfriendliness.",
+    "everyday": "brief",
+    "examples": [
+      { "text": "Asked how the battle had gone, the general gave a laconic reply: 'We won.'", "form": "laconic", "setting": "fiction" },
+      { "text": "My grandad is so laconic that a full sentence from him feels like a speech.", "form": "laconic", "setting": "conversation" },
+      { "text": "The manager's laconic statement after the defeat said only that the team would improve.", "form": "laconic", "setting": "news" },
+      { "text": "Hemingway's laconic prose leaves much of the emotional weight to the reader.", "form": "laconic", "setting": "academic" },
+      { "text": "The report's laconic conclusion offered no explanation for the sudden rise in costs.", "form": "laconic", "setting": "formal" },
+      { "text": "She sent a laconic text, just 'fine', and turned off her phone.", "form": "laconic", "setting": "conversation" }
+    ],
+    "cloze": [
+      { "text": "When asked about his plans, he gave a ___ answer of just two words.", "answer": "laconic" },
+      { "text": "Her ___ style suited the short, sharp essays she wrote for the magazine.", "answer": "laconic" },
+      { "text": "The famously ___ actor answered every long question with a single nod or shrug.", "answer": "laconic" }
+    ],
+    "misuse": [
+      { "text": "The laconic lecture went on for three hours without a break.", "why": "Laconic means using few words, so a three-hour lecture is the opposite." },
+      { "text": "He was so laconic that he talked nonstop through the whole film.", "why": "Talking nonstop is the opposite of laconic, which means saying very little." }
+    ],
+    "partners": ["a laconic reply", "laconic humour", "a laconic style", "laconic wit"],
+    "phrases": ["the author's laconic prose", "a characteristically laconic response"],
+    "family": ["laconically"],
+    "synonyms": [
+      { "word": "terse", "vs": "Terse is short and can sound rude or impatient; laconic is short and often cool or witty." },
+      { "word": "taciturn", "vs": "Taciturn describes someone who rarely talks at all; laconic is about saying little when they do." },
+      { "word": "succinct", "vs": "Succinct praises clear, efficient wording; laconic stresses how few words are used." }
+    ],
+    "antonyms": ["verbose", "garrulous", "loquacious"],
+    "confusables": [],
+    "roots": [{ "part": "Laconia", "meaning": "the region around Sparta" }],
+    "siblings": [],
+    "origin": "From Laconia, the home of the Spartans, who were famous for blunt one-line replies.",
+    "tags": ["language"]
+  },
+  {
+    "id": "posit#v",
+    "headword": "posit",
+    "pos": "v",
+    "sense": "put forward an idea as a basis for argument",
+    "forms": ["posits", "posited", "positing"],
+    "definition": "To put forward an idea as true or likely, so that it can be discussed or tested.",
+    "register": "formal",
+    "nuance": "Posit is a formal verb used mainly in academic and philosophical writing. It suggests proposing something as a starting point rather than proving it. It is usually followed by 'that' or a noun such as 'a theory' or 'a link'.",
+    "everyday": "suggest",
+    "examples": [
+      { "text": "Some economists posit that higher wages actually increase productivity in small firms.", "form": "posit", "setting": "academic" },
+      { "text": "The new study posits a link between screen time and poor sleep in teenagers.", "form": "posits", "setting": "news" },
+      { "text": "Darwin posited that species change gradually through natural selection.", "form": "posited", "setting": "formal" },
+      { "text": "You're positing that the cat opened the fridge by itself? I'm not convinced.", "form": "positing", "setting": "conversation" },
+      { "text": "The detective posited a simple theory: the butler had never left the house.", "form": "posited", "setting": "fiction" },
+      { "text": "Rather than positing a single cause, the author explores several overlapping factors.", "form": "positing", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "In her essay she ___ a theory, then spends ten pages testing whether it holds.", "answer": "posits" },
+      { "text": "The philosopher ___ the existence of a perfect being as the starting point of his argument.", "answer": "posited" },
+      { "text": "Scientists often ___ a hypothesis first and then design experiments to test it.", "answer": "posit" }
+    ],
+    "misuse": [
+      { "text": "She posited the vase carefully on the shelf.", "why": "Posit is about putting forward ideas, not physically placing objects." },
+      { "text": "The results posit that the drug works, so the case is now closed.", "why": "To posit is to suggest something as a starting point, not to prove it; results show or demonstrate." }
+    ],
+    "partners": ["posit a theory", "posit a link", "posit the existence of"],
+    "phrases": ["Some scholars posit that...", "It is tempting to posit..."],
+    "family": [],
+    "synonyms": [
+      { "word": "postulate", "vs": "Postulate is more technical and suggests a formal assumption in logic or science." },
+      { "word": "propose", "vs": "Propose is everyday and neutral; posit sounds more theoretical." },
+      { "word": "hypothesize", "vs": "Hypothesize suggests an idea to be tested by evidence; posit can be a premise you simply assume." }
+    ],
+    "antonyms": ["disprove", "refute"],
+    "confusables": [{ "word": "deposit", "note": "Deposit means put something down or pay money in; it is unrelated in meaning." }],
+    "roots": [{ "part": "pos", "meaning": "put, place (Latin ponere)" }],
+    "siblings": ["position", "postulate", "proposition", "suppose"],
+    "origin": "From Latin positus, 'placed', so to posit an idea is to place it before others.",
+    "tags": ["argument"]
+  },
+  {
+    "id": "salient#adj",
+    "headword": "salient",
+    "pos": "adj",
+    "sense": "most noticeable or important",
+    "forms": [],
+    "definition": "Most noticeable or important, standing out from everything else.",
+    "register": "formal",
+    "nuance": "Salient is formal and common in reports, essays and analysis. It is often used to pick out the main points from a mass of detail. 'The salient features' and 'the salient points' are its most frequent uses.",
+    "everyday": "main",
+    "examples": [
+      { "text": "Before writing, list the salient points of each source so your argument stays focused.", "form": "salient", "setting": "academic" },
+      { "text": "The most salient issue in the election turned out to be the cost of housing.", "form": "salient", "setting": "news" },
+      { "text": "The memo summarises the salient facts of the case in a single page.", "form": "salient", "setting": "formal" },
+      { "text": "I skimmed the article, but I think I got the salient bits.", "form": "salient", "setting": "conversation" },
+      { "text": "Fear makes threats more salient, so people notice dangers they would otherwise ignore.", "form": "salient", "setting": "academic" },
+      { "text": "The most salient detail of the room was the clock that had stopped at midnight.", "form": "salient", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "In your summary, focus on the ___ points and leave out the minor details.", "answer": "salient" },
+      { "text": "Her most ___ quality, the one everyone remembered, was her fierce honesty.", "answer": "salient" },
+      { "text": "The report highlights three ___ findings that should shape next year's budget.", "answer": "salient" }
+    ],
+    "misuse": [
+      { "text": "The salient whisper at the back of the room went unnoticed.", "why": "Salient means standing out, so something unnoticed cannot be salient." },
+      { "text": "He made a salient effort to finish the marathon despite his injury.", "why": "Salient means noticeable or important; for a great effort use 'valiant' or 'strenuous'." }
+    ],
+    "partners": ["salient points", "salient features", "salient facts", "the most salient"],
+    "phrases": ["The most salient feature of...", "A salient point here is that..."],
+    "family": ["salience", "saliency"],
+    "synonyms": [
+      { "word": "prominent", "vs": "Prominent can be physical or about fame; salient is mainly about relevance in a discussion." },
+      { "word": "key", "vs": "Key is everyday and neutral; salient sounds more formal and analytical." },
+      { "word": "conspicuous", "vs": "Conspicuous means easy to see, often unwelcome; salient means important and standing out." }
+    ],
+    "antonyms": ["minor", "peripheral", "insignificant"],
+    "confusables": [{ "word": "saline", "note": "Saline means containing salt." }],
+    "roots": [{ "part": "sal", "meaning": "leap (Latin salire)" }],
+    "siblings": ["sally", "assail", "resilient"],
+    "origin": "From Latin salire, 'to leap', so a salient point leaps out at you.",
+    "tags": ["reasoning"]
+  },
+  {
+    "id": "corroborate#v",
+    "headword": "corroborate",
+    "pos": "v",
+    "sense": "confirm with further evidence",
+    "forms": ["corroborates", "corroborated", "corroborating"],
+    "definition": "To support a claim or statement by providing more evidence that it is true.",
+    "register": "formal",
+    "nuance": "Corroborate is used for evidence, witnesses and data that back up something already claimed. It is common in law, journalism and research. It implies independent support, not just repetition of the same claim.",
+    "everyday": "confirm",
+    "examples": [
+      { "text": "A second witness corroborated the driver's account of the crash.", "form": "corroborated", "setting": "news" },
+      { "text": "These results corroborate earlier studies showing that sleep improves memory.", "form": "corroborate", "setting": "academic" },
+      { "text": "The claim could not be corroborated by any official records.", "form": "corroborated", "setting": "formal" },
+      { "text": "Can anyone corroborate your story, or were you home alone all night?", "form": "corroborate", "setting": "conversation" },
+      { "text": "The footprints in the snow corroborated what the old gardener had told her.", "form": "corroborated", "setting": "fiction" },
+      { "text": "Without corroborating evidence, a single anecdote proves very little.", "form": "corroborating", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Police need another witness to ___ her version of events before they can charge him.", "answer": "corroborate" },
+      { "text": "The new data ___ the theory, giving scientists more confidence in it.", "answer": "corroborates" },
+      { "text": "Historians searched for letters that might have ___ the soldier's diary.", "answer": "corroborated" }
+    ],
+    "misuse": [
+      { "text": "The lawyer corroborated the witness by proving she had lied.", "why": "To corroborate is to support someone's account; proving they lied would contradict them." },
+      { "text": "I corroborated my opinion that pizza is the best food.", "why": "Corroborate needs evidence from another source; you cannot corroborate a claim by simply repeating it." }
+    ],
+    "partners": ["corroborate a claim", "corroborating evidence", "independently corroborated", "corroborate an account"],
+    "phrases": ["These findings corroborate...", "...is corroborated by evidence from..."],
+    "family": ["corroboration", "corroborative"],
+    "synonyms": [
+      { "word": "confirm", "vs": "Confirm is general; corroborate stresses that the support comes from separate evidence." },
+      { "word": "substantiate", "vs": "Substantiate means giving evidence for your own claim; corroborate often means another source backs it up." },
+      { "word": "verify", "vs": "Verify means checking that something is true; corroborate means adding supporting evidence." }
+    ],
+    "antonyms": ["contradict", "refute", "undermine"],
+    "confusables": [],
+    "roots": [
+      { "part": "cor-", "meaning": "together (Latin com-)" },
+      { "part": "robor", "meaning": "strength (Latin robur)" }
+    ],
+    "siblings": ["robust"],
+    "origin": "From Latin corroborare, 'to strengthen', built on robur, 'strength', the root of robust.",
+    "tags": ["argument"]
+  },
+  {
+    "id": "tenuous#adj",
+    "headword": "tenuous",
+    "pos": "adj",
+    "sense": "very weak or slight, of a link or argument",
+    "forms": [],
+    "definition": "Very weak, slight or uncertain, and easily broken or questioned.",
+    "register": "formal",
+    "nuance": "Tenuous is most often used for links, connections, arguments and claims that are thin or unconvincing. It is common in essays when criticising weak reasoning. It can also describe a fragile hold on power or life.",
+    "everyday": "weak",
+    "examples": [
+      { "text": "The link between the two events is tenuous at best and needs stronger evidence.", "form": "tenuous", "setting": "academic" },
+      { "text": "The government's tenuous majority could collapse after a single defeat.", "form": "tenuous", "setting": "news" },
+      { "text": "That's a pretty tenuous excuse for missing your sister's birthday.", "form": "tenuous", "setting": "conversation" },
+      { "text": "She kept a tenuous grip on the ledge as the wind pulled at her coat.", "form": "tenuous", "setting": "fiction" },
+      { "text": "The committee found the connection between the payments and the contract tenuous.", "form": "tenuous", "setting": "formal" },
+      { "text": "Critics argue that the author builds a grand theory on tenuous foundations.", "form": "tenuous", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "His argument rests on a ___ connection between two facts that have little to do with each other.", "answer": "tenuous" },
+      { "text": "After the scandal, the leader's hold on power became increasingly ___ and uncertain.", "answer": "tenuous" },
+      { "text": "The evidence is too ___ to convince a jury; we need something far stronger.", "answer": "tenuous" }
+    ],
+    "misuse": [
+      { "text": "The bridge is tenuous, so thousands of lorries can cross it safely every day.", "why": "Tenuous means weak or fragile, the opposite of something strong enough for heavy traffic." },
+      { "text": "Her tenuous proof left no doubt at all in anyone's mind.", "why": "A tenuous proof is weak and leaves plenty of doubt." }
+    ],
+    "partners": ["a tenuous link", "a tenuous connection", "tenuous grip", "tenuous at best"],
+    "phrases": ["The connection between X and Y is tenuous at best.", "...rests on tenuous evidence"],
+    "family": ["tenuously", "tenuousness"],
+    "synonyms": [
+      { "word": "flimsy", "vs": "Flimsy is more informal and suggests something easily dismissed; tenuous is formal and suggests thinness." },
+      { "word": "slender", "vs": "Slender often describes a small but real chance or majority; tenuous stresses fragility." }
+    ],
+    "antonyms": ["strong", "robust", "solid"],
+    "confusables": [
+      { "word": "tenacious", "note": "Tenacious means holding on firmly, almost the opposite." },
+      { "word": "tedious", "note": "Tedious means boring." }
+    ],
+    "roots": [{ "part": "tenu", "meaning": "thin (Latin tenuis)" }],
+    "siblings": ["attenuate", "extenuate"],
+    "origin": "From Latin tenuis, 'thin', the same root as attenuate.",
+    "tags": ["reasoning", "describing"]
+  },
+  {
+    "id": "mitigate#v",
+    "headword": "mitigate",
+    "pos": "v",
+    "sense": "make something bad less severe",
+    "forms": ["mitigates", "mitigated", "mitigating"],
+    "definition": "To make something harmful, painful or serious less severe.",
+    "register": "formal",
+    "nuance": "Mitigate is used with problems, risks, damage and effects, not with people. It is common in policy, law and science writing. 'Mitigating circumstances' in law are facts that make a crime seem less serious.",
+    "everyday": "lessen",
+    "examples": [
+      { "text": "Planting trees in cities can help mitigate the effects of extreme heat.", "form": "mitigate", "setting": "news" },
+      { "text": "The study tests whether early support mitigates the impact of poverty on learning.", "form": "mitigates", "setting": "academic" },
+      { "text": "The company took steps to mitigate the risk of another data breach.", "form": "mitigate", "setting": "formal" },
+      { "text": "Taking a painkiller before the flight might mitigate the headache a bit.", "form": "mitigate", "setting": "conversation" },
+      { "text": "The judge accepted that there were mitigating circumstances and reduced the sentence.", "form": "mitigating", "setting": "formal" },
+      { "text": "Nothing she said could mitigate the hurt in his voice.", "form": "mitigate", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "Sea walls were built to ___ the damage caused by rising tides and storms.", "answer": "mitigate" },
+      { "text": "Regular breaks can ___ the strain that long hours at a screen put on your eyes.", "answer": "mitigate" },
+      { "text": "The new rules ___ some risks but create others that nobody predicted.", "answer": "mitigate" }
+    ],
+    "misuse": [
+      { "text": "Adding more cars to the roads will mitigate traffic jams.", "why": "More cars would worsen traffic jams; mitigate means making a problem less severe." },
+      { "text": "She tried to mitigate her friend into forgiving him.", "why": "You mitigate a problem or its effects, not a person; for persuading someone use 'coax' or 'persuade'." }
+    ],
+    "partners": ["mitigate the effects", "mitigate the risk", "mitigate damage", "mitigating circumstances"],
+    "phrases": ["Measures to mitigate...", "...in order to mitigate the impact of..."],
+    "family": ["mitigation"],
+    "synonyms": [
+      { "word": "alleviate", "vs": "Alleviate is mostly used for suffering and symptoms; mitigate for risks, damage and effects." },
+      { "word": "lessen", "vs": "Lessen is everyday and general; mitigate is formal and suggests deliberate action." },
+      { "word": "reduce", "vs": "Reduce is neutral and works for anything measurable; mitigate implies something harmful." }
+    ],
+    "antonyms": ["exacerbate", "aggravate", "worsen"],
+    "confusables": [{ "word": "militate", "note": "Militate against means make something less likely; it is often confused with mitigate." }],
+    "roots": [{ "part": "mitis", "meaning": "mild, soft (Latin)" }],
+    "siblings": [],
+    "origin": "From Latin mitigare, 'to soften', from mitis, 'mild'.",
+    "tags": ["change"]
+  },
+  {
+    "id": "ubiquitous#adj",
+    "headword": "ubiquitous",
+    "pos": "adj",
+    "sense": "found everywhere",
+    "forms": [],
+    "definition": "Seeming to be everywhere at the same time; very common.",
+    "register": "formal",
+    "nuance": "Ubiquitous is often used, sometimes with mild irony, for things that have become so common they are hard to avoid. It suits technology, brands, trends and habits. It is formal but appears widely in journalism.",
+    "everyday": "everywhere",
+    "examples": [
+      { "text": "Smartphones have become ubiquitous, even among young children.", "form": "ubiquitous", "setting": "news" },
+      { "text": "Plastic particles are now ubiquitous in the oceans, from the surface to the deep sea.", "form": "ubiquitous", "setting": "academic" },
+      { "text": "Those white earphones were ubiquitous on the train this morning.", "form": "ubiquitous", "setting": "conversation" },
+      { "text": "The ubiquitous pigeons followed her across the square, hoping for crumbs.", "form": "ubiquitous", "setting": "fiction" },
+      { "text": "Online payment systems are ubiquitous in modern retail.", "form": "ubiquitous", "setting": "formal" },
+      { "text": "The ubiquitous use of algorithms raises new questions about fairness.", "form": "ubiquitous", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Coffee shops are so ___ in this city that you can't walk a block without passing one.", "answer": "ubiquitous" },
+      { "text": "Twenty years ago few people had mobile phones; now they are ___ across the world.", "answer": "ubiquitous" },
+      { "text": "Security cameras have become ___, watching almost every street and shop.", "answer": "ubiquitous" }
+    ],
+    "misuse": [
+      { "text": "The rare orchid is ubiquitous, found only on one small island.", "why": "Ubiquitous means found everywhere, so something found in one place is the opposite." },
+      { "text": "He was ubiquitous about his plans and refused to tell anyone.", "why": "Ubiquitous means everywhere; for keeping plans secret use 'secretive' or 'reticent'." }
+    ],
+    "partners": ["become ubiquitous", "the ubiquitous smartphone", "almost ubiquitous", "now ubiquitous"],
+    "phrases": ["...has become ubiquitous in...", "The now ubiquitous..."],
+    "family": ["ubiquity", "ubiquitously"],
+    "synonyms": [
+      { "word": "omnipresent", "vs": "Omnipresent is more literary and can suggest a constant, sometimes oppressive presence." },
+      { "word": "pervasive", "vs": "Pervasive suggests spreading through and influencing everything, often something negative." },
+      { "word": "widespread", "vs": "Widespread is neutral and everyday; ubiquitous stresses being impossible to escape." }
+    ],
+    "antonyms": ["rare", "scarce"],
+    "confusables": [],
+    "roots": [{ "part": "ubique", "meaning": "everywhere (Latin)" }],
+    "siblings": [],
+    "origin": "From Latin ubique, 'everywhere'.",
+    "tags": ["degree"]
+  },
+  {
+    "id": "ostensibly#adv",
+    "headword": "ostensibly",
+    "pos": "adv",
+    "sense": "apparently, but perhaps not really",
+    "forms": [],
+    "definition": "As something appears or is claimed to be, though the truth may be different.",
+    "register": "formal",
+    "nuance": "Ostensibly signals doubt: it reports the stated reason or appearance while hinting that the real one is different. It is useful in essays for questioning official explanations. Compare 'apparently', which is weaker and less suspicious.",
+    "everyday": "supposedly",
+    "examples": [
+      { "text": "The minister resigned, ostensibly to spend more time with his family.", "form": "ostensibly", "setting": "news" },
+      { "text": "The law was ostensibly about public safety, but historians see it as a way to silence critics.", "form": "ostensibly", "setting": "academic" },
+      { "text": "He came over, ostensibly to return a book, but stayed until midnight.", "form": "ostensibly", "setting": "fiction" },
+      { "text": "She's ostensibly working from home, but I can hear the beach in the background.", "form": "ostensibly", "setting": "conversation" },
+      { "text": "The meeting was ostensibly open to all, yet only senior staff were told about it.", "form": "ostensibly", "setting": "formal" },
+      { "text": "Ostensibly neutral research can still reflect the interests of its funders.", "form": "ostensibly", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "The trip was ___ for business, but he spent most of it on the golf course.", "answer": "ostensibly" },
+      { "text": "They were ___ friends, though everyone knew they could not stand each other.", "answer": "ostensibly" },
+      { "text": "The fee was ___ introduced to cover costs, yet profits doubled the following year.", "answer": "ostensibly" }
+    ],
+    "misuse": [
+      { "text": "The plan was ostensibly a success, and the real results proved it beyond doubt.", "why": "Ostensibly hints the real story differs from appearances, so it clashes with results that confirm success." },
+      { "text": "She ostensibly finished the race in first place, as the official timing showed.", "why": "When the facts confirm something, ostensibly is wrong; it suggests the appearance may be misleading." }
+    ],
+    "partners": ["ostensibly because", "ostensibly to", "ostensibly about", "ostensibly neutral"],
+    "phrases": ["The policy was ostensibly designed to..., but...", "...ostensibly in the name of..."],
+    "family": ["ostensible"],
+    "synonyms": [
+      { "word": "apparently", "vs": "Apparently reports what seems true; ostensibly suggests the stated reason may hide another one." },
+      { "word": "supposedly", "vs": "Supposedly is more informal and openly doubtful." },
+      { "word": "seemingly", "vs": "Seemingly is about appearance; ostensibly is about what is claimed or presented." }
+    ],
+    "antonyms": ["genuinely", "actually", "really"],
+    "confusables": [{ "word": "ostentatiously", "note": "Ostentatiously means in a showy way, designed to impress." }],
+    "roots": [{ "part": "ostend", "meaning": "show (Latin ostendere)" }],
+    "siblings": ["ostentatious"],
+    "origin": "From Latin ostendere, 'to show': what is shown, not necessarily what is true.",
+    "tags": ["hedging"]
+  },
+  {
+    "id": "albeit#conj",
+    "headword": "albeit",
+    "pos": "conj",
+    "sense": "although, before a short phrase",
+    "forms": [],
+    "definition": "Even though; used before a short phrase that adds a limitation.",
+    "register": "formal",
+    "nuance": "Albeit is followed by a short phrase, usually an adjective or adverb, not a full clause: 'a small, albeit important, change'. It is formal and useful in essays for adding a concession concisely. Do not write 'albeit that' in modern English.",
+    "everyday": "although",
+    "examples": [
+      { "text": "The results suggest a positive effect, albeit a small one.", "form": "albeit", "setting": "academic" },
+      { "text": "Prices are rising again, albeit more slowly than last year.", "form": "albeit", "setting": "news" },
+      { "text": "The proposal was accepted, albeit with several important changes.", "form": "albeit", "setting": "formal" },
+      { "text": "It was a good holiday, albeit a bit too short.", "form": "albeit", "setting": "conversation" },
+      { "text": "He smiled at her, albeit briefly, before turning back to the window.", "form": "albeit", "setting": "fiction" },
+      { "text": "The theory is useful, albeit limited, for explaining short-term behaviour.", "form": "albeit", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "The team improved, ___ slowly, over the course of the season.", "answer": "albeit" },
+      { "text": "It was a convincing argument, ___ one with a few gaps in the evidence.", "answer": "albeit" },
+      { "text": "She agreed to help, ___ reluctantly, after hours of persuasion.", "answer": "albeit" }
+    ],
+    "misuse": [
+      { "text": "Albeit it was raining heavily, we went for a long walk.", "why": "Albeit cannot start a full clause like 'it was raining'; use 'although' there." },
+      { "text": "I failed the test albeit I had studied for weeks.", "why": "Albeit goes before a short phrase, not a full clause with a subject and verb; use 'although'." }
+    ],
+    "partners": ["albeit briefly", "albeit slowly", "albeit small", "albeit reluctantly"],
+    "phrases": ["..., albeit to a lesser extent.", "..., albeit with some reservations."],
+    "family": [],
+    "synonyms": [
+      { "word": "although", "vs": "Although can introduce a full clause; albeit only a short phrase." },
+      { "word": "though", "vs": "Though is less formal and more flexible in where it goes." }
+    ],
+    "antonyms": [],
+    "confusables": [],
+    "roots": [{ "part": "al be it", "meaning": "although it be (Middle English)" }],
+    "siblings": [],
+    "origin": "A Middle English contraction of 'although it be'.",
+    "tags": ["connecting"]
+  },
+  {
+    "id": "cogent#adj",
+    "headword": "cogent",
+    "pos": "adj",
+    "sense": "clear, logical and convincing",
+    "forms": [],
+    "definition": "Clear, logical and convincing, especially of an argument or reason.",
+    "register": "formal",
+    "nuance": "Cogent praises reasoning: a cogent argument is well organised and hard to dismiss. It is a natural word for essay feedback and reviews. It describes arguments, cases and explanations rather than people.",
+    "everyday": "convincing",
+    "examples": [
+      { "text": "The author makes a cogent case for reforming the voting system.", "form": "cogent", "setting": "academic" },
+      { "text": "The committee found her reasons cogent and approved the request.", "form": "cogent", "setting": "formal" },
+      { "text": "Neither party has offered a cogent plan for reducing waiting lists.", "form": "cogent", "setting": "news" },
+      { "text": "Honestly, that was the most cogent explanation of tax I've ever heard.", "form": "cogent", "setting": "conversation" },
+      { "text": "A cogent essay links every paragraph back to its central claim.", "form": "cogent", "setting": "academic" },
+      { "text": "His reply was so cogent that the room fell silent.", "form": "cogent", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "Her argument was so clear and ___ that even her critics had to agree.", "answer": "cogent" },
+      { "text": "The judge asked both sides to present ___ reasons for their requests, not emotional appeals.", "answer": "cogent" },
+      { "text": "To score highly, an essay must build a ___ argument supported by evidence.", "answer": "cogent" }
+    ],
+    "misuse": [
+      { "text": "The cogent speech was so muddled that nobody understood the point.", "why": "Cogent means clear and convincing, the opposite of muddled." },
+      { "text": "She is a cogent person who loves dancing.", "why": "Cogent describes arguments and reasons, not personalities." }
+    ],
+    "partners": ["a cogent argument", "a cogent case", "cogent reasons", "cogent analysis"],
+    "phrases": ["The author presents a cogent case for...", "...offers no cogent explanation of..."],
+    "family": ["cogency", "cogently"],
+    "synonyms": [
+      { "word": "compelling", "vs": "Compelling can be emotional or dramatic; cogent is specifically about logical force." },
+      { "word": "persuasive", "vs": "Persuasive works by any means; cogent works by clear reasoning." },
+      { "word": "coherent", "vs": "Coherent means logically connected; cogent adds that it is convincing." }
+    ],
+    "antonyms": ["weak", "unconvincing", "specious"],
+    "confusables": [{ "word": "cognizant", "note": "Cognizant means aware of something." }],
+    "roots": [{ "part": "cogere", "meaning": "to drive together, compel (Latin)" }],
+    "siblings": [],
+    "origin": "From Latin cogere, 'to compel': a cogent argument compels agreement.",
+    "tags": ["reasoning"]
+  },
+  {
+    "id": "tacit#adj",
+    "headword": "tacit",
+    "pos": "adj",
+    "sense": "understood without being said",
+    "forms": [],
+    "definition": "Understood or agreed without being stated openly.",
+    "register": "formal",
+    "nuance": "Tacit describes agreements, approval, knowledge and rules that everyone understands but nobody says aloud. It is common in politics, law and social science. 'Tacit knowledge' is skill people have but find hard to explain.",
+    "everyday": "unspoken",
+    "examples": [
+      { "text": "The government gave tacit approval to the protest by not stopping it.", "form": "tacit", "setting": "news" },
+      { "text": "Much expert skill is tacit knowledge that cannot easily be written down.", "form": "tacit", "setting": "academic" },
+      { "text": "There's a tacit rule in our house that whoever cooks doesn't wash up.", "form": "tacit", "setting": "conversation" },
+      { "text": "Their tacit agreement held for years: neither mentioned the letter again.", "form": "tacit", "setting": "fiction" },
+      { "text": "Silence in the meeting was taken as tacit consent to the proposal.", "form": "tacit", "setting": "formal" },
+      { "text": "Social norms often operate through tacit expectations rather than written rules.", "form": "tacit", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Nobody said it aloud, but there was a ___ understanding that we would split the bill.", "answer": "tacit" },
+      { "text": "By not objecting, the board gave its ___ consent to the merger.", "answer": "tacit" },
+      { "text": "Experienced nurses rely on ___ knowledge that they find hard to put into words.", "answer": "tacit" }
+    ],
+    "misuse": [
+      { "text": "He gave his tacit approval in a long speech praising the plan.", "why": "Tacit means unspoken, so approval given in a speech is explicit, not tacit." },
+      { "text": "The tacit rules were printed clearly on the wall.", "why": "Printed rules are stated openly; tacit rules are understood without being said." }
+    ],
+    "partners": ["tacit approval", "tacit agreement", "tacit consent", "tacit knowledge"],
+    "phrases": ["...gave tacit support to...", "an implicit or tacit assumption that..."],
+    "family": ["tacitly"],
+    "synonyms": [
+      { "word": "implicit", "vs": "Implicit means implied by something else; tacit stresses that it was never said aloud." },
+      { "word": "unspoken", "vs": "Unspoken is everyday; tacit is formal and common in analysis." }
+    ],
+    "antonyms": ["explicit", "stated", "overt"],
+    "confusables": [{ "word": "taciturn", "note": "Taciturn describes a person who says very little." }],
+    "roots": [{ "part": "tacere", "meaning": "to be silent (Latin)" }],
+    "siblings": ["taciturn"],
+    "origin": "From Latin tacitus, 'silent'.",
+    "tags": ["reasoning"]
+  },
+  {
+    "id": "exacerbate#v",
+    "headword": "exacerbate",
+    "pos": "v",
+    "sense": "make a bad situation worse",
+    "forms": ["exacerbates", "exacerbated", "exacerbating"],
+    "definition": "To make a problem, pain or bad situation worse.",
+    "register": "formal",
+    "nuance": "Exacerbate is used with problems, tensions, symptoms and inequalities. It is the formal opposite of mitigate and appears constantly in news and academic writing. It does not take a person as its object.",
+    "everyday": "worsen",
+    "examples": [
+      { "text": "The heatwave exacerbated the shortage of water in the region.", "form": "exacerbated", "setting": "news" },
+      { "text": "Cuts to local services may exacerbate existing inequalities.", "form": "exacerbate", "setting": "academic" },
+      { "text": "Scratching it will only exacerbate the rash, so leave it alone.", "form": "exacerbate", "setting": "conversation" },
+      { "text": "Delays in payment exacerbate cash-flow problems for small suppliers.", "form": "exacerbate", "setting": "formal" },
+      { "text": "Her silence only exacerbated his anxiety as the hours passed.", "form": "exacerbated", "setting": "fiction" },
+      { "text": "Social media can exacerbate feelings of isolation among teenagers.", "form": "exacerbate", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Running on an injured knee will only ___ the damage and slow your recovery.", "answer": "exacerbate" },
+      { "text": "The drought ___ the conflict over water between the two villages.", "answer": "exacerbated" },
+      { "text": "Critics warn that the new tax could ___ poverty rather than reduce it.", "answer": "exacerbate" }
+    ],
+    "misuse": [
+      { "text": "The medicine exacerbated her cough, so she felt much better by morning.", "why": "Exacerbate means make worse, so it cannot lead to feeling better." },
+      { "text": "The teacher exacerbated the students by setting extra homework.", "why": "You exacerbate a problem or feeling, not a person; for annoying people use 'exasperate'." }
+    ],
+    "partners": ["exacerbate the problem", "exacerbate tensions", "exacerbate symptoms", "exacerbate inequality"],
+    "phrases": ["...is likely to exacerbate existing...", "...further exacerbated by..."],
+    "family": ["exacerbation"],
+    "synonyms": [
+      { "word": "aggravate", "vs": "Aggravate also means make worse but is often used informally to mean annoy." },
+      { "word": "worsen", "vs": "Worsen is everyday and can be used without an object." },
+      { "word": "compound", "vs": "Compound means add to a problem, often with a separate second problem." }
+    ],
+    "antonyms": ["mitigate", "alleviate", "ease"],
+    "confusables": [{ "word": "exasperate", "note": "Exasperate means annoy someone greatly." }],
+    "roots": [{ "part": "acer", "meaning": "bitter, sharp (Latin)" }],
+    "siblings": ["acerbic", "acrid"],
+    "origin": "From Latin exacerbare, 'to make harsh', from acerbus, 'bitter'.",
+    "tags": ["change"]
+  },
+  {
+    "id": "nuance#n",
+    "headword": "nuance",
+    "pos": "n",
+    "sense": "a subtle difference in meaning or feeling",
+    "forms": ["nuances"],
+    "definition": "A very small difference in meaning, feeling, tone or colour.",
+    "register": "neutral",
+    "nuance": "Nuance is used for subtle shades of meaning in language, art, music and argument. Praising writing as 'full of nuance' means it avoids crude, black-and-white claims. In the plural, 'the nuances of' something are its fine details.",
+    "everyday": "subtlety",
+    "examples": [
+      { "text": "A good essay captures the nuance of a debate instead of reducing it to two sides.", "form": "nuance", "setting": "academic" },
+      { "text": "Something gets lost in translation; the jokes depend on every nuance of the language.", "form": "nuance", "setting": "conversation" },
+      { "text": "Critics praised the actor for bringing nuance to a villain who could have been a cartoon.", "form": "nuance", "setting": "news" },
+      { "text": "Diplomats must be alert to every nuance in a foreign leader's statements.", "form": "nuance", "setting": "formal" },
+      { "text": "The survey misses the nuances of how people actually use public spaces.", "form": "nuances", "setting": "academic" },
+      { "text": "She heard a nuance of doubt in his voice that he had tried to hide.", "form": "nuance", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "The translation keeps the basic meaning but loses every ___ of the poet's humour.", "answer": "nuance" },
+      { "text": "A skilled musician can bring out each subtle ___ of a piece.", "answer": "nuance" },
+      { "text": "Debates on social media rarely leave room for ___; everything is simply right or wrong.", "answer": "nuance" }
+    ],
+    "misuse": [
+      { "text": "The huge nuance between the two plans was obvious to everyone.", "why": "A nuance is a very small, subtle difference, not a huge obvious one." },
+      { "text": "He spoke with great nuance, shouting the same slogan over and over.", "why": "Nuance means subtle variation, the opposite of repeating one crude message." }
+    ],
+    "partners": ["subtle nuance", "every nuance", "lacks nuance", "the nuances of"],
+    "phrases": ["...fails to capture the nuance of...", "...adds nuance to the argument that..."],
+    "family": ["nuanced"],
+    "synonyms": [
+      { "word": "subtlety", "vs": "Subtlety is broader, covering cleverness and delicacy; nuance is a specific fine shade." },
+      { "word": "shade", "vs": "Shade, as in a shade of meaning, is close but less formal." }
+    ],
+    "antonyms": ["crudeness", "oversimplification"],
+    "confusables": [{ "word": "nuisance", "note": "A nuisance is something annoying." }],
+    "roots": [{ "part": "nue", "meaning": "cloud (French, from Latin nubes)" }],
+    "siblings": ["nebulous"],
+    "origin": "From French nuance, 'shade of colour', related to nue, 'cloud'.",
+    "tags": ["research", "language"]
+  },
+  {
+    "id": "pragmatic#adj",
+    "headword": "pragmatic",
+    "pos": "adj",
+    "sense": "dealing with things in a practical way",
+    "forms": [],
+    "definition": "Dealing with problems in a sensible, practical way rather than following theories or ideals.",
+    "register": "neutral",
+    "nuance": "Pragmatic is usually approving: it suggests realism and flexibility. It can also imply willingness to compromise on principles, which some see as a weakness. It is common in politics, business and history essays.",
+    "everyday": "practical",
+    "examples": [
+      { "text": "The new leader took a pragmatic approach, working with rivals when it served the country.", "form": "pragmatic", "setting": "news" },
+      { "text": "Historians describe the treaty as a pragmatic compromise rather than a victory.", "form": "pragmatic", "setting": "academic" },
+      { "text": "Let's be pragmatic: we can't afford a holiday abroad this year.", "form": "pragmatic", "setting": "conversation" },
+      { "text": "The board favoured a pragmatic solution that could be delivered within budget.", "form": "pragmatic", "setting": "formal" },
+      { "text": "Her mother was pragmatic about love and advised her to marry a man with a steady job.", "form": "pragmatic", "setting": "fiction" },
+      { "text": "Pragmatic reasons, not ideology, explain most of the policy changes.", "form": "pragmatic", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Instead of waiting for the perfect plan, she took a ___ approach and fixed the worst problems first.", "answer": "pragmatic" },
+      { "text": "Idealists dream of a better world, while ___ leaders settle for what can actually be done.", "answer": "pragmatic" },
+      { "text": "Given our tiny budget, the most ___ choice is to repair the old roof rather than build a new one.", "answer": "pragmatic" }
+    ],
+    "misuse": [
+      { "text": "He was so pragmatic that he refused every practical compromise on principle.", "why": "A pragmatic person accepts practical compromises; refusing them on principle is the opposite." },
+      { "text": "The pragmatic dreamer spent years planning a city that could never be built.", "why": "Pragmatic means practical and realistic, which clashes with endless unrealistic planning." }
+    ],
+    "partners": ["a pragmatic approach", "pragmatic solution", "pragmatic reasons", "deeply pragmatic"],
+    "phrases": ["...took a pragmatic view of...", "for pragmatic rather than ideological reasons"],
+    "family": ["pragmatism", "pragmatist", "pragmatically"],
+    "synonyms": [
+      { "word": "practical", "vs": "Practical is everyday; pragmatic stresses choosing what works over what is ideal." },
+      { "word": "realistic", "vs": "Realistic is about judging what is possible; pragmatic is about acting on it." },
+      { "word": "expedient", "vs": "Expedient suggests convenient but possibly unprincipled; pragmatic is usually more approving." }
+    ],
+    "antonyms": ["idealistic", "dogmatic", "impractical"],
+    "confusables": [],
+    "roots": [{ "part": "pragma", "meaning": "deed, thing done (Greek)" }],
+    "siblings": ["practice", "practical"],
+    "origin": "From Greek pragma, 'deed', via pragmatikos, 'skilled in business'.",
+    "tags": ["character"]
+  },
+  {
+    "id": "ephemeral#adj",
+    "headword": "ephemeral",
+    "pos": "adj",
+    "sense": "lasting a very short time",
+    "forms": [],
+    "definition": "Lasting for only a very short time.",
+    "register": "formal",
+    "nuance": "Ephemeral often carries a sense of beauty or sadness about things that fade: fame, trends, moods, art. It is common in literature, art criticism and cultural commentary. In science it describes short-lived things, like streams that flow only after rain.",
+    "everyday": "short-lived",
+    "examples": [
+      { "text": "Social media trends are often ephemeral, disappearing within days.", "form": "ephemeral", "setting": "academic" },
+      { "text": "The ephemeral beauty of the cherry blossom made her want to stay all afternoon.", "form": "ephemeral", "setting": "fiction" },
+      { "text": "The star warned young fans that online fame can be ephemeral.", "form": "ephemeral", "setting": "news" },
+      { "text": "Don't worry too much; this kind of bad mood is ephemeral.", "form": "ephemeral", "setting": "conversation" },
+      { "text": "The gallery documents ephemeral artworks, such as sand sculptures and performances.", "form": "ephemeral", "setting": "formal" },
+      { "text": "Ephemeral streams flow only after heavy rain and are dry for most of the year.", "form": "ephemeral", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Fashion trends are ___, coming and going before most people have even noticed them.", "answer": "ephemeral" },
+      { "text": "The sandcastle was beautiful but ___, washed away by the next wave.", "answer": "ephemeral" },
+      { "text": "Celebrity can be ___: today's famous face is often forgotten by next year.", "answer": "ephemeral" }
+    ],
+    "misuse": [
+      { "text": "The ancient ephemeral cathedral has stood for nine hundred years.", "why": "Ephemeral means short-lived, so a building that has lasted centuries is the opposite." },
+      { "text": "Their ephemeral friendship lasted all their lives.", "why": "A friendship that lasts a lifetime is enduring, not ephemeral." }
+    ],
+    "partners": ["ephemeral beauty", "ephemeral fame", "ephemeral nature", "highly ephemeral"],
+    "phrases": ["...the ephemeral nature of...", "...proved to be ephemeral"],
+    "family": ["ephemerality"],
+    "synonyms": [
+      { "word": "transient", "vs": "Transient is more neutral and often used for temporary states or people passing through." },
+      { "word": "fleeting", "vs": "Fleeting is for very brief moments, like a fleeting glance." },
+      { "word": "transitory", "vs": "Transitory is formal and stresses that something is not permanent." }
+    ],
+    "antonyms": ["permanent", "enduring", "lasting"],
+    "confusables": [{ "word": "ethereal", "note": "Ethereal means delicate and light, almost not of this world." }],
+    "roots": [
+      { "part": "epi-", "meaning": "on (Greek)" },
+      { "part": "hemera", "meaning": "day (Greek)" }
+    ],
+    "siblings": ["epidemic", "epilogue"],
+    "origin": "From Greek ephemeros, 'lasting only a day'.",
+    "tags": ["time"]
+  },
+  {
+    "id": "juxtapose#v",
+    "headword": "juxtapose",
+    "pos": "v",
+    "sense": "place side by side to compare or contrast",
+    "forms": ["juxtaposes", "juxtaposed", "juxtaposing"],
+    "definition": "To place two things side by side, especially to show how different they are.",
+    "register": "formal",
+    "nuance": "Juxtapose is a key word for analysing art, literature and film, where creators place contrasting things together for effect. It is usually used with 'with' or 'and'. The noun juxtaposition is just as common in essays.",
+    "everyday": "contrast",
+    "examples": [
+      { "text": "The poem juxtaposes images of wealth and poverty to criticise the city.", "form": "juxtaposes", "setting": "academic" },
+      { "text": "The exhibition juxtaposes ancient pottery with modern design.", "form": "juxtaposes", "setting": "formal" },
+      { "text": "The photograph juxtaposed a luxury yacht and a crowded migrant boat.", "form": "juxtaposed", "setting": "news" },
+      { "text": "The cafe juxtaposes old furniture with neon lights, and somehow it works.", "form": "juxtaposes", "setting": "conversation" },
+      { "text": "By juxtaposing the two speeches, the author reveals how much the party's message changed.", "form": "juxtaposing", "setting": "academic" },
+      { "text": "In the window, her tired face was juxtaposed with the bright advertisements outside.", "form": "juxtaposed", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "The film ___ scenes of a lavish wedding with shots of the starving town outside.", "answer": "juxtaposes" },
+      { "text": "Designers like to ___ rough concrete and soft fabrics to create striking rooms.", "answer": "juxtapose" },
+      { "text": "In the essay, try to ___ the two poems so their differences become clear.", "answer": "juxtapose" }
+    ],
+    "misuse": [
+      { "text": "She juxtaposed the two arguments by merging them into one.", "why": "To juxtapose is to place things side by side, not to merge them." },
+      { "text": "The museum juxtaposed the painting alone in an empty room.", "why": "Juxtapose needs at least two things placed together; one painting alone cannot be juxtaposed." }
+    ],
+    "partners": ["juxtapose X with Y", "juxtapose images", "sharply juxtaposed", "juxtaposed against"],
+    "phrases": ["The writer juxtaposes... with... to...", "By juxtaposing..., the poet..."],
+    "family": ["juxtaposition"],
+    "synonyms": [
+      { "word": "contrast", "vs": "Contrast focuses on the differences; juxtapose is about placing things together, often to show contrast." },
+      { "word": "compare", "vs": "Compare looks for similarities and differences; juxtapose is the act of placing side by side." }
+    ],
+    "antonyms": ["separate"],
+    "confusables": [],
+    "roots": [
+      { "part": "juxta", "meaning": "next to (Latin)" },
+      { "part": "pose", "meaning": "place (French poser)" }
+    ],
+    "siblings": ["position", "expose"],
+    "origin": "From French juxtaposer, from Latin juxta, 'next to', and French poser, 'to place'.",
+    "tags": ["style"]
+  },
+  {
+    "id": "dichotomy#n",
+    "headword": "dichotomy",
+    "pos": "n",
+    "sense": "a sharp division into two opposed groups",
+    "forms": ["dichotomies"],
+    "definition": "A division or contrast between two things that are completely different or opposed.",
+    "register": "formal",
+    "nuance": "Dichotomy is used in academic writing to describe a split into two opposing categories. Writers often call a dichotomy 'false' when the real situation has more than two options. Avoid it for small differences; it means a sharp, two-way divide.",
+    "everyday": "divide",
+    "examples": [
+      { "text": "The essay challenges the traditional dichotomy between nature and nurture.", "form": "dichotomy", "setting": "academic" },
+      { "text": "Politicians often present a false dichotomy between growth and the environment.", "form": "dichotomy", "setting": "news" },
+      { "text": "The report questions the dichotomy of public and private healthcare.", "form": "dichotomy", "setting": "formal" },
+      { "text": "I don't buy this dichotomy where you're either a morning person or a night owl.", "form": "dichotomy", "setting": "conversation" },
+      { "text": "Older theories relied on rigid dichotomies such as mind and body.", "form": "dichotomies", "setting": "academic" },
+      { "text": "The dichotomy between his gentle letters and his harsh voice confused her for years.", "form": "dichotomy", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "The debate is often framed as a simple ___ between freedom and security, as if only two choices exist.", "answer": "dichotomy" },
+      { "text": "Critics call it a false ___, since most people are neither wholly good nor wholly bad.", "answer": "dichotomy" },
+      { "text": "Her research questions the sharp ___ between work and leisure in modern life.", "answer": "dichotomy" }
+    ],
+    "misuse": [
+      { "text": "There was a slight dichotomy between the two shades of blue paint.", "why": "A dichotomy is a sharp split between opposites, not a slight difference." },
+      { "text": "The dichotomy of the three political parties shaped the election.", "why": "Dichotomy means a division into two; three parties cannot form one." }
+    ],
+    "partners": ["a false dichotomy", "the dichotomy between", "a sharp dichotomy", "challenge the dichotomy"],
+    "phrases": ["...rejects the simple dichotomy between... and...", "This presents a false dichotomy, since..."],
+    "family": ["dichotomous"],
+    "synonyms": [
+      { "word": "division", "vs": "Division is general; dichotomy specifies exactly two opposed parts." },
+      { "word": "contrast", "vs": "Contrast is any noticeable difference; dichotomy is a fundamental split." },
+      { "word": "binary", "vs": "Binary is similar but more technical, often used in debates about gender and computing." }
+    ],
+    "antonyms": ["unity", "continuum"],
+    "confusables": [],
+    "roots": [
+      { "part": "dicho-", "meaning": "in two (Greek)" },
+      { "part": "-tomy", "meaning": "cutting (Greek)" }
+    ],
+    "siblings": ["anatomy", "atom"],
+    "origin": "From Greek dikhotomia, 'a cutting in two'.",
+    "tags": ["reasoning"]
+  },
+  {
+    "id": "undermine#v",
+    "headword": "undermine",
+    "pos": "v",
+    "sense": "gradually weaken or damage",
+    "forms": ["undermines", "undermined", "undermining"],
+    "definition": "To gradually weaken something, such as confidence, authority or an argument, often secretly.",
+    "register": "neutral",
+    "nuance": "Undermine suggests damage from below or behind, often gradual and indirect. It is very common in essays for describing how evidence weakens a claim or how actions erode trust. It literally meant digging under a wall.",
+    "everyday": "weaken",
+    "examples": [
+      { "text": "These new findings undermine the claim that the policy reduced crime.", "form": "undermine", "setting": "academic" },
+      { "text": "Repeated scandals have undermined public trust in the police.", "form": "undermined", "setting": "news" },
+      { "text": "Stop undermining me in front of the kids when I've already said no.", "form": "undermining", "setting": "conversation" },
+      { "text": "Late payments undermine the financial stability of small firms.", "form": "undermine", "setting": "formal" },
+      { "text": "Every compliment he paid her sister seemed designed to undermine her.", "form": "undermine", "setting": "fiction" },
+      { "text": "A single counterexample can undermine an otherwise convincing theory.", "form": "undermine", "setting": "academic" }
+    ],
+    "cloze": [
+      { "text": "Constant criticism can slowly ___ a child's confidence, even when it is meant kindly.", "answer": "undermine" },
+      { "text": "The leaked emails ___ the minister's claim that he knew nothing about the deal.", "answer": "undermined" },
+      { "text": "Cheating ___ the whole point of the competition, because results no longer mean anything.", "answer": "undermines" }
+    ],
+    "misuse": [
+      { "text": "The new evidence undermined her argument, making it much stronger.", "why": "Undermine means weaken, so evidence that undermines an argument cannot make it stronger." },
+      { "text": "The teacher undermined the student's success by praising her in assembly.", "why": "Praise supports someone; undermining weakens their position or confidence." }
+    ],
+    "partners": ["undermine confidence", "undermine trust", "undermine authority", "seriously undermine"],
+    "phrases": ["This finding undermines the assumption that...", "...risks undermining..."],
+    "family": [],
+    "synonyms": [
+      { "word": "weaken", "vs": "Weaken is general and direct; undermine suggests gradual, hidden damage." },
+      { "word": "erode", "vs": "Erode stresses slow wearing away over time." },
+      { "word": "subvert", "vs": "Subvert suggests deliberately overturning a system or authority." }
+    ],
+    "antonyms": ["strengthen", "bolster", "reinforce"],
+    "confusables": [],
+    "roots": [
+      { "part": "under", "meaning": "below" },
+      { "part": "mine", "meaning": "dig a tunnel" }
+    ],
+    "siblings": [],
+    "origin": "Originally to dig a tunnel under a castle wall so that it collapsed.",
+    "tags": ["argument"]
+  },
+  {
+    "id": "sycophant#n",
+    "headword": "sycophant",
+    "pos": "n",
+    "sense": "a person who flatters the powerful for advantage",
+    "forms": ["sycophants"],
+    "definition": "A person who praises powerful people too much in order to gain an advantage.",
+    "register": "formal",
+    "nuance": "Sycophant is strongly disapproving and suggests insincere, self-serving flattery. It is often used about advisers, courtiers and staff around leaders. The adjective sycophantic is even more common.",
+    "everyday": "flatterer",
+    "examples": [
+      { "text": "The president surrounded himself with sycophants who never told him bad news.", "form": "sycophants", "setting": "news" },
+      { "text": "The historian portrays the king's advisers as sycophants rather than statesmen.", "form": "sycophants", "setting": "academic" },
+      { "text": "Don't be such a sycophant; the boss can tell when you're faking it.", "form": "sycophant", "setting": "conversation" },
+      { "text": "Every sycophant at court laughed loudly at the duke's terrible jokes.", "form": "sycophant", "setting": "fiction" },
+      { "text": "A board full of sycophants cannot hold a chief executive to account.", "form": "sycophants", "setting": "formal" },
+      { "text": "The film's villain is a smiling sycophant who betrays everyone in the end.", "form": "sycophant", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "Only a ___ would praise the manager's plan before even reading it.", "answer": "sycophant" },
+      { "text": "Leaders who hire ___ instead of honest advisers rarely hear the truth.", "answer": "sycophants" },
+      { "text": "He was no ___; he told the director exactly what was wrong with the film.", "answer": "sycophant" }
+    ],
+    "misuse": [
+      { "text": "She was a sycophant, always telling the king his ideas were foolish.", "why": "A sycophant flatters the powerful; telling a king his ideas are foolish is honest criticism." },
+      { "text": "The sycophant refused to say anything nice about his boss.", "why": "Sycophants are known for excessive praise, not for refusing it." }
+    ],
+    "partners": ["a political sycophant", "surrounded by sycophants", "a fawning sycophant"],
+    "phrases": ["...surrounded by sycophants who...", "...dismissed as a sycophant..."],
+    "family": ["sycophantic", "sycophancy"],
+    "synonyms": [
+      { "word": "flatterer", "vs": "Flatterer is neutral to mild; sycophant implies serving the powerful for personal gain." },
+      { "word": "toady", "vs": "Toady is informal and contemptuous." },
+      { "word": "yes-man", "vs": "Yes-man is informal and stresses always agreeing." }
+    ],
+    "antonyms": ["critic"],
+    "confusables": [],
+    "roots": [
+      { "part": "sykon", "meaning": "fig (Greek)" },
+      { "part": "phainein", "meaning": "show (Greek)" }
+    ],
+    "siblings": ["phenomenon"],
+    "origin": "From Greek sykophantes, which meant an informer; why figs are involved is unclear.",
+    "tags": ["character"]
+  },
+  {
+    "id": "concede#v",
+    "headword": "concede",
+    "pos": "v",
+    "sense": "admit something is true, often reluctantly",
+    "forms": ["concedes", "conceded", "conceding"],
+    "definition": "To admit, often unwillingly, that something is true or that an opponent has a point.",
+    "register": "formal",
+    "nuance": "Concede is central to good argument: conceding a point shows fairness before you answer it. It is common in essays, debates and politics. It can also mean giving up a contest, such as an election.",
+    "everyday": "admit",
+    "examples": [
+      { "text": "The author concedes that the sample was small but argues the pattern is still clear.", "form": "concedes", "setting": "academic" },
+      { "text": "The candidate conceded defeat shortly after midnight.", "form": "conceded", "setting": "news" },
+      { "text": "Okay, I'll concede that your shortcut was faster this time.", "form": "concede", "setting": "conversation" },
+      { "text": "The company conceded that its safety checks had not been followed.", "form": "conceded", "setting": "formal" },
+      { "text": "Conceding a strong counterargument can make an essay more persuasive, not less.", "form": "conceding", "setting": "academic" },
+      { "text": "He would never concede that his brother had been right all along.", "form": "concede", "setting": "fiction" }
+    ],
+    "cloze": [
+      { "text": "After losing the vote, the senator had to ___ that the reform would not pass this year.", "answer": "concede" },
+      { "text": "The coach ___ that his team had played badly but praised their effort.", "answer": "conceded" },
+      { "text": "A good essay will ___ the strongest point on the other side before replying to it.", "answer": "concede" }
+    ],
+    "misuse": [
+      { "text": "He proudly conceded that his theory had been right all along.", "why": "You concede something against your own interest; proudly claiming you were right is not conceding." },
+      { "text": "The team conceded the trophy after winning every match.", "why": "To concede a contest is to give it up, which makes no sense after winning everything." }
+    ],
+    "partners": ["concede defeat", "concede a point", "reluctantly concede", "concede that"],
+    "phrases": ["Admittedly, one must concede that...", "While it is true..., critics concede that..."],
+    "family": ["concession"],
+    "synonyms": [
+      { "word": "admit", "vs": "Admit is everyday and general; concede is used in argument, often about a point in an opponent's favour." },
+      { "word": "acknowledge", "vs": "Acknowledge is neutral recognition; concede implies some reluctance." },
+      { "word": "yield", "vs": "Yield suggests giving way under pressure." }
+    ],
+    "antonyms": ["deny", "dispute", "contest"],
+    "confusables": [{ "word": "conceive", "note": "Conceive means form an idea, or become pregnant." }],
+    "roots": [
+      { "part": "con-", "meaning": "completely (Latin)" },
+      { "part": "cedere", "meaning": "to give way (Latin)" }
+    ],
+    "siblings": ["cede", "recede", "precede"],
+    "origin": "From Latin concedere, 'to give way, yield'.",
+    "tags": ["argument"]
+  }
+]
