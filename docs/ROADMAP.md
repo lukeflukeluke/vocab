@@ -160,7 +160,7 @@ the validator. The pull request includes a readable preview of the entries.
 
 You: skim about 15 random entries and flag anything that reads wrong.
 
-### [ ] S4: Learning screens
+### [x] S4: Learning screens
 Claude builds:
 - The session runner: queue, progress bar, pause and resume.
 - New-word introduction: guess first, then the word page, the immediate check and the

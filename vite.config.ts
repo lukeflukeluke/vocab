@@ -1,7 +1,9 @@
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { wordBank } from './scripts/word-bank-plugin';
 
 const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as {
   version: string;
@@ -21,6 +23,7 @@ export default defineConfig({
   },
   plugins: [
     svelte(),
+    wordBank(fileURLToPath(new URL('./content/', import.meta.url))),
     VitePWA({
       registerType: 'autoUpdate',
       // Registered from src/lib/pwa.ts so the app can show offline status.

@@ -8,6 +8,12 @@
   --text: #1b1a2b;
   --muted: #5d5b72;
   --danger: #b42318;
+  --good: #067647;
+  --good-bg: #e7f6ec;
+  --bad: #b42318;
+  --bad-bg: #fdecea;
+  --mark: #fff1c2;
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
 
   color-scheme: light dark;
   font-family:
@@ -26,6 +32,11 @@
     --text: #ecebf6;
     --muted: #a6a4bd;
     --danger: #fda29b;
+    --good: #75e0a7;
+    --good-bg: #0f2e22;
+    --bad: #fda29b;
+    --bad-bg: #3a1714;
+    --mark: #4a3b0c;
   }
 }
 
@@ -46,4 +57,84 @@ body {
 body {
   /* Stop the page bouncing sideways on iPhone. */
   overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Buttons. Tall enough to hit with a thumb. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.btn.primary {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: var(--on-brand);
+}
+
+.btn.quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn.wide {
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn.primary {
+    border-color: #6366f1;
+    background: #4f46e5;
+  }
+}
+
+/* Keyboard shortcut labels, only where there is a keyboard and mouse. */
+.keys {
+  display: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .keys {
+    display: block;
+  }
+}
+
+kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.85em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
