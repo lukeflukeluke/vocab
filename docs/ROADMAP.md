@@ -153,7 +153,7 @@ Claude builds:
 
 Done when: the validator runs, and the candidate list and guide are committed.
 
-### [ ] C1: Content batch 1 (150 entries)
+### [x] C1: Content batch 1 (150 entries)
 Claude writes 150 entries following `content/GUIDE.md`. They are spread across your
 frontier, with mixed parts of speech and topics and academic weighting, and all pass
 the validator. The pull request includes a readable preview of the entries.

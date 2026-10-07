@@ -4,6 +4,50 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-07 · C1: Content batch 1
+
+**Done**
+- 150 new entries in `content/entries/001-batch.json`: candidate positions 0-156 (all
+  from the editorial list), so the bank now has 170 words. 72 adjectives, 40 nouns, 29
+  verbs, 9 adverbs; 127 formal, 23 neutral. All pass the checker.
+- Made with five writers in parallel (30 words each, `content/GUIDE.md` as the brief),
+  then one reviewer per part. Reviewers changed 24 to 28 of each 30 entries, mostly
+  blanks where a close synonym also fitted ("possibly" for conceivably, "trace" for
+  vestige), plus entries that mixed two senses (pacify, profane, buoyant, episodic),
+  a few doubtful origins removed or corrected, and a handful of unnatural examples.
+- Five words skipped and recorded in `content/skipped.txt` (uninterested, prejudiced,
+  inexcusable: everyday words; disenfranchised, melodrama: same family as an entry).
+- `content/GUIDE.md`: each batch now owns a fixed range of candidate positions (C2 is
+  157-336, then steps of 180), so content sessions can run at the same time; the
+  parallel writers-plus-reviewers method is described, with writers on Sonnet 5.5 and
+  reviewers on Opus 5.5 at high effort from C2 on. The ROADMAP prompt names the batch.
+
+**Decisions**
+- One entry teaches one sense; other senses get a sentence in the nuance and may get
+  their own entry later.
+- The seven headwords that candidates.json lists in American spelling (lackluster,
+  idolize, stigmatize, urbanization, fervor, meager, somber) keep that spelling as the
+  id and headword, but their sentences use British spelling, with every form of both
+  spellings in `forms`.
+- Origins only where the writer and reviewer were both sure (118 of 150 have one).
+
+**Notes for later sessions**
+- Some blanks still allow a near-twin (tirade/rant, placate/appease, elated/thrilled).
+  An app change would help: if the typed answer is one of the entry's `synonyms`, say
+  "Close: that's a near-synonym. Here the word is X" and rate it Hard instead of Again.
+  A good F1 item.
+- A second entry is worth writing later for utilitarian (the philosophy sense) and
+  perhaps impenetrable (literal) and epithet (the insult sense).
+- With 170 entries, R1 distractors now come from the same part of speech for nouns,
+  verbs and adjectives. Adverbs (10) still borrow from other parts of speech sometimes.
+
+**Owner to-do:** skim about 15 entries in the pull request preview and flag anything that
+reads wrong, then say "merge". After the merge the app has 170 words to teach.
+
+**Next:** S5 (onboarding, Today screen, stats) can start now. C2 can run alongside it.
+
+---
+
 ## 2026-10-07 · S4: Learning screens
 
 **Done**
