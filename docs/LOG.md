@@ -4,6 +4,85 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-07 · S4: Learning screens
+
+**Done**
+- **Sessions.** The Today card shows what is left of today ("5 new words, about 5 min")
+  and a Start button. A session follows PLAN 7: up to 10 reviews, then each new word with
+  about 5 reviews after it, then the rest, then a last check on each new word. Progress
+  bar at the top; Pause goes home, and Start (now "Continue") picks up where you were,
+  even after closing the app. A summary at the end: score, new words, words to look at
+  again.
+- **Meeting a new word (PLAN 4):** guess first (pick 1 of 4 or "No idea", not counted),
+  the word page (word, pronunciation button, IPA, part of speech, definition, two
+  examples from different settings, the "vs" box, and "More about..." with nuance,
+  partners, essay phrases, family, opposites, look-alikes and roots), an immediate check
+  with a new sentence, a fill-in-the-blank with the first letter about 5 items later, and
+  a final check at the end.
+- **"I know this word"** on the guess screen (PLAN 3.5): a typed fill-in-the-blank with no
+  hints. Right: the word is marked Known and another new word takes its place. Wrong: it
+  is taught as normal.
+- **Exercises R1, R3, P1, P3**, with "I don't know" everywhere, the hint ladder (first
+  letter, number of letters, meaning, then the answer), typed-answer checking (any case,
+  any form of the word, British or American spelling, one-letter slips on words of 5+
+  letters count as Hard), and retyping the answer after a miss. A missed item comes back
+  3 items later with another sentence (at most twice per word per session).
+- **Ratings** from `rateAnswer` with your usual time per exercise on this device; every
+  answer is saved as it is given.
+- **Pronunciation** with the phone's own text-to-speech (British voice preferred).
+- **iPhone:** answers in the bottom half of the screen, 48-56px buttons, the answer box
+  just under the sentence (so the keyboard cannot cover it) and focused as each typed item
+  opens, autocorrect/capitalisation/spellcheck off, 20px text in the box (no zoom), safe
+  areas.
+- **PC keys:** 1-4 choose, Enter check/continue, Space reveal (R3, then 1-3 to grade),
+  ? I don't know, H or Alt+H hint, P pronounce, Esc pause. Shown on screen only when there
+  is a mouse.
+- Tests: 123 unit tests (37 new: answers, spellings, sentences, distractors, session
+  order, runner) and 23 end-to-end runs on the two screen sizes: a full first session at iPhone size, a miss with
+  retyping and the repeat, a one-letter slip, pause and resume across a reload, "I know
+  this word", answer-box checks, a keyboard-only session on desktop, and seeded history
+  for R3 and P3.
+
+**Decisions**
+- **The word bank is joined at build time** (`virtual:word-bank`), so the app carries
+  only the written entries plus IPA, band and spellings, not the 1.5 MB candidate list.
+  New entries in `content/entries/` appear after the next build.
+- **Sessions are not stored.** Every answer is an event, so a paused session is rebuilt
+  from today's plan, plus any new word whose blank or final check is still to do.
+- **Which exercise a review uses**, until R2, R4 and P2 exist: recognition alternates R1
+  and R3 (a failed R1 comes back as R1). Production starts with P3 when you have 3 other
+  words to choose from, then P1 with the first letter, then plain P1.
+- **Distractors** are other entries' definitions: same part of speech first, then a
+  similar frequency band, never a word listed in the "vs" box. With 20 sample entries the
+  nouns, adverb and conjunction borrow from other parts of speech; C1 fixes that.
+- **The guess and the word page are not reviews.** The word is added (`word_added`) when
+  its page opens. The "I know this" check is saved as a review only when it fails.
+- **In-session repeats are saved as reviews**, like Anki's relearning steps; FSRS-6
+  handles same-day reviews.
+
+**Notes for later sessions**
+- S5: `Today.svelte` is a stand-in for the Today screen; the planner's `candidates` are
+  just bank entries by priority (`bank.candidates`). Placement and frontier fit go there.
+- PLAN 3.5's "surprise check in about 60 days" for Known words is not built: known words
+  leave the queue. It needs a planner change (S5 or S9).
+- Writing tasks (U1) are left out of sessions until S10.
+- The UK IPA from ipa-dict puts stress marks before the vowel ("dʒˈʌkstɐpˌəʊz"). Fine to
+  read, but a later session could move them to the start of the syllable.
+- Vite prints a warning that `vite.config.ts` imports files without extensions (for its
+  future native config loader). Harmless today.
+- The live app will start real learning once this is merged: the 20 sample words are
+  real entries, so that is fine, but the preview link keeps its data separate.
+
+**Owner to-do:** on the pull request's preview link (not the home-screen app), tap Start
+and do the whole session on your iPhone. Try a wrong answer, "I don't know", a hint,
+the speaker button, "I know this word", and Pause halfway. Note anything awkward (text
+size, buttons, speed, wording), then say "merge".
+
+**Next:** S5 (onboarding, Today screen, stats). It needs C1 merged first, so C1 can run
+now.
+
+---
+
 ## 2026-10-06 · S3: Word bank pipeline
 
 **Done**

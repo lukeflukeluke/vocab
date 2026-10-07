@@ -2,7 +2,19 @@
   import { onMount } from 'svelte';
   import Logo from './lib/Logo.svelte';
   import { isInstalled, isIos, requestPersistentStorage, startServiceWorker } from './lib/platform';
+  import { summarize, type Session, type SessionSummary } from './lib/session/runner';
   import { vocab } from './lib/state/store.svelte';
+  import SessionScreen from './lib/ui/SessionScreen.svelte';
+  import { prepareSpeech } from './lib/ui/speech';
+  import Summary from './lib/ui/Summary.svelte';
+  import Today from './lib/ui/Today.svelte';
+
+  type View =
+    | { name: 'home' }
+    | { name: 'session'; session: Session }
+    | { name: 'summary'; summary: SessionSummary };
+
+  let view = $state<View>({ name: 'home' });
 
   let offlineReady = $state(false);
   let persistent = $state<boolean | null>(null);
@@ -17,58 +29,73 @@
     startServiceWorker(() => (offlineReady = true));
     void vocab.init();
     void requestPersistentStorage().then((granted) => (persistent = granted));
+    prepareSpeech();
   });
+
+  function home() {
+    view = { name: 'home' };
+    window.scrollTo({ top: 0 });
+  }
 </script>
 
-<header class="topbar">
-  <Logo size={28} />
-  <span class="brand">Vocab</span>
-</header>
+{#if view.name === 'session'}
+  <SessionScreen
+    session={view.session}
+    onpause={home}
+    onfinish={(session) => (view = { name: 'summary', summary: summarize(session) })}
+  />
+{:else}
+  <header class="topbar">
+    <Logo size={28} />
+    <span class="brand">Vocab</span>
+  </header>
 
-<main>
-  <section class="card">
-    <h1>Today</h1>
-    <p>Nothing to study yet. The learning screens are being built.</p>
-  </section>
+  {#if view.name === 'summary'}
+    <Summary summary={view.summary} onclose={home} />
+  {:else}
+    <main>
+      <Today onstart={(session) => (view = { name: 'session', session })} />
 
-  {#if !installed}
-    <section class="card tip" aria-label="Install tip">
-      <h2>Install the app</h2>
-      {#if ios}
-        <p>In Safari, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</p>
-      {:else}
-        <p>In Chrome or Edge, click the <strong>Install</strong> icon in the address bar.</p>
+      {#if !installed}
+        <section class="card tip" aria-label="Install tip">
+          <h2>Install the app</h2>
+          {#if ios}
+            <p>In Safari, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</p>
+          {:else}
+            <p>In Chrome or Edge, click the <strong>Install</strong> icon in the address bar.</p>
+          {/if}
+        </section>
       {/if}
-    </section>
+
+      <details class="card device">
+        <summary>This device</summary>
+        {#if vocab.error}
+          <p class="error" role="alert">Could not open storage: {vocab.error}</p>
+        {/if}
+        <dl>
+          <dt>Works offline</dt>
+          <dd data-testid="offline-status">{offlineReady ? 'Ready' : 'Not yet'}</dd>
+
+          <dt>Saved events</dt>
+          <dd data-testid="event-count">{vocab.ready ? vocab.state.eventCount : '…'}</dd>
+
+          <dt>Storage</dt>
+          <dd>
+            {persistent === true ? 'Protected' : persistent === false ? 'Not protected' : 'Unknown'}
+          </dd>
+
+          <dt>Device</dt>
+          <dd data-testid="device-id" data-device-id={vocab.deviceId ?? ''}>
+            {vocab.deviceId ? vocab.deviceId.slice(0, 8) : '…'}
+          </dd>
+
+          <dt>Version</dt>
+          <dd>{build}</dd>
+        </dl>
+      </details>
+    </main>
   {/if}
-
-  <section class="card">
-    <h2>This device</h2>
-    {#if vocab.error}
-      <p class="error" role="alert">Could not open storage: {vocab.error}</p>
-    {/if}
-    <dl>
-      <dt>Works offline</dt>
-      <dd data-testid="offline-status">{offlineReady ? 'Ready' : 'Not yet'}</dd>
-
-      <dt>Saved events</dt>
-      <dd data-testid="event-count">{vocab.ready ? vocab.state.eventCount : '…'}</dd>
-
-      <dt>Storage</dt>
-      <dd>
-        {persistent === true ? 'Protected' : persistent === false ? 'Not protected' : 'Unknown'}
-      </dd>
-
-      <dt>Device</dt>
-      <dd data-testid="device-id" data-device-id={vocab.deviceId ?? ''}>
-        {vocab.deviceId ? vocab.deviceId.slice(0, 8) : '…'}
-      </dd>
-
-      <dt>Version</dt>
-      <dd>{build}</dd>
-    </dl>
-  </section>
-</main>
+{/if}
 
 <style>
   .topbar {
@@ -106,11 +133,6 @@
     border: 1px solid var(--border);
   }
 
-  h1 {
-    margin: 0 0 6px;
-    font-size: 1.6rem;
-  }
-
   h2 {
     margin: 0 0 10px;
     font-size: 1.05rem;
@@ -123,6 +145,17 @@
 
   .tip {
     border-color: var(--accent);
+  }
+
+  .device summary {
+    min-height: 32px;
+    color: var(--muted);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .device[open] summary {
+    margin-bottom: 10px;
   }
 
   .error {
