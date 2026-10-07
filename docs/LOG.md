@@ -36,6 +36,12 @@ Newest first. Every session adds an entry at the top.
   An app change would help: if the typed answer is one of the entry's `synonyms`, say
   "Close: that's a near-synonym. Here the word is X" and rate it Hard instead of Again.
   A good F1 item.
+- **Must fix in S5 (before C3 merges):** the word bank is built into the main script
+  (718 KB with 170 entries, about 4 KB per entry). Workbox only caches files up to 2 MB
+  for offline use, so at about 450 entries the app would stop working offline. Move the
+  bank to its own JSON file (cached and loaded at start) or raise
+  `maximumFileSizeToCacheInBytes`, and add an e2e check that the bank is precached.
+- `e2e/session.spec.ts` now reads answers from every file in `content/entries/`.
 - A second entry is worth writing later for utilitarian (the philosophy sense) and
   perhaps impenetrable (literal) and epithet (the insult sense).
 - With 170 entries, R1 distractors now come from the same part of speech for nouns,
