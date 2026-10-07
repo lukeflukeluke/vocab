@@ -1,0 +1,2 @@
+# Candidate words content sessions chose not to write, so they are not offered again.
+# One per line: word  reason

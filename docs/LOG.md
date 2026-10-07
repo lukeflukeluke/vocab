@@ -4,6 +4,64 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-06 · S3: Word bank pipeline
+
+**Done**
+- `scripts/wordbank/` (Python, see its README): `fetch.py` downloads Open English WordNet
+  2022, ipa-dict (UK and US IPA), and Wikipedia and OpenSubtitles word counts into
+  `data/raw/` (not committed); `build.py` makes `content/` in about 40 s.
+- `content/candidates.json`: 3,000 words (5,849 senses): 1,471 from the editorial list,
+  1,529 ranked by a model trained on it. Each has frequency band, IPA, word family,
+  British/American spellings where they differ, and the editorial `tag`.
+- `content/placement.json`: 16 frequency bands (headword ranks 1,000 to 42,000) with 64
+  ordinary words each plus glosses, and 250 fake words.
+- `content/dictionary/`: short definitions for 41,312 words, one file per letter (4.6 MB).
+- Entry format `src/lib/content/types.ts`, checker `src/lib/content/validate.ts`
+  (`npm run validate:content`, part of `npm test`), with 10 tests that break a good entry
+  in each way and confirm it is caught.
+- `content/GUIDE.md` for content sessions; `content/skipped.txt` for words they skip.
+- 20 sample entries in `content/entries/000-sample.json` (laconic, posit, salient,
+  corroborate, tenuous, mitigate, ubiquitous, ostensibly, albeit, cogent, tacit,
+  exacerbate, nuance, pragmatic, ephemeral, juxtapose, dichotomy, undermine, sycophant,
+  concede), all passing the checker.
+
+**Decisions**
+- **No Wiktionary:** cloud sessions cannot reach kaikki.org. WordNet supplies senses,
+  glosses and families; origin stories are written by content sessions only when sure.
+  PLAN 11.3 updated.
+- **Academic-ness needs judgement.** Frequency features alone ranked encyclopedic words
+  (rugby, rural, anime) high and missed laconic, cogent and tacit. Fix: an editorial list
+  (`scripts/wordbank/curated.txt`, about 1,600 words in 18 groups) plus a logistic
+  regression trained on it to rank the remaining frontier words.
+- Frontier is zipf 1.9 to 3.9 (headword ranks about 6,000 to 38,000). Editorial words
+  bypass it; very common editorial words are there for an academic sense (qualify,
+  founder) and rank last.
+- Inflected forms ("appointed") and transparent derivatives ("unhappiness") of a more
+  common word are folded into it. WordNet's "colloquial" and "disparaging" labels apply to
+  whole synonym groups, so they only filter non-editorial words.
+- The entry schema is TypeScript types plus the checker, not a separate JSON Schema file,
+  so the app and the checks share one definition.
+
+**Notes for later sessions**
+- S4: load entries from `content/entries/*.json`; join `candidates.json` by `headword`
+  for IPA, band and spellings. Accept both spellings in typed answers. Example 1 of each
+  entry is the "guess first" sentence. Distractors for R1 and R4 come from other entries'
+  `definition` and `everyday` of the same part of speech.
+- S5: `placement.json` bands have `size` (headwords in the band) for the vocabulary
+  estimate; the planner's `candidates` should be entry ids ordered by candidate priority
+  and frontier fit.
+- S7: `content/dictionary/{letter}.json` maps word to `[[pos, gloss], ...]`.
+- The learned half of the candidate list is noisy toward the end; content sessions skip
+  weak words and record them in `content/skipped.txt`.
+- Rebuilding needs the venv (`scripts/wordbank/requirements.txt`), not installed by the
+  session hook on purpose.
+
+**Owner to-do:** skim a few sample entries in the pull request, then say "merge".
+
+**Next:** S4, the learning screens. C1 (the first 150 entries) can now run alongside it.
+
+---
+
 ## 2026-10-06 · S2: The scheduler and time tailoring
 
 **Done**

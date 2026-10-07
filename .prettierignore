@@ -6,3 +6,5 @@ test-results
 playwright-report
 # Docs are hand-written; keep their formatting as authored.
 *.md
+# Word-bank data: generated (one row per line) or hand-written to its own layout.
+content

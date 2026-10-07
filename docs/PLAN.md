@@ -463,13 +463,18 @@ is one sense. A word with two useful senses becomes two entries, introduced week
 
 | Need | Source | Licence |
 |---|---|---|
-| Definitions, IPA, origins, word forms, senses | Wiktionary, via the kaikki.org machine-readable extracts | CC BY-SA |
-| Sense structure, synonyms, related words | Open English WordNet | CC BY 4.0 |
+| Senses, definitions, word families, synonyms | Open English WordNet 2022 | CC BY 4.0 |
+| Pronunciation (IPA, British and American) | ipa-dict | MIT |
 | Word frequency | wordfreq data | CC BY-SA |
+| Formality (Wikipedia vs film-subtitle frequency) | Wikipedia and OpenSubtitles word counts | CC BY-SA |
+| Academic word selection | An editorial list written by Claude, plus a model trained on it | n/a |
 | Real example sentences | Tatoeba; Project Gutenberg books | CC BY / public domain |
 | Pronunciation audio | Device text-to-speech | n/a |
 
 We do not scrape copyrighted dictionaries (Merriam-Webster, Etymonline, Vocabulary.com).
+Wiktionary was the first choice, but cloud sessions cannot reach its extracts
+(kaikki.org); origin stories are written in content sessions instead, only when the
+writer is sure of them. Details: `scripts/wordbank/README.md`.
 
 ### 11.4 Building the bank
 
