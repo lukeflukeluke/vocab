@@ -1,2 +1,7 @@
 # Candidate words content sessions chose not to write, so they are not offered again.
 # One per line: word  reason
+uninterested  everyday word; taught as a confusable of disinterested
+prejudiced  everyday word
+inexcusable  everyday word
+disenfranchised  same family as disenfranchise
+melodrama  same family as melodramatic

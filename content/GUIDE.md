@@ -8,10 +8,21 @@ looks and teaches the same way. The fields are defined in `src/lib/content/types
 
 ## The routine
 
-1. **Pick the next words.** Open `content/candidates.json`. Work down the list in order,
-   skipping any word that already has an entry (search `content/entries/`) or is listed
-   in `content/skipped.txt`.
-   - Take **150 entries** per batch, unless the owner asks for a different number.
+1. **Pick the words.** Each batch owns a fixed range of positions in the `candidates`
+   array of `content/candidates.json` (0-based, end included), so two content sessions
+   can run at the same time without writing the same words:
+
+   | Batch | Positions | File |
+   |---|---|---|
+   | C1 | 0-156 | `001-batch.json` |
+   | C2 | 157-336 | `002-batch.json` |
+   | C3 | 337-516 | `003-batch.json` |
+   | C4 | 517-696 | `004-batch.json` |
+   | C5 | 697-876 | `005-batch.json` |
+
+   Later batches continue in steps of 180. Write every word in the range except ones
+   that already have an entry (search `content/entries/`) or are in
+   `content/skipped.txt`. That gives about 150 entries.
    - Words with `"source": "editorial"` come first and are always worth an entry.
    - `"learned"` words were ranked by a model. Skip one if an educated adult would
      already know it, or if it is too technical or niche for general academic use.
@@ -25,8 +36,13 @@ looks and teaches the same way. The fields are defined in `src/lib/content/types
    - Common everyday words on the editorial list (zipf 4.3 or more: `qualify`,
      `founder`, `champion`) are there for their academic sense ("qualify a claim",
      "the plan foundered"). Teach that sense.
-3. **Write the entries** into a new file `content/entries/NNN-batch.json` (the next
-   number: `001-batch.json`, `002-batch.json`, ...). The file is a JSON array.
+3. **Write the entries** into the batch's file in `content/entries/` (a JSON array, in
+   list order).
+   - Faster: split the words into 5 parts and have 5 helper agents write them in
+     parallel, each into its own scratch file, with this guide and the sample entries as
+     their brief. Then have one more agent review all of them for meaning (blanks where
+     another word fits, odd examples, weak "vs" boxes, doubtful origins), fix what it
+     finds, and join the parts into the batch file. C1 was made this way.
 4. **Check them:** `npm run validate:content`. Fix every problem it reports.
 5. **Make a readable preview** for the owner:
    `npm run validate:content -- --preview NNN-batch.json`. Paste 10-15 random entries

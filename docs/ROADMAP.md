@@ -40,7 +40,7 @@ is the memory. Each session starts by reading these files:
 | To do | Start a new session in the `vocab` repo with |
 |---|---|
 | The next build step | `Vocab app: do the next unchecked build session in docs/ROADMAP.md.` |
-| More word entries | `Vocab app: content session. Write the next batch of entries following content/GUIDE.md.` |
+| More word entries | `Vocab app: do content session C2 in docs/ROADMAP.md.` (change the number; batches can run at the same time, see `content/GUIDE.md`) |
 | Fix things you noticed | `Vocab app: feedback session. Here's what I noticed: ...` |
 | Something is broken on the live app | `Vocab app: fix this first: ...` |
 
