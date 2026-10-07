@@ -43,6 +43,11 @@ looks and teaches the same way. The fields are defined in `src/lib/content/types
      their brief. Then have one more agent review all of them for meaning (blanks where
      another word fits, odd examples, weak "vs" boxes, doubtful origins), fix what it
      finds, and join the parts into the batch file. C1 was made this way.
+   - Models (from C2 on): writers on Sonnet 5.5 at normal effort, since writing to this
+     guide is most of the time and the checker keeps the format right. Reviewers on
+     Opus 5.5 at high effort, since spotting a blank where another word fits, an off
+     nuance or a doubtful origin needs the most careful judgement. Start a reviewer on
+     each part as soon as its writer finishes.
 4. **Check them:** `npm run validate:content`. Fix every problem it reports.
 5. **Make a readable preview** for the owner:
    `npm run validate:content -- --preview NNN-batch.json`. Paste 10-15 random entries
