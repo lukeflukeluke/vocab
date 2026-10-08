@@ -1,15 +1,21 @@
+import { readdirSync, readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
-import sampleFile from '../content/entries/000-sample.json' with { type: 'json' };
 
 // Full learning sessions, driven the way a person would. The step container says which
 // word and sentence it shows (data-entry-id, data-prompt-id), so the test can look up the
-// right answer in the sample entries.
+// right answer in the word-bank entries.
 
-interface SampleEntry {
+interface BankEntry {
   id: string;
   cloze: { text: string; answer: string }[];
 }
-const entries = new Map((sampleFile as SampleEntry[]).map((e) => [e.id, e]));
+const entriesDir = new URL('../content/entries/', import.meta.url);
+const entries = new Map(
+  readdirSync(entriesDir)
+    .filter((f) => f.endsWith('.json'))
+    .flatMap((f) => JSON.parse(readFileSync(new URL(f, entriesDir), 'utf8')) as BankEntry[])
+    .map((e) => [e.id, e]),
+);
 
 interface StepInfo {
   kind: string;

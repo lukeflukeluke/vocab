@@ -40,7 +40,7 @@ is the memory. Each session starts by reading these files:
 | To do | Start a new session in the `vocab` repo with |
 |---|---|
 | The next build step | `Vocab app: do the next unchecked build session in docs/ROADMAP.md.` |
-| More word entries | `Vocab app: content session. Write the next batch of entries following content/GUIDE.md.` |
+| More word entries | `Vocab app: do content session C2 in docs/ROADMAP.md.` (change the number; batches can run at the same time, see `content/GUIDE.md`) |
 | Fix things you noticed | `Vocab app: feedback session. Here's what I noticed: ...` |
 | Something is broken on the live app | `Vocab app: fix this first: ...` |
 
@@ -153,7 +153,7 @@ Claude builds:
 
 Done when: the validator runs, and the candidate list and guide are committed.
 
-### [ ] C1: Content batch 1 (150 entries)
+### [x] C1: Content batch 1 (150 entries)
 Claude writes 150 entries following `content/GUIDE.md`. They are spread across your
 frontier, with mixed parts of speech and topics and academic weighting, and all pass
 the validator. The pull request includes a readable preview of the entries.
