@@ -17,6 +17,11 @@ const entries = new Map(
     .map((e) => [e.id, e]),
 );
 
+// These tests start past the first-launch welcome (e2e/onboarding.spec.ts covers it).
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('vocab.onboarded', '1'));
+});
+
 interface StepInfo {
   kind: string;
   role: string;
@@ -92,9 +97,11 @@ test('a first session: five new words, start to finish', async ({ page }) => {
   await page.getByTestId('done').click();
   await expect(page.getByTestId('today-done')).toBeVisible();
   // 5 words added and 15 answers saved, and they survive a reload.
+  await page.getByTestId('tab-settings').click();
   await expect(page.getByTestId('event-count')).toHaveText('20');
   await page.reload();
   await expect(page.getByTestId('today-done')).toBeVisible();
+  await page.getByTestId('tab-settings').click();
   await expect(page.getByTestId('event-count')).toHaveText('20');
 });
 
@@ -254,7 +261,7 @@ test('works with the keyboard alone on a PC', async ({ page, isMobile }) => {
 /** Writes events straight into the app's database, as if studied on earlier days. */
 async function seed(page: Page, events: Record<string, unknown>[]) {
   await page.goto('/');
-  await expect(page.getByTestId('event-count')).toHaveText('0');
+  await expect(page.getByTestId('start')).toBeVisible();
   await page.evaluate(async (rows) => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => {
       const request = indexedDB.open('vocab');
@@ -269,7 +276,8 @@ async function seed(page: Page, events: Record<string, unknown>[]) {
   await page.reload();
 }
 
-test('later days: quick recall (R3) and "which word fits?" (P3)', async ({ page }) => {
+/** Five words met 20 days ago, two of them reviewed again later. */
+function laterDayEvents() {
   const day = 86_400_000;
   const start = Date.now() - 20 * day;
   const words = ['laconic#adj', 'salient#adj', 'tenuous#adj', 'cogent#adj', 'tacit#adj'];
@@ -300,7 +308,11 @@ test('later days: quick recall (R3) and "which word fits?" (P3)', async ({ page 
   ]);
   // Two words were reviewed again later, so their production track has opened.
   events.push(review('laconic#adj', start + 3 * day), review('salient#adj', start + 3 * day));
-  await seed(page, events);
+  return events;
+}
+
+test('later days: quick recall (R3) and "which word fits?" (P3)', async ({ page }) => {
+  await seed(page, laterDayEvents());
 
   await expect(page.getByTestId('today-plan')).toContainText('5 reviews');
   await page.getByTestId('start').click();
@@ -313,4 +325,13 @@ test('later days: quick recall (R3) and "which word fits?" (P3)', async ({ page 
       .map((s) => s.entryId)
       .sort(),
   ).toEqual(['laconic#adj', 'salient#adj']);
+});
+
+test('2-minute mode: only the most at-risk reviews', async ({ page }) => {
+  await seed(page, laterDayEvents());
+  await page.getByTestId('quick').click();
+  const seen = await finish(page);
+  expect(seen.length).toBe(5);
+  expect(seen.every((s) => s.role === 'review')).toBe(true);
+  await expect(page.getByTestId('summary')).toContainText('5 of 5 right');
 });

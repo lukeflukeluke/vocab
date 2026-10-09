@@ -4,6 +4,72 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-09 · S5: Onboarding, home screen and stats
+
+**Done**
+- **Word bank as its own file** (the must-fix from C1): `virtual:word-bank` is now the
+  URL of a hashed JSON file (528 KB for 170 entries; the app script fell from 718 KB to
+  247 KB). The service worker caches it with a 30 MB limit, and an e2e test starts a
+  session offline to prove it.
+- **Placement test** (PLAN 3.1): 100 yes/no taps (5 words from each of 16 frequency
+  bands, ranks 1,000 to 42,000, plus 20 made-up words), then up to 15 meaning checks on
+  "yes" words, rarest bands first. Scoring corrects for made-up words claimed and failed
+  checks, smooths the bands so knowledge never rises towards rarer words, and gives a
+  vocabulary size with a range and the frontier (bands 30-80% known). Results screen
+  with a band chart. Saved as a new `placement_done` event with the raw answers. Retests
+  use fresh words; Today offers one every 30 days.
+- **Onboarding** on first launch: welcome, the test (or skip), daily time (optionally
+  different at weekends), first session.
+- **New words chosen for you** (PLAN 3.4): candidate priority plus frontier fit, minus
+  interference (near-synonyms and look-alikes of words met in the last 7 days), with
+  variety in part of speech and topic at the front.
+- **Today screen**: minutes, reviews, new words, why there are fewer new words when
+  there are, Start or Continue, **2-minute mode** (up to 7 most at-risk reviews, no new
+  words), this week's study days.
+- **Progress tab**: Words Owned, the ladder, recall per track over 30 days (first review
+  of a day only, not on the day a word was met), reviews due over the next 7 days and
+  30-day total, weekly streak, vocabulary size.
+- **Settings tab**: daily and weekend minutes, target recall (85/90/95%), busy period,
+  **Export** (share sheet on iPhone, download on PC) and **Import** (adds missing events,
+  never deletes), device details, and hidden **time travel** (tap the version 7 times):
+  moves the clock forward by days using a separate test database.
+- Bottom tab bar (Today, Progress, Settings).
+- The store now saves a plain copy of every event, so a screen can never pass a
+  reactive object the database cannot store (this broke the placement result at first).
+- Tests: 145 unit tests (placement, candidate order, stats, backup, 2-minute mode) and
+  38 end-to-end runs: onboarding with the full test, skipping and taking it later,
+  settings changing today, busy period, backup export and import on a fresh device,
+  time travel leaving real data untouched, the ladder, 2-minute mode, offline start.
+
+**Decisions**
+- Placement uses 5 words per band (80 real words). That is noisy per band, so bands are
+  smoothed into a falling shape before scoring; the range shown reflects the noise.
+- The 1,000 commonest words are assumed known; the size counts headwords (word families),
+  not every inflected form.
+- Time travel never touches real data: it switches to the `vocab-test` database.
+- Writing tasks (S10) still take planned time; Today leaves them out of its minutes.
+- Onboarding is skipped for anyone who already has data (the owner's live app goes
+  straight to Today, with a "Find your level" card).
+
+**Notes for later sessions**
+- S6 (sync): `vocab.importEvents` already merges by id and replays; sync can reuse it.
+  Settings events are last-writer-wins by time, which is fine across devices.
+- PLAN 3.5's 60-day surprise check for Known words is still not built (planner change).
+- F1 candidates: the near-synonym "close, but the word here is X" verdict (C1 notes);
+  self-grading calibration for R3 (PLAN 10) is not in Progress yet.
+- The placement pool has 64 words a band, so about 12 monthly tests before words repeat.
+
+**Owner to-do**
+1. Open the preview link and try it, including time travel (Settings, tap the version
+   7 times) if you want to see weeks pass.
+2. Say "merge". Then on the home-screen app: Today shows "Find your level": take the
+   test, then do your first real session. From here on, one session a day.
+3. Until sync (S6), tap Settings, Export once a week and save the file to Files.
+
+**Next:** S6 (sync) and C2 can run now.
+
+---
+
 ## 2026-10-07 · C1: Content batch 1
 
 **Done**

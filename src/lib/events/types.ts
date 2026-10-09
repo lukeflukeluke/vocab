@@ -100,13 +100,51 @@ export interface SentenceWritten {
   accepted: boolean;
 }
 
+/** One item of the placement test (PLAN 3.1). */
+export interface PlacementAnswer {
+  word: string;
+  /** Frequency band (1-16) of a real word; absent for a fake word. */
+  band?: number;
+  /** "Yes, I know it". */
+  yes: boolean;
+  /** The meaning check on a "yes" word: true passed, false failed, absent if not asked. */
+  checked?: boolean;
+}
+
+/** The result worked out from the answers (src/lib/placement/score.ts). */
+export interface PlacementResult {
+  /** Share of each band's words you know, after corrections, 0 to 1. */
+  bands: { band: number; known: number }[];
+  /** Estimated vocabulary size (words) and a likely range. */
+  size: number;
+  low: number;
+  high: number;
+  /** Share of fake words you said yes to. */
+  falseAlarms: number;
+  /** Bands where you know roughly 30-80%: where new words come from. */
+  frontier: number[];
+}
+
+/** A finished placement test. The answers are kept so the result can be worked out again. */
+export interface PlacementDone {
+  type: 'placement_done';
+  answers: PlacementAnswer[];
+  result: PlacementResult;
+}
+
 export interface SettingsChanged {
   type: 'settings_changed';
   patch: Partial<Settings>;
 }
 
 export type EventBody =
-  WordAdded | WordStatusSet | NoteSet | ReviewDone | SentenceWritten | SettingsChanged;
+  | WordAdded
+  | WordStatusSet
+  | NoteSet
+  | ReviewDone
+  | SentenceWritten
+  | SettingsChanged
+  | PlacementDone;
 
 export type VocabEvent = EventMeta & EventBody;
 

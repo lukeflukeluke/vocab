@@ -1,17 +1,29 @@
 import { expect, test } from '@playwright/test';
 
-test('shows the home screen', async ({ page }) => {
+test('first launch shows the welcome, then Today', async ({ page }) => {
   await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'Welcome to Vocab' })).toBeVisible();
+  await page.getByTestId('skip-test').click();
+  await expect(page.getByRole('heading', { name: 'Your daily time' })).toBeVisible();
+  await page.getByRole('button', { name: 'Not now' }).click();
   await expect(page.getByRole('heading', { name: 'Today' })).toBeVisible();
-  await expect(page.getByTestId('event-count')).toHaveText('0');
+  await expect(page.getByTestId('placement-card')).toBeVisible();
+  // The daily time was saved, so the welcome does not come back.
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Today' })).toBeVisible();
+  await page.getByTestId('tab-settings').click();
+  await expect(page.getByTestId('event-count')).toHaveText('1');
 });
 
 test('keeps the device id across reloads (on-device storage works)', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('vocab.onboarded', '1'));
   await page.goto('/');
+  await page.getByTestId('tab-settings').click();
   const deviceId = page.getByTestId('device-id');
   await expect(deviceId).toHaveAttribute('data-device-id', /^[0-9a-f-]{36}$/);
   const first = await deviceId.getAttribute('data-device-id');
   await page.reload();
+  await page.getByTestId('tab-settings').click();
   await expect(deviceId).toHaveAttribute('data-device-id', first!);
 });
 
@@ -27,13 +39,17 @@ test('serves an installable web app manifest', async ({ request }) => {
   }
 });
 
-test('works offline once loaded', async ({ page, context }) => {
+test('works offline once loaded, word bank included', async ({ page, context }) => {
+  await page.addInitScript(() => localStorage.setItem('vocab.onboarded', '1'));
   await page.goto('/');
+  await page.getByTestId('tab-settings').click();
   await expect(page.getByTestId('offline-status')).toHaveText('Ready');
   await page.evaluate(() => navigator.serviceWorker.ready);
 
   await context.setOffline(true);
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Today' })).toBeVisible();
-  await expect(page.getByTestId('offline-status')).toHaveText('Ready');
+  // The word bank is a separate file: starting a session proves it came from the cache.
+  await page.getByTestId('start').click();
+  await expect(page.getByTestId('step')).toBeVisible();
 });

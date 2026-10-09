@@ -84,10 +84,29 @@ At the end (the owner set up this routine and wants it every session):
   so pausing and coming back rebuilds it from what is left (`unfinishedIntros`).
 - `answers.ts` checks typed answers (forms, both spellings, one-letter slips).
 - `prompts.ts` picks sentences (`ex0`-`ex5`, `cz0`-`cz2`, stored as `promptId`).
-- The word bank reaches the app as `virtual:word-bank` (`scripts/word-bank-plugin.ts`):
-  entries joined with IPA, band and spellings from `candidates.json` at build time.
-  Unit tests use `src/lib/testing/bank.ts` instead.
+- The word bank is a separate JSON file (`scripts/word-bank-plugin.ts`): entries joined
+  with IPA, band and spellings from `candidates.json` at build time. `virtual:word-bank`
+  is its URL; `loadBank()` fetches it at start and `getBank()` returns it afterwards. The
+  service worker caches it (limit 30 MB). Unit tests use `src/lib/testing/bank.ts`.
+- `today.ts`: today's plan and session. New words come from `orderCandidates()`
+  (`src/lib/content/candidates.ts`, PLAN 3.4): priority plus frontier fit from the
+  latest placement test, minus interference with words met in the last 7 days, with
+  variety at the front.
 - Steps show `data-entry-id` and `data-prompt-id`; the e2e tests use them to answer.
+
+## Placement, stats, settings
+
+- `src/lib/placement/placement.ts`: the placement test (PLAN 3.1): 5 words from each of
+  16 bands plus 20 fakes, up to 15 meaning checks, scoring. The result is stored as a
+  `placement_done` event (answers kept, so it can be re-scored) in `state.placements`.
+- `src/lib/stats/stats.ts`: funnel, recall (first review of a day, not on the day met),
+  forecast, weekly streak (5+ days).
+- `src/lib/backup.ts`: the export file (all events) and its reader; import merges by id.
+- `src/lib/clock.ts`: the app clock. Use `now()` and `tzOffsetMinutes()` from it, never
+  `Date.now()`, so time travel works. Time travel (Settings, tap the version 7 times)
+  switches to a separate database, `vocab-test`.
+- Onboarding shows on first launch only (no events and no `vocab.onboarded` in
+  localStorage). e2e tests that skip it set that key with `page.addInitScript`.
 
 ## Word bank (`content/`)
 
