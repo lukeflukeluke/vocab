@@ -17,6 +17,8 @@
     "vitest.config.ts",
     "playwright.config.ts",
     "e2e/**/*.ts",
-    "scripts/**/*.ts"
+    "scripts/**/*.ts",
+    "server/**/*.ts",
+    "functions/**/*.ts"
   ]
 }

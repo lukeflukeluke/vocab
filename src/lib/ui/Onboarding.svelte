@@ -1,5 +1,7 @@
 <script lang="ts">
   import { vocab } from '../state/store.svelte';
+  import { isValidKey } from '../sync/key';
+  import { syncer } from '../sync/sync.svelte';
   import MinutesPicker from './MinutesPicker.svelte';
   import PlacementFlow from './PlacementFlow.svelte';
   import TopBar from './TopBar.svelte';
@@ -13,7 +15,20 @@
 
   let { ondone }: Props = $props();
 
-  let step = $state<'welcome' | 'test' | 'time'>('welcome');
+  let step = $state<'welcome' | 'test' | 'time' | 'join'>('welcome');
+  let typed = $state('');
+  let joining = $state(false);
+  let joinError = $state<string | null>(null);
+
+  /** Another device already has your words: link to it instead of starting afresh. */
+  async function join() {
+    joining = true;
+    joinError = null;
+    await syncer.useKey(typed);
+    joining = false;
+    if (syncer.status.phase === 'ok') ondone(false);
+    else if (syncer.status.phase === 'error') joinError = syncer.status.message;
+  }
   let minutes = $state(vocab.state.settings.dailyMinutes);
   let weekendDiffers = $state(vocab.state.settings.weekendMinutes !== null);
   let weekend = $state(vocab.state.settings.weekendMinutes ?? vocab.state.settings.dailyMinutes);
@@ -61,6 +76,43 @@
         <button class="btn quiet wide" data-testid="skip-test" onclick={() => (step = 'time')}>
           Skip the test for now
         </button>
+        <button class="btn quiet wide" data-testid="join" onclick={() => (step = 'join')}>
+          I already use Vocab on another device
+        </button>
+      </div>
+    {:else if step === 'join'}
+      <h1>Link this device</h1>
+      <p>
+        On your other device, open Settings, Sync. Make a sync key there (or tap "Show key" if you
+        already have one) and type it in here.
+      </p>
+      <label class="field">
+        Sync key
+        <input
+          type="text"
+          bind:value={typed}
+          data-testid="join-key"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="characters"
+          spellcheck="false"
+          placeholder="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+        />
+      </label>
+      {#if typed.trim() && !isValidKey(typed)}
+        <p class="bad">That key doesn't look right. Check each character.</p>
+      {/if}
+      {#if joinError}<p class="bad" role="alert">{joinError}</p>{/if}
+      <div class="actions">
+        <button
+          class="btn primary wide"
+          data-testid="join-go"
+          disabled={!isValidKey(typed) || joining}
+          onclick={join}
+        >
+          {joining ? 'Fetching your words...' : 'Link and fetch my words'}
+        </button>
+        <button class="btn quiet wide" onclick={() => (step = 'welcome')}>Back</button>
       </div>
     {:else}
       <h1>Your daily time</h1>
@@ -124,6 +176,29 @@
   .muted {
     color: var(--muted);
     font-size: 0.9rem;
+  }
+
+  .field {
+    display: grid;
+    gap: 6px;
+    color: var(--muted);
+  }
+
+  .field input {
+    width: 100%;
+    min-height: 52px;
+    padding: 8px 12px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text);
+    /* 16px or more stops iPhone zooming in. */
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1.05rem;
+  }
+
+  .bad {
+    color: var(--bad);
   }
 
   .toggle {

@@ -4,6 +4,72 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-09 · S6: Sync
+
+**Done**
+- **Sync server** in the same Cloudflare Pages project as the app: `functions/api/sync.ts`
+  and `functions/api/health.ts`, with the logic in `server/sync.ts`. It stores events in
+  a D1 database and relays them; it never reads or changes them. Tables (events, and the
+  Inbox for S7) are created on first use, so setup is dashboard clicks only.
+- **One request does both directions**: the device sends its new events and gets back
+  everything after its cursor (the server's row number), in pages of up to 1,000.
+  Sending the same event twice is harmless.
+- **Sync key**: 24 random characters plus a check character, shown as 5 groups of 5.
+  Typos are caught on the device (O/0 and I/L/1 are treated as the same). The server
+  only stores a hash of the key.
+- **Sync engine** in the app: on open, every 3 minutes while open, when you come back to
+  the app or back online, after pausing or finishing a session, and after a backup
+  import. Offline just waits. Time travel never syncs.
+- **Settings, Sync**: make a key, enter a key, sync now, show the key, turn off on this
+  device. A clear message if the server has no database yet.
+- **First launch on a new device**: "I already use Vocab on another device" takes the
+  key and brings your words over, skipping the placement test.
+- **Status in the top bar**: Synced, Syncing, Offline or Not synced.
+- **A race fixed before it could bite**: a sync arriving while you answer could replay
+  over the fresh answer in memory (the answer was saved, but the screen missed it until
+  reload). The store now runs writes one at a time.
+- `docs/SETUP-SYNC.md`: the owner's dashboard steps, PC install, and what to do if
+  something goes wrong.
+- Tests: 170 unit tests (server relay, paging, accounts kept apart, bad input; two
+  devices with clocks 5 minutes apart ending with identical state; keys) and 44
+  end-to-end runs, including an iPhone and a PC syncing through the real server code
+  (on SQLite) both ways.
+
+**Decisions**
+- Pages Functions instead of a separate Worker: same project, same address, no CORS,
+  and preview links get their own sync server. D1 is bound in the dashboard (no
+  `wrangler.toml`), with a separate database for previews so testing never touches real
+  data.
+- The cursor is the server's row number, not a time, so an event from a device with a
+  slow clock is never skipped.
+- The device pushes by a time watermark (events at or after the newest it has sent).
+  Re-sending a few is harmless; missing one is not.
+- Joining from a device that already has data merges both; nothing is ever deleted.
+
+**Notes for later sessions**
+- S7: the `inbox` table already exists on the server (account, id, word, context, source,
+  created). Captures from the iOS Shortcut and bookmarklet need an endpoint that takes
+  the sync key; add it next to `functions/api/sync.ts`.
+- S8: Pages Functions cannot run on a schedule. The weekly R2 backup needs a tiny
+  separate Worker with a cron trigger bound to the same D1 database (or a GitHub Action
+  calling an export endpoint).
+- PLAN 13.3's snapshots are not needed yet: replaying thousands of events takes
+  milliseconds. Revisit if start-up slows.
+- The key is in the device's database, not in localStorage, so clearing site data
+  unlinks the device (enter the key again).
+
+**Owner to-do**
+1. Follow `docs/SETUP-SYNC.md` steps 1-3 (create `vocab-sync` and `vocab-sync-preview`,
+   bind both as `DB`, redeploy). About 10 minutes.
+2. On the preview link: Settings, Sync, Make a sync key, Turn on sync. It should say
+   Synced. Then say "merge".
+3. After the merge, on the iPhone home-screen app: make your real key (step 4 of the
+   guide). On the PC: install the app and enter the key (step 5).
+
+**Next:** S7 (capture) and C2 can run now.
+
+---
+
 ## 2026-10-09 · S5: Onboarding, home screen and stats
 
 **Done**

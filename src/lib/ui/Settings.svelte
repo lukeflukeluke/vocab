@@ -3,7 +3,9 @@
   import { now as clockNow, setTimeTravel, timeTravelDays } from '../clock';
   import type { Settings } from '../events/types';
   import { vocab } from '../state/store.svelte';
+  import { syncer } from '../sync/sync.svelte';
   import MinutesPicker from './MinutesPicker.svelte';
+  import SyncCard from './SyncCard.svelte';
 
   // Settings (PLAN 6.7, 13.4): daily time, target retention, a busy period, backups, and
   // a hidden time-travel switch for testing. The device details live here too.
@@ -88,6 +90,8 @@
     try {
       const events = parseBackup(await file.text());
       const added = await vocab.importEvents(events);
+      // Restored events may be older than anything synced so far: send the whole log.
+      if (added) void syncer.backupImported();
       message = {
         text: added
           ? `Imported ${added} events. Everything else was already here.`
@@ -169,6 +173,8 @@
     {/if}
   </div>
 </section>
+
+<SyncCard />
 
 <section class="card">
   <h2>Backup</h2>
