@@ -1,4 +1,7 @@
+import type { Entry } from '../content/types';
 import type {
+  CaptureSorted,
+  CaptureSource,
   NoteField,
   PlacementAnswer,
   PlacementResult,
@@ -17,6 +20,10 @@ export interface State {
   words: Record<string, UserWord>;
   /** Placement tests taken, oldest first. */
   placements: PlacementRecord[];
+  /** Captured words (the Inbox, sorted or not), keyed by the capture event's id. */
+  captures: Record<string, Capture>;
+  /** Entries made on the device for captured words not in the bank, keyed by id. */
+  entries: Record<string, Entry>;
   /** Number of events replayed. */
   eventCount: number;
   /** Time of the latest event replayed, or 0 for an empty log. */
@@ -58,6 +65,18 @@ export interface PlacementRecord {
   result: PlacementResult;
 }
 
+export interface Capture {
+  id: string;
+  t: number;
+  word: string;
+  context?: string;
+  source: CaptureSource;
+  title?: string;
+  url?: string;
+  /** How it was sorted, or undefined while it waits in the Inbox. */
+  sorted?: { t: number; decision: CaptureSorted['decision']; entryId?: string };
+}
+
 export interface SentenceRecord {
   t: number;
   exercise: string;
@@ -78,6 +97,8 @@ export function emptyState(): State {
     settings: { ...DEFAULT_SETTINGS },
     words: {},
     placements: [],
+    captures: {},
+    entries: {},
     eventCount: 0,
     latestEventTime: 0,
   };

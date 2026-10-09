@@ -3,6 +3,7 @@ import type { EventBody, ReviewDone, VocabEvent } from '../events/types';
 import { makeEvent, seededRandom, shuffled } from '../testing/factories';
 import { DAY_MS, remember } from '../scheduler/memory';
 import { at, introduced, reviewed, sentence } from '../testing/history';
+import { entryFromSense } from '../content/capture';
 import { applyEvent, applyEvents, replay } from './reducer';
 import { DEFAULT_SETTINGS, emptyState } from './state';
 
@@ -207,5 +208,53 @@ describe('applyEvents', () => {
     const before = replay(first);
     expect(applyEvents(before, later)).toEqual(replay([...first, ...later]));
     expect(before).toEqual(replay(first));
+  });
+});
+
+describe('captures', () => {
+  const captured = makeEvent(
+    { type: 'word_captured', word: 'posited', context: 'She posited it.', source: 'shortcut' },
+    { t: 10, id: 'cap-1' },
+  );
+
+  it('puts captured words in the Inbox until they are sorted', () => {
+    const state = replay([captured]);
+    expect(state.captures['cap-1']).toEqual({
+      id: 'cap-1',
+      t: 10,
+      word: 'posited',
+      context: 'She posited it.',
+      source: 'shortcut',
+    });
+    const sorted = replay([
+      captured,
+      makeEvent(
+        { type: 'capture_sorted', captureId: 'cap-1', decision: 'learn', entryId: 'posit#v' },
+        { t: 20 },
+      ),
+      // The other device sorted it too, a moment later: the first decision stands.
+      makeEvent({ type: 'capture_sorted', captureId: 'cap-1', decision: 'ignore' }, { t: 21 }),
+    ]);
+    expect(sorted.captures['cap-1']!.sorted).toEqual({
+      t: 20,
+      decision: 'learn',
+      entryId: 'posit#v',
+    });
+  });
+
+  it('keeps entries made for captured words, the first one if made twice', () => {
+    const entry = entryFromSense({ headword: 'posit', pos: 'v', definition: 'assume' });
+    const state = replay([
+      makeEvent({ type: 'entry_created', entry }, { t: 1 }),
+      makeEvent({ type: 'entry_created', entry: { ...entry, nuance: 'later' } }, { t: 2 }),
+    ]);
+    expect(state.entries[entry.id]).toEqual(entry);
+  });
+
+  it('hands out a new captures object instead of changing the old one', () => {
+    const before = replay([]);
+    const after = applyEvent(before, captured);
+    expect(before.captures).toEqual({});
+    expect(Object.keys(after.captures)).toEqual(['cap-1']);
   });
 });

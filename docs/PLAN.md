@@ -109,8 +109,9 @@ sentence it appeared in, in two taps on phone or PC (section 13.5). It lands in 
 **Inbox**:
 
 - If it is in the bank, it links to that entry and your sentence is added as an example.
-- If not, the app builds an entry from open dictionary data (Wiktionary) and asks which
-  sense matches your sentence (AI can pick it for you if turned on).
+- If not, the app builds an entry from open dictionary data (WordNet, in the compact
+  dictionary) and asks which sense matches your sentence (AI can pick it for you if
+  turned on). If no sense fits, you write the meaning yourself.
 - You triage it: **Learn**, **Already know**, or **Ignore**.
 
 Captured words **jump the queue** and get introduced within a day or two. Your original
@@ -621,8 +622,9 @@ everywhere.
 - **Android:** the installed PWA appears in the system share sheet (Web Share Target).
   Select text in any app, Share, Vocab.
 - **iPhone:** an iOS Shortcut in the share sheet ("Add to Vocab") that sends the selected
-  text straight to the Inbox. (Opening a link would land in Safari, which on iOS keeps
-  separate storage from the installed app, hence going via the server.)
+  text to the sync server, which adds it to your event log. (Opening a link would land in
+  Safari, which on iOS keeps separate storage from the installed app, hence going via the
+  server.) Sharing a whole sentence works too: the Inbox asks which word you meant.
 - **PC:** a bookmarklet. Select a word on any web page, click "+Vocab", and a small popup
   grabs the word, the sentence around it, and the page title and URL. Optionally later,
   a tiny browser extension with a right-click "Add to Vocab".

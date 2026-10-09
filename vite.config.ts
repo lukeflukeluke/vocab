@@ -59,9 +59,12 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true,
         globPatterns: ['**/*.{js,css,html,svg,png,webmanifest,json}'],
-        // The word bank is one JSON file that grows with every content batch.
+        // The word bank is one JSON file that grows with every content batch. The
+        // dictionary for captured words adds 26 files, 4.6 MB in all.
         maximumFileSizeToCacheInBytes: 30 * 1024 * 1024,
         navigateFallback: 'index.html',
+        // The sync server's addresses are never the app (opening /api/health in a tab).
+        navigateFallbackDenylist: [/^\/api\//],
       },
     }),
   ],

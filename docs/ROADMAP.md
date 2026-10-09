@@ -233,7 +233,7 @@ You:
 
 Done when: a review done on your iPhone shows up on your PC within a minute.
 
-### [ ] S7: Capture
+### [x] S7: Capture
 Claude builds:
 - The Inbox screen, with sorting into Learn / Know it / Ignore, and a sense picker.
 - Entries for words that aren't in the bank, built from the compact dictionary.

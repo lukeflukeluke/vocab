@@ -1,29 +1,9 @@
-import { devices, expect, test, type BrowserContext, type Page } from '@playwright/test';
+import { devices, expect, test, type Page } from '@playwright/test';
 import { sqliteDb } from '../server/sqlite';
-import { handleHealth, handleSync, type SyncDb } from '../server/sync';
+import { serve } from './server';
 
 // Sync between an iPhone and a PC, each a separate browser with its own storage, through
-// the real server code (server/sync.ts) on an in-memory SQLite database standing in for
-// Cloudflare D1. Requests to /api/* are answered by that server inside the test.
-
-async function serve(context: BrowserContext, db: SyncDb | undefined) {
-  await context.route('**/api/**', async (route) => {
-    const req = route.request();
-    const request = new Request(req.url(), {
-      method: req.method(),
-      headers: await req.allHeaders(),
-      ...(req.postData() !== null && { body: req.postData()! }),
-    });
-    const res = req.url().endsWith('/api/health')
-      ? await handleHealth(db)
-      : await handleSync(request, db, Date.now());
-    await route.fulfill({
-      status: res.status,
-      headers: { 'content-type': 'application/json' },
-      body: await res.text(),
-    });
-  });
-}
+// the real server code (e2e/server.ts).
 
 async function eventCount(page: Page): Promise<string> {
   await page.getByTestId('tab-settings').click();

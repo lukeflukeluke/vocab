@@ -5,6 +5,7 @@
   import { vocab } from '../state/store.svelte';
   import { syncer } from '../sync/sync.svelte';
   import MinutesPicker from './MinutesPicker.svelte';
+  import CaptureCard from './CaptureCard.svelte';
   import SyncCard from './SyncCard.svelte';
 
   // Settings (PLAN 6.7, 13.4): daily time, target retention, a busy period, backups, and
@@ -175,6 +176,7 @@
 </section>
 
 <SyncCard />
+<CaptureCard />
 
 <section class="card">
   <h2>Backup</h2>

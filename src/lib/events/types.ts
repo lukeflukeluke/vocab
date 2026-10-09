@@ -5,6 +5,8 @@
 // Changing an existing payload shape breaks replay of old events. Add a new event type
 // instead, and keep the reducer able to read every type ever written.
 
+import type { Entry } from '../content/types';
+
 export type Track = 'recognition' | 'production';
 
 /** FSRS ratings: 1 Again, 2 Hard, 3 Good, 4 Easy. */
@@ -132,6 +134,47 @@ export interface PlacementDone {
   result: PlacementResult;
 }
 
+/** Where a captured word came from (PLAN 13.5). */
+export type CaptureSource = 'app' | 'shortcut' | 'bookmarklet';
+
+/**
+ * A word met in the wild, waiting in the Inbox to be sorted (PLAN 3.3). The iOS Shortcut's
+ * captures are written by the sync server (device "server"), the others on the device.
+ */
+export interface WordCaptured {
+  type: 'word_captured';
+  /**
+   * The word as it was met, in any form ("posited"). Empty when only a passage was shared;
+   * the word is then picked from `context` in the Inbox.
+   */
+  word: string;
+  /** The sentence (or passage) it was in. */
+  context?: string;
+  source: CaptureSource;
+  /** The page it was captured from. */
+  title?: string;
+  url?: string;
+}
+
+/** An Inbox item sorted: learn it, already known, or ignore. */
+export interface CaptureSorted {
+  type: 'capture_sorted';
+  /** Event id of the `word_captured` event. */
+  captureId: string;
+  decision: 'learn' | 'known' | 'ignore';
+  /** The entry it was linked to, if any. */
+  entryId?: string;
+}
+
+/**
+ * A word-bank entry made on the device for a captured word that is not in the bank,
+ * from the compact dictionary (or a meaning you wrote). Ids start with "my:".
+ */
+export interface EntryCreated {
+  type: 'entry_created';
+  entry: Entry;
+}
+
 export interface SettingsChanged {
   type: 'settings_changed';
   patch: Partial<Settings>;
@@ -144,7 +187,10 @@ export type EventBody =
   | ReviewDone
   | SentenceWritten
   | SettingsChanged
-  | PlacementDone;
+  | PlacementDone
+  | WordCaptured
+  | CaptureSorted
+  | EntryCreated;
 
 export type VocabEvent = EventMeta & EventBody;
 

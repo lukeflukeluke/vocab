@@ -8,3 +8,9 @@ declare module 'virtual:word-bank' {
   const url: string;
   export default url;
 }
+
+// URLs of the compact dictionary's files, one per first letter (scripts/word-bank-plugin.ts).
+declare module 'virtual:dictionary' {
+  const urls: Record<string, string>;
+  export default urls;
+}

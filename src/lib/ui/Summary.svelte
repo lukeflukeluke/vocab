@@ -1,8 +1,10 @@
 <script lang="ts">
   import { getBank } from '../content/wordBank';
+  import { yourBank } from '../content/yourBank';
+  import { vocab } from '../state/store.svelte';
   import type { SessionSummary } from '../session/runner';
 
-  const bank = getBank();
+  const bank = yourBank(getBank(), vocab.state);
 
   interface Props {
     summary: SessionSummary;

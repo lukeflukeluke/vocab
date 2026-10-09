@@ -1,6 +1,7 @@
 <script lang="ts">
   import { flushSync, onMount } from 'svelte';
   import { getBank } from '../content/wordBank';
+  import { yourBank } from '../content/yourBank';
   import type { EventBody, Rating } from '../events/types';
   import { rateAnswer, usualResponseMs, type Answer, type SelfGrade } from '../scheduler/rating';
   import { enteredWord, type TypedResult } from '../session/answers';
@@ -31,7 +32,9 @@
   import Typed from './steps/Typed.svelte';
   import WordPage from './WordPage.svelte';
 
-  const bank = getBank();
+  // Fixed for the session: words met in it are already in the state when it starts.
+  // svelte-ignore state_referenced_locally
+  const bank = yourBank(getBank(), vocab.state);
 
   interface Props {
     session: Session;
@@ -287,7 +290,11 @@
             {#snippet after(correct)}
               <p class:good={correct}>
                 {correct ? 'Right!' : 'Not this time.'}
-                <strong>{entry.headword}</strong> is close to "{entry.everyday}".
+                {#if entry.everyday}
+                  <strong>{entry.headword}</strong> is close to "{entry.everyday}".
+                {:else}
+                  <strong>{entry.headword}</strong>: {entry.definition}
+                {/if}
               </p>
             {/snippet}
           </Choice>
