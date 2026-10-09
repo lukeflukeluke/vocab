@@ -77,6 +77,40 @@ function applyInPlace(state: State, event: VocabEvent): void {
       state.placements = [...state.placements, record];
       return;
     }
+    case 'word_captured': {
+      state.captures = {
+        ...state.captures,
+        [event.id]: {
+          id: event.id,
+          t: event.t,
+          word: event.word,
+          source: event.source,
+          ...(event.context !== undefined && { context: event.context }),
+          ...(event.title !== undefined && { title: event.title }),
+          ...(event.url !== undefined && { url: event.url }),
+        },
+      };
+      return;
+    }
+    case 'capture_sorted': {
+      // Sorted on two devices at once: the first decision stands.
+      const capture = state.captures[event.captureId];
+      if (!capture || capture.sorted) return;
+      const sorted = {
+        t: event.t,
+        decision: event.decision,
+        ...(event.entryId !== undefined && { entryId: event.entryId }),
+      };
+      state.captures = { ...state.captures, [event.captureId]: { ...capture, sorted } };
+      return;
+    }
+    case 'entry_created': {
+      // The same entry made on two devices: keep the first.
+      if (!state.entries[event.entry.id]) {
+        state.entries = { ...state.entries, [event.entry.id]: event.entry };
+      }
+      return;
+    }
     case 'settings_changed': {
       // Skip undefined values: they would not survive the JSON trip to another device.
       const defined = Object.entries(event.patch).filter(([, value]) => value !== undefined);

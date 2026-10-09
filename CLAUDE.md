@@ -7,7 +7,8 @@ server (Cloudflare Pages Functions with D1) relays events between devices.
 - Design: `docs/PLAN.md`
 - Build order and progress: `docs/ROADMAP.md`
 - What each session did: `docs/LOG.md`
-- Hosting: `docs/SETUP-CLOUDFLARE.md`; sync database: `docs/SETUP-SYNC.md`
+- Hosting: `docs/SETUP-CLOUDFLARE.md`; sync database: `docs/SETUP-SYNC.md`; capture:
+  `docs/SETUP-CAPTURE.md`
 
 ## Session routine
 
@@ -58,8 +59,9 @@ The owner wants usage spent where it matters:
   `src/lib/db/eventLog.ts`). Stored events are never edited or deleted.
 - **Never change an existing event payload shape.** Add a new event type. The reducer
   must keep reading every type ever written and ignore types it does not know.
-- **Events are created only by `EventLog.append`** (tests aside). It sets the time to
-  `max(clock, latest event + 1)`, so causes sort before effects across devices with
+- **Events are created only by `EventLog.append`** (tests aside, and the server's
+  `word_captured` events from the iOS Shortcut, which have no causes). It sets the time
+  to `max(clock, latest event + 1)`, so causes sort before effects across devices with
   wrong clocks.
 - **State is derived by replay** (`src/lib/state/reducer.ts`). The reducer is pure and
   deterministic: no clock reads, no randomness. It replaces nested objects instead of
@@ -128,10 +130,11 @@ The owner wants usage spent where it matters:
   no `wrangler.toml`). Preview deployments bind a separate database. The logic is in
   `server/sync.ts` and runs on any `SyncDb` (a D1 subset); `server/sqlite.ts` adapts
   Node's SQLite for tests. Tables are created on first use.
-- One endpoint: `POST /api/sync` with `Authorization: Bearer <key>` and
+- Main endpoint: `POST /api/sync` with `Authorization: Bearer <key>` and
   `{cursor, events}`; returns `{cursor, events, more}`. The account is a SHA-256 hash of
   the key; the cursor is the server's row number. Inserts ignore ids already there, so
-  sending twice is harmless. The server never reads or changes event bodies.
+  sending twice is harmless. The server never reads or changes event bodies (it only
+  writes new ones for iOS Shortcut captures, `POST /api/capture`).
 - The client (`engine.ts`) pushes events with `t` at or after the `sync.pushed`
   watermark and pulls after `sync.cursor`; both and the key live in the Dexie `meta`
   table, so the time-travel database has its own (and sync is off in time travel).
@@ -143,6 +146,29 @@ The owner wants usage spent where it matters:
 - `server/*.test.ts` run under Vitest with Node types; `server/devices.test.ts` syncs two
   in-memory devices with skewed clocks. `e2e/sync.spec.ts` drives an iPhone and a PC
   against the real server code.
+
+## Capture and the Inbox (`src/lib/inbox/`, `src/lib/content/capture.ts`)
+
+- A captured word is a `word_captured` event (`state.captures`); `capture_sorted` sorts it
+  (learn, known, ignore; the first decision stands). `sortCapture()` in `inbox.ts` works
+  out the events for a decision.
+- Routes: the Inbox's quick-add box; the PC bookmarklet (`bookmarklet.ts`), which opens
+  the app at `/?capture&w=&s=&t=&u=` in a small window (`CaptureLanding.svelte`) that
+  records the event locally and syncs; the iOS Shortcut, which posts to
+  `/api/capture` (`server/capture.ts`). That endpoint is the one place the server
+  writes an event itself (device `server`), because a link on iPhone would open Safari's
+  separate storage.
+- Words not in the bank get an entry made on the device (`entryFromSense`, id
+  `my:headword#pos.hash`, same on every device), saved as an `entry_created` event in
+  `state.entries`. It has the definition, your sentence as example and blank, and a
+  "word for this meaning" blank; the rich fields are empty, and screens must cope.
+- `yourBank(getBank(), state)` (`content/yourBank.ts`) is the bank screens and sessions
+  use: the shipped entries, the made ones, and captured sentences added to their words
+  (as `ex6`, `cz3`... after the written ones). A captured word is guessed from your own
+  sentence (`capturedPrompt`). The planner already puts captured words first.
+- The compact dictionary is `virtual:dictionary` (26 JSON files by first letter, fetched
+  when needed, cached by the service worker). `lookUp()` in `content/dictionary.ts`
+  guesses dictionary forms (`lemmaCandidates`: "posited" to "posit").
 
 ## Word bank (`content/`)
 

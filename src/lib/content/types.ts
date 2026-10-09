@@ -4,7 +4,8 @@
 
 export type EntryPos = 'n' | 'v' | 'adj' | 'adv' | 'conj' | 'prep';
 export type Register = 'formal' | 'neutral' | 'informal';
-export type Setting = 'conversation' | 'news' | 'fiction' | 'academic' | 'formal';
+/** Where an example comes from. "captured" marks your own sentence (never in content files). */
+export type Setting = 'conversation' | 'news' | 'fiction' | 'academic' | 'formal' | 'captured';
 
 export interface Example {
   text: string;

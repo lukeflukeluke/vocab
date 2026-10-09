@@ -2,6 +2,8 @@
   import { now as clockNow, tzOffsetMinutes } from '../clock';
   import { orderCandidates } from '../content/candidates';
   import { getBank } from '../content/wordBank';
+  import { yourBank } from '../content/yourBank';
+  import { unsorted } from '../inbox/inbox';
   import { paceFromHistory } from '../scheduler/budget';
   import { studyDay } from '../scheduler/day';
   import { DAY_MS } from '../scheduler/memory';
@@ -17,11 +19,13 @@
   interface Props {
     onstart: (session: Session) => void;
     onplacement: () => void;
+    oninbox: () => void;
   }
 
-  let { onstart, onplacement }: Props = $props();
+  let { onstart, onplacement, oninbox }: Props = $props();
 
-  const bank = getBank();
+  const bank = $derived(yourBank(getBank(), vocab.state));
+  const toSort = $derived(unsorted(vocab.state).length);
   const now = clockNow();
   const tz = tzOffsetMinutes();
   const today = studyDay(now, tz);
@@ -126,6 +130,14 @@
     </span>
   </div>
 </section>
+
+{#if toSort}
+  <section class="card" data-testid="inbox-card">
+    <h2>{toSort === 1 ? '1 word' : `${toSort} words`} in your Inbox</h2>
+    <p>Sort them and the ones you want to learn come first.</p>
+    <button class="btn wide" onclick={oninbox}>Open the Inbox</button>
+  </section>
+{/if}
 
 {#if placementDue}
   <section class="card placement" data-testid="placement-card">

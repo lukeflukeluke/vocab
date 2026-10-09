@@ -51,7 +51,9 @@
   {#if shown}
     <div class="reveal" role="status">
       <p class="definition">{entry.definition}</p>
-      <p class="everyday">Close to: <strong>{entry.everyday}</strong></p>
+      {#if entry.everyday}
+        <p class="everyday">Close to: <strong>{entry.everyday}</strong></p>
+      {/if}
     </div>
   {/if}
 </div>

@@ -3,7 +3,13 @@ import type { Track } from '../events/types';
 import type { DayPlan } from '../scheduler/planner';
 import { studyDay } from '../scheduler/day';
 import type { State, UserWord } from '../state/state';
-import { pageExamples, pickPrompt, promptHistory, type PromptKind } from './prompts';
+import {
+  capturedPrompt,
+  pageExamples,
+  pickPrompt,
+  promptHistory,
+  type PromptKind,
+} from './prompts';
 import type { ExerciseId, ExerciseStep, Role, Step } from './steps';
 
 // Turns today's plan into a session (PLAN 7): about 10 reviews, then each new word with
@@ -62,7 +68,8 @@ export class StepMaker {
   introduction(entryId: string): Step[] {
     const entry = this.#entry(entryId);
     const block = this.#key('intro', entryId);
-    const guess = 'ex0';
+    // A word you captured is guessed from your own sentence (PLAN 3.3).
+    const guess = capturedPrompt(entry) ?? 'ex0';
     const page = pageExamples(entry);
     (this.used[entryId] ??= []).push(guess, ...page);
     return [

@@ -2,11 +2,16 @@
   import { onMount } from 'svelte';
   import { now as clockNow, timeTravelDays, tzOffsetMinutes } from './lib/clock';
   import { getBank, loadBank } from './lib/content/wordBank';
+  import { yourBank } from './lib/content/yourBank';
+  import { captureParams } from './lib/inbox/bookmarklet';
+  import { unsorted } from './lib/inbox/inbox';
   import { isInstalled, isIos, requestPersistentStorage, startServiceWorker } from './lib/platform';
   import { summarize, type Session, type SessionSummary } from './lib/session/runner';
   import { todaysSession } from './lib/session/today';
   import { vocab } from './lib/state/store.svelte';
   import { syncer } from './lib/sync/sync.svelte';
+  import CaptureLanding from './lib/ui/CaptureLanding.svelte';
+  import Inbox from './lib/ui/Inbox.svelte';
   import Onboarding from './lib/ui/Onboarding.svelte';
   import PlacementFlow from './lib/ui/PlacementFlow.svelte';
   import Progress from './lib/ui/Progress.svelte';
@@ -39,6 +44,11 @@
   let installed = $state(true);
   let ios = $state(false);
   const travel = timeTravelDays();
+  /** Opened by the PC bookmarklet: just save the captured word. */
+  const capturing = captureParams(location.search);
+  /** The event log is open and sync is set up. */
+  const started = vocab.init().then(() => syncer.init());
+  const inboxCount = $derived(unsorted(vocab.state).length);
 
   /** First launch: nothing recorded yet and the welcome not dismissed on this device. */
   const ONBOARDED = 'vocab.onboarded';
@@ -61,11 +71,11 @@
     } catch {
       onboarded = false;
     }
+    if (capturing) return;
     startServiceWorker(
       () => (offlineReady = true),
       () => (updateReady = true),
     );
-    void vocab.init().then(() => syncer.init());
     loadBank().then(
       () => (bankReady = true),
       (err: unknown) => (bankError = err instanceof Error ? err.message : String(err)),
@@ -91,7 +101,12 @@
     if (start) {
       view = {
         name: 'session',
-        session: todaysSession(vocab.state, getBank(), clockNow(), tzOffsetMinutes()),
+        session: todaysSession(
+          vocab.state,
+          yourBank(getBank(), vocab.state),
+          clockNow(),
+          tzOffsetMinutes(),
+        ),
       };
     }
   }
@@ -101,7 +116,9 @@
   <p class="test-mode" data-testid="test-mode">Test mode, day +{travel}. Real data untouched.</p>
 {/if}
 
-{#if !ready}
+{#if capturing}
+  <CaptureLanding params={capturing} {started} />
+{:else if !ready}
   <TopBar />
   <main class="page">
     {#if vocab.error || bankError}
@@ -140,6 +157,7 @@
       <Today
         onstart={(session) => (view = { name: 'session', session })}
         onplacement={() => (view = { name: 'placement' })}
+        oninbox={() => home('inbox')}
       />
       {#if !installed}
         <section class="card tip" aria-label="Install tip">
@@ -151,13 +169,15 @@
           {/if}
         </section>
       {/if}
+    {:else if tab === 'inbox'}
+      <Inbox onsetup={() => home('settings')} />
     {:else if tab === 'progress'}
       <Progress onplacement={() => (view = { name: 'placement' })} />
     {:else}
       <Settings {offlineReady} {persistent} />
     {/if}
   </main>
-  <TabBar {tab} onchange={(t) => home(t)} />
+  <TabBar {tab} {inboxCount} onchange={(t) => home(t)} />
 {/if}
 
 <style>

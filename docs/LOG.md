@@ -4,6 +4,77 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-10 · S7: Capture
+
+**Done**
+- **Inbox tab** (with a count badge): a box to type a word you just met and paste its
+  sentence, the list of words waiting to be sorted, and the last few sorted. Today shows
+  a card when words are waiting.
+- **Sorting**: pick the word (if a whole sentence was shared, tap the word), pick the
+  meaning that fits, then **Learn**, **I know it** or **Ignore**. Meanings come from the
+  word bank ("Full entry") and the compact dictionary; if none fits, or the word is in no
+  dictionary, you write the meaning.
+- **Entries for words not in the bank**, made on the device from the chosen sense: the
+  definition, your sentence as the example and a fill-in-the-blank, and a "word for this
+  meaning" blank that always works. Ids are `my:headword#pos.hash`, the same on every
+  device, and the entry travels as an `entry_created` event.
+- **Your sentence is used**: a captured word is guessed from your own sentence, and it
+  joins the word's examples and blanks (after the written ones). Captured words already
+  jumped the queue (the planner takes them first, newest first).
+- **iOS Shortcut "Add to Vocab"**: posts to `/api/capture` with the sync key; the server
+  adds a `word_captured` event to your account and replies with a line the Shortcut shows
+  as a notification. Step-by-step instructions with copy buttons in Settings, Capture
+  words, and in `docs/SETUP-CAPTURE.md`.
+- **PC bookmarklet "+Vocab"**: drag it from Settings to the bookmarks bar. It takes the
+  selected word, the sentence around it (within its paragraph), and the page title and
+  address, and opens a small app window that saves it and syncs, then closes.
+- The compact dictionary (41,000 words, 4.6 MB in 26 files) now ships with the app and is
+  cached for offline use.
+- Fixes found on the way: the service worker answered `/api/...` page loads with the app
+  (so `/api/health` in a browser tab showed the app); "sync now" during a running sync
+  now waits for a second run, so a fresh capture is really sent before the bookmarklet
+  window closes. The unused server `inbox` table is no longer created.
+- Tests: 196 unit tests (capture parsing, dictionary forms, made entries, sorting, the
+  capture endpoint, the combined bank) and 52 end-to-end runs, including the Shortcut
+  path through the real server code with an iPhone and a PC, and the bookmarklet run on
+  a page.
+
+**Decisions**
+- The Shortcut's captures are written by the server straight into the event log
+  (device `server`) instead of a separate inbox table: one source of truth, nothing new
+  in the sync protocol, and every device sees them. This is the only event the server
+  creates.
+- The bookmarklet opens the app itself in a small window rather than calling the server:
+  the PC's installed app shares that storage, so it works offline and needs no key.
+- A shared passage of more than 3 words is kept as the sentence; you tap the word in the
+  Inbox. 1 to 3 words are the word itself ("insofar as").
+- "I know it" on a bank word marks it known (never offered); on other words it just
+  clears the Inbox.
+- Two devices sorting the same capture: the first decision stands.
+
+**Notes for later sessions**
+- Made entries have no IPA, nuance, synonyms or misuse sentences. S11 (AI) could fill
+  them in, and pick the sense for you (PLAN 3.3).
+- Captured words in the bank show "Full entry"; a later content batch may write a full
+  entry for a word you made yourself (`my:...`). Nothing links them yet.
+- Android share target (PLAN 13.5) not built: not needed for iPhone and PC.
+- The Shortcut and bookmark point at the address they were set up from, so set them up
+  on the live app, not a preview.
+
+**Owner to-do**
+1. Open the preview link: Inbox tab, type a word and its sentence, sort it, and see it
+   first in the next session. Try a word that is not in the bank (for example "sabayon")
+   and one that is in no dictionary.
+2. Say "merge".
+3. Then on the live app: build the Shortcut on the iPhone (Settings, Capture words, How
+   to make it; about 5 minutes) and drag +Vocab to the PC's bookmarks bar.
+4. Capture 3 real words while reading, and check one shared on the iPhone shows up in the
+   Inbox on the PC.
+
+**Next:** S8 (reminders and backups) and C2 can run now.
+
+---
+
 ## 2026-10-09 · S6: Sync
 
 **Done**

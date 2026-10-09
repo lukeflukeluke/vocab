@@ -2,7 +2,8 @@ import type { Entry } from '../content/types';
 import type { UserWord } from '../state/state';
 
 // Which sentence an exercise shows (PLAN 5, "Variety"). Example sentences have ids ex0 to
-// ex5 and fill-in-the-blank sentences cz0 to cz2; reviews store the id as `promptId`.
+// ex5 and fill-in-the-blank sentences cz0 to cz2, then any sentences you captured the word
+// in (ex6, cz3...; see content/capture.ts); reviews store the id as `promptId`.
 // A word never repeats a sentence within 3 reviews, nor within one session.
 
 export type PromptKind = 'example' | 'cloze';
@@ -50,13 +51,19 @@ export function pickPrompt(
 
 /** The example sentence or blank for a prompt id. */
 export function exampleFor(entry: Entry, promptId: string) {
-  const match = /^ex(\d)$/.exec(promptId);
+  const match = /^ex(\d+)$/.exec(promptId);
   return entry.examples[match ? Number(match[1]) : 0] ?? entry.examples[0]!;
 }
 
 export function clozeFor(entry: Entry, promptId: string) {
-  const match = /^cz(\d)$/.exec(promptId);
+  const match = /^cz(\d+)$/.exec(promptId);
   return entry.cloze[match ? Number(match[1]) : 0] ?? entry.cloze[0]!;
+}
+
+/** The first sentence you captured the word in, which is the best one to guess from. */
+export function capturedPrompt(entry: Entry): string | null {
+  const i = entry.examples.findIndex((x) => x.setting === 'captured');
+  return i === -1 ? null : `ex${i}`;
 }
 
 /**
@@ -66,6 +73,8 @@ export function clozeFor(entry: Entry, promptId: string) {
 export function pageExamples(entry: Entry): string[] {
   const first = entry.examples[1];
   if (!first) return ['ex0'];
-  const second = entry.examples.findIndex((x, i) => i > 1 && x.setting !== first.setting);
+  const second = entry.examples.findIndex(
+    (x, i) => i > 1 && x.setting !== first.setting && x.setting !== 'captured',
+  );
   return ['ex1', `ex${second === -1 ? 2 : second}`];
 }

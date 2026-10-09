@@ -1,5 +1,6 @@
-// The sync server (PLAN 13.2, 13.3). It only stores and relays events: every device pushes
-// its new events and fetches everything after its cursor, in one request. Accounts are
+// The sync server (PLAN 13.2, 13.3). It stores and relays events: every device pushes
+// its new events and fetches everything after its cursor, in one request. The only events
+// it writes itself are words captured by the iOS Shortcut (server/capture.ts). Accounts are
 // identified by a hash of the sync key, so the key itself is never stored.
 //
 // The database is Cloudflare D1 in production (functions/api/*.ts). `SyncDb` is the small
@@ -32,17 +33,6 @@ const SCHEMA = [
     UNIQUE (account, id)
   )`,
   `CREATE INDEX IF NOT EXISTS events_by_account ON events (account, seq)`,
-  // Captured words waiting to be sorted (build session S7).
-  `CREATE TABLE IF NOT EXISTS inbox (
-    seq INTEGER PRIMARY KEY AUTOINCREMENT,
-    account TEXT NOT NULL,
-    id TEXT NOT NULL,
-    word TEXT NOT NULL,
-    context TEXT,
-    source TEXT,
-    created INTEGER NOT NULL,
-    UNIQUE (account, id)
-  )`,
 ];
 
 let schemaReady: WeakSet<object> = new WeakSet();
@@ -124,6 +114,21 @@ export function parseSyncRequest(body: unknown): SyncRequest {
   return { cursor, events: events as WireEvent[] };
 }
 
+/** Stores events in an account; ones already stored are ignored. */
+export async function storeEvents(
+  db: SyncDb,
+  account: string,
+  events: readonly WireEvent[],
+  now: number,
+): Promise<void> {
+  await ensureSchema(db);
+  if (!events.length) return;
+  const insert = db.prepare(
+    'INSERT OR IGNORE INTO events (account, id, t, body, received) VALUES (?, ?, ?, ?, ?)',
+  );
+  await db.batch(events.map((e) => insert.bind(account, e.id, e.t, JSON.stringify(e), now)));
+}
+
 /**
  * Stores the pushed events (ones already stored are ignored, so sending twice is safe),
  * then returns everything in the account after the cursor, including what was just sent.
@@ -134,15 +139,7 @@ export async function sync(
   request: SyncRequest,
   now: number,
 ): Promise<SyncResponse> {
-  await ensureSchema(db);
-  if (request.events.length) {
-    const insert = db.prepare(
-      'INSERT OR IGNORE INTO events (account, id, t, body, received) VALUES (?, ?, ?, ?, ?)',
-    );
-    await db.batch(
-      request.events.map((e) => insert.bind(account, e.id, e.t, JSON.stringify(e), now)),
-    );
-  }
+  await storeEvents(db, account, request.events, now);
   const { results } = await db
     .prepare('SELECT seq, body FROM events WHERE account = ? AND seq > ? ORDER BY seq LIMIT ?')
     .bind(account, request.cursor, MAX_PULL + 1)

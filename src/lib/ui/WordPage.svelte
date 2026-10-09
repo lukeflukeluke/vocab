@@ -25,7 +25,22 @@
   };
 
   const ipa = $derived(entry.ipa?.uk ?? entry.ipa?.us);
-  const examples = $derived(promptIds.map((id) => exampleFor(entry, id)));
+  // A captured word met without a sentence has only itself as its "example".
+  const examples = $derived(
+    promptIds.map((id) => exampleFor(entry, id)).filter((x) => x.text !== entry.headword),
+  );
+  const hasMore = $derived(
+    Boolean(
+      entry.nuance ||
+      entry.partners.length ||
+      entry.phrases.length ||
+      entry.family.length ||
+      entry.antonyms.length ||
+      entry.confusables.length ||
+      entry.roots.length ||
+      entry.origin,
+    ),
+  );
   const spoken = canSpeak();
 </script>
 
@@ -58,14 +73,18 @@
 
   <p class="definition">{entry.definition}</p>
 
-  <ul class="examples">
-    {#each examples as example (example.text)}
-      <li>
-        <Sentence split={splitAtWord(example.text, example.form)} mode="word" />
-        <span class="setting">{example.setting}</span>
-      </li>
-    {/each}
-  </ul>
+  {#if examples.length}
+    <ul class="examples">
+      {#each examples as example, i (i)}
+        <li>
+          <Sentence split={splitAtWord(example.text, example.form)} mode="word" />
+          <span class="setting"
+            >{example.setting === 'captured' ? 'your sentence' : example.setting}</span
+          >
+        </li>
+      {/each}
+    </ul>
+  {/if}
 
   {#if entry.synonyms.length}
     <section class="vs" aria-label="Compared with similar words">
@@ -79,41 +98,43 @@
     </section>
   {/if}
 
-  <details class="more">
-    <summary>More about {entry.headword}</summary>
-    <div class="more-body">
-      <p>{entry.nuance}</p>
-      {#if entry.partners.length}
-        <h3>Goes with</h3>
-        <p>{entry.partners.join(' · ')}</p>
-      {/if}
-      {#if entry.phrases.length}
-        <h3>For essays</h3>
-        <p>{entry.phrases.join(' · ')}</p>
-      {/if}
-      {#if entry.family.length}
-        <h3>Family</h3>
-        <p>{entry.family.join(', ')}</p>
-      {/if}
-      {#if entry.antonyms.length}
-        <h3>Opposites</h3>
-        <p>{entry.antonyms.join(', ')}</p>
-      {/if}
-      {#if entry.confusables.length}
-        <h3>Don't mix up with</h3>
-        {#each entry.confusables as c (c.word)}
-          <p><strong>{c.word}</strong>: {c.note}</p>
-        {/each}
-      {/if}
-      {#if entry.roots.length || entry.origin}
-        <h3>Roots</h3>
-        {#each entry.roots as r (r.part)}
-          <p><strong>{r.part}</strong>: {r.meaning}</p>
-        {/each}
-        {#if entry.origin}<p>{entry.origin}</p>{/if}
-      {/if}
-    </div>
-  </details>
+  {#if hasMore}
+    <details class="more">
+      <summary>More about {entry.headword}</summary>
+      <div class="more-body">
+        {#if entry.nuance}<p>{entry.nuance}</p>{/if}
+        {#if entry.partners.length}
+          <h3>Goes with</h3>
+          <p>{entry.partners.join(' · ')}</p>
+        {/if}
+        {#if entry.phrases.length}
+          <h3>For essays</h3>
+          <p>{entry.phrases.join(' · ')}</p>
+        {/if}
+        {#if entry.family.length}
+          <h3>Family</h3>
+          <p>{entry.family.join(', ')}</p>
+        {/if}
+        {#if entry.antonyms.length}
+          <h3>Opposites</h3>
+          <p>{entry.antonyms.join(', ')}</p>
+        {/if}
+        {#if entry.confusables.length}
+          <h3>Don't mix up with</h3>
+          {#each entry.confusables as c (c.word)}
+            <p><strong>{c.word}</strong>: {c.note}</p>
+          {/each}
+        {/if}
+        {#if entry.roots.length || entry.origin}
+          <h3>Roots</h3>
+          {#each entry.roots as r (r.part)}
+            <p><strong>{r.part}</strong>: {r.meaning}</p>
+          {/each}
+          {#if entry.origin}<p>{entry.origin}</p>{/if}
+        {/if}
+      </div>
+    </details>
+  {/if}
 </article>
 
 <style>

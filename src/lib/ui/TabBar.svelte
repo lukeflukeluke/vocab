@@ -1,20 +1,27 @@
 <script lang="ts">
   // Bottom tabs, within thumb reach.
 
-  export type Tab = 'today' | 'progress' | 'settings';
+  export type Tab = 'today' | 'inbox' | 'progress' | 'settings';
 
   interface Props {
     tab: Tab;
+    /** Captured words waiting to be sorted. */
+    inboxCount?: number;
     onchange: (tab: Tab) => void;
   }
 
-  let { tab, onchange }: Props = $props();
+  let { tab, inboxCount = 0, onchange }: Props = $props();
 
   const TABS: { id: Tab; label: string; icon: string }[] = [
     {
       id: 'today',
       label: 'Today',
       icon: 'M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 5v11h12V8H6zm2 2h4v4H8v-4z',
+    },
+    {
+      id: 'inbox',
+      label: 'Inbox',
+      icon: 'M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v7h4a3 3 0 0 0 6 0h4V6H5z',
     },
     {
       id: 'progress',
@@ -38,10 +45,18 @@
       data-testid="tab-{t.id}"
       onclick={() => onchange(t.id)}
     >
-      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-        <path fill="currentColor" d={t.icon} />
-      </svg>
-      {t.label}
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path fill="currentColor" d={t.icon} />
+        </svg>
+        {#if t.id === 'inbox' && inboxCount > 0}
+          <span class="badge" data-testid="inbox-badge">{inboxCount > 99 ? '99+' : inboxCount}</span
+          >
+        {/if}
+      </span>
+      {t.label}{#if t.id === 'inbox' && inboxCount > 0}<span class="sr-only"
+          >, {inboxCount} to sort</span
+        >{/if}
     </button>
   {/each}
 </nav>
@@ -54,7 +69,7 @@
     left: 0;
     z-index: 3;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     padding: 4px calc(env(safe-area-inset-right) + 8px) calc(env(safe-area-inset-bottom) + 4px)
       calc(env(safe-area-inset-left) + 8px);
     border-top: 1px solid var(--border);
@@ -81,5 +96,24 @@
 
   .tab.on svg {
     color: var(--accent);
+  }
+
+  .icon {
+    position: relative;
+    display: grid;
+  }
+
+  .badge {
+    position: absolute;
+    top: -4px;
+    left: 16px;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #1b1a2b;
+    font-size: 0.7rem;
+    line-height: 18px;
+    text-align: center;
   }
 </style>

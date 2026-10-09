@@ -27,7 +27,8 @@ class SyncController {
   status = $state<SyncStatus>({ phase: 'off' });
   key = $state<string | null>(null);
   #running: Promise<void> | null = null;
-  #again = false;
+  /** A second run asked for while one was going, so it includes what just changed. */
+  #queued: Promise<void> | null = null;
   #timer: ReturnType<typeof setInterval> | null = null;
 
   /** Call once the event log is open. */
@@ -68,19 +69,18 @@ class SyncController {
     await this.syncNow();
   }
 
-  /** Syncs now (or right after the sync already running). */
+  /** Syncs now, or right after the sync already running. Resolves when that sync ends. */
   syncNow(): Promise<void> {
     if (!this.key || this.status.phase === 'test-mode') return Promise.resolve();
     if (this.#running) {
-      this.#again = true;
-      return this.#running;
+      this.#queued ??= this.#running.then(() => {
+        this.#queued = null;
+        return this.syncNow();
+      });
+      return this.#queued;
     }
     this.#running = this.#run().finally(() => {
       this.#running = null;
-      if (this.#again) {
-        this.#again = false;
-        void this.syncNow();
-      }
     });
     return this.#running;
   }
