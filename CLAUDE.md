@@ -26,6 +26,16 @@ At the end (the owner set up this routine and wants it every session):
    a preview link. Merge only when the owner says so.
 4. Tell the owner, in plain words, what to test on the iPhone.
 
+## Which model does the work
+
+The owner wants usage spent where it matters:
+- **Small fixes and mechanical changes** (a bug with a clear cause, a rule tweak, copy
+  changes, a rebuild, updating tests to match): hand them to a helper agent on Sonnet,
+  or Haiku for trivial ones, with a precise brief. The main session states the fix,
+  reviews the diff and runs `npm test`.
+- **Design, debugging an unclear cause, and final review** stay with the main session.
+- Content batches follow `content/GUIDE.md` (Sonnet writers, Opus reviewers).
+
 ## Commands
 
 | Command | Does |
