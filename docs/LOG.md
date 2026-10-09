@@ -20,6 +20,10 @@ Newest first. Every session adds an entry at the top.
   knowledge falls) to every answer and gives a size, a range and the frontier. Saved as
   a new `placement_done` event with the raw answers, so it can be re-scored. Retests
   use fresh words; Today offers one every 30 days.
+  - Meaning checks never give the answer away: about 160 of the 1,024 test words had a
+    WordNet definition containing the word ("assayer: one who assays..."). The build now
+    uses another clean definition where one exists and swaps in other words otherwise
+    (owner's catch); the app also refuses such checks and such wrong options.
   - History: first built as a fixed 100-word list, cut to 40 at the owner's request,
     then made adaptive (owner's idea) with the evidence-weighing model and on-the-spot
     checks (Claude's addition). Simulated on the same 400 learners: fixed 40 typical

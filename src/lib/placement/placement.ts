@@ -235,7 +235,7 @@ export class AdaptiveTest {
       const edge = meanEdge(posterior(this.answers.slice(0, -1)));
       if (q.band >= edge - 1.5) {
         this.#pending = makeCheck(this.pool, q.word, this.random);
-        this.#checks += 1;
+        if (this.#pending) this.#checks += 1;
       }
     }
   }
@@ -266,11 +266,38 @@ export class AdaptiveTest {
   }
 }
 
-/** A meaning check: the word's meaning and three others of the same part of speech. */
-export function makeCheck(pool: PlacementPool, word: string, random: () => number): CheckItem {
-  const info = pool.words.find((w) => w.word === word)!;
+/**
+ * True when a definition gives the word away: it contains the word or a form of it
+ * ("assays" for assayer), part of a compound ("horse" for warhorse) or a close relative
+ * ("political" for politburo). The same rule as scripts/wordbank/build.py, which keeps
+ * such definitions out of placement.json; this is the safety net.
+ */
+export function givesAway(word: string, definition: string): boolean {
+  const stem = word.slice(0, Math.max(4, word.length - 3));
+  for (const t of definition.toLowerCase().match(/[a-z]+/g) ?? []) {
+    if (t.startsWith(stem)) return true;
+    const part = t.endsWith('s') && t.length > 4 ? t.slice(0, -1) : t;
+    if (part.length >= 4 && (word.startsWith(part) || word.endsWith(part))) return true;
+    if (t.length >= 5 && word.length >= 5 && t.slice(0, 5) === word.slice(0, 5)) return true;
+  }
+  return false;
+}
+
+/**
+ * A meaning check: the word's meaning and three others of the same part of speech, none
+ * of which contains the word. Null if the word's own definition would give it away.
+ */
+export function makeCheck(
+  pool: PlacementPool,
+  word: string,
+  random: () => number,
+): CheckItem | null {
+  const info = pool.words.find((w) => w.word === word);
+  if (!info || givesAway(info.word, info.gloss)) return null;
   const others = shuffle(
-    pool.words.filter((w) => w.word !== info.word && w.gloss !== info.gloss),
+    pool.words.filter(
+      (w) => w.word !== info.word && w.gloss !== info.gloss && !givesAway(info.word, w.gloss),
+    ),
     random,
   ).sort((x, y) => Number(y.pos === info.pos) - Number(x.pos === info.pos));
   const options = [

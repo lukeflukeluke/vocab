@@ -6,6 +6,8 @@ import {
   AdaptiveTest,
   COMMONEST,
   FAKES,
+  givesAway,
+  makeCheck,
   MAX_CHECKS,
   posterior,
   QUESTIONS,
@@ -105,6 +107,35 @@ describe('AdaptiveTest', () => {
     expect(test.asked).toBe(0);
     expect(test.answers).toHaveLength(0);
     expect(test.next()).toEqual(q);
+  });
+});
+
+describe('meaning checks', () => {
+  it('spots definitions that give the word away', () => {
+    expect(givesAway('assayer', 'an analyst who assays metals')).toBe(true);
+    expect(givesAway('warhorse', 'horse used in war')).toBe(true);
+    expect(givesAway('panpipe', 'several parallel pipes bound together')).toBe(true);
+    expect(givesAway('politburo', 'the chief political committee')).toBe(true);
+    expect(givesAway('assayer', 'someone who tests metals to see what they contain')).toBe(false);
+    expect(givesAway('cherish', 'be fond of; be attached to')).toBe(false);
+  });
+
+  it('no definition in the test pool gives its word away', () => {
+    expect(pool.words.filter((w) => givesAway(w.word, w.gloss))).toEqual([]);
+  });
+
+  it('never offers a check whose options contain the word', () => {
+    const word = pool.words[100]!;
+    const fake: PlacementPool = {
+      ...pool,
+      words: [
+        ...pool.words,
+        { word: 'assayer', band: 12, pos: 'n', gloss: 'an analyst who assays metals' },
+      ],
+    };
+    expect(makeCheck(fake, 'assayer', seededRandom(1))).toBeNull();
+    const check = makeCheck(pool, word.word, seededRandom(1))!;
+    for (const o of check.options) expect(givesAway(word.word, o.text)).toBe(false);
   });
 });
 
