@@ -21,7 +21,9 @@ export async function requestPersistentStorage(): Promise<boolean | null> {
 /** True when running as an installed app rather than a browser tab. */
 export function isInstalled(): boolean {
   const iosStandalone = (navigator as Navigator & { standalone?: boolean }).standalone === true;
-  return iosStandalone || window.matchMedia('(display-mode: standalone)').matches;
+  // Installed apps on PC can report any of these, depending on the browser and window.
+  const modes = ['standalone', 'minimal-ui', 'fullscreen', 'window-controls-overlay'];
+  return iosStandalone || modes.some((m) => window.matchMedia(`(display-mode: ${m})`).matches);
 }
 
 export function isIos(): boolean {
