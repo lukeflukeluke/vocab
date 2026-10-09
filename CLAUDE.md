@@ -96,9 +96,12 @@ At the end (the owner set up this routine and wants it every session):
 
 ## Placement, stats, settings
 
-- `src/lib/placement/placement.ts`: the placement test (PLAN 3.1): 2 words from each of
-  16 bands plus 8 fakes, up to 8 meaning checks, scoring. The result is stored as a
-  `placement_done` event (answers kept, so it can be re-scored) in `state.placements`.
+- `src/lib/placement/placement.ts`: the adaptive placement test (PLAN 3.1).
+  `AdaptiveTest` asks 50 questions: 3 warm-up words, then the most informative band each
+  time (a Bayesian grid over the band you know half of and the slope), 8 fakes, up to 10
+  on-the-spot meaning checks. `score()` fits the same model to any stored answers. The
+  result is a `placement_done` event (answers kept, so it can be re-scored) in
+  `state.placements`.
 - `src/lib/stats/stats.ts`: funnel, recall (first review of a day, not on the day met),
   forecast, weekly streak (5+ days).
 - `src/lib/backup.ts`: the export file (all events) and its reader; import merges by id.

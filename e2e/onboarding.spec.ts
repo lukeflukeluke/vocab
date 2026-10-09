@@ -4,34 +4,36 @@ import { expect, test, type Page } from '@playwright/test';
 // S5: onboarding with the placement test, settings, backups, 2-minute mode and time
 // travel, driven as a person would at iPhone size and on a desktop.
 
-/** Answers the yes/no part: yes to real words up to `knownShare` of the way through. */
-async function takeYesNo(page: Page) {
+/**
+ * Takes the whole adaptive test as someone who knows most real words: every fourth one is
+ * a "no", made-up words are always "no", and meaning checks are answered correctly.
+ */
+async function takeTest(page: Page) {
   const word = page.getByTestId('test-word');
-  await expect(word).toBeVisible();
+  const check = page.getByTestId('check-word');
+  const result = page.getByTestId('placement-result');
   let i = 0;
-  while (await word.isVisible().catch(() => false)) {
-    const fake = (await word.getAttribute('data-fake')) === 'true';
-    // Someone who knows most real words but not all: every fourth one is a "no".
-    await page.getByTestId(!fake && i++ % 4 !== 0 ? 'say-yes' : 'say-no').click();
+  for (let n = 0; n < 80; n++) {
+    await expect(word.or(check).or(result)).toBeVisible();
+    if (await result.isVisible()) return;
+    if (await word.isVisible()) {
+      const text = await word.textContent();
+      const fake = (await word.getAttribute('data-fake')) === 'true';
+      await page.getByTestId(!fake && i++ % 4 !== 0 ? 'say-yes' : 'say-no').click();
+      await expect(word.filter({ hasText: text! })).toHaveCount(0);
+    } else {
+      const text = await check.textContent();
+      await page.locator('[data-right="true"]').click();
+      await expect(check.filter({ hasText: text! })).toHaveCount(0);
+    }
   }
-}
-
-/** Answers every meaning check correctly. */
-async function takeChecks(page: Page) {
-  const word = page.getByTestId('check-word');
-  await expect(word).toBeVisible();
-  while (await word.isVisible().catch(() => false)) {
-    const before = await word.textContent();
-    await page.locator('[data-right="true"]').click();
-    await expect(word.or(page.getByTestId('placement-result'))).not.toHaveText(before!);
-  }
+  throw new Error('The test did not end');
 }
 
 test('first launch: placement test, daily time, then the first session', async ({ page }) => {
   await page.goto('/');
   await page.getByTestId('begin-test').click();
-  await takeYesNo(page);
-  await takeChecks(page);
+  await takeTest(page);
 
   await expect(page.getByTestId('vocab-size')).toHaveText(/About [\d,]+ words/);
   await page.getByTestId('placement-continue').click();
@@ -63,8 +65,7 @@ test('the placement test can be stopped and taken later from Today', async ({ pa
   await page.getByRole('button', { name: 'Not now' }).click();
 
   await page.getByTestId('take-placement').click();
-  await takeYesNo(page);
-  await takeChecks(page);
+  await takeTest(page);
   await page.getByTestId('placement-continue').click();
   await expect(page.getByTestId('placement-card')).toHaveCount(0);
 });

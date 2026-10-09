@@ -11,16 +11,21 @@ Newest first. Every session adds an entry at the top.
   URL of a hashed JSON file (528 KB for 170 entries; the app script fell from 718 KB to
   247 KB). The service worker caches it with a 30 MB limit, and an e2e test starts a
   session offline to prove it.
-- **Placement test** (PLAN 3.1): 40 yes/no taps (2 words from each of 16 frequency
-  bands, ranks 1,000 to 42,000, plus 8 made-up words), then up to 8 meaning checks on
-  "yes" words, rarest bands first. About 2-3 minutes. (First built with 100 taps and 15
-  checks; the owner asked for 30-50 words. Simulating 2,000 learners: typical size error
-  12% instead of 9%, and the range shown is wider, but still catches the true size 94%
-  of the time.) Scoring corrects for made-up words claimed and failed
-  checks, smooths the bands so knowledge never rises towards rarer words, and gives a
-  vocabulary size with a range and the frontier (bands 30-80% known). Results screen
-  with a band chart. Saved as a new `placement_done` event with the raw answers. Retests
+- **Placement test** (PLAN 3.1), adaptive, 50 questions (about 3 minutes): three easy
+  warm-up words, then each word comes from the band where the answer tells the most
+  about where your knowledge drops off, so it climbs while you know the words and
+  settles at your edge. 8 made-up words spread through, and up to 10 meaning checks on
+  the spot for "yes" answers near your edge. Failed checks and claimed fakes both count
+  as guessing. Scoring fits a small model (the band you know half of, and how sharply
+  knowledge falls) to every answer and gives a size, a range and the frontier. Saved as
+  a new `placement_done` event with the raw answers, so it can be re-scored. Retests
   use fresh words; Today offers one every 30 days.
+  - History: first built as a fixed 100-word list, cut to 40 at the owner's request,
+    then made adaptive (owner's idea) with the evidence-weighing model and on-the-spot
+    checks (Claude's addition). Simulated on the same 400 learners: fixed 40 typical
+    error 13% (worst 10%: 36%); a plain up/down ladder of 50, 10% (25%); adaptive 50,
+    9% (22%), with the range catching the true size 94% of the time. With heavy
+    over-claimers: ladder 17% (43%), adaptive 12% (29%).
 - **Onboarding** on first launch: welcome, the test (or skip), daily time (optionally
   different at weekends), first session.
 - **New words chosen for you** (PLAN 3.4): candidate priority plus frontier fit, minus
@@ -52,9 +57,8 @@ Newest first. Every session adds an entry at the top.
   time travel leaving real data untouched, the ladder, 2-minute mode, offline start.
 
 **Decisions**
-- Placement uses 2 words per band (32 real words). That is noisy per band, so bands are
-  smoothed into a falling shape before scoring, and the range is worked out from the
-  pooled bands; it reflects the noise honestly.
+- Placement scoring assumes knowledge falls off smoothly with rarity (a logistic curve),
+  which is what real vocabularies look like and lets 50 answers say a lot.
 - The 1,000 commonest words are assumed known; the size counts headwords (word families),
   not every inflected form.
 - Time travel never touches real data: it switches to the `vocab-test` database.
@@ -68,11 +72,14 @@ Newest first. Every session adds an entry at the top.
 - PLAN 3.5's 60-day surprise check for Known words is still not built (planner change).
 - F1 candidates: the near-synonym "close, but the word here is X" verdict (C1 notes);
   self-grading calibration for R3 (PLAN 10) is not in Progress yet.
-- The placement pool has 64 words a band, so about 30 monthly tests before words repeat.
+- The placement pool has 64 words a band. The adaptive test asks 10 or more from the
+  bands around your edge, so those bands run dry after about 5 monthly tests (it then
+  uses the nearest band with words left). A later build session should add more words
+  per band to `placement.json` (scripts/wordbank/build.py).
 
 **Owner to-do**
 1. Open the preview link and try it, including time travel (Settings, tap the version
-   7 times) if you want to see weeks pass. The test is now 40 words plus 8 checks.
+   7 times) if you want to see weeks pass. The test is now adaptive: 50 questions.
 2. Say "merge". Then on the home-screen app: Today shows "Find your level": take the
    test, then do your first real session. From here on, one session a day.
 3. Until sync (S6), tap Settings, Export once a week and save the file to Files.

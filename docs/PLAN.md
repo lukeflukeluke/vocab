@@ -67,21 +67,24 @@ for now), **Ignored**.
 
 ## 3. Where words come from
 
-### 3.1 Placement test (first launch, about 2-3 minutes)
+### 3.1 Placement test (first launch, about 3 minutes)
 
 Goal: find your **frontier**, the band of words you half-know or have seen but cannot
 use. Words far past it are rare (you would hardly ever meet them); words below it you
 already have.
 
-1. **Yes/No checklist.** 40 items: 32 real words, 2 from each of 16 frequency bands
-   (roughly the 1,000th to the 42,000th most common word), plus 8 convincing fake
-   words ("plimsious", "devorant"). "Do you know what this means?" Quick taps. (S5 first
-   built 100 items; the owner asked for a shorter test. A simulation of 2,000 learners
-   put the typical size error at 12%, against 9% for 100 items.)
-2. **Verification.** Up to 8 of your "yes" words, rarest first, get a quick meaning
-   check.
-3. **Scoring.** For each band: the share you know, corrected for fake words you claimed
-   (your over-claiming rate) and for failed verifications. Summed across bands, that
+1. **Adaptive yes/no.** 50 questions in about 3 minutes. "Do you know what this
+   means?" for real words from 16 frequency bands (roughly the 1,000th to the 42,000th
+   most common word), with 8 convincing fake words ("plimsious", "devorant") spread
+   through. It starts with three easy words, then each next word comes from the band
+   where the answer will tell the most about your edge, so it climbs while you know the
+   words and settles where you start not to.
+2. **Verification on the spot.** A "yes" near or past your edge sometimes gets an
+   immediate meaning check (up to 10, counted in the 50). Failed checks and claimed fake
+   words both count as guessing, so over-claiming cannot push the test up.
+3. **Scoring.** A small model of how knowledge falls off with rarity (the band where you
+   know half, and how sharply it drops), fitted to every answer, corrected for guessing.
+   It gives the share you know of each band. Summed across bands, that
    gives a vocabulary size estimate with a range.
 4. **Result.** Your estimated size, and your frontier: the bands where you know about
    30-80%. Your starting pool is drawn from those bands.

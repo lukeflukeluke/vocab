@@ -2,16 +2,15 @@
   import { onMount } from 'svelte';
   import type { PlacementAnswer } from '../events/types';
   import {
-    CHECKS,
-    makeChecks,
-    makeTest,
-    type CheckItem,
+    AdaptiveTest,
+    QUESTIONS,
     type PlacementPool,
-    type TestItem,
+    type Question,
   } from '../placement/placement';
   import { onButton, typingInField, withModifier } from './keys';
 
-  // The placement test (PLAN 3.1): quick yes/no taps, then a few meaning checks.
+  // The placement test (PLAN 3.1): quick yes/no taps that get harder while you know the
+  // words, with a meaning check now and then on a "yes".
 
   interface Props {
     pool: PlacementPool;
@@ -23,65 +22,57 @@
 
   let { pool, exclude, onfinish, oncancel }: Props = $props();
 
-  const random = Math.random;
   // svelte-ignore state_referenced_locally
-  const items: TestItem[] = makeTest(pool, exclude, random);
+  const test = new AdaptiveTest(pool, exclude, Math.random);
 
-  let answers = $state<PlacementAnswer[]>([]);
-  let checks = $state<CheckItem[] | null>(null);
-  let checkIndex = $state(0);
+  let question = $state<Question>(test.next());
+  let asked = $state(0);
   let picked = $state<number | null>(null);
 
-  const item = $derived(items[answers.length]);
-  const check = $derived(checks?.[checkIndex]);
-  const total = $derived(items.length + (checks?.length ?? CHECKS));
-  const done = $derived(answers.length + checkIndex);
+  function show() {
+    question = test.next();
+    asked = test.asked;
+    if (question.kind === 'done') onfinish(structuredClone(test.answers));
+  }
 
   function say(yes: boolean) {
-    if (!item) return;
-    answers = [
-      ...answers,
-      { word: item.word, ...(item.band !== undefined && { band: item.band }), yes },
-    ];
-    if (answers.length === items.length) {
-      checks = makeChecks(pool, answers, random);
-      if (!checks.length) onfinish($state.snapshot(answers));
-    }
+    if (question.kind !== 'word') return;
+    test.answerWord(yes);
+    show();
   }
 
   function undo() {
-    if (checks || !answers.length) return;
-    answers = answers.slice(0, -1);
+    if (question.kind !== 'word' || !test.answers.length) return;
+    test.undo();
+    show();
   }
 
   function choose(i: number) {
-    if (!check || picked !== null) return;
+    if (question.kind !== 'check' || picked !== null) return;
     picked = i;
-    const right = check.options[i]?.right ?? false;
-    const word = check.word;
-    answers = answers.map((a) => (a.word === word ? { ...a, checked: right } : a));
+    const right = question.check.options[i]?.right ?? false;
     // A short pause shows which was right, then on to the next.
     setTimeout(() => {
       picked = null;
-      if (checkIndex + 1 >= checks!.length) onfinish($state.snapshot(answers));
-      else checkIndex += 1;
+      test.answerCheck(right);
+      show();
     }, 600);
   }
 
   function onkeydown(event: KeyboardEvent) {
     if (typingInField(event) || withModifier(event) || onButton(event)) return;
     const key = event.key.toLowerCase();
-    if (!checks) {
+    if (question.kind === 'word') {
       if (key === 'y' || key === 'arrowright') say(true);
       else if (key === 'n' || key === 'arrowleft') say(false);
       else if (key === 'backspace') undo();
       else return;
-    } else {
+    } else if (question.kind === 'check') {
       const n = Number(key);
       if (n >= 1 && n <= 4) choose(n - 1);
       else if (key === '?' || key === '0') choose(-1);
       else return;
-    }
+    } else return;
     event.preventDefault();
   }
 
@@ -98,19 +89,23 @@
       role="progressbar"
       aria-label="Test progress"
       aria-valuemin={0}
-      aria-valuemax={total}
-      aria-valuenow={done}
+      aria-valuemax={QUESTIONS}
+      aria-valuenow={asked}
     >
-      <div class="fill" style:width="{(done / total) * 100}%"></div>
+      <div class="fill" style:width="{(asked / QUESTIONS) * 100}%"></div>
     </div>
   </div>
 
   <main class="stage">
-    {#if !checks && item}
-      <p class="tag">Part 1 of 2 · {answers.length + 1} of {items.length}</p>
+    {#if question.kind === 'word'}
+      <p class="tag">Question {asked + 1} of {QUESTIONS}</p>
       <p class="ask">Do you know what this word means?</p>
-      <p class="word" data-testid="test-word" data-fake={item.band === undefined}>{item.word}</p>
-      <p class="hint">Some are made up. Only say yes if you could explain it.</p>
+      <p class="word" data-testid="test-word" data-fake={question.band === undefined}>
+        {question.word}
+      </p>
+      <p class="hint">
+        Some are made up. Only say yes if you could explain it. The words get harder as you go.
+      </p>
       <div class="answers">
         <div class="yesno">
           <button class="btn big no" data-testid="say-no" onclick={() => say(false)}>No</button>
@@ -118,16 +113,16 @@
             Yes
           </button>
         </div>
-        <button class="btn quiet" disabled={!answers.length} onclick={undo}>Undo</button>
+        <button class="btn quiet" disabled={!asked} onclick={undo}>Undo</button>
         <p class="keys"><kbd>Y</kbd> yes · <kbd>N</kbd> no · <kbd>Backspace</kbd> undo</p>
       </div>
-    {:else if check}
-      <p class="tag">Part 2 of 2 · check {checkIndex + 1} of {checks!.length}</p>
+    {:else if question.kind === 'check'}
+      <p class="tag">Question {asked + 1} of {QUESTIONS} · quick check</p>
       <p class="ask">You said you know this one. What does it mean?</p>
-      <p class="word" data-testid="check-word">{check.word}</p>
+      <p class="word" data-testid="check-word">{question.check.word}</p>
       <div class="answers">
         <ol class="options">
-          {#each check.options as option, i (option.text)}
+          {#each question.check.options as option, i (option.text)}
             <li>
               <button
                 class="option"
