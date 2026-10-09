@@ -72,6 +72,11 @@ function applyInPlace(state: State, event: VocabEvent): void {
       }
       return;
     }
+    case 'placement_done': {
+      const record = { t: event.t, answers: event.answers, result: event.result };
+      state.placements = [...state.placements, record];
+      return;
+    }
     case 'settings_changed': {
       // Skip undefined values: they would not survive the JSON trip to another device.
       const defined = Object.entries(event.patch).filter(([, value]) => value !== undefined);

@@ -498,6 +498,37 @@ def main() -> None:
     )
 
     # 7. Placement test pool: ordinary dictionary words a fair test can ask about.
+    # Each needs a definition that does not contain the word itself ("assayer: one who
+    # assays..."), or the meaning check would test spelling instead of knowledge. The
+    # first sense's definition is used if it is clean, otherwise the first clean one of
+    # another sense; words with none are left out. src/lib/placement/placement.ts applies
+    # the same rule (givesAway) as a safety net.
+    def gives_away(word: str, gloss: str) -> bool:
+        stem = word[: max(4, len(word) - 3)]
+        for t in re.findall(r"[a-z]+", gloss.lower()):
+            if t.startswith(stem):
+                return True  # the word or a form of it: "assays" for assayer
+            part = t[:-1] if t.endswith("s") and len(t) > 4 else t
+            if len(part) >= 4 and (word.startswith(part) or word.endswith(part)):
+                return True  # part of a compound: "horse" for warhorse, "pipes" for panpipe
+            if len(t) >= 5 and len(word) >= 5 and t[:5] == word[:5]:
+                return True  # a close relative: "political" for politburo
+        return False
+
+    def tidy(gloss: str) -> str:
+        # WordNet sometimes ends a definition with a quotation's author: "...; - Samuel Butler".
+        gloss = re.sub(r"[;\s]*-\s+[A-Z][\w.' ]*$", "", gloss)
+        return re.sub(r"(\s*;)+\s*$", "", re.sub(r";\s*;", ";", gloss)).strip()
+
+    def test_sense(w: Word) -> Sense | None:
+        return next(
+            (
+                s for s in w.senses
+                if not s.technical and len(s.gloss) <= 90 and not gives_away(w.word, s.gloss)
+            ),
+            None,
+        )  # fmt: skip
+
     rng = random.Random(2026)
     placement_words = []
     for band in bands:
@@ -505,12 +536,14 @@ def main() -> None:
             w for w in by_freq
             if w.band == band["band"] and not w.extra and 5 <= len(w.word) <= 14
             and (w.word in ipa_uk or w.word in ipa_us)
-            and not w.senses[0].technical and len(w.senses[0].gloss) <= 90
+            and not w.senses[0].technical and test_sense(w) is not None
             and w.senses[0].lexname not in PLACEMENT_SKIP_KINDS
             and not SENSITIVE_GLOSS.search(" ".join(s.gloss for s in w.senses))
         ]  # fmt: skip
         for w in sorted(rng.sample(pool, min(PLACEMENT_PER_BAND, len(pool))), key=lambda w: w.rank):
-            placement_words.append({"word": w.word, "band": w.band, "pos": w.senses[0].pos, "gloss": w.senses[0].gloss})
+            sense = test_sense(w)
+            assert sense is not None
+            placement_words.append({"word": w.word, "band": w.band, "pos": sense.pos, "gloss": tidy(sense.gloss)})
 
     def is_real(s: str) -> bool:
         return (

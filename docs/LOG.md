@@ -4,6 +4,97 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-09 · S5: Onboarding, home screen and stats
+
+**Done**
+- **Word bank as its own file** (the must-fix from C1): `virtual:word-bank` is now the
+  URL of a hashed JSON file (528 KB for 170 entries; the app script fell from 718 KB to
+  247 KB). The service worker caches it with a 30 MB limit, and an e2e test starts a
+  session offline to prove it.
+- **Placement test** (PLAN 3.1), adaptive, 50 questions (about 3 minutes): three easy
+  warm-up words, then each word comes from the band where the answer tells the most
+  about where your knowledge drops off, so it climbs while you know the words and
+  settles at your edge. 8 made-up words spread through, and up to 10 meaning checks on
+  the spot for "yes" answers near your edge. Failed checks and claimed fakes both count
+  as guessing. Scoring fits a small model (the band you know half of, and how sharply
+  knowledge falls) to every answer and gives a size, a range and the frontier. Saved as
+  a new `placement_done` event with the raw answers, so it can be re-scored. Retests
+  use fresh words; Today offers one every 30 days.
+  - Meaning checks never give the answer away: about 160 of the 1,024 test words had a
+    WordNet definition containing the word ("assayer: one who assays..."). The build now
+    uses another clean definition where one exists and swaps in other words otherwise
+    (owner's catch); the app also refuses such checks and such wrong options.
+  - History: first built as a fixed 100-word list, cut to 40 at the owner's request,
+    then made adaptive (owner's idea) with the evidence-weighing model and on-the-spot
+    checks (Claude's addition). Simulated on the same 400 learners: fixed 40 typical
+    error 13% (worst 10%: 36%); a plain up/down ladder of 50, 10% (25%); adaptive 50,
+    9% (22%), with the range catching the true size 94% of the time. With heavy
+    over-claimers: ladder 17% (43%), adaptive 12% (29%).
+- **Onboarding** on first launch: welcome, the test (or skip), daily time (optionally
+  different at weekends), first session.
+- **New words chosen for you** (PLAN 3.4): candidate priority plus frontier fit, minus
+  interference (near-synonyms and look-alikes of words met in the last 7 days), with
+  variety in part of speech and topic at the front.
+- **Today screen**: minutes, reviews, new words, why there are fewer new words when
+  there are, Start or Continue, **2-minute mode** (up to 7 most at-risk reviews, no new
+  words), this week's study days.
+- **Progress tab**: Words Owned, the ladder, recall per track over 30 days (first review
+  of a day only, not on the day a word was met), reviews due over the next 7 days and
+  30-day total, weekly streak, vocabulary size.
+- **Settings tab**: daily and weekend minutes, target recall (85/90/95%), busy period,
+  **Export** (share sheet on iPhone, download on PC) and **Import** (adds missing events,
+  never deletes), device details, and hidden **time travel** (tap the version 7 times):
+  moves the clock forward by days using a separate test database.
+- Bottom tab bar (Today, Progress, Settings).
+- **Updates now arrive straight away** (a bug since S1, found when the preview stayed on
+  the old version): the service worker waited until every window of the app was closed
+  before switching to a new version, so an open tab or a home-screen app that was never
+  swiped away kept the old one. It now takes over at once (`skipWaiting`,
+  `clientsClaim`), and the app reloads when you are on a main tab, never mid-session or
+  mid-test. Checked by upgrading the live build to this one on the same address.
+- The install tip no longer shows inside apps installed on PC (other display modes).
+- The store now saves a plain copy of every event, so a screen can never pass a
+  reactive object the database cannot store (this broke the placement result at first).
+- Tests: 145 unit tests (placement, candidate order, stats, backup, 2-minute mode) and
+  38 end-to-end runs: onboarding with the full test, skipping and taking it later,
+  settings changing today, busy period, backup export and import on a fresh device,
+  time travel leaving real data untouched, the ladder, 2-minute mode, offline start.
+
+**Decisions**
+- Placement estimates lean low on purpose (owner's request): the reported size and band
+  shares are the 30th percentile of the model's beliefs, so a lucky test never pushes new
+  words too hard and retests can show real growth.
+- Placement scoring assumes knowledge falls off smoothly with rarity (a logistic curve),
+  which is what real vocabularies look like and lets 50 answers say a lot.
+- The 1,000 commonest words are assumed known; the size counts headwords (word families),
+  not every inflected form.
+- Time travel never touches real data: it switches to the `vocab-test` database.
+- Writing tasks (S10) still take planned time; Today leaves them out of its minutes.
+- Onboarding is skipped for anyone who already has data (the owner's live app goes
+  straight to Today, with a "Find your level" card).
+
+**Notes for later sessions**
+- S6 (sync): `vocab.importEvents` already merges by id and replays; sync can reuse it.
+  Settings events are last-writer-wins by time, which is fine across devices.
+- PLAN 3.5's 60-day surprise check for Known words is still not built (planner change).
+- F1 candidates: the near-synonym "close, but the word here is X" verdict (C1 notes);
+  self-grading calibration for R3 (PLAN 10) is not in Progress yet.
+- The placement pool has 64 words a band. The adaptive test asks 10 or more from the
+  bands around your edge, so those bands run dry after about 5 monthly tests (it then
+  uses the nearest band with words left). A later build session should add more words
+  per band to `placement.json` (scripts/wordbank/build.py).
+
+**Owner to-do**
+1. Open the preview link and try it, including time travel (Settings, tap the version
+   7 times) if you want to see weeks pass. The test is now adaptive: 50 questions.
+2. Say "merge". Then on the home-screen app: Today shows "Find your level": take the
+   test, then do your first real session. From here on, one session a day.
+3. Until sync (S6), tap Settings, Export once a week and save the file to Files.
+
+**Next:** S6 (sync) and C2 can run now.
+
+---
+
 ## 2026-10-07 · C1: Content batch 1
 
 **Done**

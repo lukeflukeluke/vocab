@@ -52,7 +52,15 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
+        // A new version takes over as soon as it is downloaded, instead of waiting until
+        // every window of the app has been closed (the app then reloads at a quiet moment;
+        // see startServiceWorker). vite-plugin-pwa only sets these itself when it injects
+        // its own registration, which we don't.
+        skipWaiting: true,
+        clientsClaim: true,
+        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest,json}'],
+        // The word bank is one JSON file that grows with every content batch.
+        maximumFileSizeToCacheInBytes: 30 * 1024 * 1024,
         navigateFallback: 'index.html',
       },
     }),

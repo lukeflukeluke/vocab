@@ -163,7 +163,12 @@ export interface BuildInput {
   bank: Bank;
   now: number;
   tzOffsetMinutes: number;
+  /** 2-minute mode (PLAN 7): the most at-risk due reviews only, no new words. */
+  quick?: boolean;
 }
+
+/** Reviews in a 2-minute session. */
+export const QUICK_REVIEWS = 7;
 
 export interface Built {
   steps: Step[];
@@ -196,7 +201,7 @@ export function buildSession(input: BuildInput): Built {
   ).length;
 
   const reviews: Step[] = [];
-  for (const item of plan.reviews) {
+  for (const item of input.quick ? plan.reviews.slice(0, QUICK_REVIEWS) : plan.reviews) {
     const word = state.words[item.entryId];
     if (!word || !inBank(item.entryId)) continue;
     const { exercise, firstLetter } = reviewExercise(word, item.track, ownWords);
@@ -204,6 +209,7 @@ export function buildSession(input: BuildInput): Built {
   }
 
   const steps: Step[] = [];
+  if (input.quick) return { steps: reviews, maker };
   const unfinished = unfinishedIntros(state, input.now, input.tzOffsetMinutes).filter((u) =>
     inBank(u.entryId),
   );

@@ -8,6 +8,7 @@ import {
   BLANK_GAP,
   buildSession,
   OPENING_REVIEWS,
+  QUICK_REVIEWS,
   reviewExercise,
   unfinishedIntros,
 } from './build';
@@ -142,6 +143,31 @@ describe('buildSession', () => {
       [`blank:P1:${a}`, `final:R1:${a}`, `final:R1:${b}`].sort(),
     );
     expect(steps[0]!.kind === 'exercise' && steps[0]!.role).toBe('blank');
+  });
+
+  it('2-minute mode: the most at-risk reviews only, no new words', () => {
+    const reviewIds = ids.slice(5, 17);
+    const state = replay(reviewIds.flatMap((id) => introduced(id, 0)));
+    const today = plan({
+      reviews: reviewIds.map((entryId) => ({
+        entryId,
+        track: 'recognition',
+        retrievability: 0.8,
+        overdueDays: 0,
+      })),
+      newWords: ids.slice(0, 2),
+    });
+    const { steps } = buildSession({
+      plan: today,
+      state,
+      bank,
+      now: at(3),
+      tzOffsetMinutes: 0,
+      quick: true,
+    });
+    expect(steps.map(describeStep)).toEqual(
+      reviewIds.slice(0, QUICK_REVIEWS).map((id) => expect.stringMatching(`^review:R.:${id}$`)),
+    );
   });
 
   it('leaves out words the bank does not have', () => {

@@ -184,7 +184,7 @@ buttons, speed, wording.
 
 Done when: a complete session works on your iPhone.
 
-### [ ] S5: Onboarding, home screen and stats (Phase 1 complete)
+### [x] S5: Onboarding, home screen and stats (Phase 1 complete)
 Needs C1 merged, so there are real words to learn.
 
 Claude builds:

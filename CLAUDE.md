@@ -26,6 +26,16 @@ At the end (the owner set up this routine and wants it every session):
    a preview link. Merge only when the owner says so.
 4. Tell the owner, in plain words, what to test on the iPhone.
 
+## Which model does the work
+
+The owner wants usage spent where it matters:
+- **Small fixes and mechanical changes** (a bug with a clear cause, a rule tweak, copy
+  changes, a rebuild, updating tests to match): hand them to a helper agent on Sonnet,
+  or Haiku for trivial ones, with a precise brief. The main session states the fix,
+  reviews the diff and runs `npm test`.
+- **Design, debugging an unclear cause, and final review** stay with the main session.
+- Content batches follow `content/GUIDE.md` (Sonnet writers, Opus reviewers).
+
 ## Commands
 
 | Command | Does |
@@ -84,10 +94,32 @@ At the end (the owner set up this routine and wants it every session):
   so pausing and coming back rebuilds it from what is left (`unfinishedIntros`).
 - `answers.ts` checks typed answers (forms, both spellings, one-letter slips).
 - `prompts.ts` picks sentences (`ex0`-`ex5`, `cz0`-`cz2`, stored as `promptId`).
-- The word bank reaches the app as `virtual:word-bank` (`scripts/word-bank-plugin.ts`):
-  entries joined with IPA, band and spellings from `candidates.json` at build time.
-  Unit tests use `src/lib/testing/bank.ts` instead.
+- The word bank is a separate JSON file (`scripts/word-bank-plugin.ts`): entries joined
+  with IPA, band and spellings from `candidates.json` at build time. `virtual:word-bank`
+  is its URL; `loadBank()` fetches it at start and `getBank()` returns it afterwards. The
+  service worker caches it (limit 30 MB). Unit tests use `src/lib/testing/bank.ts`.
+- `today.ts`: today's plan and session. New words come from `orderCandidates()`
+  (`src/lib/content/candidates.ts`, PLAN 3.4): priority plus frontier fit from the
+  latest placement test, minus interference with words met in the last 7 days, with
+  variety at the front.
 - Steps show `data-entry-id` and `data-prompt-id`; the e2e tests use them to answer.
+
+## Placement, stats, settings
+
+- `src/lib/placement/placement.ts`: the adaptive placement test (PLAN 3.1).
+  `AdaptiveTest` asks 50 questions: 3 warm-up words, then the most informative band each
+  time (a Bayesian grid over the band you know half of and the slope), 8 fakes, up to 10
+  on-the-spot meaning checks. `score()` fits the same model to any stored answers. The
+  result is a `placement_done` event (answers kept, so it can be re-scored) in
+  `state.placements`. Estimates lean low on purpose (`CAUTION`, the 30th percentile).
+- `src/lib/stats/stats.ts`: funnel, recall (first review of a day, not on the day met),
+  forecast, weekly streak (5+ days).
+- `src/lib/backup.ts`: the export file (all events) and its reader; import merges by id.
+- `src/lib/clock.ts`: the app clock. Use `now()` and `tzOffsetMinutes()` from it, never
+  `Date.now()`, so time travel works. Time travel (Settings, tap the version 7 times)
+  switches to a separate database, `vocab-test`.
+- Onboarding shows on first launch only (no events and no `vocab.onboarded` in
+  localStorage). e2e tests that skip it set that key with `page.addInitScript`.
 
 ## Word bank (`content/`)
 

@@ -1,4 +1,13 @@
-import type { NoteField, Rating, Settings, Track, WordSource, WordStatus } from '../events/types';
+import type {
+  NoteField,
+  PlacementAnswer,
+  PlacementResult,
+  Rating,
+  Settings,
+  Track,
+  WordSource,
+  WordStatus,
+} from '../events/types';
 import type { Memory } from '../scheduler/memory';
 
 /** Everything the app knows, rebuilt by replaying the event log. Never stored. */
@@ -6,6 +15,8 @@ export interface State {
   settings: Settings;
   /** Your words, keyed by word-bank entry id. */
   words: Record<string, UserWord>;
+  /** Placement tests taken, oldest first. */
+  placements: PlacementRecord[];
   /** Number of events replayed. */
   eventCount: number;
   /** Time of the latest event replayed, or 0 for an empty log. */
@@ -41,6 +52,12 @@ export interface ReviewRecord {
   chose?: string;
 }
 
+export interface PlacementRecord {
+  t: number;
+  answers: PlacementAnswer[];
+  result: PlacementResult;
+}
+
 export interface SentenceRecord {
   t: number;
   exercise: string;
@@ -57,5 +74,11 @@ export const DEFAULT_SETTINGS: Settings = {
 };
 
 export function emptyState(): State {
-  return { settings: { ...DEFAULT_SETTINGS }, words: {}, eventCount: 0, latestEventTime: 0 };
+  return {
+    settings: { ...DEFAULT_SETTINGS },
+    words: {},
+    placements: [],
+    eventCount: 0,
+    latestEventTime: 0,
+  };
 }

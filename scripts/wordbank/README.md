@@ -38,7 +38,10 @@ python3 -m venv .venv
   endings, formality measured as Wikipedia vs film-subtitle frequency, frequency) and
   ranks the other frontier words (zipf 1.9 to 3.9) to fill the list.
 - **Placement words** are ordinary dictionary words (in the pronunciation dictionary, 5+
-  letters, not specialist or sensitive). **Fake words** come from a letter model of
+  letters, not specialist or sensitive), each with a definition that does not give the
+  word away (no form of the word, no part of a compound, no close relative), so the
+  test's meaning checks test knowledge, not spelling. If the first sense's definition
+  gives it away another sense is used; words with none are left out. **Fake words** come from a letter model of
   common words, and are rejected if they are real, contain a real word, start a real
   word, or are one letter from one.
 

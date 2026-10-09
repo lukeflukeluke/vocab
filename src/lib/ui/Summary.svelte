@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { bank } from '../content/wordBank';
+  import { getBank } from '../content/wordBank';
   import type { SessionSummary } from '../session/runner';
+
+  const bank = getBank();
 
   interface Props {
     summary: SessionSummary;

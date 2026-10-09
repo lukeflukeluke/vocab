@@ -1,61 +1,139 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Logo from './lib/Logo.svelte';
+  import { now as clockNow, timeTravelDays, tzOffsetMinutes } from './lib/clock';
+  import { getBank, loadBank } from './lib/content/wordBank';
   import { isInstalled, isIos, requestPersistentStorage, startServiceWorker } from './lib/platform';
   import { summarize, type Session, type SessionSummary } from './lib/session/runner';
+  import { todaysSession } from './lib/session/today';
   import { vocab } from './lib/state/store.svelte';
+  import Onboarding from './lib/ui/Onboarding.svelte';
+  import PlacementFlow from './lib/ui/PlacementFlow.svelte';
+  import Progress from './lib/ui/Progress.svelte';
   import SessionScreen from './lib/ui/SessionScreen.svelte';
+  import Settings from './lib/ui/Settings.svelte';
   import { prepareSpeech } from './lib/ui/speech';
   import Summary from './lib/ui/Summary.svelte';
+  import TabBar, { type Tab } from './lib/ui/TabBar.svelte';
   import Today from './lib/ui/Today.svelte';
+  import TopBar from './lib/ui/TopBar.svelte';
 
   type View =
-    | { name: 'home' }
+    | { name: 'tabs' }
     | { name: 'session'; session: Session }
-    | { name: 'summary'; summary: SessionSummary };
+    | { name: 'summary'; summary: SessionSummary }
+    | { name: 'placement' };
 
-  let view = $state<View>({ name: 'home' });
+  let view = $state<View>({ name: 'tabs' });
+  let tab = $state<Tab>('today');
 
+  let bankReady = $state(false);
+  let bankError = $state<string | null>(null);
   let offlineReady = $state(false);
+  /** A new version of the app has taken over; reload when nothing is in progress. */
+  let updateReady = $state(false);
+  $effect(() => {
+    if (updateReady && view.name === 'tabs' && !onboarding) location.reload();
+  });
   let persistent = $state<boolean | null>(null);
   let installed = $state(true);
   let ios = $state(false);
+  const travel = timeTravelDays();
 
-  const build = `${__APP_VERSION__} · ${__BUILD_COMMIT__} (${__BUILD_BRANCH__})`;
+  /** First launch: nothing recorded yet and the welcome not dismissed on this device. */
+  const ONBOARDED = 'vocab.onboarded';
+  let onboarded = $state(true);
+  const ready = $derived(vocab.ready && bankReady);
+  // Decided once at start: recording the placement result must not end onboarding early.
+  let onboarding = $state(false);
+  let decided = false;
+  $effect(() => {
+    if (!ready || decided) return;
+    decided = true;
+    onboarding = !onboarded && vocab.state.eventCount === 0;
+  });
 
   onMount(() => {
     installed = isInstalled();
     ios = isIos();
-    startServiceWorker(() => (offlineReady = true));
+    try {
+      onboarded = localStorage.getItem(ONBOARDED) !== null;
+    } catch {
+      onboarded = false;
+    }
+    startServiceWorker(
+      () => (offlineReady = true),
+      () => (updateReady = true),
+    );
     void vocab.init();
+    loadBank().then(
+      () => (bankReady = true),
+      (err: unknown) => (bankError = err instanceof Error ? err.message : String(err)),
+    );
     void requestPersistentStorage().then((granted) => (persistent = granted));
     prepareSpeech();
   });
 
-  function home() {
-    view = { name: 'home' };
+  function home(to: Tab = tab) {
+    view = { name: 'tabs' };
+    tab = to;
     window.scrollTo({ top: 0 });
+  }
+
+  function finishOnboarding(start: boolean) {
+    try {
+      localStorage.setItem(ONBOARDED, '1');
+    } catch {
+      // Storage blocked: the welcome may show again, which is harmless.
+    }
+    onboarded = true;
+    onboarding = false;
+    if (start) {
+      view = {
+        name: 'session',
+        session: todaysSession(vocab.state, getBank(), clockNow(), tzOffsetMinutes()),
+      };
+    }
   }
 </script>
 
-{#if view.name === 'session'}
+{#if travel !== null}
+  <p class="test-mode" data-testid="test-mode">Test mode, day +{travel}. Real data untouched.</p>
+{/if}
+
+{#if !ready}
+  <TopBar />
+  <main class="page">
+    {#if vocab.error || bankError}
+      <section class="card">
+        <h1>Something went wrong</h1>
+        <p class="error" role="alert">{vocab.error ?? bankError}</p>
+        <button class="btn" onclick={() => location.reload()}>Try again</button>
+      </section>
+    {:else}
+      <p class="muted">Loading...</p>
+    {/if}
+  </main>
+{:else if onboarding}
+  <Onboarding ondone={finishOnboarding} />
+{:else if view.name === 'session'}
   <SessionScreen
     session={view.session}
-    onpause={home}
+    onpause={() => home('today')}
     onfinish={(session) => (view = { name: 'summary', summary: summarize(session) })}
   />
+{:else if view.name === 'placement'}
+  <PlacementFlow continueLabel="Done" oncontinue={() => home('progress')} oncancel={() => home()} />
+{:else if view.name === 'summary'}
+  <TopBar />
+  <Summary summary={view.summary} onclose={() => home('today')} />
 {:else}
-  <header class="topbar">
-    <Logo size={28} />
-    <span class="brand">Vocab</span>
-  </header>
-
-  {#if view.name === 'summary'}
-    <Summary summary={view.summary} onclose={home} />
-  {:else}
-    <main>
-      <Today onstart={(session) => (view = { name: 'session', session })} />
-
+  <TopBar />
+  <main class="page with-tabs">
+    {#if tab === 'today'}
+      <Today
+        onstart={(session) => (view = { name: 'session', session })}
+        onplacement={() => (view = { name: 'placement' })}
+      />
       {#if !installed}
         <section class="card tip" aria-label="Install tip">
           <h2>Install the app</h2>
@@ -66,58 +144,17 @@
           {/if}
         </section>
       {/if}
-
-      <details class="card device">
-        <summary>This device</summary>
-        {#if vocab.error}
-          <p class="error" role="alert">Could not open storage: {vocab.error}</p>
-        {/if}
-        <dl>
-          <dt>Works offline</dt>
-          <dd data-testid="offline-status">{offlineReady ? 'Ready' : 'Not yet'}</dd>
-
-          <dt>Saved events</dt>
-          <dd data-testid="event-count">{vocab.ready ? vocab.state.eventCount : '…'}</dd>
-
-          <dt>Storage</dt>
-          <dd>
-            {persistent === true ? 'Protected' : persistent === false ? 'Not protected' : 'Unknown'}
-          </dd>
-
-          <dt>Device</dt>
-          <dd data-testid="device-id" data-device-id={vocab.deviceId ?? ''}>
-            {vocab.deviceId ? vocab.deviceId.slice(0, 8) : '…'}
-          </dd>
-
-          <dt>Version</dt>
-          <dd>{build}</dd>
-        </dl>
-      </details>
-    </main>
-  {/if}
+    {:else if tab === 'progress'}
+      <Progress onplacement={() => (view = { name: 'placement' })} />
+    {:else}
+      <Settings {offlineReady} {persistent} />
+    {/if}
+  </main>
+  <TabBar {tab} onchange={(t) => home(t)} />
 {/if}
 
 <style>
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: calc(env(safe-area-inset-top) + 12px) calc(env(safe-area-inset-right) + 16px) 12px
-      calc(env(safe-area-inset-left) + 16px);
-    background: var(--brand);
-    color: var(--on-brand);
-  }
-
-  .brand {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-  }
-
-  main {
+  .page {
     display: grid;
     gap: 16px;
     max-width: 640px;
@@ -126,20 +163,36 @@
       calc(env(safe-area-inset-left) + 16px);
   }
 
+  .with-tabs {
+    /* Room for the tab bar. */
+    padding-bottom: calc(env(safe-area-inset-bottom) + 88px);
+  }
+
   .card {
+    display: grid;
+    gap: 10px;
     padding: 18px 20px;
     border-radius: 16px;
     background: var(--surface);
     border: 1px solid var(--border);
   }
 
+  h1 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
   h2 {
-    margin: 0 0 10px;
+    margin: 0;
     font-size: 1.05rem;
   }
 
   p {
     margin: 0;
+  }
+
+  .tip p,
+  .muted {
     color: var(--muted);
   }
 
@@ -147,37 +200,25 @@
     border-color: var(--accent);
   }
 
-  .device summary {
-    min-height: 32px;
-    color: var(--muted);
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  .device[open] summary {
-    margin-bottom: 10px;
-  }
-
   .error {
-    margin-bottom: 10px;
     color: var(--danger);
   }
 
-  dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 8px 16px;
-    margin: 0;
-  }
-
-  dt {
-    color: var(--muted);
-  }
-
-  dd {
-    margin: 0;
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    overflow-wrap: anywhere;
+  .test-mode {
+    position: fixed;
+    right: 0;
+    bottom: calc(env(safe-area-inset-bottom) + 64px);
+    left: 0;
+    z-index: 4;
+    margin: 0 auto;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #1b1a2b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    pointer-events: none;
   }
 </style>

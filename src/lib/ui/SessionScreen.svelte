@@ -1,6 +1,6 @@
 <script lang="ts">
   import { flushSync, onMount } from 'svelte';
-  import { bank } from '../content/wordBank';
+  import { getBank } from '../content/wordBank';
   import type { EventBody, Rating } from '../events/types';
   import { rateAnswer, usualResponseMs, type Answer, type SelfGrade } from '../scheduler/rating';
   import { enteredWord, type TypedResult } from '../session/answers';
@@ -30,6 +30,8 @@
   import Recall from './steps/Recall.svelte';
   import Typed from './steps/Typed.svelte';
   import WordPage from './WordPage.svelte';
+
+  const bank = getBank();
 
   interface Props {
     session: Session;
