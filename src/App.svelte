@@ -29,6 +29,11 @@
   let bankReady = $state(false);
   let bankError = $state<string | null>(null);
   let offlineReady = $state(false);
+  /** A new version of the app has taken over; reload when nothing is in progress. */
+  let updateReady = $state(false);
+  $effect(() => {
+    if (updateReady && view.name === 'tabs' && !onboarding) location.reload();
+  });
   let persistent = $state<boolean | null>(null);
   let installed = $state(true);
   let ios = $state(false);
@@ -55,7 +60,10 @@
     } catch {
       onboarded = false;
     }
-    startServiceWorker(() => (offlineReady = true));
+    startServiceWorker(
+      () => (offlineReady = true),
+      () => (updateReady = true),
+    );
     void vocab.init();
     loadBank().then(
       () => (bankReady = true),

@@ -53,3 +53,10 @@ test('works offline once loaded, word bank included', async ({ page, context }) 
   await page.getByTestId('start').click();
   await expect(page.getByTestId('step')).toBeVisible();
 });
+
+test('a new version takes over without closing every window', async ({ request }) => {
+  // Without these, an installed app stayed on its old version until fully closed.
+  const sw = await (await request.get('/sw.js')).text();
+  expect(sw).toContain('skipWaiting()');
+  expect(sw).toContain('clientsClaim()');
+});

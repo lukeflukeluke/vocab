@@ -37,6 +37,13 @@ Newest first. Every session adds an entry at the top.
   never deletes), device details, and hidden **time travel** (tap the version 7 times):
   moves the clock forward by days using a separate test database.
 - Bottom tab bar (Today, Progress, Settings).
+- **Updates now arrive straight away** (a bug since S1, found when the preview stayed on
+  the old version): the service worker waited until every window of the app was closed
+  before switching to a new version, so an open tab or a home-screen app that was never
+  swiped away kept the old one. It now takes over at once (`skipWaiting`,
+  `clientsClaim`), and the app reloads when you are on a main tab, never mid-session or
+  mid-test. Checked by upgrading the live build to this one on the same address.
+- The install tip no longer shows inside apps installed on PC (other display modes).
 - The store now saves a plain copy of every event, so a screen can never pass a
   reactive object the database cannot store (this broke the placement result at first).
 - Tests: 145 unit tests (placement, candidate order, stats, backup, 2-minute mode) and
