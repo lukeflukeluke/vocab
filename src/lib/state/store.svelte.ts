@@ -13,6 +13,14 @@ class VocabStore {
   error = $state<string | null>(null);
 
   #log: EventLog | null = null;
+  /** Writes run one at a time, so a sync import cannot replay over a fresh answer. */
+  #queue: Promise<unknown> = Promise.resolve();
+
+  #serial<T>(work: () => Promise<T>): Promise<T> {
+    const result = this.#queue.then(work);
+    this.#queue = result.catch(() => undefined);
+    return result;
+  }
 
   async init(
     db: VocabDB = new VocabDB(databaseName()),
@@ -29,14 +37,18 @@ class VocabStore {
   }
 
   /** Records something the user just did and updates the state. */
-  async record(body: EventBody): Promise<VocabEvent> {
-    if (!this.#log) throw new Error('The event log is not open yet');
+  record(body: EventBody): Promise<VocabEvent> {
+    const log = this.#log;
+    if (!log) return Promise.reject(new Error('The event log is not open yet'));
     // A plain copy: screens may pass reactive objects, which the database cannot store.
     // It also drops undefined fields, which would not survive the trip to another device.
-    const event = await this.#log.append(JSON.parse(JSON.stringify(body)) as EventBody);
-    // A new local event always sorts last, so it can be applied without a full replay.
-    this.state = applyEvent(this.state, event);
-    return event;
+    const plain = JSON.parse(JSON.stringify(body)) as EventBody;
+    return this.#serial(async () => {
+      const event = await log.append(plain);
+      // A new local event always sorts last, so it can be applied without a full replay.
+      this.state = applyEvent(this.state, event);
+      return event;
+    });
   }
 
   /** Every event on this device, for a backup file. */
@@ -45,15 +57,33 @@ class VocabStore {
     return this.#log.all();
   }
 
+  /** Events at or after time `t` (for sync). */
+  async eventsSince(t: number): Promise<VocabEvent[]> {
+    if (!this.#log) throw new Error('The event log is not open yet');
+    return this.#log.since(t);
+  }
+
+  async getMeta(key: string): Promise<string | undefined> {
+    return this.#log?.getMeta(key);
+  }
+
+  async setMeta(key: string, value: string | null): Promise<void> {
+    if (!this.#log) throw new Error('The event log is not open yet');
+    await this.#log.setMeta(key, value);
+  }
+
   /**
    * Adds events from a backup file (or another device). Events already here are skipped,
    * so importing the same file twice changes nothing. Returns how many were new.
    */
-  async importEvents(events: readonly VocabEvent[]): Promise<number> {
-    if (!this.#log) throw new Error('The event log is not open yet');
-    const fresh = await this.#log.import(events);
-    if (fresh.length) this.state = replay(await this.#log.all());
-    return fresh.length;
+  importEvents(events: readonly VocabEvent[]): Promise<number> {
+    const log = this.#log;
+    if (!log) return Promise.reject(new Error('The event log is not open yet'));
+    return this.#serial(async () => {
+      const fresh = await log.import(events);
+      if (fresh.length) this.state = replay(await log.all());
+      return fresh.length;
+    });
   }
 }
 

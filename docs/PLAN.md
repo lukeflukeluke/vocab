@@ -585,8 +585,8 @@ PWA downsides, and answers:
 
 - **All the logic runs on the device.** The app works fully offline; the server only
   stores and relays.
-- Hosting: Cloudflare Pages for the app and word-bank files; a Cloudflare Worker with a
-  D1 database for sync. The free tier is far beyond what one person uses, and it doesn't
+- Hosting: Cloudflare Pages for the app and word-bank files; Pages Functions (Workers
+  that live in the same project, at `/api/*`) with a D1 database for sync. The free tier is far beyond what one person uses, and it doesn't
   pause when idle (Supabase's free tier does, which would be annoying).
 - **Login:** it's a single-user app. A long random sync key, entered once per device and
   sent with every request. Simple, and enough for a personal app.

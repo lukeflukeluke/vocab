@@ -215,10 +215,10 @@ polishes.
 
 ## Week 2: iPhone and PC as one app (Phase 2)
 
-### [ ] S6: Sync
+### [x] S6: Sync
 Claude builds:
-- The sync server: a Cloudflare Worker with a D1 database (tables for events and the
-  Inbox).
+- The sync server: Cloudflare Pages Functions (a Worker inside the app's Pages project)
+  with a D1 database (tables for events and the Inbox).
 - Sync-key login, with endpoints to send and fetch events.
 - The sync engine in the app: it syncs when the app opens, after each session, and every
   few minutes while open.
@@ -226,7 +226,7 @@ Claude builds:
 - A sync status indicator, and instructions for installing the app on your PC.
 
 You:
-- Follow the steps to create the database and connect the Worker in the Cloudflare
+- Follow `docs/SETUP-SYNC.md` to create the database and connect it in the Cloudflare
   dashboard (about 10 min).
 - Make a sync key on your iPhone and enter it on your PC.
 - Install the app on your PC (the "Install" icon in Chrome or Edge).

@@ -61,4 +61,20 @@ export class EventLog {
   async count(): Promise<number> {
     return this.db.events.count();
   }
+
+  /** Events at or after time `t`, in canonical order. */
+  async since(t: number): Promise<VocabEvent[]> {
+    return sortEvents(await this.db.events.where('t').aboveOrEqual(t).toArray());
+  }
+
+  /** A setting kept on this device only (never synced), such as the sync key. */
+  async getMeta(key: string): Promise<string | undefined> {
+    return (await this.db.meta.get(key))?.value;
+  }
+
+  /** Saves a device-only setting, or removes it when `value` is null. */
+  async setMeta(key: string, value: string | null): Promise<void> {
+    if (value === null) await this.db.meta.delete(key);
+    else await this.db.meta.put({ key, value });
+  }
 }

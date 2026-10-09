@@ -2,12 +2,12 @@
 
 A personal vocabulary app for one person (the repo owner). The main device is an iPhone,
 the second a PC. It is a local-first PWA: all logic runs on the device; a small sync
-server comes later (build session S6).
+server (Cloudflare Pages Functions with D1) relays events between devices.
 
 - Design: `docs/PLAN.md`
 - Build order and progress: `docs/ROADMAP.md`
 - What each session did: `docs/LOG.md`
-- Hosting: `docs/SETUP-CLOUDFLARE.md`
+- Hosting: `docs/SETUP-CLOUDFLARE.md`; sync database: `docs/SETUP-SYNC.md`
 
 ## Session routine
 
@@ -120,6 +120,29 @@ The owner wants usage spent where it matters:
   switches to a separate database, `vocab-test`.
 - Onboarding shows on first launch only (no events and no `vocab.onboarded` in
   localStorage). e2e tests that skip it set that key with `page.addInitScript`.
+
+## Sync (`server/`, `functions/`, `src/lib/sync/`)
+
+- The server is Cloudflare Pages Functions (`functions/api/sync.ts`, `health.ts`) in the
+  same project as the app, with a D1 binding named `DB` (set in the dashboard; there is
+  no `wrangler.toml`). Preview deployments bind a separate database. The logic is in
+  `server/sync.ts` and runs on any `SyncDb` (a D1 subset); `server/sqlite.ts` adapts
+  Node's SQLite for tests. Tables are created on first use.
+- One endpoint: `POST /api/sync` with `Authorization: Bearer <key>` and
+  `{cursor, events}`; returns `{cursor, events, more}`. The account is a SHA-256 hash of
+  the key; the cursor is the server's row number. Inserts ignore ids already there, so
+  sending twice is harmless. The server never reads or changes event bodies.
+- The client (`engine.ts`) pushes events with `t` at or after the `sync.pushed`
+  watermark and pulls after `sync.cursor`; both and the key live in the Dexie `meta`
+  table, so the time-travel database has its own (and sync is off in time travel).
+  Merging is `vocab.importEvents` plus replay. Store writes run one at a time so an
+  import cannot replay over a fresh answer.
+- `sync.svelte.ts` (`syncer`) runs it on open, every 3 minutes while visible, on focus
+  and on reconnect, after a session pauses or finishes, and after a backup import.
+- Keys (`key.ts`): 24 Crockford base32 characters plus a check character.
+- `server/*.test.ts` run under Vitest with Node types; `server/devices.test.ts` syncs two
+  in-memory devices with skewed clocks. `e2e/sync.spec.ts` drives an iPhone and a PC
+  against the real server code.
 
 ## Word bank (`content/`)
 

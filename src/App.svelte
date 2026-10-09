@@ -6,6 +6,7 @@
   import { summarize, type Session, type SessionSummary } from './lib/session/runner';
   import { todaysSession } from './lib/session/today';
   import { vocab } from './lib/state/store.svelte';
+  import { syncer } from './lib/sync/sync.svelte';
   import Onboarding from './lib/ui/Onboarding.svelte';
   import PlacementFlow from './lib/ui/PlacementFlow.svelte';
   import Progress from './lib/ui/Progress.svelte';
@@ -64,7 +65,7 @@
       () => (offlineReady = true),
       () => (updateReady = true),
     );
-    void vocab.init();
+    void vocab.init().then(() => syncer.init());
     loadBank().then(
       () => (bankReady = true),
       (err: unknown) => (bankError = err instanceof Error ? err.message : String(err)),
@@ -118,8 +119,14 @@
 {:else if view.name === 'session'}
   <SessionScreen
     session={view.session}
-    onpause={() => home('today')}
-    onfinish={(session) => (view = { name: 'summary', summary: summarize(session) })}
+    onpause={() => {
+      void syncer.syncNow();
+      home('today');
+    }}
+    onfinish={(session) => {
+      void syncer.syncNow();
+      view = { name: 'summary', summary: summarize(session) };
+    }}
   />
 {:else if view.name === 'placement'}
   <PlacementFlow continueLabel="Done" oncontinue={() => home('progress')} oncancel={() => home()} />

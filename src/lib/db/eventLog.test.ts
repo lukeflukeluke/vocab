@@ -122,3 +122,20 @@ describe('EventLog', () => {
     expect(state.eventCount).toBe(1 + 1 + words.length + 120);
   });
 });
+
+describe('device-only settings and sync helpers', () => {
+  it('keeps settings on the device and lists events since a time', async () => {
+    let t = 1000;
+    const log = await EventLog.open(freshDb(), () => t++);
+    expect(await log.getMeta('sync.key')).toBeUndefined();
+    await log.setMeta('sync.key', 'ABC');
+    expect(await log.getMeta('sync.key')).toBe('ABC');
+    await log.setMeta('sync.key', null);
+    expect(await log.getMeta('sync.key')).toBeUndefined();
+
+    const a = await log.append({ type: 'word_added', entryId: 'a#n', source: 'bank' });
+    const b = await log.append({ type: 'word_added', entryId: 'b#n', source: 'bank' });
+    expect((await log.since(b.t)).map((e) => e.id)).toEqual([b.id]);
+    expect((await log.since(0)).map((e) => e.id)).toEqual([a.id, b.id]);
+  });
+});
