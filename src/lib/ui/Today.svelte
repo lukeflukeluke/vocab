@@ -4,6 +4,7 @@
   import { getBank } from '../content/wordBank';
   import { yourBank } from '../content/yourBank';
   import { unsorted } from '../inbox/inbox';
+  import { reminders } from '../reminders/reminders.svelte';
   import { paceFromHistory } from '../scheduler/budget';
   import { studyDay } from '../scheduler/day';
   import { DAY_MS } from '../scheduler/memory';
@@ -59,6 +60,10 @@
     ),
   );
   const started = $derived(todays.spentSeconds > 0);
+  // Nothing left today: no reminder needed (server/reminders.ts).
+  $effect(() => {
+    if (steps === 0) void reminders.done(today);
+  });
   const week = $derived(streak(vocab.state, today, tz));
   const lastPlacement = $derived(vocab.state.placements.at(-1));
   const placementDue = $derived(

@@ -4,6 +4,59 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-10 · S8: Reminders and backups
+
+**Done**
+- **Daily reminder**: Settings, Daily reminder. Pick a time (6:00 to 23:30), turn it on,
+  allow notifications, and **Send a test**. It arrives once a day at about that time, and
+  only if today's session isn't done on any device. Works in the iPhone Home Screen app
+  (iOS 16.4+) and the installed PC app.
+- **Web Push without packages** (`server/webpush.ts`): message encryption checked byte for
+  byte against the RFC 8291 test vector, and signed (VAPID). Written by a Sonnet helper
+  to a precise brief, reviewed here. The signing keys are made on first use and kept in
+  the database, so there is no secret to set up.
+- **The tick**: `POST /api/tick` sends due reminders and makes weekly backups. A
+  scheduled GitHub Action (`.github/workflows/tick.yml`) calls it every 10 minutes.
+- **Weekly backup to R2** when a bucket is bound as `BACKUPS` (optional): one normal
+  backup file per account per week, which Settings, Import can read back.
+- **New version prompt**: a "A new version is ready. Reload" banner on the main tabs. The
+  app also switches by itself when you come back to it, unless you are mid-session or
+  have typed something (S7's Inbox box made the old silent reload risky).
+- Tests: 214 unit tests (push encryption, VAPID, due times, done days, gone
+  subscriptions, backups) and end-to-end runs of turning reminders on, testing, changing
+  the time and turning off, a done day getting no reminder, and the service worker
+  loading the push handler.
+
+**Decisions**
+- A GitHub Action as the timer instead of a separate Cloudflare Worker with a cron:
+  nothing for the owner to deploy or bind, free for a public repository. The cost is a
+  few minutes' delay at times. The tick needs no key because repeating it is harmless.
+- "Done" is decided on the device (Today has nothing left) and sent to the server, rather
+  than the server replaying the log.
+- Reminder times are half hours from 6:00 to 23:30, so they never fall before the 4am
+  start of a study day. A reminder more than 3 hours late (the tick was down) is skipped.
+- Backups to R2 stay optional: turning R2 on may ask for a payment method, and the data
+  is already on the server, on each device, and in Cloudflare's 30-day database history.
+
+**Notes for later sessions**
+- The reminder text is fixed. It could say how many reviews are waiting if the device
+  sent its plan's size with `done` (or a `status` call) each day.
+- GitHub pauses scheduled workflows after 60 days without repository activity (it emails
+  first). `docs/SETUP-REMINDERS.md` says how to re-enable it.
+- iOS may stop delivering if the Home Screen app is removed; the server drops
+  subscriptions the push service reports gone (404/410).
+
+**Owner to-do**
+1. Say "merge" (reminders need the live app: the tick only calls the live address).
+2. On the iPhone Home Screen app: Settings, Daily reminder, pick a time, Turn on, Allow,
+   then Send a test.
+3. Optional: the R2 backup bucket (`docs/SETUP-REMINDERS.md`, about 5 minutes).
+4. On GitHub, Actions, Tick: check the runs are green after the merge.
+
+**Next:** C2 (content batch 2), then F2. S9 after that.
+
+---
+
 ## 2026-10-10 · S7: Capture
 
 **Done**

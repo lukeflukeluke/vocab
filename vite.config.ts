@@ -62,6 +62,8 @@ export default defineConfig({
         // The word bank is one JSON file that grows with every content batch. The
         // dictionary for captured words adds 26 files, 4.6 MB in all.
         maximumFileSizeToCacheInBytes: 30 * 1024 * 1024,
+        // Shows reminders (push messages) as notifications.
+        importScripts: ['push-sw.js'],
         navigateFallback: 'index.html',
         // The sync server's addresses are never the app (opening /api/health in a tab).
         navigateFallbackDenylist: [/^\/api\//],

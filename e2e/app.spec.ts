@@ -60,3 +60,13 @@ test('a new version takes over without closing every window', async ({ request }
   expect(sw).toContain('skipWaiting()');
   expect(sw).toContain('clientsClaim()');
 });
+
+test('the service worker shows reminders and leaves the server alone', async ({ request }) => {
+  const sw = await (await request.get('/sw.js')).text();
+  expect(sw).toContain('importScripts("push-sw.js")');
+  const push = await (await request.get('/push-sw.js')).text();
+  expect(push).toContain("addEventListener('push'");
+  expect(push).toContain("addEventListener('notificationclick'");
+  // /api/ page loads are never answered with the app.
+  expect(sw).toMatch(/denylist:\[\/\^\\\/api\\\/\/\]/);
+});
