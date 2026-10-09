@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import type { PlacementAnswer } from '../events/types';
   import {
+    CHECKS,
     makeChecks,
     makeTest,
     type CheckItem,
@@ -33,7 +34,7 @@
 
   const item = $derived(items[answers.length]);
   const check = $derived(checks?.[checkIndex]);
-  const total = $derived(items.length + (checks?.length ?? 15));
+  const total = $derived(items.length + (checks?.length ?? CHECKS));
   const done = $derived(answers.length + checkIndex);
 
   function say(yes: boolean) {

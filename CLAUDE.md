@@ -96,8 +96,8 @@ At the end (the owner set up this routine and wants it every session):
 
 ## Placement, stats, settings
 
-- `src/lib/placement/placement.ts`: the placement test (PLAN 3.1): 5 words from each of
-  16 bands plus 20 fakes, up to 15 meaning checks, scoring. The result is stored as a
+- `src/lib/placement/placement.ts`: the placement test (PLAN 3.1): 2 words from each of
+  16 bands plus 8 fakes, up to 8 meaning checks, scoring. The result is stored as a
   `placement_done` event (answers kept, so it can be re-scored) in `state.placements`.
 - `src/lib/stats/stats.ts`: funnel, recall (first review of a day, not on the day met),
   forecast, weekly streak (5+ days).

@@ -25,10 +25,14 @@ export interface CheckItem {
   options: { text: string; right: boolean }[];
 }
 
-/** Real words per band, fake words, and meaning checks in one test. */
-export const WORDS_PER_BAND = 5;
-export const FAKES = 20;
-export const CHECKS = 15;
+/**
+ * Real words per band, fake words, and meaning checks in one test: 40 taps and 8 checks,
+ * about 2 to 3 minutes. Two words a band is noisy on its own; pooling neighbouring bands
+ * (`decreasing`) evens it out, and the range shown reflects what is left.
+ */
+export const WORDS_PER_BAND = 2;
+export const FAKES = 8;
+export const CHECKS = 8;
 /** Headwords ranked above the first band (the 1,000 commonest), assumed known. */
 export const COMMONEST = 1000;
 /** A band is on your frontier when you know this share of it. */
@@ -44,7 +48,7 @@ function shuffle<T>(items: readonly T[], random: () => number): T[] {
 }
 
 /**
- * The yes/no list: 5 words from each band and 20 fake words, mixed. Words shown in an
+ * The yes/no list: 2 words from each band and 8 fake words, mixed. Words shown in an
  * earlier test or already among your words are skipped, so each monthly retest is fresh.
  */
 export function makeTest(
@@ -65,7 +69,7 @@ export function makeTest(
 }
 
 /**
- * Meaning checks on up to 15 "yes" words, spread over the bands and favouring the rarer
+ * Meaning checks on up to 8 "yes" words, spread over the bands and favouring the rarer
  * ones, where over-claiming matters most. Wrong options are meanings of other words with
  * the same part of speech.
  */
@@ -105,7 +109,7 @@ export function makeChecks(
 
 /**
  * Makes known-shares fall (or stay level) from common to rare bands, the shape real
- * vocabularies have, by pooling neighbours that break it. With only 5 words a band this
+ * vocabularies have, by pooling neighbours that break it. With only 2 words a band this
  * removes most of the noise.
  */
 export function decreasing(values: readonly number[]): number[] {
@@ -147,13 +151,23 @@ export function score(pool: PlacementPool, answers: readonly PlacementAnswer[]):
   const known = decreasing(raw);
 
   let size = COMMONEST;
+  pool.bands.forEach((b, i) => (size += b.size * known[i]!));
+
+  // Uncertainty: bands pooled together share one estimate, made from all their answers.
   let variance = 0;
-  pool.bands.forEach((b, i) => {
+  for (let i = 0; i < pool.bands.length;) {
+    let j = i;
+    let words = 0;
+    let headwords = 0;
+    while (j < pool.bands.length && known[j] === known[i]) {
+      words += answers.filter((a) => a.band === pool.bands[j]!.band).length;
+      headwords += pool.bands[j]!.size;
+      j++;
+    }
     const k = known[i]!;
-    const n = answers.filter((a) => a.band === b.band).length || 1;
-    size += b.size * k;
-    variance += (b.size * b.size * Math.max(k * (1 - k), 0.02)) / n;
-  });
+    variance += (headwords * headwords * Math.max(k * (1 - k), 0.02)) / Math.max(words, 1);
+    i = j;
+  }
   const spread = 1.96 * Math.sqrt(variance);
 
   const bands = pool.bands.map((b, i) => ({ band: b.band, known: round(known[i]!, 0.01) }));

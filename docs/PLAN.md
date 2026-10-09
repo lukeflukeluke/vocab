@@ -67,16 +67,19 @@ for now), **Ignored**.
 
 ## 3. Where words come from
 
-### 3.1 Placement test (first launch, about 6 minutes)
+### 3.1 Placement test (first launch, about 2-3 minutes)
 
 Goal: find your **frontier**, the band of words you half-know or have seen but cannot
 use. Words far past it are rare (you would hardly ever meet them); words below it you
 already have.
 
-1. **Yes/No checklist.** About 100 items: 80 real words sampled from 16 frequency bands
-   (roughly the 2,000th to the 60,000th most common word), plus 20 convincing fake
-   words ("plimsious", "devorant"). "Do you know what this means?" Quick taps.
-2. **Verification.** 15 of your "yes" words get a quick meaning check.
+1. **Yes/No checklist.** 40 items: 32 real words, 2 from each of 16 frequency bands
+   (roughly the 1,000th to the 42,000th most common word), plus 8 convincing fake
+   words ("plimsious", "devorant"). "Do you know what this means?" Quick taps. (S5 first
+   built 100 items; the owner asked for a shorter test. A simulation of 2,000 learners
+   put the typical size error at 12%, against 9% for 100 items.)
+2. **Verification.** Up to 8 of your "yes" words, rarest first, get a quick meaning
+   check.
 3. **Scoring.** For each band: the share you know, corrected for fake words you claimed
    (your over-claiming rate) and for failed verifications. Summed across bands, that
    gives a vocabulary size estimate with a range.

@@ -27,7 +27,7 @@ function answersFor(lastKnownBand: number, fakeYes = 0): PlacementAnswer[] {
 }
 
 describe('makeTest', () => {
-  it('takes 5 words from each band and 20 fake words', () => {
+  it('takes 2 words from each band and 8 fake words', () => {
     const test = makeTest(pool, new Set(), seededRandom(1));
     expect(test).toHaveLength(pool.bands.length * WORDS_PER_BAND + FAKES);
     for (const { band } of pool.bands) {
@@ -45,7 +45,7 @@ describe('makeTest', () => {
 });
 
 describe('makeChecks', () => {
-  it('checks up to 15 "yes" words, rarest bands first, with one right meaning', () => {
+  it('checks up to 8 "yes" words, rarest bands first, with one right meaning', () => {
     const checks = makeChecks(pool, answersFor(16), seededRandom(3));
     expect(checks).toHaveLength(CHECKS);
     expect(checks[0]!.band).toBe(16);
@@ -61,7 +61,7 @@ describe('makeChecks', () => {
     const answers = answersFor(2);
     const yes = new Set(answers.filter((a) => a.yes).map((a) => a.word));
     const checks = makeChecks(pool, answers, seededRandom(3));
-    expect(checks).toHaveLength(10);
+    expect(checks).toHaveLength(Math.min(CHECKS, 2 * WORDS_PER_BAND));
     for (const c of checks) expect(yes.has(c.word)).toBe(true);
   });
 });
@@ -89,25 +89,33 @@ describe('score', () => {
   });
 
   it('marks the bands where you know some of the words as the frontier', () => {
-    const answers = answersFor(16).map((a) =>
-      a.band !== undefined && a.band >= 11 && a.band <= 13
-        ? { ...a, yes: a.word.length % 2 === 0 }
-        : a.band !== undefined && a.band > 13
-          ? { ...a, yes: false }
-          : a,
-    );
+    // Bands 11 to 13: the first word of each known, the second not; nothing rarer.
+    const seen = new Map<number, number>();
+    const answers = answersFor(16).map((a) => {
+      if (a.band === undefined || a.band <= 10) return a;
+      const n = (seen.get(a.band) ?? 0) + 1;
+      seen.set(a.band, n);
+      return { ...a, yes: a.band <= 13 && n === 1 };
+    });
     const result = score(pool, answers);
+    expect(result.frontier.length).toBeGreaterThan(0);
     for (const band of result.frontier) expect(band).toBeGreaterThanOrEqual(11);
   });
 
   it('discounts "yes" answers when you claim fake words', () => {
     // Half of each rarer band known: those are the answers that could be guesses.
-    const partly = (fakeYes: number) =>
-      answersFor(10, fakeYes).map((a) =>
-        a.band && a.band > 10 ? { ...a, yes: a.word.length % 2 === 0 } : a,
-      );
+    const seen = new Map<number, number>();
+    const partly = (fakeYes: number) => {
+      seen.clear();
+      return answersFor(10, fakeYes).map((a) => {
+        if (!a.band || a.band <= 10) return a;
+        const n = (seen.get(a.band) ?? 0) + 1;
+        seen.set(a.band, n);
+        return { ...a, yes: n === 1 };
+      });
+    };
     const honest = score(pool, partly(0));
-    const claiming = score(pool, partly(5));
+    const claiming = score(pool, partly(2));
     expect(claiming.falseAlarms).toBe(0.25);
     expect(claiming.size).toBeLessThan(honest.size);
   });

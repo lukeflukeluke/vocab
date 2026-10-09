@@ -131,10 +131,10 @@
   <section class="card placement" data-testid="placement-card">
     {#if lastPlacement}
       <h2>Monthly check</h2>
-      <p>Retake the 6-minute test with fresh words to see how your vocabulary has grown.</p>
+      <p>Retake the 2-minute test with fresh words to see how your vocabulary has grown.</p>
     {:else}
       <h2>Find your level</h2>
-      <p>A 6-minute test finds the words worth learning for you, and your vocabulary size.</p>
+      <p>A 2-minute test finds the words worth learning for you, and your vocabulary size.</p>
     {/if}
     <button class="btn wide" data-testid="take-placement" onclick={onplacement}>
       Take the test

@@ -53,7 +53,7 @@
         <li>Reviews come back just before you would forget.</li>
         <li>Words move up a ladder from <em>seen</em> to <em>owned</em>.</li>
       </ul>
-      <p>First, a 6-minute test finds your level, so you only learn words worth learning.</p>
+      <p>First, a 2-minute test finds your level, so you only learn words worth learning.</p>
       <div class="actions">
         <button class="btn primary wide" data-testid="begin-test" onclick={() => (step = 'test')}>
           Find my level

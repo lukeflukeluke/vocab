@@ -11,9 +11,12 @@ Newest first. Every session adds an entry at the top.
   URL of a hashed JSON file (528 KB for 170 entries; the app script fell from 718 KB to
   247 KB). The service worker caches it with a 30 MB limit, and an e2e test starts a
   session offline to prove it.
-- **Placement test** (PLAN 3.1): 100 yes/no taps (5 words from each of 16 frequency
-  bands, ranks 1,000 to 42,000, plus 20 made-up words), then up to 15 meaning checks on
-  "yes" words, rarest bands first. Scoring corrects for made-up words claimed and failed
+- **Placement test** (PLAN 3.1): 40 yes/no taps (2 words from each of 16 frequency
+  bands, ranks 1,000 to 42,000, plus 8 made-up words), then up to 8 meaning checks on
+  "yes" words, rarest bands first. About 2-3 minutes. (First built with 100 taps and 15
+  checks; the owner asked for 30-50 words. Simulating 2,000 learners: typical size error
+  12% instead of 9%, and the range shown is wider, but still catches the true size 94%
+  of the time.) Scoring corrects for made-up words claimed and failed
   checks, smooths the bands so knowledge never rises towards rarer words, and gives a
   vocabulary size with a range and the frontier (bands 30-80% known). Results screen
   with a band chart. Saved as a new `placement_done` event with the raw answers. Retests
@@ -42,8 +45,9 @@ Newest first. Every session adds an entry at the top.
   time travel leaving real data untouched, the ladder, 2-minute mode, offline start.
 
 **Decisions**
-- Placement uses 5 words per band (80 real words). That is noisy per band, so bands are
-  smoothed into a falling shape before scoring; the range shown reflects the noise.
+- Placement uses 2 words per band (32 real words). That is noisy per band, so bands are
+  smoothed into a falling shape before scoring, and the range is worked out from the
+  pooled bands; it reflects the noise honestly.
 - The 1,000 commonest words are assumed known; the size counts headwords (word families),
   not every inflected form.
 - Time travel never touches real data: it switches to the `vocab-test` database.
@@ -57,11 +61,11 @@ Newest first. Every session adds an entry at the top.
 - PLAN 3.5's 60-day surprise check for Known words is still not built (planner change).
 - F1 candidates: the near-synonym "close, but the word here is X" verdict (C1 notes);
   self-grading calibration for R3 (PLAN 10) is not in Progress yet.
-- The placement pool has 64 words a band, so about 12 monthly tests before words repeat.
+- The placement pool has 64 words a band, so about 30 monthly tests before words repeat.
 
 **Owner to-do**
 1. Open the preview link and try it, including time travel (Settings, tap the version
-   7 times) if you want to see weeks pass.
+   7 times) if you want to see weeks pass. The test is now 40 words plus 8 checks.
 2. Say "merge". Then on the home-screen app: Today shows "Find your level": take the
    test, then do your first real session. From here on, one session a day.
 3. Until sync (S6), tap Settings, Export once a week and save the file to Files.
