@@ -10,6 +10,10 @@ import type { PlacementAnswer, PlacementResult } from '../events/types';
 // updates a grid of (edge, slope) guesses. Scoring past answers uses the same model, so a
 // test can always be re-scored from its stored answers. Everything here is pure: pass in
 // a random function.
+//
+// Estimates deliberately lean low: the reported size and band shares are the level the
+// model is 70% sure you are at or above, so a lucky test never inflates your level and
+// later retests can show real improvement.
 
 /** content/placement.json */
 export interface PlacementPool {
@@ -42,6 +46,8 @@ const WARM_UP = [3, 5, 7];
 export const COMMONEST = 1000;
 /** A band is on your frontier when you know this share of it. */
 export const FRONTIER = { low: 0.3, high: 0.8 };
+/** Estimates lean low: the level we are 70% sure you are at or above (PLAN 3.1). */
+export const CAUTION = 0.3;
 
 // The model. A known word is sometimes still answered "no" (SLIP); an unknown word is
 // answered "yes" at your guessing rate, which the made-up words measure. A meaning check
@@ -328,11 +334,16 @@ function quantile(values: { value: number; weight: number }[], q: number): numbe
 export function score(pool: PlacementPool, answers: readonly PlacementAnswer[]): PlacementResult {
   const points = posterior(answers);
   const sizes = points.map((p) => ({ value: sizeAt(pool, p.edge, p.slope), weight: p.weight }));
-  const size = sizes.reduce((s, v) => s + v.value * v.weight, 0);
+  const low = Math.max(COMMONEST, round(quantile(sizes, 0.05), 100));
+  const high = round(quantile(sizes, 0.95), 100);
+  const size = Math.min(high, Math.max(low, round(quantile(sizes, CAUTION), 100)));
   const bands = pool.bands.map((b) => ({
     band: b.band,
     known: round(
-      points.reduce((s, p) => s + p.weight * knownAt(b.band, p.edge, p.slope), 0),
+      quantile(
+        points.map((p) => ({ value: knownAt(b.band, p.edge, p.slope), weight: p.weight })),
+        CAUTION,
+      ),
       0.01,
     ),
   }));
@@ -348,9 +359,9 @@ export function score(pool: PlacementPool, answers: readonly PlacementAnswer[]):
   const fakes = answers.filter((a) => a.band === undefined);
   return {
     bands,
-    size: round(size, 100),
-    low: Math.max(COMMONEST, round(quantile(sizes, 0.05), 100)),
-    high: round(quantile(sizes, 0.95), 100),
+    size,
+    low,
+    high,
     falseAlarms: fakes.length ? round(fakes.filter((a) => a.yes).length / fakes.length, 0.01) : 0,
     frontier,
   };

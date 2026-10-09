@@ -61,6 +61,9 @@ Newest first. Every session adds an entry at the top.
   time travel leaving real data untouched, the ladder, 2-minute mode, offline start.
 
 **Decisions**
+- Placement estimates lean low on purpose (owner's request): the reported size and band
+  shares are the 30th percentile of the model's beliefs, so a lucky test never pushes new
+  words too hard and retests can show real growth.
 - Placement scoring assumes knowledge falls off smoothly with rarity (a logistic curve),
   which is what real vocabularies look like and lets 50 answers say a lot.
 - The 1,000 commonest words are assumed known; the size counts headwords (word families),

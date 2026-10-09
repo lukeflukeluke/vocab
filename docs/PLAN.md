@@ -85,7 +85,9 @@ already have.
 3. **Scoring.** A small model of how knowledge falls off with rarity (the band where you
    know half, and how sharply it drops), fitted to every answer, corrected for guessing.
    It gives the share you know of each band. Summed across bands, that
-   gives a vocabulary size estimate with a range.
+   gives a vocabulary size estimate with a range. The reported size and the band shares
+   are deliberately cautious (the level the model is 70% sure you are at or above), so a
+   lucky test never pushes new words too hard and retests can show growth.
 4. **Result.** Your estimated size, and your frontier: the bands where you know about
    30-80%. Your starting pool is drawn from those bands.
 

@@ -150,6 +150,24 @@ describe('score', () => {
     }
   });
 
+  it("leans low: the reported size is below the model's average", () => {
+    const answers = take(12).test.answers;
+    const mean = posterior(answers).reduce(
+      (sum, p) =>
+        sum +
+        p.weight *
+          pool.bands.reduce(
+            (s, b) => s + b.size / (1 + Math.exp(p.slope * (b.band - p.edge))),
+            COMMONEST,
+          ),
+      0,
+    );
+    const result = score(pool, answers);
+    expect(result.size).toBeLessThanOrEqual(mean);
+    expect(result.low).toBeLessThanOrEqual(result.size);
+    expect(result.size).toBeLessThanOrEqual(result.high);
+  });
+
   it('gives a lower estimate when you claim made-up words', () => {
     // The same answers (without checks), once honest and once claiming every made-up word.
     const answers = take(12).test.answers.map(({ checked: _, ...a }) => a);

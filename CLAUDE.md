@@ -111,7 +111,7 @@ The owner wants usage spent where it matters:
   time (a Bayesian grid over the band you know half of and the slope), 8 fakes, up to 10
   on-the-spot meaning checks. `score()` fits the same model to any stored answers. The
   result is a `placement_done` event (answers kept, so it can be re-scored) in
-  `state.placements`.
+  `state.placements`. Estimates lean low on purpose (`CAUTION`, the 30th percentile).
 - `src/lib/stats/stats.ts`: funnel, recall (first review of a day, not on the day met),
   forecast, weekly streak (5+ days).
 - `src/lib/backup.ts`: the export file (all events) and its reader; import merges by id.
