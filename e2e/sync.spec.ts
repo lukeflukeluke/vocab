@@ -44,7 +44,7 @@ test('a session on the iPhone shows up on the PC, and back', async ({ browser, i
   // The word added (on its page) and the check's review; the guess is not recorded.
   expect(phoneEvents).toBe('2');
 
-  // PC: first launch, "I already use Vocab on another device", enter the key.
+  // PC: first launch, "I already use Wordhoard on another device", enter the key.
   const pcContext = await browser.newContext({ ...devices['Desktop Chrome'] });
   await serve(pcContext, db);
   const pc = await pcContext.newPage();

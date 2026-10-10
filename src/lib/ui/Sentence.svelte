@@ -31,10 +31,11 @@
     color: var(--text);
   }
 
+  /* A highlighter stroke under the word. */
   mark {
     padding: 0 3px;
-    border-radius: 4px;
-    background: var(--mark);
+    border-radius: 3px;
+    background: linear-gradient(transparent 52%, var(--mark) 52%, var(--mark) 92%, transparent 92%);
     color: inherit;
     font-weight: 700;
   }
@@ -43,7 +44,7 @@
     display: inline-block;
     min-width: 4.5em;
     padding: 0 4px;
-    border-bottom: 2px solid var(--muted);
+    border-bottom: 2px dashed var(--accent);
     color: var(--muted);
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.9em;

@@ -1,6 +1,8 @@
-# Vocab
+# Vocab (the app is called Wordhoard)
 
-A personal vocabulary app for one person (the repo owner). The main device is an iPhone,
+A personal vocabulary app for one person (the repo owner). Its name in the UI, manifest and
+icons is **Wordhoard** (Old English "word-hoard", a store of words); the repo, the
+Cloudflare project, database names and storage keys (`vocab.*`) keep "vocab". The main device is an iPhone,
 the second a PC. It is a local-first PWA: all logic runs on the device; a small sync
 server (Cloudflare Pages Functions with D1) relays events between devices.
 
@@ -194,6 +196,24 @@ The owner wants usage spent where it matters:
 - `entries/*.json` are written by content sessions following `content/GUIDE.md`, in the
   format of `src/lib/content/types.ts`. `npm test` runs the entry checker.
 - `content/` is excluded from Prettier.
+
+## Design (`src/app.css`, `src/lib/theme.svelte.ts`)
+
+- Look: warm and literary. "Paper" (light: parchment, ink, gold) and "Ink" (dark: night
+  blue, warm text, brighter gold). Headings, headwords and big numbers use Fraunces
+  (`@fontsource-variable/fraunces`, bundled and cached offline); UI text is the system
+  sans. The gold cut gem is the mark (`src/lib/Logo.svelte`, `public/favicon.svg`,
+  `scripts/make_icons.py`, kept identical).
+- Colours are tokens on `<html data-theme="light|dark">` in `src/app.css`. Use them
+  (`--surface`, `--accent`, `--accent-text`, `--stage-*`...); never hard-code a colour
+  or add a `prefers-color-scheme` block in a component. Hero cards (`--hero-1/2`) and the
+  top bar (`--bar`) stay dark in both themes, so text on them is light.
+- The theme choice (Automatic, Paper, Ink) is per device in localStorage
+  `wordhoard.theme`; `index.html` applies it before the first paint and sets
+  `darkreader-lock` so the Dark Reader extension leaves the app alone.
+- Shared pieces in `app.css`: `.btn` (`.primary`, `.gold` for the one main action,
+  `.quiet`, `.wide`), `.eyebrow`, and the `rise`, `pop`, `shake` animations. Motion stays
+  small and is switched off for reduced-motion users.
 
 ## Conventions
 

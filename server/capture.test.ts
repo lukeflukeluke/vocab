@@ -28,7 +28,7 @@ describe('POST /api/capture', () => {
       () => 'cap-1',
     );
     expect(res.status).toBe(200);
-    expect(await res.text()).toBe('Added "salient" to your Vocab Inbox.');
+    expect(await res.text()).toBe('Added "salient" to your Wordhoard Inbox.');
     expect(await inbox(db)).toEqual([
       {
         id: 'cap-1',

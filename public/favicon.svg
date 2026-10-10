@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#312e81"/>
-  <rect x="168" y="112" width="40" height="288" rx="20" fill="#c7d2fe"/>
-  <rect x="304" y="112" width="40" height="288" rx="20" fill="#c7d2fe"/>
-  <rect x="168" y="324" width="176" height="32" rx="16" fill="#c7d2fe"/>
-  <rect x="168" y="240" width="176" height="32" rx="16" fill="#c7d2fe"/>
-  <rect x="168" y="156" width="176" height="32" rx="16" fill="#fbbf24"/>
+  <rect width="512" height="512" rx="112" fill="#1b2240"/>
+  <polygon points="136,200 196,136 216,200" fill="#f6cf6a"/>
+  <polygon points="196,136 316,136 296,200 216,200" fill="#fbe3a0"/>
+  <polygon points="316,136 376,200 296,200" fill="#e8b143"/>
+  <polygon points="136,200 216,200 256,388" fill="#e6a730"/>
+  <polygon points="216,200 296,200 256,388" fill="#f2bd4b"/>
+  <polygon points="296,200 376,200 256,388" fill="#c98a1c"/>
+  <polygon points="380,96 388,120 412,128 388,136 380,160 372,136 348,128 372,120" fill="#fff3d1"/>
 </svg>

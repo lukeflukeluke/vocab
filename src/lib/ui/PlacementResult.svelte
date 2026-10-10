@@ -169,10 +169,4 @@
     border-radius: 3px;
     background: var(--accent);
   }
-
-  @media (prefers-color-scheme: dark) {
-    .fill {
-      background: color-mix(in srgb, #a5b4fc 45%, var(--surface));
-    }
-  }
 </style>

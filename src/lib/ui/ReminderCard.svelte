@@ -35,15 +35,15 @@
   {:else if current.phase === 'unsupported' || iosBrowser}
     <p class="muted small">
       {iosBrowser
-        ? 'Reminders work in the app on your Home Screen (iOS 16.4 or later). Open Vocab from there.'
+        ? 'Reminders work in the app on your Home Screen (iOS 16.4 or later). Open Wordhoard from there.'
         : "This browser can't show reminders."}
     </p>
   {:else if !syncer.key}
     <p class="muted small">Turn on sync first (above): reminders come from the sync server.</p>
   {:else if current.phase === 'blocked'}
     <p class="small">
-      Notifications are blocked for Vocab. Allow them in your
-      {isIos() ? 'iPhone Settings, Notifications, Vocab' : "browser's site settings"}, then come
+      Notifications are blocked for Wordhoard. Allow them in your
+      {isIos() ? 'iPhone Settings, Notifications, Wordhoard' : "browser's site settings"}, then come
       back here.
     </p>
   {:else}

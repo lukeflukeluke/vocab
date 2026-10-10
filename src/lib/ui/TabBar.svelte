@@ -73,7 +73,9 @@
     padding: 4px calc(env(safe-area-inset-right) + 8px) calc(env(safe-area-inset-bottom) + 4px)
       calc(env(safe-area-inset-left) + 8px);
     border-top: 1px solid var(--border);
-    background: var(--surface);
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(14px) saturate(1.4);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
   }
 
   .tab {
@@ -94,24 +96,30 @@
     color: var(--text);
   }
 
-  .tab.on svg {
-    color: var(--accent);
-  }
-
   .icon {
     position: relative;
     display: grid;
+    place-items: center;
+    width: 56px;
+    height: 30px;
+    border-radius: 999px;
+    transition: background-color 0.25s var(--ease);
+  }
+
+  .tab.on .icon {
+    background: var(--accent-soft);
+    color: var(--accent-text);
   }
 
   .badge {
     position: absolute;
-    top: -4px;
-    left: 16px;
+    top: -5px;
+    left: 32px;
     min-width: 18px;
     padding: 0 5px;
     border-radius: 999px;
     background: var(--accent);
-    color: #1b1a2b;
+    color: var(--on-accent);
     font-size: 0.7rem;
     line-height: 18px;
     text-align: center;

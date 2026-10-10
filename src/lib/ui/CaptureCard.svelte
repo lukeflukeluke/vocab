@@ -3,8 +3,8 @@
   import { formatKey } from '../sync/key';
   import { syncer } from '../sync/sync.svelte';
 
-  // Settings: set up capture (PLAN 13.5), the "Add to Vocab" Shortcut on iPhone and the
-  // +Vocab bookmark on PC. Both drop words into the Inbox.
+  // Settings: set up capture (PLAN 13.5), the "Add to Wordhoard" Shortcut on iPhone and the
+  // +Hoard bookmark on PC. Both drop words into the Inbox.
 
   const origin = location.origin;
   const captureUrl = `${origin}/api/capture`;
@@ -28,7 +28,7 @@
     Met a word while reading? Send it to your Inbox in two taps, with the sentence it was in.
   </p>
 
-  <h3>iPhone: the "Add to Vocab" Shortcut</h3>
+  <h3>iPhone: the "Add to Wordhoard" Shortcut</h3>
   {#if !syncer.key}
     <p class="small">
       Turn on sync first (above): the Shortcut sends words through the sync server.
@@ -39,7 +39,7 @@
       <ol class="steps">
         <li>
           Open the <strong>Shortcuts</strong> app, tap <strong>+</strong>, and name it
-          <strong>Add to Vocab</strong>.
+          <strong>Add to Wordhoard</strong>.
         </li>
         <li>
           Tap <strong>i</strong> (Details) and turn on <strong>Show in Share Sheet</strong>. In the
@@ -80,13 +80,13 @@
       </ol>
       <p class="small">
         To use it: select a word (or a whole sentence) in Safari or any app, tap
-        <strong>Share</strong>, then <strong>Add to Vocab</strong>. You can also run it from the
+        <strong>Share</strong>, then <strong>Add to Wordhoard</strong>. You can also run it from the
         Shortcuts app and type a word.
       </p>
     </details>
   {/if}
 
-  <h3>PC: the +Vocab bookmark</h3>
+  <h3>PC: the +Hoard bookmark</h3>
   <p class="small">
     Show the bookmarks bar (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>), then drag this onto it:
     <a
@@ -97,7 +97,7 @@
       onclick={(event) => {
         event.preventDefault();
         dragHint = true;
-      }}>+Vocab</a
+      }}>+Hoard</a
     >
   </p>
   {#if dragHint}
@@ -105,7 +105,7 @@
       Drag it to the bookmarks bar rather than clicking it here.
     </p>
   {/if}
-  <p class="small">To use it: select a word on any page and click <strong>+Vocab</strong>.</p>
+  <p class="small">To use it: select a word on any page and click <strong>+Hoard</strong>.</p>
 </section>
 
 <style>

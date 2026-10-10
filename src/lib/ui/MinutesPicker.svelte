@@ -85,11 +85,4 @@
     color: var(--muted);
     font-size: 0.9rem;
   }
-
-  @media (prefers-color-scheme: dark) {
-    .chip.on {
-      border-color: #6366f1;
-      background: #4f46e5;
-    }
-  }
 </style>

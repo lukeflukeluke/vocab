@@ -17,6 +17,11 @@
     summary.answered ? Math.round((summary.correct / summary.answered) * 100) : 100,
   );
   const words = (ids: string[]) => ids.flatMap((id) => bank.byId.get(id) ?? []);
+  const cheer = $derived(
+    percent >= 90 ? 'Superb session' : percent >= 70 ? 'Nicely done' : 'Session done',
+  );
+  /** Positions of the little gems that float up behind the score. */
+  const SPARKS = [8, 22, 37, 55, 68, 82, 93];
 
   function onkeydown(event: KeyboardEvent) {
     if (event.key === 'Enter') {
@@ -29,11 +34,27 @@
 <svelte:window {onkeydown} />
 
 <main class="summary" data-testid="summary">
-  <h1>Session done</h1>
-  <p class="score">
-    <strong>{summary.correct}</strong> of {summary.answered} right
-    <span class="muted">({percent}%)</span>
-  </p>
+  <section class="hero">
+    <div class="sparks" aria-hidden="true">
+      {#each SPARKS as left, i (left)}
+        <span style:left="{left}%" style:animation-delay="{i * 0.18}s"></span>
+      {/each}
+    </div>
+    <p class="eyebrow">Session done</p>
+    <h1>{cheer}</h1>
+    <div class="stats">
+      <p class="stat">
+        <strong>{percent}%</strong>
+        <span>{summary.correct} of {summary.answered} right</span>
+      </p>
+      {#if summary.newWords.length}
+        <p class="stat">
+          <strong>+{summary.newWords.length}</strong>
+          <span>{summary.newWords.length === 1 ? 'word' : 'words'} in your hoard</span>
+        </p>
+      {/if}
+    </div>
+  </section>
 
   {#if summary.newWords.length}
     <section>
@@ -85,25 +106,100 @@
       calc(env(safe-area-inset-left) + 16px);
   }
 
+  .hero {
+    position: relative;
+    display: grid;
+    gap: 10px;
+    padding: 24px 20px;
+    overflow: hidden;
+    border-radius: 24px;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgb(235 181 75 / 30%), transparent 60%),
+      linear-gradient(150deg, var(--hero-1), var(--hero-2));
+    color: var(--on-hero);
+    box-shadow: var(--shadow-lift);
+    animation: rise 0.4s var(--ease) both;
+  }
+
+  .hero .eyebrow {
+    color: #f2c766;
+  }
+
   h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    line-height: 1.05;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin-top: 6px;
+  }
+
+  .stat {
+    display: grid;
+  }
+
+  .stat strong {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #f8dc98;
+  }
+
+  .stat span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .sparks span {
+    position: absolute;
+    bottom: -12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #fbe3a0, #e2a52a);
+    opacity: 0;
+    transform: rotate(45deg);
+    animation: float 2.4s ease-out 2 both;
+  }
+
+  @keyframes float {
+    0% {
+      opacity: 0;
+      transform: translateY(0) rotate(45deg) scale(0.6);
+    }
+    20% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-190px) rotate(45deg) scale(1);
+    }
+  }
+
+  section:not(.hero) {
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
   }
 
   h2 {
-    margin: 0 0 6px;
-    color: var(--muted);
-    font-size: 0.8rem;
-    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+    color: var(--accent-text);
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   p {
     margin: 0;
-  }
-
-  .score {
-    font-size: 1.3rem;
   }
 
   ul {

@@ -282,7 +282,7 @@
     padding: 4px 12px;
     border-radius: 999px;
     background: var(--accent);
-    color: #1b1a2b;
+    color: var(--on-accent);
     font-size: 0.8rem;
     font-weight: 700;
     pointer-events: none;

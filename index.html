@@ -3,17 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Vocab</title>
-    <meta name="description" content="Build a vocabulary you can actually use." />
-    <meta name="theme-color" content="#1e1b4b" />
+    <title>Wordhoard</title>
+    <meta
+      name="description"
+      content="Words worth keeping: build a vocabulary you can actually use."
+    />
+    <meta name="theme-color" content="#1b2240" />
     <meta name="color-scheme" content="light dark" />
     <!-- iPhone home-screen app: full screen, white status bar text over the brand header -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Vocab" />
+    <meta name="apple-mobile-web-app-title" content="Wordhoard" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- The app has its own dark theme: ask the Dark Reader extension to leave it alone. -->
+    <meta name="darkreader-lock" />
+    <script>
+      // The theme before the first paint (src/lib/theme.svelte.ts keeps it up to date).
+      try {
+        var choice = localStorage.getItem('wordhoard.theme');
+        var dark =
+          choice === 'dark' ||
+          (choice !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>

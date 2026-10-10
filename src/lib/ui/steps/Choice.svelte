@@ -150,10 +150,20 @@
     border: 1.5px solid var(--border);
     border-radius: 14px;
     background: var(--surface);
+    box-shadow: var(--shadow);
     text-align: left;
     line-height: 1.3;
     cursor: pointer;
     touch-action: manipulation;
+    transition:
+      border-color 0.15s,
+      transform 0.12s var(--ease);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .option:not(:disabled):hover {
+      border-color: var(--accent);
+    }
   }
 
   .option:disabled {
@@ -161,7 +171,8 @@
   }
 
   .option:not(:disabled):active {
-    border-color: var(--brand);
+    border-color: var(--accent);
+    transform: scale(0.985);
   }
 
   .num {
@@ -171,7 +182,7 @@
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: var(--bg);
+    background: var(--surface-2);
     color: var(--muted);
     font-size: 0.8rem;
     font-weight: 700;
@@ -189,6 +200,12 @@
   .right {
     border-color: var(--good);
     background: var(--good-bg);
+    animation: pop 0.35s var(--ease);
+  }
+
+  .right .num {
+    background: var(--good);
+    color: var(--good-bg);
   }
 
   .right .mark {
@@ -198,6 +215,12 @@
   .wrong {
     border-color: var(--bad);
     background: var(--bad-bg);
+    animation: shake 0.35s ease-in-out;
+  }
+
+  .wrong .num {
+    background: var(--bad);
+    color: var(--bad-bg);
   }
 
   .wrong .mark {
@@ -218,6 +241,16 @@
   .feedback {
     display: grid;
     gap: 6px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border-left: 4px solid var(--bad);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    animation: rise 0.25s var(--ease) both;
+  }
+
+  .feedback.good {
+    border-left-color: var(--good);
   }
 
   .feedback:empty {

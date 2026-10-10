@@ -3,7 +3,7 @@
 // workbox.importScripts).
 
 self.addEventListener('push', (event) => {
-  let message = { title: 'Vocab', body: "Today's words are waiting.", url: '/' };
+  let message = { title: 'Wordhoard', body: "Today's words are waiting.", url: '/' };
   try {
     if (event.data) message = { ...message, ...event.data.json() };
   } catch {
