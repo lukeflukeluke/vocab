@@ -260,7 +260,7 @@ You: allow notifications and pick a reminder time.
 
 Done when: a reminder arrives on your phone.
 
-### [ ] C2, [ ] C3: Content batches 2 and 3 (150 each, about 450 total)
+### [x] C2, [ ] C3: Content batches 2 and 3 (150 each, about 450 total)
 ### [ ] F2: Feedback and fixes
 
 ---

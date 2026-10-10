@@ -4,6 +4,52 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-10 · C2: Content batch 2
+
+**Done**
+- 175 new entries in `content/entries/002-batch.json`: candidate positions 157-336 (all
+  editorial words), so the bank now has 345. All pass the checker.
+- Made as the guide says: 5 Sonnet writers in parallel (35 words each), then one Opus
+  reviewer per part at high effort, started as each writer finished. Reviewers changed
+  26 to 35 entries per part. The commonest fixes:
+  - blanks where a near-synonym fitted just as well (now with a clue, a contrast or a
+    typical partner);
+  - entries mixing two senses, cut to one (quash, impervious, intractable, antecedent,
+    unfathomable, whimsical, derelict, jurisprudence, sedentary, inasmuch);
+  - misuse sentences that were actually correct English or too silly to teach anything,
+    replaced with real learner mix-ups (egregious/gregarious, sedentary/sedative,
+    amiable/amicable, impervious/imperious);
+  - a few facts and origins corrected (connoisseur, taxonomy, heretical and Galileo,
+    zenith at noon, allay/alley), and doubtful origins removed.
+- `elitist` is taught as the adjective (`elitist#adj`), the more useful form.
+- One skip recorded in `content/skipped.txt`: burgeoning (same family as burgeon, whose
+  entry uses "burgeoning" as its commonest form).
+- `npm run validate:content -- --only FILE` reports problems in one file only, so
+  parallel writers each check their own part (in `content/GUIDE.md`).
+
+**Decisions**
+- Close near-twins (moniker/nickname, paltry/meagre, pariah/outcast) can still fit some
+  blanks despite clues; the first-letter hint settles them. Same standard as C1.
+- `inasmuch` teaches only "because"; "insofar as" is named in its nuance for "to the
+  extent that".
+
+**Notes for later sessions**
+- Give each writer and reviewer its own scratch folder by name. In C2 two writers shared
+  one, overwrote each other's drafts, and one part briefly held another part's words;
+  it was caught by checking each file's headwords against its list, and redone. The
+  guide now says so.
+- C3 takes positions 337-516 into `003-batch.json`.
+- The F1 idea from C1 still stands: accept a listed near-synonym as "close" (Hard, not
+  Again) in typed blanks.
+
+**Owner to-do**
+1. Skim the sample entries in the pull request. Say "merge" if they read well, or name
+   any that seem off.
+
+**Next:** F1/F2 feedback once you have used the app for a few days, S9, or C3.
+
+---
+
 ## 2026-10-10 · S8: Reminders and backups
 
 **Done**
