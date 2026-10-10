@@ -42,7 +42,9 @@ looks and teaches the same way. The fields are defined in `src/lib/content/types
      parallel, each into its own scratch file, with this guide and the sample entries as
      their brief (each part in its own file, `content/entries/NNN-partK.json`, checked
      with `npm run validate:content -- --only NNN-partK.json`, which reports only that
-     file's problems). Then have one more agent review all of them for meaning (blanks where
+     file's problems). Give each writer its own scratch folder by name (in C2 two
+     writers shared one and overwrote each other's drafts). Then have one more agent
+     review all of them for meaning (blanks where
      another word fits, odd examples, weak "vs" boxes, doubtful origins), fix what it
      finds, and join the parts into the batch file. C1 was made this way.
    - Models (from C2 on): writers on Sonnet 5.5 at normal effort, since writing to this
