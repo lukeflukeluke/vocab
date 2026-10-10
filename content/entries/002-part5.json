@@ -648,7 +648,7 @@
       },
       {
         "text": "Outliers can distort an average, so researchers must decide whether to keep them in the analysis.",
-        "form": "Outliers",
+        "form": "outliers",
         "setting": "academic"
       }
     ],
@@ -1957,8 +1957,8 @@
     "partners": [
       "indoctrinate children",
       "indoctrinated from birth",
-      "political indoctrination",
-      "religious indoctrination",
+      "indoctrinate voters",
+      "indoctrinate the young",
       "an attempt to indoctrinate"
     ],
     "phrases": [
@@ -2358,7 +2358,7 @@
     ],
     "definition": "To find reasons that make a poor choice or bad behaviour seem sensible, often to avoid guilt.",
     "register": "formal",
-    "nuance": "Rationalise usually means making excuses to yourself: finding respectable reasons for something done for a different, less comfortable reason. It is a key idea in psychology. In business it can also mean reorganising to save money, but the excuse sense is the one met in essays. British English spells it rationalise; American English spells it rationalize.",
+    "nuance": "Rationalise usually means making excuses to yourself: finding respectable reasons for something done for a less comfortable reason. It is a key idea in psychology; in business it can also mean reorganising to save money. British English spells it rationalise and American English rationalize.",
     "everyday": "make excuses",
     "examples": [
       {
@@ -3951,7 +3951,7 @@
     "forms": [
       "platitudes"
     ],
-    "definition": "A remark that is dull and obvious because it has been used so often, though said as if it were wise.",
+    "definition": "A dull, obvious remark, used too often, that is said as if it were wise.",
     "register": "formal",
     "nuance": "Platitude is critical: it names a comfortable saying such as 'time heals all wounds' offered when real thought or help is needed. It is common in reviews and criticism of speeches. The speaker may mean well, but the remark adds nothing.",
     "everyday": "empty phrase",

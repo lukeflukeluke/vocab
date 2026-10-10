@@ -1,0 +1,4176 @@
+[
+  {
+    "id": "auspicious#adj",
+    "headword": "auspicious",
+    "pos": "adj",
+    "sense": "promising future success",
+    "forms": [],
+    "definition": "Showing signs that something is likely to go well; favourable for the future.",
+    "register": "formal",
+    "nuance": "Auspicious describes beginnings, signs, occasions and omens that suggest future success. It is positive and slightly ceremonial in tone. Its opposite, 'inauspicious', is often used for a bad start.",
+    "everyday": "promising",
+    "examples": [
+      {
+        "text": "The team's five-nil win in its first match was an auspicious start to the season.",
+        "form": "auspicious",
+        "setting": "news"
+      },
+      {
+        "text": "Historians note that the republic's first peaceful elections were an auspicious sign for its democratic future.",
+        "form": "auspicious",
+        "setting": "academic"
+      },
+      {
+        "text": "Sunshine on the morning of my driving test felt like an auspicious omen.",
+        "form": "auspicious",
+        "setting": "conversation"
+      },
+      {
+        "text": "On an auspicious morning in spring, the merchants set sail with a following wind.",
+        "form": "auspicious",
+        "setting": "fiction"
+      },
+      {
+        "text": "The chairman called the signing of the treaty an auspicious occasion for both nations.",
+        "form": "auspicious",
+        "setting": "formal"
+      },
+      {
+        "text": "The reign began under auspicious circumstances: a good harvest, a peaceful border and a loyal army.",
+        "form": "auspicious",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Everyone saw the rainbow over the stadium as an ___ sign, a good omen for the match ahead.",
+        "answer": "auspicious"
+      },
+      {
+        "text": "It was not an ___ start for the new manager, whose first three matches all ended in defeat.",
+        "answer": "auspicious"
+      },
+      {
+        "text": "She chose an ___ day for the ceremony, hoping that good fortune would follow the couple for life.",
+        "answer": "auspicious"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The auspicious fire destroyed the whole village overnight.",
+        "why": "Auspicious means promising good fortune, so it cannot describe a disaster."
+      },
+      {
+        "text": "He is an auspicious student who always asks clever questions.",
+        "why": "Auspicious describes beginnings, signs and occasions, not people; use 'bright' or 'inquisitive'."
+      }
+    ],
+    "partners": [
+      "an auspicious start",
+      "an auspicious occasion",
+      "an auspicious sign",
+      "an auspicious omen"
+    ],
+    "phrases": [
+      "This was an auspicious beginning to...",
+      "...under auspicious circumstances"
+    ],
+    "family": [
+      "auspiciously",
+      "inauspicious",
+      "auspices"
+    ],
+    "synonyms": [
+      {
+        "word": "promising",
+        "vs": "Promising is everyday and fits people or plans; auspicious fits omens, starts and occasions."
+      },
+      {
+        "word": "favourable",
+        "vs": "Favourable describes good conditions in general; auspicious suggests a sign of success to come."
+      },
+      {
+        "word": "propitious",
+        "vs": "Propitious is even more formal and stresses conditions that favour success; auspicious stresses the good sign itself."
+      }
+    ],
+    "antonyms": [
+      "ominous",
+      "unpromising",
+      "unfavourable"
+    ],
+    "confusables": [
+      {
+        "word": "suspicious",
+        "note": "Suspicious means doubtful or distrustful; it only looks and sounds similar."
+      }
+    ],
+    "roots": [
+      {
+        "part": "avis",
+        "meaning": "bird (Latin)"
+      },
+      {
+        "part": "specere",
+        "meaning": "to look (Latin)"
+      }
+    ],
+    "siblings": [
+      "aviary",
+      "inspect",
+      "spectacle"
+    ],
+    "origin": "From Latin auspicium, built on avis, 'bird', and specere, 'to look': Romans watched birds for signs of what would happen.",
+    "tags": [
+      "describing"
+    ]
+  },
+  {
+    "id": "incoherent#adj",
+    "headword": "incoherent",
+    "pos": "adj",
+    "sense": "confused and not logically connected",
+    "forms": [],
+    "definition": "Unclear and badly connected, so that it cannot be followed or understood.",
+    "register": "neutral",
+    "nuance": "Incoherent describes speech, writing, arguments and people whose words do not link together sensibly. A person can be incoherent from shock, anger or illness, while a text is incoherent when its ideas do not connect. In essay feedback it is a sharp criticism.",
+    "everyday": "confused",
+    "examples": [
+      {
+        "text": "He was so upset that his answer came out as an incoherent jumble of half-finished sentences.",
+        "form": "incoherent",
+        "setting": "conversation"
+      },
+      {
+        "text": "The essay is incoherent: its second half contradicts the first, and the paragraphs follow no clear order.",
+        "form": "incoherent",
+        "setting": "academic"
+      },
+      {
+        "text": "Police said the man was incoherent and unable to give his name when they found him.",
+        "form": "incoherent",
+        "setting": "news"
+      },
+      {
+        "text": "Rage made her incoherent, and the words tumbled out in a furious rush.",
+        "form": "incoherent",
+        "setting": "fiction"
+      },
+      {
+        "text": "The committee rejected the proposal as incoherent, since its aims and its budget did not match.",
+        "form": "incoherent",
+        "setting": "formal"
+      },
+      {
+        "text": "Critics dismissed the theory as incoherent, because its central claims could not all be true at once.",
+        "form": "incoherent",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The speech was so ___ that nobody could tell what point the speaker was trying to make.",
+        "answer": "incoherent"
+      },
+      {
+        "text": "My feedback was that the essay felt ___, with paragraphs jumping from topic to topic and no logical link between them.",
+        "answer": "incoherent"
+      },
+      {
+        "text": "Exhausted and feverish, the patient muttered a few ___ words and fell silent.",
+        "answer": "incoherent"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "Her incoherent argument was clear, logical and easy to follow.",
+        "why": "Incoherent means confused and badly connected, the opposite of clear and logical."
+      },
+      {
+        "text": "He gave an incoherent shout so loud that the whole street heard it.",
+        "why": "Incoherent is about confused, disconnected meaning, not volume; use 'loud' or 'deafening'."
+      }
+    ],
+    "partners": [
+      "an incoherent argument",
+      "incoherent rambling",
+      "incoherent with rage",
+      "an incoherent mess"
+    ],
+    "phrases": [
+      "The argument is incoherent because...",
+      "...an incoherent account of..."
+    ],
+    "family": [
+      "coherent",
+      "coherence",
+      "incoherence",
+      "incoherently"
+    ],
+    "synonyms": [
+      {
+        "word": "confused",
+        "vs": "Confused is general and can describe minds or situations; incoherent focuses on speech or writing that does not hang together."
+      },
+      {
+        "word": "illogical",
+        "vs": "Illogical means breaking the rules of reasoning; incoherent means the parts do not connect, so the whole is unclear."
+      },
+      {
+        "word": "garbled",
+        "vs": "Garbled describes a message distorted on its way; incoherent suggests ideas that were never well connected."
+      }
+    ],
+    "antonyms": [
+      "coherent",
+      "clear",
+      "lucid",
+      "logical"
+    ],
+    "confusables": [
+      {
+        "word": "inconsistent",
+        "note": "Inconsistent means not staying the same or contradicting itself; incoherent means too confused to follow."
+      }
+    ],
+    "roots": [
+      {
+        "part": "in-",
+        "meaning": "not (Latin)"
+      },
+      {
+        "part": "co-",
+        "meaning": "together (Latin)"
+      },
+      {
+        "part": "haerere",
+        "meaning": "to stick (Latin)"
+      }
+    ],
+    "siblings": [
+      "adhere",
+      "adhesive",
+      "cohesion",
+      "hesitate"
+    ],
+    "origin": "From Latin in-, 'not', and cohaerere, 'to stick together': an incoherent text does not hold together.",
+    "tags": [
+      "reasoning"
+    ]
+  },
+  {
+    "id": "indulgent#adj",
+    "headword": "indulgent",
+    "pos": "adj",
+    "sense": "too ready to give people what they want",
+    "forms": [],
+    "definition": "Too ready to give people what they want or to excuse their faults.",
+    "register": "neutral",
+    "nuance": "Indulgent describes people who spoil or go easy on others, and things done purely for pleasure. It can be mild and affectionate, as in an indulgent smile, or critical, as in an indulgent parent. In reviews it can also mean pleasing oneself at the expense of discipline.",
+    "everyday": "lenient",
+    "examples": [
+      {
+        "text": "My grandparents are far too indulgent: they let the kids eat dessert before dinner.",
+        "form": "indulgent",
+        "setting": "conversation"
+      },
+      {
+        "text": "Researchers found that indulgent parenting, with few rules and little correction, is linked to poor self-control in children.",
+        "form": "indulgent",
+        "setting": "academic"
+      },
+      {
+        "text": "Critics called the judge's ruling indulgent, since the fine was smaller than the money the company had saved by breaking the law.",
+        "form": "indulgent",
+        "setting": "news"
+      },
+      {
+        "text": "The old teacher gave the noisy class an indulgent smile and let them finish their game.",
+        "form": "indulgent",
+        "setting": "fiction"
+      },
+      {
+        "text": "The review warned that the university had been indulgent towards departments that regularly overspent.",
+        "form": "indulgent",
+        "setting": "formal"
+      },
+      {
+        "text": "The film is an indulgent exercise: three hours of the director's favourite images with very little story.",
+        "form": "indulgent",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Parents who are too ___ give their children everything they ask for and rarely say no.",
+        "answer": "indulgent"
+      },
+      {
+        "text": "The coach was ___ with his star players, excusing late arrivals that he would never forgive in others.",
+        "answer": "indulgent"
+      },
+      {
+        "text": "Her uncle watched the toddler's mess with an ___ smile, happy to let her have fun.",
+        "answer": "indulgent"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The indulgent teacher punished every mistake with detention.",
+        "why": "Indulgent means too ready to excuse or allow things, so harsh punishment is the opposite."
+      },
+      {
+        "text": "I felt indulgent before the exam, so I could not sleep.",
+        "why": "Indulgent describes someone who spoils or excuses others; for feeling nervous use 'anxious'."
+      }
+    ],
+    "partners": [
+      "an indulgent parent",
+      "an indulgent smile",
+      "indulgent towards",
+      "an indulgent treat"
+    ],
+    "phrases": [
+      "...has been too indulgent towards...",
+      "an indulgent attitude to..."
+    ],
+    "family": [
+      "indulge",
+      "indulgence",
+      "indulgently",
+      "self-indulgent"
+    ],
+    "synonyms": [
+      {
+        "word": "lenient",
+        "vs": "Lenient is about being mild in punishing or judging; indulgent is about giving people what they want."
+      },
+      {
+        "word": "permissive",
+        "vs": "Permissive describes relaxed rules, often in a social or moral sense; indulgent adds the idea of spoiling."
+      },
+      {
+        "word": "tolerant",
+        "vs": "Tolerant accepts differences calmly; indulgent gives in to wishes, sometimes too much."
+      }
+    ],
+    "antonyms": [
+      "strict",
+      "severe",
+      "stern",
+      "harsh"
+    ],
+    "confusables": [
+      {
+        "word": "indigent",
+        "note": "Indigent means very poor."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "ethics"
+    ]
+  },
+  {
+    "id": "acumen#n",
+    "headword": "acumen",
+    "pos": "n",
+    "sense": "sharp, quick practical judgement",
+    "forms": [],
+    "definition": "The ability to judge situations quickly and accurately, especially in business or politics.",
+    "register": "formal",
+    "nuance": "Acumen is always approving and is usually followed by a field: business acumen, political acumen. It suggests a sharp, practical mind that sees opportunities and dangers early. It is uncountable, so we say 'her acumen', not 'an acumen'.",
+    "everyday": "sharp judgement",
+    "examples": [
+      {
+        "text": "Her business acumen turned a tiny shop into a chain of forty stores within ten years.",
+        "form": "acumen",
+        "setting": "news"
+      },
+      {
+        "text": "The study links financial acumen in early adulthood to better long-term savings.",
+        "form": "acumen",
+        "setting": "academic"
+      },
+      {
+        "text": "You'd be amazed at his acumen: he spotted the flaw in the contract in about two minutes.",
+        "form": "acumen",
+        "setting": "conversation"
+      },
+      {
+        "text": "The old detective's acumen was legendary; he could read a lie in a person's hands.",
+        "form": "acumen",
+        "setting": "fiction"
+      },
+      {
+        "text": "The role requires strong commercial acumen and experience of managing large budgets.",
+        "form": "acumen",
+        "setting": "formal"
+      },
+      {
+        "text": "Historians praise the minister's political acumen in building a coalition from bitter rivals.",
+        "form": "acumen",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Her financial ___ was obvious: she saw the market crash coming and sold everything just in time.",
+        "answer": "acumen"
+      },
+      {
+        "text": "The firm hired him for his legal ___, his quick eye for the weak point in any contract.",
+        "answer": "acumen"
+      },
+      {
+        "text": "A politician with real ___ can sense which way public opinion is moving long before the polls do.",
+        "answer": "acumen"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She tripped over a rock with great acumen.",
+        "why": "Acumen is sharp mental judgement, not physical skill or clumsiness."
+      },
+      {
+        "text": "He lacks acumen, so he always makes wise decisions.",
+        "why": "Lacking acumen means having poor judgement, so wise decisions do not follow."
+      }
+    ],
+    "partners": [
+      "business acumen",
+      "political acumen",
+      "financial acumen",
+      "commercial acumen",
+      "great acumen"
+    ],
+    "phrases": [
+      "...showed considerable acumen in...",
+      "...had the acumen to..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "shrewdness",
+        "vs": "Shrewdness stresses cleverness in dealing with people and money; acumen is a more formal word for sharp judgement in a field."
+      },
+      {
+        "word": "insight",
+        "vs": "Insight is a deep understanding of something; acumen is practical skill in judging and acting."
+      },
+      {
+        "word": "savvy",
+        "vs": "Savvy is informal and means practical know-how; acumen is formal and sounds more impressive."
+      }
+    ],
+    "antonyms": [
+      "naivety",
+      "foolishness"
+    ],
+    "confusables": [
+      {
+        "word": "acuity",
+        "note": "Acuity means sharpness of the senses or the mind, as in visual acuity; acumen is sharp judgement."
+      }
+    ],
+    "roots": [
+      {
+        "part": "acuere",
+        "meaning": "to sharpen (Latin)"
+      }
+    ],
+    "siblings": [
+      "acute",
+      "acupuncture"
+    ],
+    "origin": "From Latin acumen, 'sharpness' or 'point', from acuere, 'to sharpen'.",
+    "tags": [
+      "thought"
+    ]
+  },
+  {
+    "id": "disinterested#adj",
+    "headword": "disinterested",
+    "pos": "adj",
+    "sense": "impartial, with nothing to gain",
+    "forms": [],
+    "definition": "Fair and impartial because you have nothing to gain or lose from the result.",
+    "register": "formal",
+    "nuance": "Disinterested means free from personal bias or advantage, so it praises judges, experts, advice and research. Many people also use it to mean 'bored' or 'not interested', but careful writers keep the two words apart. In essays, use it for sources with no stake in the outcome.",
+    "everyday": "impartial",
+    "examples": [
+      {
+        "text": "Because the arbitrator has no money or friends at stake, she can give disinterested advice to both sides.",
+        "form": "disinterested",
+        "setting": "formal"
+      },
+      {
+        "text": "Science aims to be a disinterested search for truth, free from the wishes of funders and politicians.",
+        "form": "disinterested",
+        "setting": "academic"
+      },
+      {
+        "text": "The inquiry will be led by a disinterested panel with no ties to the company or the government.",
+        "form": "disinterested",
+        "setting": "news"
+      },
+      {
+        "text": "I'd like some disinterested advice, so I'm asking you, since you've nothing to gain either way.",
+        "form": "disinterested",
+        "setting": "conversation"
+      },
+      {
+        "text": "He watched the quarrel with disinterested calm, as a stranger on a train might.",
+        "form": "disinterested",
+        "setting": "fiction"
+      },
+      {
+        "text": "Readers should ask whether the author is a disinterested observer or has a stake in the outcome.",
+        "form": "disinterested",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "A juror must be ___, with no personal stake in the verdict and no loyalty to either side.",
+        "answer": "disinterested"
+      },
+      {
+        "text": "Unlike a bored listener, a ___ judge cares a great deal about the case but has no personal stake in it.",
+        "answer": "disinterested"
+      },
+      {
+        "text": "She offered ___ advice, caring only about what was best for him and not about what she might gain.",
+        "answer": "disinterested"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "I was disinterested in the lecture, so I fell asleep.",
+        "why": "Disinterested means impartial; for bored or lacking interest use 'uninterested'."
+      },
+      {
+        "text": "The disinterested judge owned half the company on trial.",
+        "why": "A disinterested judge has no personal stake, but owning the company is exactly a stake."
+      }
+    ],
+    "partners": [
+      "a disinterested observer",
+      "disinterested advice",
+      "a disinterested party",
+      "disinterested research"
+    ],
+    "phrases": [
+      "...requires a disinterested observer...",
+      "...the disinterested pursuit of knowledge"
+    ],
+    "family": [
+      "disinterest",
+      "disinterestedly",
+      "disinterestedness"
+    ],
+    "synonyms": [
+      {
+        "word": "impartial",
+        "vs": "Impartial stresses treating all sides equally; disinterested stresses having no personal stake in the result."
+      },
+      {
+        "word": "neutral",
+        "vs": "Neutral means taking no side, often in a conflict; disinterested means you gain nothing from either outcome."
+      },
+      {
+        "word": "objective",
+        "vs": "Objective is about judging by facts rather than feelings; disinterested is about having no stake."
+      }
+    ],
+    "antonyms": [
+      "biased",
+      "partial",
+      "partisan"
+    ],
+    "confusables": [
+      {
+        "word": "uninterested",
+        "note": "Uninterested means bored or not curious. Many speakers use disinterested this way too, but careful writers keep the words apart."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "irreparable#adj",
+    "headword": "irreparable",
+    "pos": "adj",
+    "sense": "too severe to be repaired or put right",
+    "forms": [],
+    "definition": "So badly damaged or harmful that it can never be put right.",
+    "register": "formal",
+    "nuance": "Irreparable is used with damage, harm, loss and breaks in relationships. It is common in law, where 'irreparable harm' can justify a court order, and in news about disasters. It stresses that money or effort cannot undo the damage.",
+    "everyday": "beyond repair",
+    "examples": [
+      {
+        "text": "The fire caused irreparable damage to the library, destroying books that exist nowhere else.",
+        "form": "irreparable",
+        "setting": "news"
+      },
+      {
+        "text": "Overfishing can cause irreparable harm to marine ecosystems that never fully recover.",
+        "form": "irreparable",
+        "setting": "academic"
+      },
+      {
+        "text": "I think that argument did irreparable harm to their friendship; they haven't spoken since.",
+        "form": "irreparable",
+        "setting": "conversation"
+      },
+      {
+        "text": "She knew at once that the vase was irreparable, scattered across the floor in a hundred pieces.",
+        "form": "irreparable",
+        "setting": "fiction"
+      },
+      {
+        "text": "The company asked the court to block the sale, arguing that it would suffer irreparable harm.",
+        "form": "irreparable",
+        "setting": "formal"
+      },
+      {
+        "text": "Some historians argue that the war caused an irreparable break between the two communities.",
+        "form": "irreparable",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The flood did ___ damage to the ancient manuscripts, which no restorer could ever bring back.",
+        "answer": "irreparable"
+      },
+      {
+        "text": "After years of lies, the harm to their marriage was ___, and no apology could mend it.",
+        "answer": "irreparable"
+      },
+      {
+        "text": "A court may stop a company from acting if the action would cause ___ harm that money cannot fix.",
+        "answer": "irreparable"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The scratch was irreparable, so a quick rub with a cloth removed it.",
+        "why": "Irreparable means impossible to repair, so something fixed with a cloth was not irreparable."
+      },
+      {
+        "text": "He felt irreparable pleasure at the news.",
+        "why": "Irreparable describes damage, harm or loss, not good feelings."
+      }
+    ],
+    "partners": [
+      "irreparable damage",
+      "irreparable harm",
+      "an irreparable loss",
+      "an irreparable rift"
+    ],
+    "phrases": [
+      "...would cause irreparable harm to...",
+      "...an irreparable breach of trust"
+    ],
+    "family": [
+      "irreparably",
+      "reparable",
+      "reparation"
+    ],
+    "synonyms": [
+      {
+        "word": "irreversible",
+        "vs": "Irreversible means it cannot be turned back to an earlier state; irreparable stresses that the damage cannot be put right."
+      },
+      {
+        "word": "permanent",
+        "vs": "Permanent only says that something lasts; irreparable says it lasts and is harmful."
+      },
+      {
+        "word": "incurable",
+        "vs": "Incurable is mainly for diseases and problems; irreparable is for damage and loss."
+      }
+    ],
+    "antonyms": [
+      "repairable",
+      "reversible",
+      "curable"
+    ],
+    "confusables": [
+      {
+        "word": "irreplaceable",
+        "note": "Irreplaceable means too special to be replaced; irreparable means too damaged to be repaired."
+      }
+    ],
+    "roots": [
+      {
+        "part": "re-",
+        "meaning": "again (Latin)"
+      },
+      {
+        "part": "parare",
+        "meaning": "to make ready (Latin)"
+      }
+    ],
+    "siblings": [
+      "repair",
+      "prepare"
+    ],
+    "origin": "From Latin irreparabilis, 'that cannot be restored', from reparare, 'to restore'.",
+    "tags": [
+      "describing"
+    ]
+  },
+  {
+    "id": "noxious#adj",
+    "headword": "noxious",
+    "pos": "adj",
+    "sense": "harmful or poisonous, often foul-smelling",
+    "forms": [],
+    "definition": "Harmful to health or the environment, and often unpleasant to smell or taste.",
+    "register": "formal",
+    "nuance": "Noxious is used for gases, fumes, chemicals and weeds that can harm living things. It often suggests an unpleasant smell as well. Writers also use it figuratively for ideas or influences seen as poisonous.",
+    "everyday": "harmful",
+    "examples": [
+      {
+        "text": "Noxious fumes from the factory forced hundreds of residents to leave their homes.",
+        "form": "noxious",
+        "setting": "news"
+      },
+      {
+        "text": "The study measured the effect of noxious gases such as sulphur dioxide on the health of city children.",
+        "form": "noxious",
+        "setting": "academic"
+      },
+      {
+        "text": "Don't open that bin; the smell is absolutely noxious.",
+        "form": "noxious",
+        "setting": "conversation"
+      },
+      {
+        "text": "A noxious green smoke rose from the cauldron and made the apprentice cough.",
+        "form": "noxious",
+        "setting": "fiction"
+      },
+      {
+        "text": "The regulations ban the release of noxious substances into rivers and streams.",
+        "form": "noxious",
+        "setting": "formal"
+      },
+      {
+        "text": "The author calls the rumour a noxious influence on public debate, poisoning trust between neighbours.",
+        "form": "noxious",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Factory chimneys released ___ fumes that burned the eyes and made breathing painful.",
+        "answer": "noxious"
+      },
+      {
+        "text": "Gardeners hate that ___ weed, which poisons the soil and kills the plants around it.",
+        "answer": "noxious"
+      },
+      {
+        "text": "Opening the sealed tank released a ___ gas that could poison anyone who breathed it in.",
+        "answer": "noxious"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "We enjoyed the noxious scent of fresh bread in the bakery.",
+        "why": "Noxious means harmful and usually foul; fresh bread is neither."
+      },
+      {
+        "text": "The noxious teacher was in a bad mood today.",
+        "why": "Noxious describes substances, fumes or influences, not a mood; use 'unpleasant' or 'grumpy'."
+      }
+    ],
+    "partners": [
+      "noxious fumes",
+      "noxious gas",
+      "a noxious weed",
+      "noxious chemicals",
+      "a noxious influence"
+    ],
+    "phrases": [
+      "...releases noxious fumes into...",
+      "...a noxious influence on..."
+    ],
+    "family": [
+      "noxiously"
+    ],
+    "synonyms": [
+      {
+        "word": "toxic",
+        "vs": "Toxic stresses poison and is common in science and everyday talk; noxious often adds an unpleasant smell or spreading harm."
+      },
+      {
+        "word": "poisonous",
+        "vs": "Poisonous is plain and usually about substances that harm when eaten or touched; noxious suits fumes and gases."
+      },
+      {
+        "word": "harmful",
+        "vs": "Harmful is general and mild; noxious is stronger and more vivid, suggesting something foul."
+      }
+    ],
+    "antonyms": [
+      "harmless",
+      "wholesome",
+      "innocuous"
+    ],
+    "confusables": [
+      {
+        "word": "obnoxious",
+        "note": "Obnoxious means extremely unpleasant, usually of a person or behaviour; noxious means physically harmful."
+      }
+    ],
+    "roots": [
+      {
+        "part": "noxa",
+        "meaning": "harm (Latin)"
+      }
+    ],
+    "siblings": [
+      "obnoxious",
+      "innocuous",
+      "innocent"
+    ],
+    "origin": "From Latin noxius, 'harmful', from noxa, 'harm'.",
+    "tags": [
+      "judgement",
+      "describing"
+    ]
+  },
+  {
+    "id": "opulent#adj",
+    "headword": "opulent",
+    "pos": "adj",
+    "sense": "very luxurious and richly decorated",
+    "forms": [],
+    "definition": "Showing great wealth, with rich decoration and expensive things.",
+    "register": "formal",
+    "nuance": "Opulent describes rooms, buildings, parties and lifestyles that display great wealth. It can be admiring, but it can also hint at excess or showing off. It is common in descriptions of palaces, hotels and fashion.",
+    "everyday": "luxurious",
+    "examples": [
+      {
+        "text": "The palace's opulent ballroom had gold walls, crystal chandeliers and floors of polished marble.",
+        "form": "opulent",
+        "setting": "fiction"
+      },
+      {
+        "text": "Historians describe the court of Louis XIV as opulent, designed to display the king's power.",
+        "form": "opulent",
+        "setting": "academic"
+      },
+      {
+        "text": "The billionaire's opulent wedding, with three hundred guests and a private island, drew widespread criticism.",
+        "form": "opulent",
+        "setting": "news"
+      },
+      {
+        "text": "We stayed in this opulent hotel with marble bathrooms, and honestly it felt like a film set.",
+        "form": "opulent",
+        "setting": "conversation"
+      },
+      {
+        "text": "The guidebook praises the opulent interior of the opera house, restored at great expense.",
+        "form": "opulent",
+        "setting": "formal"
+      },
+      {
+        "text": "The novel contrasts the opulent homes of the aristocracy with the cramped slums nearby.",
+        "form": "opulent",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The hotel lobby was ___, with golden columns, velvet sofas and a chandelier the size of a car.",
+        "answer": "opulent"
+      },
+      {
+        "text": "In contrast to their plain village church, the cathedral was ___ and covered in gold and jewels.",
+        "answer": "opulent"
+      },
+      {
+        "text": "The emperor lived an ___ life, with silk, silver and servants at every meal.",
+        "answer": "opulent"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The opulent hut had a leaking roof and a bare earth floor.",
+        "why": "Opulent means richly luxurious, the opposite of a bare, leaking hut."
+      },
+      {
+        "text": "She greeted us with an opulent smile.",
+        "why": "Opulent describes rich, luxurious things; a smile can be wide or warm but not opulent."
+      }
+    ],
+    "partners": [
+      "an opulent palace",
+      "opulent surroundings",
+      "opulent decor",
+      "an opulent lifestyle"
+    ],
+    "phrases": [
+      "...the opulent interiors of...",
+      "...in opulent surroundings"
+    ],
+    "family": [
+      "opulence",
+      "opulently"
+    ],
+    "synonyms": [
+      {
+        "word": "luxurious",
+        "vs": "Luxurious is general and pleasant; opulent suggests more display and decoration, sometimes excessive."
+      },
+      {
+        "word": "lavish",
+        "vs": "Lavish stresses generous spending or abundance; opulent stresses a rich look and decoration."
+      },
+      {
+        "word": "sumptuous",
+        "vs": "Sumptuous is very close but stresses rich, costly beauty, often for food, fabrics and rooms."
+      }
+    ],
+    "antonyms": [
+      "austere",
+      "plain",
+      "spartan",
+      "humble"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "origin": "From Latin opulentus, 'rich, wealthy'.",
+    "tags": [
+      "degree",
+      "describing"
+    ]
+  },
+  {
+    "id": "replete#adj",
+    "headword": "replete",
+    "pos": "adj",
+    "sense": "full of, richly supplied with",
+    "forms": [],
+    "definition": "Filled with something, or supplied with it in great quantity.",
+    "register": "formal",
+    "nuance": "Replete is almost always followed by 'with': replete with examples, replete with detail. It suggests a rich or even overfull supply and is common in book reviews and essays. It can also mean full after a meal, but that use is rarer.",
+    "everyday": "full of",
+    "examples": [
+      {
+        "text": "The old house was replete with antiques, from grandfather clocks to carved wooden chests.",
+        "form": "replete",
+        "setting": "fiction"
+      },
+      {
+        "text": "The report is replete with statistics, but it offers little explanation of what they mean.",
+        "form": "replete",
+        "setting": "academic"
+      },
+      {
+        "text": "The festival programme is replete with famous names, from film stars to Nobel prize winners.",
+        "form": "replete",
+        "setting": "news"
+      },
+      {
+        "text": "That film is replete with jokes, so I'm surprised you didn't laugh once.",
+        "form": "replete",
+        "setting": "conversation"
+      },
+      {
+        "text": "The archive is replete with letters and diaries that cover three centuries of local life.",
+        "form": "replete",
+        "setting": "formal"
+      },
+      {
+        "text": "Her essay is replete with quotations, yet the argument itself remains thin.",
+        "form": "replete",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The travel guide is ___ with colourful photographs, maps and tips from local people.",
+        "answer": "replete"
+      },
+      {
+        "text": "The reviewer described the novel as ___ with symbolism, overflowing in every chapter.",
+        "answer": "replete"
+      },
+      {
+        "text": "The legal document was ___ with technical terms that few ordinary readers could follow.",
+        "answer": "replete"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The desert was replete with water for hundreds of miles.",
+        "why": "Replete means richly supplied or full, so it clashes with a desert that has almost no water."
+      },
+      {
+        "text": "She was replete of ideas for the project.",
+        "why": "Replete takes 'with', not 'of': replete with ideas."
+      }
+    ],
+    "partners": [
+      "replete with detail",
+      "replete with examples",
+      "replete with irony",
+      "replete with references"
+    ],
+    "phrases": [
+      "The text is replete with...",
+      "...a history replete with..."
+    ],
+    "family": [
+      "repletion"
+    ],
+    "synonyms": [
+      {
+        "word": "full",
+        "vs": "Full is everyday and neutral; replete is formal and suggests a rich or complete supply."
+      },
+      {
+        "word": "rich in",
+        "vs": "Rich in is plain and positive; replete may suggest there is almost too much."
+      },
+      {
+        "word": "brimming",
+        "vs": "Brimming is vivid and a little informal, as if about to overflow; replete is calmer and more formal."
+      }
+    ],
+    "antonyms": [
+      "empty",
+      "bare",
+      "devoid",
+      "lacking"
+    ],
+    "confusables": [
+      {
+        "word": "replicate",
+        "note": "Replicate means copy or repeat; replete means full."
+      }
+    ],
+    "roots": [
+      {
+        "part": "re-",
+        "meaning": "again, thoroughly (Latin)"
+      },
+      {
+        "part": "plere",
+        "meaning": "to fill (Latin)"
+      }
+    ],
+    "siblings": [
+      "complete",
+      "deplete",
+      "plenty"
+    ],
+    "origin": "From Latin replere, 'to fill up'.",
+    "tags": [
+      "degree"
+    ]
+  },
+  {
+    "id": "repugnant#adj",
+    "headword": "repugnant",
+    "pos": "adj",
+    "sense": "causing strong disgust or moral objection",
+    "forms": [],
+    "definition": "Causing strong disgust or moral disapproval; completely unacceptable to your feelings or values.",
+    "register": "formal",
+    "nuance": "Repugnant describes ideas, practices, behaviour and sights that cause strong disgust or moral objection. It is stronger than 'unpleasant' and is often used with 'to', as in 'repugnant to most people'. It is common in discussions of ethics and law.",
+    "everyday": "disgusting",
+    "examples": [
+      {
+        "text": "The idea of punishing a child for telling the truth is repugnant to most parents.",
+        "form": "repugnant",
+        "setting": "conversation"
+      },
+      {
+        "text": "Slavery was repugnant to a growing number of citizens, who began to campaign for its abolition.",
+        "form": "repugnant",
+        "setting": "academic"
+      },
+      {
+        "text": "The minister called the attack repugnant and promised that those responsible would be punished.",
+        "form": "repugnant",
+        "setting": "news"
+      },
+      {
+        "text": "The smell of the rotting fish was so repugnant that she held her sleeve over her nose.",
+        "form": "repugnant",
+        "setting": "fiction"
+      },
+      {
+        "text": "The tribunal found the company's treatment of its workers repugnant to basic standards of decency.",
+        "form": "repugnant",
+        "setting": "formal"
+      },
+      {
+        "text": "Philosophers disagree about whether a practice that seems repugnant is wrong for that reason alone.",
+        "form": "repugnant",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Cruelty to animals is ___ to most of us because it makes us feel both angry and sick.",
+        "answer": "repugnant"
+      },
+      {
+        "text": "The politician's views were so morally ___ that even his own party refused to defend them.",
+        "answer": "repugnant"
+      },
+      {
+        "text": "She found the rotten smell ___ and hurried out of the kitchen, holding her breath.",
+        "answer": "repugnant"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The repugnant dessert was my favourite part of the meal.",
+        "why": "Repugnant means causing strong disgust, so it cannot describe a favourite."
+      },
+      {
+        "text": "He was repugnant to buy a new phone.",
+        "why": "Repugnant describes what causes disgust, not a person's unwillingness; use 'reluctant' for that."
+      }
+    ],
+    "partners": [
+      "morally repugnant",
+      "repugnant to",
+      "a repugnant idea",
+      "find it repugnant"
+    ],
+    "phrases": [
+      "...is morally repugnant because...",
+      "Such practices are repugnant to..."
+    ],
+    "family": [
+      "repugnance"
+    ],
+    "synonyms": [
+      {
+        "word": "repulsive",
+        "vs": "Repulsive stresses physical disgust that makes you turn away; repugnant is more often moral."
+      },
+      {
+        "word": "abhorrent",
+        "vs": "Abhorrent is even stronger and nearly always moral; repugnant can also be about taste."
+      },
+      {
+        "word": "distasteful",
+        "vs": "Distasteful is mild and polite; repugnant is far stronger."
+      }
+    ],
+    "antonyms": [
+      "appealing",
+      "pleasant",
+      "agreeable",
+      "attractive"
+    ],
+    "confusables": [
+      {
+        "word": "reluctant",
+        "note": "Reluctant means unwilling to do something; it is not about disgust at a thing."
+      }
+    ],
+    "roots": [
+      {
+        "part": "re-",
+        "meaning": "back, against (Latin)"
+      },
+      {
+        "part": "pugnare",
+        "meaning": "to fight (Latin)"
+      }
+    ],
+    "siblings": [
+      "pugnacious",
+      "pugilist",
+      "impugn"
+    ],
+    "origin": "From Latin repugnare, 'to fight against, resist': a repugnant thing is something your feelings resist.",
+    "tags": [
+      "judgement",
+      "ethics"
+    ]
+  },
+  {
+    "id": "unequivocal#adj",
+    "headword": "unequivocal",
+    "pos": "adj",
+    "sense": "clear, leaving no room for doubt",
+    "forms": [],
+    "definition": "Stated or shown so clearly that there is no doubt about the meaning.",
+    "register": "formal",
+    "nuance": "Unequivocal describes statements, answers, evidence and support that leave no room for doubt. It is strong and often paired with 'support', 'denial' or 'evidence'. Careful writers use it sparingly, because few findings are truly beyond doubt.",
+    "everyday": "absolutely clear",
+    "examples": [
+      {
+        "text": "When asked if she would resign, the minister gave an unequivocal answer: 'No.'",
+        "form": "unequivocal",
+        "setting": "news"
+      },
+      {
+        "text": "The data provide unequivocal evidence that the drug works, since every patient improved.",
+        "form": "unequivocal",
+        "setting": "academic"
+      },
+      {
+        "text": "I gave him an unequivocal no, so he can't say he didn't know.",
+        "form": "unequivocal",
+        "setting": "conversation"
+      },
+      {
+        "text": "The old woman's reply was unequivocal: the door would stay closed.",
+        "form": "unequivocal",
+        "setting": "fiction"
+      },
+      {
+        "text": "The contract contains an unequivocal ban on selling the product outside the region.",
+        "form": "unequivocal",
+        "setting": "formal"
+      },
+      {
+        "text": "Few historical sources offer unequivocal answers, so scholars must weigh competing accounts.",
+        "form": "unequivocal",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The jury was shown ___ proof of his guilt: a video that left no room for doubt.",
+        "answer": "unequivocal"
+      },
+      {
+        "text": "The president gave ___ support to the plan, with no conditions and no hesitation at all.",
+        "answer": "unequivocal"
+      },
+      {
+        "text": "Scientists rarely claim ___ results, because most findings leave at least some room for doubt.",
+        "answer": "unequivocal"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "His unequivocal answer was so vague that nobody knew what he meant.",
+        "why": "Unequivocal means impossible to misunderstand, so a vague answer cannot be unequivocal."
+      },
+      {
+        "text": "The unequivocal text could be read in several different ways.",
+        "why": "Unequivocal means having only one possible meaning; a text with several readings is equivocal."
+      }
+    ],
+    "partners": [
+      "unequivocal evidence",
+      "unequivocal support",
+      "an unequivocal answer",
+      "unequivocal condemnation"
+    ],
+    "phrases": [
+      "The evidence is unequivocal:...",
+      "...gave unequivocal support to..."
+    ],
+    "family": [
+      "unequivocally",
+      "equivocal",
+      "equivocate",
+      "equivocation"
+    ],
+    "synonyms": [
+      {
+        "word": "unambiguous",
+        "vs": "Unambiguous is about wording that has one meaning; unequivocal adds a strong, firm tone."
+      },
+      {
+        "word": "categorical",
+        "vs": "Categorical means without conditions or exceptions, as in a categorical denial; unequivocal stresses lack of doubt."
+      },
+      {
+        "word": "explicit",
+        "vs": "Explicit means stated openly and in detail; unequivocal means impossible to doubt or misread."
+      }
+    ],
+    "antonyms": [
+      "equivocal",
+      "ambiguous",
+      "vague",
+      "uncertain"
+    ],
+    "confusables": [],
+    "roots": [
+      {
+        "part": "aequus",
+        "meaning": "equal (Latin)"
+      },
+      {
+        "part": "vocare",
+        "meaning": "to call (Latin)"
+      }
+    ],
+    "siblings": [
+      "equal",
+      "vocal",
+      "advocate",
+      "vocabulary"
+    ],
+    "origin": "From equivocal, 'equal-voiced' (Latin aequus, 'equal', and vox, 'voice'), meaning open to two readings; the prefix un- reverses it.",
+    "tags": [
+      "reasoning"
+    ]
+  },
+  {
+    "id": "unfathomable#adj",
+    "headword": "unfathomable",
+    "pos": "adj",
+    "sense": "too deep or complex to understand",
+    "forms": [],
+    "definition": "Impossible to understand fully, or too deep to measure.",
+    "register": "formal",
+    "nuance": "Unfathomable describes things so vast, complex or mysterious that the mind cannot grasp them, such as motives, grief, depths and numbers. It may express wonder or frustration. A fathom is an old measure of water depth, so the word still hints at depth.",
+    "everyday": "beyond understanding",
+    "examples": [
+      {
+        "text": "His decision to quit a perfectly good job without a plan was unfathomable to his family.",
+        "form": "unfathomable",
+        "setting": "conversation"
+      },
+      {
+        "text": "The universe contains unfathomable distances, so large that light from some stars has taken billions of years to reach us.",
+        "form": "unfathomable",
+        "setting": "academic"
+      },
+      {
+        "text": "Rescuers described the family's loss as unfathomable after the flood destroyed the whole street.",
+        "form": "unfathomable",
+        "setting": "news"
+      },
+      {
+        "text": "Beneath the ice lay the unfathomable darkness of a lake that no one had ever measured.",
+        "form": "unfathomable",
+        "setting": "fiction"
+      },
+      {
+        "text": "The scale of the damage was unfathomable, and officials could only estimate the cost.",
+        "form": "unfathomable",
+        "setting": "formal"
+      },
+      {
+        "text": "Medieval writers saw God's purposes as unfathomable, beyond the reach of human reason.",
+        "form": "unfathomable",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Her grief was so deep and ___ that no words of comfort seemed to reach it.",
+        "answer": "unfathomable"
+      },
+      {
+        "text": "The sea there is ___, a black depth whose bottom no rope or instrument has ever touched.",
+        "answer": "unfathomable"
+      },
+      {
+        "text": "To outsiders the rules of the game seemed ___, since no amount of explaining made them clear.",
+        "answer": "unfathomable"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The instructions were so unfathomable and simple that a child could follow them.",
+        "why": "Unfathomable means impossible to understand, so it cannot describe simple instructions."
+      },
+      {
+        "text": "The shallow puddle was unfathomable, so we stepped across it.",
+        "why": "Unfathomable means too deep to measure or understand; a shallow puddle is easily measured."
+      }
+    ],
+    "partners": [
+      "unfathomable depths",
+      "unfathomable grief",
+      "unfathomable reasons",
+      "unfathomable to"
+    ],
+    "phrases": [
+      "...for reasons that remain unfathomable",
+      "...an unfathomable gap between..."
+    ],
+    "family": [
+      "unfathomably",
+      "fathom"
+    ],
+    "synonyms": [
+      {
+        "word": "incomprehensible",
+        "vs": "Incomprehensible means impossible to understand; unfathomable adds a sense of depth or vastness."
+      },
+      {
+        "word": "inscrutable",
+        "vs": "Inscrutable describes people or faces that give nothing away; unfathomable describes things too deep to grasp."
+      },
+      {
+        "word": "immeasurable",
+        "vs": "Immeasurable means too big to measure; unfathomable can also mean too puzzling to understand."
+      }
+    ],
+    "antonyms": [
+      "comprehensible",
+      "clear",
+      "shallow"
+    ],
+    "confusables": [],
+    "roots": [
+      {
+        "part": "fathom",
+        "meaning": "an old measure of water depth, about six feet"
+      }
+    ],
+    "siblings": [],
+    "origin": "A fathom is a unit for measuring water depth; to fathom something is to measure how deep it goes, and so to understand it.",
+    "tags": [
+      "thought",
+      "describing"
+    ]
+  },
+  {
+    "id": "ascetic#adj",
+    "headword": "ascetic",
+    "pos": "adj",
+    "sense": "living very simply, denying pleasures",
+    "forms": [],
+    "definition": "Living in a very simple, strict way and avoiding pleasures, often for religious or moral reasons.",
+    "register": "formal",
+    "nuance": "Ascetic describes people, lifestyles and habits marked by strict self-denial. It is common in writing about religion and philosophy, and can be admiring or suggest joyless severity. The noun, an ascetic, means a person who lives this way.",
+    "everyday": "self-denying",
+    "examples": [
+      {
+        "text": "The monks lived an ascetic life, sleeping on hard beds, eating plain bread and owning nothing.",
+        "form": "ascetic",
+        "setting": "fiction"
+      },
+      {
+        "text": "Early Christian hermits adopted an ascetic way of life in the desert, giving up comfort for prayer.",
+        "form": "ascetic",
+        "setting": "academic"
+      },
+      {
+        "text": "My uncle is quite ascetic: no television, no car and one cup of black tea a day.",
+        "form": "ascetic",
+        "setting": "conversation"
+      },
+      {
+        "text": "The prime minister's ascetic habits, from cold showers to simple meals, are well known.",
+        "form": "ascetic",
+        "setting": "news"
+      },
+      {
+        "text": "The founder's ascetic principles shaped the order's rules on food, clothing and possessions.",
+        "form": "ascetic",
+        "setting": "formal"
+      },
+      {
+        "text": "Weber linked the ascetic discipline of early Protestants to the growth of modern capitalism.",
+        "form": "ascetic",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The hermit led an ___ life, sleeping on the floor and eating only bread and water.",
+        "answer": "ascetic"
+      },
+      {
+        "text": "Unlike his comfort-loving brother, he was ___ by nature and gave away most of what he earned.",
+        "answer": "ascetic"
+      },
+      {
+        "text": "The artist's ___ studio held a table, a chair and nothing else, as if pleasure were a sin.",
+        "answer": "ascetic"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The ascetic millionaire bought a new yacht every year.",
+        "why": "An ascetic person denies themselves luxuries, so buying a yacht every year contradicts it."
+      },
+      {
+        "text": "She felt ascetic after the long hike.",
+        "why": "Ascetic is about deliberately living simply, not feeling tired; use 'exhausted' or 'weary'."
+      }
+    ],
+    "partners": [
+      "an ascetic life",
+      "ascetic discipline",
+      "ascetic practices",
+      "an ascetic monk"
+    ],
+    "phrases": [
+      "...adopted an ascetic lifestyle...",
+      "...the ascetic ideal of..."
+    ],
+    "family": [
+      "asceticism",
+      "ascetically"
+    ],
+    "synonyms": [
+      {
+        "word": "austere",
+        "vs": "Austere describes plain, severe things and styles as well as people; ascetic stresses choosing self-denial."
+      },
+      {
+        "word": "abstemious",
+        "vs": "Abstemious means moderate, especially in food and drink; ascetic is stricter and often spiritual."
+      },
+      {
+        "word": "spartan",
+        "vs": "Spartan describes harsh, simple conditions; ascetic describes a person's deliberate choice."
+      }
+    ],
+    "antonyms": [
+      "hedonistic",
+      "self-indulgent",
+      "luxurious"
+    ],
+    "confusables": [
+      {
+        "word": "aesthetic",
+        "note": "Aesthetic is about beauty and art; the two look similar in writing but mean different things."
+      }
+    ],
+    "roots": [
+      {
+        "part": "askein",
+        "meaning": "to exercise, train (Greek)"
+      }
+    ],
+    "siblings": [],
+    "origin": "From Greek askesis, 'training': early ascetics trained their bodies and minds like athletes.",
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "capitulate#v",
+    "headword": "capitulate",
+    "pos": "v",
+    "sense": "give in and stop resisting",
+    "forms": [
+      "capitulates",
+      "capitulated",
+      "capitulating"
+    ],
+    "definition": "To stop resisting and give in to an enemy, a demand or pressure.",
+    "register": "formal",
+    "nuance": "Capitulate suggests giving in after a struggle, usually because resistance has become hopeless or too costly. It is used for armies, governments, negotiators and ordinary people under pressure. It can sound critical, as if the person lacked courage.",
+    "everyday": "give in",
+    "examples": [
+      {
+        "text": "After a six-month siege, the starving city finally capitulated to the invading army.",
+        "form": "capitulated",
+        "setting": "news"
+      },
+      {
+        "text": "The study shows that managers often capitulate to staff demands when a strike would be costly.",
+        "form": "capitulate",
+        "setting": "academic"
+      },
+      {
+        "text": "I held out for an hour, but when the kids begged again I capitulated and bought the ice cream.",
+        "form": "capitulated",
+        "setting": "conversation"
+      },
+      {
+        "text": "The old king refused to capitulate, even as the enemy's drums grew louder outside the walls.",
+        "form": "capitulate",
+        "setting": "fiction"
+      },
+      {
+        "text": "The company capitulates whenever customers complain loudly enough on social media.",
+        "form": "capitulates",
+        "setting": "formal"
+      },
+      {
+        "text": "Rather than capitulating at once, the rebels held the fort for three more weeks.",
+        "form": "capitulating",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "After days of heavy bombing, the general agreed to ___ and signed the surrender terms.",
+        "answer": "capitulate"
+      },
+      {
+        "text": "Under pressure from the angry crowd, the mayor finally ___ and cancelled the whole project.",
+        "answer": "capitulated"
+      },
+      {
+        "text": "A negotiator who ___ at the first threat will never win a fair deal for her side.",
+        "answer": "capitulates"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The army capitulated the enemy after a great victory.",
+        "why": "Capitulate means to give in, so a winning army would not capitulate, and it takes no object like this."
+      },
+      {
+        "text": "He capitulated the proposal and the committee approved it.",
+        "why": "Capitulate means give in and takes no direct object; use 'presented' or 'submitted' for a proposal."
+      }
+    ],
+    "partners": [
+      "capitulate to demands",
+      "refuse to capitulate",
+      "capitulate under pressure",
+      "capitulate without a fight"
+    ],
+    "phrases": [
+      "The government capitulated to...",
+      "...rather than capitulate to..."
+    ],
+    "family": [
+      "capitulation"
+    ],
+    "synonyms": [
+      {
+        "word": "surrender",
+        "vs": "Surrender is the plain word and often final; capitulate suggests a formal, negotiated giving in."
+      },
+      {
+        "word": "yield",
+        "vs": "Yield is gentler and can be voluntary; capitulate suggests giving way to pressure or defeat."
+      },
+      {
+        "word": "submit",
+        "vs": "Submit stresses accepting authority or control; capitulate stresses ending resistance."
+      }
+    ],
+    "antonyms": [
+      "resist",
+      "hold out",
+      "defy"
+    ],
+    "confusables": [
+      {
+        "word": "recapitulate",
+        "note": "Recapitulate means summarise the main points again; it is related but means something different."
+      }
+    ],
+    "roots": [
+      {
+        "part": "capitulum",
+        "meaning": "little head, heading (Latin)"
+      }
+    ],
+    "siblings": [
+      "capital",
+      "chapter",
+      "recapitulate"
+    ],
+    "origin": "From medieval Latin capitulare, 'to arrange in chapters': terms of surrender were drawn up under headings.",
+    "tags": [
+      "argument"
+    ]
+  },
+  {
+    "id": "antecedent#n",
+    "headword": "antecedent",
+    "pos": "n",
+    "sense": "something that came before and led to it",
+    "forms": [
+      "antecedents"
+    ],
+    "definition": "A thing, event or person that came earlier and led to something later.",
+    "register": "formal",
+    "nuance": "Antecedent is used for earlier events, ideas or forms that lead to later ones, as in the antecedents of a war or of a theory. In grammar it is the word that a pronoun refers back to. It is often plural in historical writing: 'the antecedents of'.",
+    "everyday": "forerunner",
+    "examples": [
+      {
+        "text": "Silent films are the antecedent of today's blockbusters; the whole art grew out of them.",
+        "form": "antecedent",
+        "setting": "conversation"
+      },
+      {
+        "text": "Historians trace the antecedents of the revolution to years of poor harvests and rising bread prices.",
+        "form": "antecedents",
+        "setting": "academic"
+      },
+      {
+        "text": "Police are examining the antecedents of the dispute, which began as an argument over a fence.",
+        "form": "antecedents",
+        "setting": "news"
+      },
+      {
+        "text": "She knew little about his antecedents, only that his family had come from far away.",
+        "form": "antecedents",
+        "setting": "fiction"
+      },
+      {
+        "text": "The inquiry will consider the antecedent events that led to the factory closing.",
+        "form": "antecedent",
+        "setting": "formal"
+      },
+      {
+        "text": "In this sentence, the antecedent of the pronoun 'it' is 'the experiment'.",
+        "form": "antecedent",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Grammar teachers ask which noun a pronoun refers back to, and that noun is called its ___.",
+        "answer": "antecedent"
+      },
+      {
+        "text": "The earlier trade agreement was the direct ___ of the larger treaty signed twenty years later.",
+        "answer": "antecedent"
+      },
+      {
+        "text": "To understand the war, you must study its ___: the tensions and decisions in the years before it began.",
+        "answer": "antecedents"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The antecedent of the storm was the flood that came afterwards.",
+        "why": "An antecedent comes before; a flood after the storm is a consequence."
+      },
+      {
+        "text": "He is the antecedent of the team, leading it into every match.",
+        "why": "Antecedent means something that came before, not a leader of the present."
+      }
+    ],
+    "partners": [
+      "historical antecedents",
+      "an antecedent of",
+      "the antecedents of",
+      "grammatical antecedent",
+      "a clear antecedent"
+    ],
+    "phrases": [
+      "...has its antecedents in...",
+      "The antecedents of... lie in..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "precursor",
+        "vs": "Precursor suggests something that clearly leads on to a later form; antecedent is broader and includes causes and ancestors."
+      },
+      {
+        "word": "forerunner",
+        "vs": "Forerunner is plainer and usually names a similar thing that came earlier; antecedent can be a cause."
+      },
+      {
+        "word": "predecessor",
+        "vs": "Predecessor is the person or thing that held a role before; antecedent need not be in the same role."
+      }
+    ],
+    "antonyms": [
+      "consequence",
+      "successor"
+    ],
+    "confusables": [
+      {
+        "word": "precedent",
+        "note": "A precedent is an earlier case used as a guide for a later one; an antecedent is anything that came before."
+      }
+    ],
+    "roots": [
+      {
+        "part": "ante-",
+        "meaning": "before (Latin)"
+      },
+      {
+        "part": "cedere",
+        "meaning": "to go (Latin)"
+      }
+    ],
+    "siblings": [
+      "precede",
+      "proceed",
+      "concede",
+      "recede"
+    ],
+    "origin": "From Latin antecedens, 'going before'.",
+    "tags": [
+      "time"
+    ]
+  },
+  {
+    "id": "coherence#n",
+    "headword": "coherence",
+    "pos": "n",
+    "sense": "logical connection that makes sense as a whole",
+    "forms": [],
+    "definition": "The quality of having parts that fit together logically, so that the whole makes sense.",
+    "register": "formal",
+    "nuance": "Coherence is a key quality in essays and arguments: the ideas connect clearly and each point leads to the next. It also describes plans, policies and life stories that hold together. Teachers often mark down work that lacks coherence.",
+    "everyday": "logical flow",
+    "examples": [
+      {
+        "text": "Good linking words give an essay coherence, so each paragraph leads naturally to the next.",
+        "form": "coherence",
+        "setting": "academic"
+      },
+      {
+        "text": "The plot has no coherence at all; characters appear, vanish and change personality for no reason.",
+        "form": "coherence",
+        "setting": "conversation"
+      },
+      {
+        "text": "Critics say the government's energy policy lacks coherence, with each department pulling in a different direction.",
+        "form": "coherence",
+        "setting": "news"
+      },
+      {
+        "text": "Her story had a strange coherence, every detail fitting neatly with the next.",
+        "form": "coherence",
+        "setting": "fiction"
+      },
+      {
+        "text": "The panel praised the report for its coherence and its clear line of argument.",
+        "form": "coherence",
+        "setting": "formal"
+      },
+      {
+        "text": "The study explores how elderly people give their life stories coherence by linking past events to present beliefs.",
+        "form": "coherence",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "A good conclusion gives the whole essay ___ by drawing every paragraph together into one clear message.",
+        "answer": "coherence"
+      },
+      {
+        "text": "The film's weakness is a lack of ___: its scenes are fine alone but do not add up to a story.",
+        "answer": "coherence"
+      },
+      {
+        "text": "Examiners reward ___, meaning ideas that are ordered logically and linked from one paragraph to the next.",
+        "answer": "coherence"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The coherence of the sandwich was delicious.",
+        "why": "Coherence is about ideas fitting together logically, not taste or physical things."
+      },
+      {
+        "text": "His essay had great coherence because its paragraphs contradicted one another.",
+        "why": "Contradictory paragraphs destroy coherence; coherence means the ideas fit together."
+      }
+    ],
+    "partners": [
+      "logical coherence",
+      "lack coherence",
+      "give coherence to",
+      "narrative coherence",
+      "overall coherence"
+    ],
+    "phrases": [
+      "...lacks coherence because...",
+      "...to give the argument coherence..."
+    ],
+    "family": [
+      "coherent",
+      "coherently",
+      "incoherent",
+      "incoherence",
+      "cohere"
+    ],
+    "synonyms": [
+      {
+        "word": "consistency",
+        "vs": "Consistency means not contradicting itself or changing; coherence means the parts also link into a sensible whole."
+      },
+      {
+        "word": "unity",
+        "vs": "Unity means being one whole; coherence stresses the logical links between the parts."
+      },
+      {
+        "word": "cohesion",
+        "vs": "Cohesion is how parts stick together, through linking words and structure; coherence is whether the meaning makes sense."
+      }
+    ],
+    "antonyms": [
+      "incoherence",
+      "confusion",
+      "disorder"
+    ],
+    "confusables": [
+      {
+        "word": "cohesion",
+        "note": "Cohesion is the sticking together of parts, often by linking words; coherence is about logical sense. Writers often mix them up."
+      }
+    ],
+    "roots": [
+      {
+        "part": "co-",
+        "meaning": "together (Latin)"
+      },
+      {
+        "part": "haerere",
+        "meaning": "to stick (Latin)"
+      }
+    ],
+    "siblings": [
+      "adhere",
+      "adhesive",
+      "hesitate"
+    ],
+    "origin": "From Latin cohaerere, 'to stick together'.",
+    "tags": [
+      "style",
+      "reasoning"
+    ]
+  },
+  {
+    "id": "venerate#v",
+    "headword": "venerate",
+    "pos": "v",
+    "sense": "respect deeply, almost as holy",
+    "forms": [
+      "venerates",
+      "venerated",
+      "venerating"
+    ],
+    "definition": "To respect someone or something deeply, often as holy or as having great wisdom.",
+    "register": "formal",
+    "nuance": "Venerate suggests deep, almost religious respect for a person, tradition or object, often because of age, wisdom or holiness. It is common in writing about religion, history and culture. Its adjective, venerable, describes old and respected people or things.",
+    "everyday": "revere",
+    "examples": [
+      {
+        "text": "In many cultures, people venerate their ancestors by keeping photographs and leaving food at their graves.",
+        "form": "venerate",
+        "setting": "academic"
+      },
+      {
+        "text": "Thousands gathered to venerate the relics, which have been kept in the cathedral for eight hundred years.",
+        "form": "venerate",
+        "setting": "news"
+      },
+      {
+        "text": "My dad venerates his old vinyl records, and nobody else is allowed to touch them.",
+        "form": "venerates",
+        "setting": "conversation"
+      },
+      {
+        "text": "The villagers spent every spring venerating the old oak tree, tying ribbons to its branches.",
+        "form": "venerating",
+        "setting": "fiction"
+      },
+      {
+        "text": "The nation venerates its founders, whose portraits hang in every public building.",
+        "form": "venerates",
+        "setting": "formal"
+      },
+      {
+        "text": "Scholars note that the poet was venerated as a prophet long after his death.",
+        "form": "venerated",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Followers ___ the saint, praying at his tomb and treating his belongings as holy objects.",
+        "answer": "venerate"
+      },
+      {
+        "text": "Some societies ___ their elders as keepers of wisdom, and no major decision is made without them.",
+        "answer": "venerate"
+      },
+      {
+        "text": "It is healthy to admire great scientists, but unhealthy to ___ them so much that nobody dares question them.",
+        "answer": "venerate"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "I venerate pizza more than salad.",
+        "why": "Venerate means to respect deeply, almost as holy; it is far too strong for liking a food."
+      },
+      {
+        "text": "The students venerated their teacher by laughing at her mistakes.",
+        "why": "Venerate means deep respect, not mockery."
+      }
+    ],
+    "partners": [
+      "venerate a saint",
+      "venerate ancestors",
+      "venerate tradition",
+      "widely venerated",
+      "venerated as"
+    ],
+    "phrases": [
+      "...is venerated as a founder of...",
+      "Many cultures venerate..."
+    ],
+    "family": [
+      "veneration",
+      "venerable"
+    ],
+    "synonyms": [
+      {
+        "word": "revere",
+        "vs": "Revere is nearly identical but feels less religious; venerate suggests holiness or great age."
+      },
+      {
+        "word": "worship",
+        "vs": "Worship is giving religious honour to a god; venerate honours holy people or things without calling them divine."
+      },
+      {
+        "word": "admire",
+        "vs": "Admire is mild and everyday; venerate is far stronger and almost religious."
+      }
+    ],
+    "antonyms": [
+      "despise",
+      "scorn",
+      "mock"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "feeling",
+      "religion"
+    ]
+  },
+  {
+    "id": "predisposition#n",
+    "headword": "predisposition",
+    "pos": "n",
+    "sense": "a built-in tendency to react in a certain way",
+    "forms": [
+      "predispositions"
+    ],
+    "definition": "A built-in tendency to think, act or react in a particular way, or to develop a condition.",
+    "register": "formal",
+    "nuance": "Predisposition is used for inborn or earlier-formed tendencies, in science (a genetic predisposition to a disease) and in psychology (a bias towards certain views). It says a tendency exists, not that the result is certain. It is usually followed by 'to' or 'towards'.",
+    "everyday": "tendency",
+    "examples": [
+      {
+        "text": "Our family has a predisposition to asthma, so the doctor checks the children's lungs every year.",
+        "form": "predisposition",
+        "setting": "conversation"
+      },
+      {
+        "text": "The study found that children with an anxious predisposition respond more strongly to stress.",
+        "form": "predisposition",
+        "setting": "academic"
+      },
+      {
+        "text": "Researchers have identified a genetic predisposition to the condition in about one person in ten.",
+        "form": "predisposition",
+        "setting": "news"
+      },
+      {
+        "text": "She had a predisposition to melancholy, and grey afternoons only made it worse.",
+        "form": "predisposition",
+        "setting": "fiction"
+      },
+      {
+        "text": "Jurors should examine their own predispositions before judging a case.",
+        "form": "predispositions",
+        "setting": "formal"
+      },
+      {
+        "text": "Readers bring predispositions to a text, and these shape how they interpret its meaning.",
+        "form": "predispositions",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "A genetic ___ to heart disease means you are more likely to develop it, not certain to.",
+        "answer": "predisposition"
+      },
+      {
+        "text": "Her natural ___ to trust strangers made her an easy target for tricksters.",
+        "answer": "predisposition"
+      },
+      {
+        "text": "Teachers should be aware of their own ___, since unconscious biases can affect how they mark.",
+        "answer": "predispositions"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "His predisposition happened suddenly yesterday when he fell off his bike.",
+        "why": "A predisposition is a tendency that exists beforehand, not a sudden event."
+      },
+      {
+        "text": "The predisposition proves that he will certainly get ill.",
+        "why": "A predisposition only makes something more likely; it does not prove or guarantee it."
+      }
+    ],
+    "partners": [
+      "a genetic predisposition",
+      "a predisposition to",
+      "a natural predisposition",
+      "a predisposition towards"
+    ],
+    "phrases": [
+      "...a predisposition to..., rather than...",
+      "...shaped by predispositions..."
+    ],
+    "family": [
+      "predispose",
+      "predisposed"
+    ],
+    "synonyms": [
+      {
+        "word": "tendency",
+        "vs": "Tendency is everyday and general; predisposition suggests it was set in advance, by nature or experience."
+      },
+      {
+        "word": "propensity",
+        "vs": "Propensity is a natural leaning, often towards something negative; predisposition is used more in science."
+      },
+      {
+        "word": "inclination",
+        "vs": "Inclination is a mild personal preference; predisposition is stronger and more built-in."
+      }
+    ],
+    "antonyms": [
+      "immunity",
+      "resistance"
+    ],
+    "confusables": [
+      {
+        "word": "predilection",
+        "note": "A predilection is a special liking for something; a predisposition is a tendency, not necessarily a liking."
+      }
+    ],
+    "roots": [
+      {
+        "part": "pre-",
+        "meaning": "before (Latin)"
+      },
+      {
+        "part": "ponere",
+        "meaning": "to place (Latin)"
+      }
+    ],
+    "siblings": [
+      "dispose",
+      "position",
+      "compose"
+    ],
+    "tags": [
+      "thought"
+    ]
+  },
+  {
+    "id": "moratorium#n",
+    "headword": "moratorium",
+    "pos": "n",
+    "sense": "an official temporary pause on an activity",
+    "forms": [
+      "moratoriums",
+      "moratoria"
+    ],
+    "definition": "An official pause on an activity, agreed or ordered for a set period.",
+    "register": "formal",
+    "nuance": "A moratorium is a temporary ban or delay, usually announced by a government, court or organisation. It appears in politics, law, science and finance, for example on a new technology or on debt payments. It implies that the activity may resume later.",
+    "everyday": "temporary ban",
+    "examples": [
+      {
+        "text": "The council declared a moratorium on new building until the flood risks had been studied.",
+        "form": "moratorium",
+        "setting": "news"
+      },
+      {
+        "text": "Scientists called for a moratorium on gene editing of embryos until the ethical questions had been debated.",
+        "form": "moratorium",
+        "setting": "academic"
+      },
+      {
+        "text": "We've agreed a moratorium on talking about work at dinner, at least until Friday.",
+        "form": "moratorium",
+        "setting": "conversation"
+      },
+      {
+        "text": "The king declared a moratorium on fighting during the harvest, and both armies went home.",
+        "form": "moratorium",
+        "setting": "fiction"
+      },
+      {
+        "text": "The bank granted a six-month moratorium on loan repayments to flood-hit farmers.",
+        "form": "moratorium",
+        "setting": "formal"
+      },
+      {
+        "text": "Critics argue that moratoria on research rarely last as long as promised.",
+        "form": "moratoria",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The government announced a ___ on new drilling licences while the safety review was carried out.",
+        "answer": "moratorium"
+      },
+      {
+        "text": "Farmers were given a temporary ___ on debt payments, so no money was due until after the next harvest.",
+        "answer": "moratorium"
+      },
+      {
+        "text": "The two clubs agreed to a one-month ___ on signing each other's players, then planned to review the rule.",
+        "answer": "moratorium"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The moratorium on smoking is permanent and will never be reviewed.",
+        "why": "A moratorium is a temporary pause, so a permanent ban is not a moratorium."
+      },
+      {
+        "text": "She took a moratorium in the park after lunch.",
+        "why": "A moratorium is an official pause on an activity, not a personal rest or walk."
+      }
+    ],
+    "partners": [
+      "a moratorium on",
+      "declare a moratorium",
+      "impose a moratorium",
+      "lift a moratorium",
+      "a temporary moratorium"
+    ],
+    "phrases": [
+      "...called for a moratorium on...",
+      "...a moratorium on... until..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "ban",
+        "vs": "A ban can be permanent; a moratorium is a temporary stop, with an end or a review in view."
+      },
+      {
+        "word": "suspension",
+        "vs": "Suspension is a pause on a person's or thing's activity; moratorium is a general pause on a whole activity."
+      },
+      {
+        "word": "freeze",
+        "vs": "Freeze is plainer and often used for money, wages and prices; moratorium is more official."
+      }
+    ],
+    "antonyms": [
+      "approval",
+      "go-ahead"
+    ],
+    "confusables": [
+      {
+        "word": "mortuary",
+        "note": "A mortuary is a place where dead bodies are kept; the word only looks similar."
+      }
+    ],
+    "roots": [
+      {
+        "part": "mora",
+        "meaning": "delay (Latin)"
+      }
+    ],
+    "siblings": [],
+    "origin": "From Latin morari, 'to delay', from mora, 'delay'.",
+    "tags": [
+      "time",
+      "politics"
+    ]
+  },
+  {
+    "id": "eulogy#n",
+    "headword": "eulogy",
+    "pos": "n",
+    "sense": "a speech of high praise, often for the dead",
+    "forms": [
+      "eulogies"
+    ],
+    "definition": "A speech or piece of writing that praises someone highly, especially at a funeral.",
+    "register": "formal",
+    "nuance": "A eulogy is most often a speech given at a funeral to honour the life of someone who has died. It can also mean any formal, glowing praise, as in a eulogy to a city or an idea. It is warm and serious, not mocking.",
+    "everyday": "tribute",
+    "examples": [
+      {
+        "text": "At the funeral, his daughter gave a moving eulogy about his kindness and his terrible jokes.",
+        "form": "eulogy",
+        "setting": "fiction"
+      },
+      {
+        "text": "The poem is a eulogy for a lost way of life, mourning the villages that vanished.",
+        "form": "eulogy",
+        "setting": "academic"
+      },
+      {
+        "text": "The former president delivered the eulogy, praising the senator's courage and humour.",
+        "form": "eulogy",
+        "setting": "news"
+      },
+      {
+        "text": "I'm writing Gran's eulogy tonight, and I can't decide which stories to include.",
+        "form": "eulogy",
+        "setting": "conversation"
+      },
+      {
+        "text": "The chairman's eulogy thanked the founder for forty years of service to the school.",
+        "form": "eulogy",
+        "setting": "formal"
+      },
+      {
+        "text": "Funeral eulogies in ancient Rome praised the dead and their ancestors, often exaggerating their achievements.",
+        "form": "eulogies",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "She was asked to deliver the ___ at the funeral, speaking for ten minutes about her grandfather's life.",
+        "answer": "eulogy"
+      },
+      {
+        "text": "Reviewers said the biography reads like a ___ rather than an honest account, since it mentions no faults.",
+        "answer": "eulogy"
+      },
+      {
+        "text": "The speech was a warm ___ to the retiring teacher, listing everything the school owed her.",
+        "answer": "eulogy"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The critic wrote a harsh eulogy of the film, listing every flaw.",
+        "why": "A eulogy is high praise; a harsh list of flaws is criticism."
+      },
+      {
+        "text": "He gave a eulogy at his own birthday party.",
+        "why": "A eulogy honours someone who has died, or praises them very formally; a birthday toast is not a eulogy."
+      }
+    ],
+    "partners": [
+      "deliver a eulogy",
+      "a moving eulogy",
+      "a funeral eulogy",
+      "give a eulogy",
+      "a eulogy for"
+    ],
+    "phrases": [
+      "...delivered a eulogy for...",
+      "...reads more like a eulogy than..."
+    ],
+    "family": [
+      "eulogise",
+      "eulogize",
+      "eulogistic"
+    ],
+    "synonyms": [
+      {
+        "word": "tribute",
+        "vs": "Tribute is any public show of respect and need not be a speech; eulogy is a formal speech or text of praise."
+      },
+      {
+        "word": "obituary",
+        "vs": "An obituary is a written notice of a death with a short life story; a eulogy is usually spoken at the funeral."
+      }
+    ],
+    "antonyms": [
+      "condemnation",
+      "criticism",
+      "attack"
+    ],
+    "confusables": [
+      {
+        "word": "elegy",
+        "note": "An elegy is a sad poem or lament for the dead; a eulogy is praise, usually spoken."
+      }
+    ],
+    "roots": [
+      {
+        "part": "eu-",
+        "meaning": "good, well (Greek)"
+      },
+      {
+        "part": "legein",
+        "meaning": "to speak (Greek)"
+      }
+    ],
+    "siblings": [
+      "euphemism",
+      "euphoria",
+      "euthanasia"
+    ],
+    "origin": "From Greek eulogia, 'praise', literally 'good speaking'.",
+    "tags": [
+      "language"
+    ]
+  },
+  {
+    "id": "moniker#n",
+    "headword": "moniker",
+    "pos": "n",
+    "sense": "a name, especially a nickname",
+    "forms": [
+      "monikers"
+    ],
+    "definition": "A name for a person or thing, especially an informal or chosen one such as a nickname.",
+    "register": "informal",
+    "nuance": "Moniker is an informal word for a name, especially a nickname or a label someone has earned or chosen. It often has a light, slightly humorous tone and appears in news and magazine writing. It is less common in formal academic prose.",
+    "everyday": "nickname",
+    "examples": [
+      {
+        "text": "Everyone on the team calls him by his moniker, 'Tiny', even though he is two metres tall.",
+        "form": "moniker",
+        "setting": "conversation"
+      },
+      {
+        "text": "The author's online moniker, rather than her real name, appears on every post in the archive.",
+        "form": "moniker",
+        "setting": "academic"
+      },
+      {
+        "text": "The singer, who performs under the moniker Nova, announced a tour of fifteen countries.",
+        "form": "moniker",
+        "setting": "news"
+      },
+      {
+        "text": "He earned the moniker 'Lucky' after surviving three shipwrecks and a fire.",
+        "form": "moniker",
+        "setting": "fiction"
+      },
+      {
+        "text": "The company's moniker, shortened from its founder's long surname, is now recognised worldwide.",
+        "form": "moniker",
+        "setting": "formal"
+      },
+      {
+        "text": "Historians have given the period a gloomy moniker, 'the Dark Ages', which many now reject.",
+        "form": "moniker",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Fans gave the goalkeeper the ___ 'The Wall' because nothing ever got past him.",
+        "answer": "moniker"
+      },
+      {
+        "text": "Her online ___ was Starfish, and none of her followers knew her real name.",
+        "answer": "moniker"
+      },
+      {
+        "text": "The DJ performs under the stage ___ Moonlight, though his passport says something quite different.",
+        "answer": "moniker"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She gave the document a long moniker of twelve pages.",
+        "why": "A moniker is a name, not a length or a piece of writing."
+      },
+      {
+        "text": "The prime minister signed the law with his moniker.",
+        "why": "A moniker is an informal name or nickname, so it does not fit a formal signature."
+      }
+    ],
+    "partners": [
+      "a catchy moniker",
+      "under the moniker",
+      "earn the moniker",
+      "a fitting moniker",
+      "an online moniker"
+    ],
+    "phrases": [
+      "...performs under the moniker...",
+      "...earned the moniker..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "nickname",
+        "vs": "Nickname is the plain everyday word; moniker sounds slightly more playful or journalistic."
+      },
+      {
+        "word": "alias",
+        "vs": "Alias is a name used instead of the real one, often to hide identity; moniker need not hide anything."
+      },
+      {
+        "word": "handle",
+        "vs": "Handle is a name used online or on radio; moniker is broader and can be earned."
+      }
+    ],
+    "antonyms": [],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "language"
+    ]
+  },
+  {
+    "id": "autocratic#adj",
+    "headword": "autocratic",
+    "pos": "adj",
+    "sense": "ruling with absolute power",
+    "forms": [],
+    "definition": "Ruling with total power and without asking others, or acting as if you have such power.",
+    "register": "formal",
+    "nuance": "Autocratic describes rulers, governments and bosses who make all decisions themselves and allow little discussion. It is critical and common in politics and history. In management it names a leadership style, in contrast to a democratic or participative one.",
+    "everyday": "domineering",
+    "examples": [
+      {
+        "text": "The autocratic king made every decision himself and punished anyone who questioned him.",
+        "form": "autocratic",
+        "setting": "fiction"
+      },
+      {
+        "text": "Autocratic regimes often fall into crisis when the leader dies without a clear successor.",
+        "form": "autocratic",
+        "setting": "academic"
+      },
+      {
+        "text": "Critics accuse the president of an autocratic style, ignoring parliament and the courts.",
+        "form": "autocratic",
+        "setting": "news"
+      },
+      {
+        "text": "My boss is so autocratic that we are not even allowed to choose the colour of the folders.",
+        "form": "autocratic",
+        "setting": "conversation"
+      },
+      {
+        "text": "The review found that the company's autocratic leadership discouraged staff from reporting mistakes.",
+        "form": "autocratic",
+        "setting": "formal"
+      },
+      {
+        "text": "Unlike democratic leaders, autocratic ones need not win elections or answer to a free press.",
+        "form": "autocratic",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Under the ___ ruler there were no elections, and no one dared to disagree with him.",
+        "answer": "autocratic"
+      },
+      {
+        "text": "A leadership style in which one person makes every decision without consulting the team is called ___ management.",
+        "answer": "autocratic"
+      },
+      {
+        "text": "Her ___ manner, giving orders and never asking for opinions, made the staff unhappy.",
+        "answer": "autocratic"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The autocratic classroom held a vote on every decision.",
+        "why": "Autocratic means one person decides everything, the opposite of voting."
+      },
+      {
+        "text": "He is an autocratic eater who loves pasta.",
+        "why": "Autocratic is about holding absolute control over others, not personal tastes."
+      }
+    ],
+    "partners": [
+      "an autocratic ruler",
+      "an autocratic regime",
+      "autocratic leadership",
+      "an autocratic style",
+      "autocratic government"
+    ],
+    "phrases": [
+      "...under an autocratic regime...",
+      "...an autocratic style of leadership..."
+    ],
+    "family": [
+      "autocrat",
+      "autocracy",
+      "autocratically"
+    ],
+    "synonyms": [
+      {
+        "word": "authoritarian",
+        "vs": "Authoritarian stresses demanding strict obedience to authority; autocratic stresses one person holding all the power."
+      },
+      {
+        "word": "dictatorial",
+        "vs": "Dictatorial is stronger and more insulting; autocratic is more formal and analytical."
+      },
+      {
+        "word": "despotic",
+        "vs": "Despotic suggests cruel, unjust use of absolute power; autocratic need not be cruel."
+      }
+    ],
+    "antonyms": [
+      "democratic",
+      "egalitarian",
+      "participatory"
+    ],
+    "confusables": [
+      {
+        "word": "aristocratic",
+        "note": "Aristocratic means belonging to the nobility, or rule by a noble class; autocratic means rule by one person."
+      }
+    ],
+    "roots": [
+      {
+        "part": "auto-",
+        "meaning": "self (Greek)"
+      },
+      {
+        "part": "kratos",
+        "meaning": "power, rule (Greek)"
+      }
+    ],
+    "siblings": [
+      "democracy",
+      "aristocracy",
+      "bureaucracy",
+      "autonomy"
+    ],
+    "origin": "From Greek autokrates, 'ruling by oneself': autos, 'self', and kratos, 'power'.",
+    "tags": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "id": "pluralism#n",
+    "headword": "pluralism",
+    "pos": "n",
+    "sense": "acceptance of many different groups and views",
+    "forms": [],
+    "definition": "A system in which many different groups, beliefs and ways of life exist side by side.",
+    "register": "formal",
+    "nuance": "Pluralism is a positive or neutral term for accepting and protecting many different groups, views and interests within one society. It is common in politics, religion and philosophy. Writers often contrast it with a single dominant culture or ideology.",
+    "everyday": "diversity",
+    "examples": [
+      {
+        "text": "The country is proud of its pluralism: people of many faiths and languages live and work together.",
+        "form": "pluralism",
+        "setting": "news"
+      },
+      {
+        "text": "Political pluralism means that parties, newspapers and unions can compete freely without fear.",
+        "form": "pluralism",
+        "setting": "academic"
+      },
+      {
+        "text": "I love how this city values pluralism; you hear ten languages on a single street.",
+        "form": "pluralism",
+        "setting": "conversation"
+      },
+      {
+        "text": "In the old trading port, pluralism was a fact of life, with temples, churches and mosques side by side.",
+        "form": "pluralism",
+        "setting": "fiction"
+      },
+      {
+        "text": "The charter commits the university to pluralism, welcoming scholars of every background and belief.",
+        "form": "pluralism",
+        "setting": "formal"
+      },
+      {
+        "text": "Some critics argue that cultural pluralism can weaken a shared national identity, while others disagree.",
+        "form": "pluralism",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "A democracy that protects many faiths, parties and cultures is said to practise ___ in its public life.",
+        "answer": "pluralism"
+      },
+      {
+        "text": "Supporters of ___ argue that a society is stronger when many groups are free to keep their own beliefs.",
+        "answer": "pluralism"
+      },
+      {
+        "text": "Religious ___ means that many faiths exist side by side, each respected and none forced on others.",
+        "answer": "pluralism"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "Under pluralism, only one party and one belief were allowed.",
+        "why": "Pluralism means many groups and beliefs are accepted; allowing only one is the opposite."
+      },
+      {
+        "text": "The pluralism of the word 'child' is 'children'.",
+        "why": "Pluralism is about diversity in society, not grammar; the word you need is 'plural'."
+      }
+    ],
+    "partners": [
+      "cultural pluralism",
+      "political pluralism",
+      "religious pluralism",
+      "embrace pluralism",
+      "democratic pluralism"
+    ],
+    "phrases": [
+      "...a society built on pluralism...",
+      "...the value of pluralism in..."
+    ],
+    "family": [
+      "plural",
+      "pluralist",
+      "pluralistic"
+    ],
+    "synonyms": [
+      {
+        "word": "diversity",
+        "vs": "Diversity describes the mix of differences; pluralism adds the idea that they are accepted and protected."
+      },
+      {
+        "word": "multiculturalism",
+        "vs": "Multiculturalism is about many cultures in one place; pluralism also covers political and religious views."
+      },
+      {
+        "word": "tolerance",
+        "vs": "Tolerance is putting up with difference; pluralism values it and gives it a place."
+      }
+    ],
+    "antonyms": [
+      "uniformity",
+      "conformity",
+      "homogeneity"
+    ],
+    "confusables": [
+      {
+        "word": "plurality",
+        "note": "Plurality means a large number or, in voting, the most votes without a majority; pluralism is about diversity."
+      }
+    ],
+    "roots": [
+      {
+        "part": "plus",
+        "meaning": "more (Latin)"
+      }
+    ],
+    "siblings": [
+      "plus",
+      "surplus"
+    ],
+    "tags": [
+      "society",
+      "politics"
+    ]
+  },
+  {
+    "id": "succinct#adj",
+    "headword": "succinct",
+    "pos": "adj",
+    "sense": "brief but clear and complete",
+    "forms": [],
+    "definition": "Expressed clearly in few words, with no unnecessary detail.",
+    "register": "formal",
+    "nuance": "Succinct praises writing and speech that is short but complete. It suggests skill: the writer has chosen the words carefully. Unlike 'brief', it implies that nothing important is missing.",
+    "everyday": "concise",
+    "examples": [
+      {
+        "text": "Thanks for the succinct explanation; you covered everything in two sentences.",
+        "form": "succinct",
+        "setting": "conversation"
+      },
+      {
+        "text": "A good abstract is succinct, stating the question, method and main result in under two hundred words.",
+        "form": "succinct",
+        "setting": "academic"
+      },
+      {
+        "text": "In a succinct statement, the club confirmed that the manager had left and thanked him.",
+        "form": "succinct",
+        "setting": "news"
+      },
+      {
+        "text": "The telegram was succinct: 'Arriving Friday. Meet me at the station.'",
+        "form": "succinct",
+        "setting": "fiction"
+      },
+      {
+        "text": "Please keep your reports succinct, as the board has little time to read long documents.",
+        "form": "succinct",
+        "setting": "formal"
+      },
+      {
+        "text": "The author's succinct account of the war fits a whole century into twenty pages.",
+        "form": "succinct",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The best answers were ___, giving all the necessary facts in a couple of sentences and nothing extra.",
+        "answer": "succinct"
+      },
+      {
+        "text": "Instead of rambling for an hour, the speaker made one ___ point and sat down.",
+        "answer": "succinct"
+      },
+      {
+        "text": "Newspaper headlines must be ___, since every word has to earn its place on the page.",
+        "answer": "succinct"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The succinct report ran to six hundred pages.",
+        "why": "Succinct means short and clear, so a six-hundred-page report is not succinct."
+      },
+      {
+        "text": "He gave a succinct answer, but it left out the main point.",
+        "why": "Succinct means brief while still covering the essentials; leaving out the main point is just incomplete."
+      }
+    ],
+    "partners": [
+      "a succinct summary",
+      "succinct and clear",
+      "a succinct account",
+      "admirably succinct"
+    ],
+    "phrases": [
+      "...in a succinct summary,...",
+      "...is best put in a succinct form..."
+    ],
+    "family": [
+      "succinctly",
+      "succinctness"
+    ],
+    "synonyms": [
+      {
+        "word": "concise",
+        "vs": "Concise is nearly the same and a little more common; succinct often suggests extra neatness or skill."
+      },
+      {
+        "word": "brief",
+        "vs": "Brief only says short; succinct says short and complete."
+      },
+      {
+        "word": "terse",
+        "vs": "Terse is short in a curt or unfriendly way; succinct is short and helpful."
+      }
+    ],
+    "antonyms": [
+      "long-winded",
+      "verbose",
+      "rambling",
+      "wordy"
+    ],
+    "confusables": [
+      {
+        "word": "succulent",
+        "note": "Succulent describes juicy food or fleshy plants; it is unrelated in meaning."
+      }
+    ],
+    "roots": [
+      {
+        "part": "sub-",
+        "meaning": "under (Latin)"
+      },
+      {
+        "part": "cingere",
+        "meaning": "to gird, to wrap round (Latin)"
+      }
+    ],
+    "siblings": [
+      "precinct",
+      "cincture"
+    ],
+    "origin": "From Latin succinctus, 'girded up' or 'tucked up', from cingere, 'to gird'.",
+    "tags": [
+      "language"
+    ]
+  },
+  {
+    "id": "astute#adj",
+    "headword": "astute",
+    "pos": "adj",
+    "sense": "clever at judging people and situations",
+    "forms": [],
+    "definition": "Quick to understand situations and people, and clever at using that understanding to your advantage.",
+    "register": "formal",
+    "nuance": "Astute praises sharp, practical judgement, especially about people, money and politics. It suggests noticing what others miss and acting wisely on it. It is usually approving, although it can hint at calculating cleverness.",
+    "everyday": "shrewd",
+    "examples": [
+      {
+        "text": "An astute businesswoman, she noticed the new trend months before her rivals and stocked up early.",
+        "form": "astute",
+        "setting": "news"
+      },
+      {
+        "text": "The author is an astute observer of village life, noting small habits that reveal deep tensions.",
+        "form": "astute",
+        "setting": "academic"
+      },
+      {
+        "text": "That was an astute question; I hadn't noticed the gap in their story either.",
+        "form": "astute",
+        "setting": "conversation"
+      },
+      {
+        "text": "The astute old lawyer saw at once that the witness was hiding something.",
+        "form": "astute",
+        "setting": "fiction"
+      },
+      {
+        "text": "The minister made an astute decision to delay the announcement until after the figures were published.",
+        "form": "astute",
+        "setting": "formal"
+      },
+      {
+        "text": "Historians describe the queen as astute, balancing rival factions without open conflict.",
+        "form": "astute",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "It was an ___ move to buy shares before the announcement, as prices soared a week later.",
+        "answer": "astute"
+      },
+      {
+        "text": "Only an ___ negotiator would have noticed the small clause that gave her side the whole advantage.",
+        "answer": "astute"
+      },
+      {
+        "text": "Her ___ comments about the candidates showed that she understood both the people and the politics.",
+        "answer": "astute"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The astute child ran through the park in muddy boots.",
+        "why": "Astute means sharply clever in judgement, not active or messy."
+      },
+      {
+        "text": "His astute mistake cost the company millions.",
+        "why": "An astute action is a clever, wise one, so it cannot be a costly mistake."
+      }
+    ],
+    "partners": [
+      "an astute observer",
+      "an astute politician",
+      "astute judgement",
+      "politically astute",
+      "an astute move"
+    ],
+    "phrases": [
+      "...an astute observation that...",
+      "...politically astute enough to..."
+    ],
+    "family": [
+      "astutely",
+      "astuteness"
+    ],
+    "synonyms": [
+      {
+        "word": "shrewd",
+        "vs": "Shrewd stresses cleverness about money and advantage, sometimes with a hint of cunning; astute is more admiring."
+      },
+      {
+        "word": "perceptive",
+        "vs": "Perceptive stresses noticing subtle things; astute adds acting wisely on what you notice."
+      },
+      {
+        "word": "canny",
+        "vs": "Canny is informal and suggests practical caution; astute is more formal."
+      }
+    ],
+    "antonyms": [
+      "naive",
+      "foolish",
+      "obtuse"
+    ],
+    "confusables": [
+      {
+        "word": "acute",
+        "note": "Acute means sharp or severe, as in acute pain, and also quick to notice; astute is about clever judgement."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "origin": "From Latin astutus, 'crafty, clever'.",
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "bewildered#adj",
+    "headword": "bewildered",
+    "pos": "adj",
+    "sense": "completely confused and puzzled",
+    "forms": [],
+    "definition": "Completely confused and puzzled, unable to understand what is happening.",
+    "register": "neutral",
+    "nuance": "Bewildered describes the feeling of being so confused that you cannot make sense of what is happening. It is stronger than 'puzzled' and suggests being lost or overwhelmed by too many things at once. It is common in news, fiction and personal writing.",
+    "everyday": "very confused",
+    "examples": [
+      {
+        "text": "I was completely bewildered by the instructions; every step seemed to contradict the last.",
+        "form": "bewildered",
+        "setting": "conversation"
+      },
+      {
+        "text": "Bewildered residents stood in the street as officials told them the whole district must be evacuated.",
+        "form": "bewildered",
+        "setting": "news"
+      },
+      {
+        "text": "She stared at the stranger, bewildered, as he called her by a name she had never heard.",
+        "form": "bewildered",
+        "setting": "fiction"
+      },
+      {
+        "text": "Patients often leave the first appointment bewildered by the medical terms, and may fail to follow advice.",
+        "form": "bewildered",
+        "setting": "academic"
+      },
+      {
+        "text": "The inspector reported that many new staff were bewildered by the complex booking system.",
+        "form": "bewildered",
+        "setting": "formal"
+      },
+      {
+        "text": "Participants who received conflicting instructions became bewildered and made more errors than the control group.",
+        "form": "bewildered",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Thrown into a new city with no map and no language, the young student felt completely ___.",
+        "answer": "bewildered"
+      },
+      {
+        "text": "The sudden change of rules left the players ___ and unsure what they were supposed to do.",
+        "answer": "bewildered"
+      },
+      {
+        "text": "She gave a ___ look, as if the question made no sense to her at all.",
+        "answer": "bewildered"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "I was bewildered by the clear, simple directions.",
+        "why": "Bewildered means confused, so it does not fit directions that are clear and simple."
+      },
+      {
+        "text": "The bewildered chef cooked with great confidence.",
+        "why": "A bewildered person is confused and unsure, not confident."
+      }
+    ],
+    "partners": [
+      "a bewildered look",
+      "utterly bewildered",
+      "bewildered by",
+      "left bewildered"
+    ],
+    "phrases": [
+      "...left many voters bewildered by...",
+      "...a bewildered audience..."
+    ],
+    "family": [
+      "bewilder",
+      "bewilderment",
+      "bewildering",
+      "bewilderingly"
+    ],
+    "synonyms": [
+      {
+        "word": "puzzled",
+        "vs": "Puzzled is milder and about a single problem; bewildered is stronger and suggests being overwhelmed."
+      },
+      {
+        "word": "baffled",
+        "vs": "Baffled suggests you cannot solve a particular problem; bewildered suggests general confusion."
+      },
+      {
+        "word": "perplexed",
+        "vs": "Perplexed is more formal and thoughtful; bewildered is more helpless."
+      }
+    ],
+    "antonyms": [
+      "certain",
+      "clear-headed",
+      "assured"
+    ],
+    "confusables": [
+      {
+        "word": "bewitched",
+        "note": "Bewitched means put under a magic spell, or charmed; it is a different feeling."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "thought"
+    ]
+  },
+  {
+    "id": "brazen#adj",
+    "headword": "brazen",
+    "pos": "adj",
+    "sense": "boldly shameless",
+    "forms": [],
+    "definition": "Bold and shameless, showing no embarrassment about doing something wrong or rude.",
+    "register": "neutral",
+    "nuance": "Brazen describes behaviour that is open and shameless, especially lies, theft and rule-breaking done as if nobody could object. It is strongly critical when used about wrongdoing. It is common in news, where 'a brazen robbery' means one carried out in plain sight.",
+    "everyday": "shameless",
+    "examples": [
+      {
+        "text": "In a brazen robbery, two men walked into the shop at noon, filled their bags and strolled out.",
+        "form": "brazen",
+        "setting": "news"
+      },
+      {
+        "text": "The memoir describes brazen corruption, with officials openly demanding bribes in front of witnesses.",
+        "form": "brazen",
+        "setting": "academic"
+      },
+      {
+        "text": "It was so brazen: he copied her answers while the teacher was looking right at him.",
+        "form": "brazen",
+        "setting": "conversation"
+      },
+      {
+        "text": "With a brazen grin, the boy pocketed the apple while the stallholder watched.",
+        "form": "brazen",
+        "setting": "fiction"
+      },
+      {
+        "text": "The committee condemned the brazen disregard for safety rules shown by the contractor.",
+        "form": "brazen",
+        "setting": "formal"
+      },
+      {
+        "text": "The study analyses brazen lies in politics, where leaders deny facts that anyone can check.",
+        "form": "brazen",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "It was a ___ lie, told with a straight face to people who had seen the truth with their own eyes.",
+        "answer": "brazen"
+      },
+      {
+        "text": "The thieves carried out a ___ raid in broad daylight, with the street full of people.",
+        "answer": "brazen"
+      },
+      {
+        "text": "After such a ___ display of rudeness, he did not even have the grace to look embarrassed.",
+        "answer": "brazen"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She apologised in a brazen, shy whisper.",
+        "why": "Brazen means bold and shameless; a shy whisper is the opposite."
+      },
+      {
+        "text": "He was brazen about his mistake and asked everyone to forgive him.",
+        "why": "Brazen means showing no shame; someone who asks forgiveness is showing shame."
+      }
+    ],
+    "partners": [
+      "a brazen lie",
+      "a brazen robbery",
+      "a brazen attempt",
+      "brazen disregard for"
+    ],
+    "phrases": [
+      "...a brazen attempt to...",
+      "...with brazen disregard for..."
+    ],
+    "family": [
+      "brazenly",
+      "brazenness"
+    ],
+    "synonyms": [
+      {
+        "word": "shameless",
+        "vs": "Shameless is plain and stresses lack of embarrassment; brazen stresses open boldness, often in front of others."
+      },
+      {
+        "word": "audacious",
+        "vs": "Audacious can be admiring, meaning daring; brazen is almost always critical."
+      },
+      {
+        "word": "barefaced",
+        "vs": "Barefaced is very close, used for lies and cheating; brazen has a wider range."
+      }
+    ],
+    "antonyms": [
+      "shy",
+      "timid",
+      "sheepish",
+      "bashful"
+    ],
+    "confusables": [
+      {
+        "word": "brash",
+        "note": "Brash means loud and self-confident, without the shamelessness of brazen."
+      }
+    ],
+    "roots": [
+      {
+        "part": "brass",
+        "meaning": "the metal alloy (Old English bræs)"
+      }
+    ],
+    "siblings": [],
+    "origin": "Originally 'made of brass': a brazen face was one as hard as brass, unable to blush.",
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "causation#n",
+    "headword": "causation",
+    "pos": "n",
+    "sense": "the link between a cause and its effect",
+    "forms": [],
+    "definition": "The relationship in which one thing makes another happen.",
+    "register": "formal",
+    "nuance": "Causation is the idea or process by which one event produces another. It is central to science and social science, where writers warn that correlation is not causation. It is uncountable and more abstract than 'cause', which names the individual thing that produces a result.",
+    "everyday": "reason and result",
+    "examples": [
+      {
+        "text": "Ice cream sales and sunburn rise together, but that shows no causation: the hot weather explains both.",
+        "form": "causation",
+        "setting": "academic"
+      },
+      {
+        "text": "You can't prove causation just because two things happened together; that's lazy thinking.",
+        "form": "causation",
+        "setting": "conversation"
+      },
+      {
+        "text": "Experts said the study showed a link but could not prove causation between the diet and the illness.",
+        "form": "causation",
+        "setting": "news"
+      },
+      {
+        "text": "The detective traced a chain of causation from a lost letter to the final tragedy.",
+        "form": "causation",
+        "setting": "fiction"
+      },
+      {
+        "text": "In law, the claimant must prove causation, showing that the injury resulted from the defendant's act.",
+        "form": "causation",
+        "setting": "formal"
+      },
+      {
+        "text": "Historians debate the causation of the First World War, weighing alliances, nationalism and chance.",
+        "form": "causation",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Statistics may show two things rising together, but proving ___ requires showing that one makes the other happen.",
+        "answer": "causation"
+      },
+      {
+        "text": "In negligence cases the court asks about ___: did the defendant's action actually lead to the harm?",
+        "answer": "causation"
+      },
+      {
+        "text": "Philosophers have long argued about ___, asking what it means to say that one event produces another.",
+        "answer": "causation"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The main causation of the fire was a faulty wire.",
+        "why": "Causation is the general relationship of cause and effect; for an individual thing that produces a result, use 'cause'."
+      },
+      {
+        "text": "The result of the experiment was causation.",
+        "why": "Causation names the link between a cause and an effect, not an outcome or result."
+      }
+    ],
+    "partners": [
+      "prove causation",
+      "establish causation",
+      "correlation and causation",
+      "a chain of causation",
+      "legal causation"
+    ],
+    "phrases": [
+      "Correlation does not imply causation.",
+      "...fails to establish causation between..."
+    ],
+    "family": [
+      "cause",
+      "causal",
+      "causality",
+      "causally"
+    ],
+    "synonyms": [
+      {
+        "word": "causality",
+        "vs": "Causality is almost identical and a little more philosophical; causation is more common in law and statistics."
+      },
+      {
+        "word": "aetiology",
+        "vs": "Aetiology is the study of causes, especially of disease; causation is the general link between cause and effect."
+      }
+    ],
+    "antonyms": [
+      "coincidence",
+      "chance"
+    ],
+    "confusables": [
+      {
+        "word": "correlation",
+        "note": "Correlation means two things change together; causation means one makes the other happen."
+      }
+    ],
+    "roots": [
+      {
+        "part": "causa",
+        "meaning": "reason, cause (Latin)"
+      }
+    ],
+    "siblings": [
+      "because",
+      "excuse",
+      "accuse"
+    ],
+    "tags": [
+      "reasoning"
+    ]
+  },
+  {
+    "id": "condescending#adj",
+    "headword": "condescending",
+    "pos": "adj",
+    "sense": "treating others as less intelligent or important",
+    "forms": [],
+    "definition": "Behaving as though you are cleverer or more important than others, in a way that insults them.",
+    "register": "neutral",
+    "nuance": "Condescending is critical: it describes tone, remarks and attitudes that treat other people as less intelligent or less important. It is often about explaining things slowly, or praising someone as if they were a child. It is common in everyday speech and in reviews of writing.",
+    "everyday": "patronising",
+    "examples": [
+      {
+        "text": "He gave me a condescending smile and explained, very slowly, how to use a printer.",
+        "form": "condescending",
+        "setting": "conversation"
+      },
+      {
+        "text": "Earlier travel writers often adopted a condescending tone towards the people they described, treating them as simple or backward.",
+        "form": "condescending",
+        "setting": "academic"
+      },
+      {
+        "text": "The minister apologised for what many called a condescending reply to a nurse's question about pay.",
+        "form": "condescending",
+        "setting": "news"
+      },
+      {
+        "text": "Her condescending laugh told him that his idea was not worth discussing.",
+        "form": "condescending",
+        "setting": "fiction"
+      },
+      {
+        "text": "Staff complained that the manager's condescending remarks made it hard to ask questions in meetings.",
+        "form": "condescending",
+        "setting": "formal"
+      },
+      {
+        "text": "Reviewers found the textbook condescending, with explanations pitched as if readers could not follow simple ideas.",
+        "form": "condescending",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Please do not talk to me in that ___ voice, as if I were a small child who cannot understand.",
+        "answer": "condescending"
+      },
+      {
+        "text": "Her ___ remark, 'That's quite good for a beginner', left the young designer feeling insulted.",
+        "answer": "condescending"
+      },
+      {
+        "text": "Nobody likes a ___ boss who explains obvious things slowly and praises staff as though they were children.",
+        "answer": "condescending"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The condescending nurse treated every patient as an equal and listened carefully.",
+        "why": "Condescending means treating others as inferior, the opposite of treating them as equals."
+      },
+      {
+        "text": "He is condescending to meet us at the airport.",
+        "why": "Condescending describes a patronising attitude; it does not mean kind or willing. Use 'kind enough' or 'generous' instead."
+      }
+    ],
+    "partners": [
+      "a condescending tone",
+      "a condescending smile",
+      "condescending remarks",
+      "sound condescending"
+    ],
+    "phrases": [
+      "...in a condescending tone...",
+      "...a condescending attitude towards..."
+    ],
+    "family": [
+      "condescend",
+      "condescension",
+      "condescendingly"
+    ],
+    "synonyms": [
+      {
+        "word": "patronising",
+        "vs": "Patronising is the closest and more common in British English; condescending can be a little stronger."
+      },
+      {
+        "word": "superior",
+        "vs": "Superior suggests feeling better than others, without necessarily speaking down to them."
+      },
+      {
+        "word": "arrogant",
+        "vs": "Arrogant is about thinking highly of yourself; condescending is about how you treat others."
+      }
+    ],
+    "antonyms": [
+      "respectful",
+      "humble",
+      "deferential"
+    ],
+    "confusables": [],
+    "roots": [
+      {
+        "part": "descendere",
+        "meaning": "to go down (Latin)"
+      }
+    ],
+    "siblings": [
+      "descend",
+      "ascend",
+      "transcend"
+    ],
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "copious#adj",
+    "headword": "copious",
+    "pos": "adj",
+    "sense": "plentiful, in large amounts",
+    "forms": [],
+    "definition": "Existing or provided in large amounts; more than enough.",
+    "register": "formal",
+    "nuance": "Copious describes things that come in large quantity, such as notes, tears, evidence or food. It is neutral to positive and is most often used with uncountable or plural nouns. It is formal; in everyday speech people say 'lots of'.",
+    "everyday": "plentiful",
+    "examples": [
+      {
+        "text": "She took copious notes during the lecture and filled half a notebook in an hour.",
+        "form": "copious",
+        "setting": "conversation"
+      },
+      {
+        "text": "The archive holds copious evidence of trade between the two ports, including thousands of invoices.",
+        "form": "copious",
+        "setting": "academic"
+      },
+      {
+        "text": "Copious rain fell overnight, flooding roads in the north and closing two bridges.",
+        "form": "copious",
+        "setting": "news"
+      },
+      {
+        "text": "He wept copious tears at the news, soaking the sleeve of his coat.",
+        "form": "copious",
+        "setting": "fiction"
+      },
+      {
+        "text": "The author supports each claim with copious references to primary sources.",
+        "form": "copious",
+        "setting": "formal"
+      },
+      {
+        "text": "Copious data from the trial allowed the team to detect even small effects.",
+        "form": "copious",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Students who take ___ notes in class usually find revision much easier before the exam.",
+        "answer": "copious"
+      },
+      {
+        "text": "The report cites ___ evidence, from interviews to statistics, in support of every claim.",
+        "answer": "copious"
+      },
+      {
+        "text": "The wedding feast offered ___ amounts of food, far more than the guests could possibly eat.",
+        "answer": "copious"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She drank a copious glass of water.",
+        "why": "Copious describes a large quantity, not the size of one container; use 'large' or 'tall' for a glass."
+      },
+      {
+        "text": "The copious desert had hardly any water or plants.",
+        "why": "Copious means plentiful, which is the opposite of hardly any."
+      }
+    ],
+    "partners": [
+      "copious notes",
+      "copious amounts",
+      "copious evidence",
+      "copious tears",
+      "copious quantities"
+    ],
+    "phrases": [
+      "...supported by copious evidence...",
+      "...copious amounts of..."
+    ],
+    "family": [
+      "copiously",
+      "copiousness"
+    ],
+    "synonyms": [
+      {
+        "word": "abundant",
+        "vs": "Abundant is more general and often about natural supply; copious is more often about notes, evidence and fluids."
+      },
+      {
+        "word": "plentiful",
+        "vs": "Plentiful is plain and everyday; copious is more formal."
+      },
+      {
+        "word": "ample",
+        "vs": "Ample means enough or more than enough; copious means a lot, sometimes too much."
+      }
+    ],
+    "antonyms": [
+      "scant",
+      "meagre",
+      "sparse",
+      "scarce"
+    ],
+    "confusables": [
+      {
+        "word": "capacious",
+        "note": "Capacious means able to hold a lot; copious means existing in large amounts."
+      }
+    ],
+    "roots": [
+      {
+        "part": "copia",
+        "meaning": "plenty (Latin)"
+      }
+    ],
+    "siblings": [
+      "cornucopia"
+    ],
+    "origin": "From Latin copiosus, 'plentiful', from copia, 'abundance'.",
+    "tags": [
+      "judgement",
+      "degree"
+    ]
+  },
+  {
+    "id": "egregious#adj",
+    "headword": "egregious",
+    "pos": "adj",
+    "sense": "shockingly bad and obvious",
+    "forms": [],
+    "definition": "Outstandingly bad in a way that is shocking and impossible to ignore.",
+    "register": "formal",
+    "nuance": "Egregious is used for mistakes, abuses and failures that are shockingly bad and obvious. It is strongly critical and appears in law, journalism and academic criticism. Long ago it meant outstandingly good, so today's sense is always an insult.",
+    "everyday": "shockingly bad",
+    "examples": [
+      {
+        "text": "The report found egregious errors in the accounts, including millions of pounds counted twice.",
+        "form": "egregious",
+        "setting": "news"
+      },
+      {
+        "text": "Egregious violations of human rights prompted the committee to demand an immediate investigation.",
+        "form": "egregious",
+        "setting": "academic"
+      },
+      {
+        "text": "That was an egregious mistake; you sent the private email to the whole company.",
+        "form": "egregious",
+        "setting": "conversation"
+      },
+      {
+        "text": "The captain's egregious cruelty towards his crew finally pushed them to mutiny.",
+        "form": "egregious",
+        "setting": "fiction"
+      },
+      {
+        "text": "The tribunal found an egregious breach of trust and ordered full compensation.",
+        "form": "egregious",
+        "setting": "formal"
+      },
+      {
+        "text": "The film contains egregious historical errors, such as placing a car in the Middle Ages.",
+        "form": "egregious",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Leaving the patient unattended for six hours was an ___ failure that shocked the whole hospital.",
+        "answer": "egregious"
+      },
+      {
+        "text": "The judge described the fraud as an ___ abuse of trust, the worst case she had seen.",
+        "answer": "egregious"
+      },
+      {
+        "text": "There were several ___ errors in the textbook, so glaring that even the students noticed them.",
+        "answer": "egregious"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She won the egregious prize for her brilliant work.",
+        "why": "Today egregious means shockingly bad; it is not praise, whatever the old meaning was."
+      },
+      {
+        "text": "The egregious bakery smelled of warm bread.",
+        "why": "Egregious describes shocking faults or wrongs, not a pleasant place."
+      }
+    ],
+    "partners": [
+      "an egregious error",
+      "egregious abuse",
+      "an egregious violation",
+      "an egregious example",
+      "an egregious breach"
+    ],
+    "phrases": [
+      "...an egregious violation of...",
+      "...the most egregious example of..."
+    ],
+    "family": [
+      "egregiously"
+    ],
+    "synonyms": [
+      {
+        "word": "flagrant",
+        "vs": "Flagrant stresses that the wrong is open and unashamed; egregious stresses how shockingly bad it is."
+      },
+      {
+        "word": "glaring",
+        "vs": "Glaring means impossible to miss, such as a glaring error; egregious adds serious shock or moral weight."
+      },
+      {
+        "word": "outrageous",
+        "vs": "Outrageous is more emotional and everyday; egregious is formal and measured."
+      }
+    ],
+    "antonyms": [
+      "minor",
+      "trivial",
+      "forgivable"
+    ],
+    "confusables": [
+      {
+        "word": "gregarious",
+        "note": "Gregarious means sociable and fond of company; it comes from the same Latin root, grex, 'flock', but means something else."
+      }
+    ],
+    "roots": [
+      {
+        "part": "e-",
+        "meaning": "out of (Latin)"
+      },
+      {
+        "part": "grex",
+        "meaning": "flock, herd (Latin)"
+      }
+    ],
+    "siblings": [
+      "gregarious",
+      "congregate",
+      "segregate",
+      "aggregate"
+    ],
+    "origin": "From Latin egregius, 'standing out from the herd', which first meant outstanding in a good way.",
+    "tags": [
+      "judgement"
+    ]
+  },
+  {
+    "id": "gullible#adj",
+    "headword": "gullible",
+    "pos": "adj",
+    "sense": "too ready to believe, easily tricked",
+    "forms": [],
+    "definition": "Too ready to believe what you are told, and so easily tricked.",
+    "register": "neutral",
+    "nuance": "Gullible is critical or pitying: it describes people who believe false claims, promises and scams too easily. It is common in talk of fraud, advertising and misinformation. It describes the person who believes, not the lie.",
+    "everyday": "easily fooled",
+    "examples": [
+      {
+        "text": "She was so gullible that she believed her brother when he said the moon was made of cheese.",
+        "form": "gullible",
+        "setting": "conversation"
+      },
+      {
+        "text": "Scammers target gullible pensioners with calls claiming that their bank accounts have been hacked.",
+        "form": "gullible",
+        "setting": "news"
+      },
+      {
+        "text": "Experiments show that even intelligent people can be gullible when a claim comes from someone they trust.",
+        "form": "gullible",
+        "setting": "academic"
+      },
+      {
+        "text": "The pedlar looked at the gullible farmer and began his most extravagant sales speech.",
+        "form": "gullible",
+        "setting": "fiction"
+      },
+      {
+        "text": "The advert was criticised for exploiting gullible consumers with promises of overnight weight loss.",
+        "form": "gullible",
+        "setting": "formal"
+      },
+      {
+        "text": "Propaganda works best on a gullible audience that lacks the habit of checking sources.",
+        "form": "gullible",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Con artists look for ___ victims who will believe any story and hand over their money.",
+        "answer": "gullible"
+      },
+      {
+        "text": "Don't be so ___: if an email promises you a million pounds for nothing, it is a scam.",
+        "answer": "gullible"
+      },
+      {
+        "text": "A ___ reader may accept every headline as true, while a careful one checks the sources first.",
+        "answer": "gullible"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The gullible detective doubted everyone and checked every claim.",
+        "why": "Gullible means too ready to believe, so doubting everyone is the opposite."
+      },
+      {
+        "text": "He is gullible because he knows so much history.",
+        "why": "Gullible means easily believing false things, not being knowledgeable."
+      }
+    ],
+    "partners": [
+      "gullible enough to",
+      "a gullible victim",
+      "far too gullible",
+      "a gullible audience"
+    ],
+    "phrases": [
+      "...exploiting the gullible...",
+      "...preys on gullible..."
+    ],
+    "family": [
+      "gullibility",
+      "gull"
+    ],
+    "synonyms": [
+      {
+        "word": "naive",
+        "vs": "Naive means lacking experience and expecting the best; gullible means easily convinced of false things."
+      },
+      {
+        "word": "credulous",
+        "vs": "Credulous is the formal twin, close in meaning; gullible is more common and more negative."
+      },
+      {
+        "word": "trusting",
+        "vs": "Trusting is neutral or positive; gullible is trusting to a foolish degree."
+      }
+    ],
+    "antonyms": [
+      "sceptical",
+      "shrewd",
+      "wary",
+      "cynical"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "normative#adj",
+    "headword": "normative",
+    "pos": "adj",
+    "sense": "setting or concerning standards of how things should be",
+    "forms": [],
+    "definition": "Concerned with how things should be, setting standards or rules, rather than describing how they are.",
+    "register": "formal",
+    "nuance": "Normative is a technical word in philosophy, ethics, law and social science. A normative claim says what ought to happen; a descriptive claim says what does happen. Writers use it to separate facts from value judgements.",
+    "everyday": "about standards",
+    "examples": [
+      {
+        "text": "Ethics asks normative questions, such as how we ought to treat strangers, not merely how people do treat them.",
+        "form": "normative",
+        "setting": "academic"
+      },
+      {
+        "text": "A descriptive study reports what voters do; a normative study argues what they should do.",
+        "form": "normative",
+        "setting": "academic"
+      },
+      {
+        "text": "Critics said the guidelines were normative, telling schools how to teach rather than describing current practice.",
+        "form": "normative",
+        "setting": "news"
+      },
+      {
+        "text": "That's a normative statement, not a fact: you're saying people should work harder.",
+        "form": "normative",
+        "setting": "conversation"
+      },
+      {
+        "text": "The code sets out normative standards of conduct that all members are expected to follow.",
+        "form": "normative",
+        "setting": "formal"
+      },
+      {
+        "text": "In the village, the normative view was that daughters should marry young, and few dared to question it.",
+        "form": "normative",
+        "setting": "fiction"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "A ___ claim says what ought to happen, while a descriptive claim only says what does happen.",
+        "answer": "normative"
+      },
+      {
+        "text": "Moral philosophy is a ___ subject because it asks how people should live, not how they do live.",
+        "answer": "normative"
+      },
+      {
+        "text": "The committee issued ___ guidelines, setting out how doctors ought to behave in difficult cases.",
+        "answer": "normative"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "It was a normative day, with ordinary weather and nothing unusual.",
+        "why": "Normative means setting or concerning standards; for ordinary or typical use 'normal'."
+      },
+      {
+        "text": "The normative study simply recorded how many people owned cars.",
+        "why": "A study that only records facts is descriptive; normative work says what should be."
+      }
+    ],
+    "partners": [
+      "normative claims",
+      "a normative theory",
+      "normative standards",
+      "normative judgements",
+      "normative ethics"
+    ],
+    "phrases": [
+      "This is a normative claim, not an empirical one.",
+      "...normative assumptions about..."
+    ],
+    "family": [
+      "norm",
+      "normatively",
+      "normativity"
+    ],
+    "synonyms": [
+      {
+        "word": "prescriptive",
+        "vs": "Prescriptive is about rules telling people what to do, such as grammar rules; normative covers values and standards more widely."
+      },
+      {
+        "word": "evaluative",
+        "vs": "Evaluative means judging worth or quality; normative means saying what should be."
+      }
+    ],
+    "antonyms": [
+      "descriptive",
+      "empirical"
+    ],
+    "confusables": [
+      {
+        "word": "normal",
+        "note": "Normal means usual or typical; normative means concerned with standards and what ought to be."
+      }
+    ],
+    "roots": [
+      {
+        "part": "norma",
+        "meaning": "rule, carpenter's square (Latin)"
+      }
+    ],
+    "siblings": [
+      "normal",
+      "abnormal",
+      "enormous"
+    ],
+    "origin": "From Latin norma, 'rule', which first meant a carpenter's square.",
+    "tags": [
+      "reasoning"
+    ]
+  },
+  {
+    "id": "scant#adj",
+    "headword": "scant",
+    "pos": "adj",
+    "sense": "hardly enough, very little",
+    "forms": [],
+    "definition": "Barely enough or very little in amount; less than is needed.",
+    "register": "formal",
+    "nuance": "Scant describes small amounts of things you would expect more of, such as evidence, attention, time or praise. It is formal and usually comes before a noun: 'scant evidence', 'scant regard'. It often hints at disappointment or criticism.",
+    "everyday": "very little",
+    "examples": [
+      {
+        "text": "The police had scant evidence, only a single footprint and a neighbour's vague memory.",
+        "form": "scant",
+        "setting": "news"
+      },
+      {
+        "text": "There is scant research on how very young children use digital devices at home.",
+        "form": "scant",
+        "setting": "academic"
+      },
+      {
+        "text": "I got scant sleep last night, so please don't expect me to be cheerful.",
+        "form": "scant",
+        "setting": "conversation"
+      },
+      {
+        "text": "The travellers paid scant attention to the storm, so keen were they to reach the coast.",
+        "form": "scant",
+        "setting": "fiction"
+      },
+      {
+        "text": "The proposal gives scant detail on how the project would be funded.",
+        "form": "scant",
+        "setting": "formal"
+      },
+      {
+        "text": "Historians have scant information about her childhood, since no letters or diaries survive.",
+        "form": "scant",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Because the survey had only twelve respondents, it provides ___ evidence for any firm conclusion.",
+        "answer": "scant"
+      },
+      {
+        "text": "The manager paid ___ attention to the complaints, barely glancing at them before moving on.",
+        "answer": "scant"
+      },
+      {
+        "text": "The desert village had ___ rainfall that year, hardly enough to keep the crops alive.",
+        "answer": "scant"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The library holds scant books on every shelf, from floor to ceiling.",
+        "why": "Scant means very little, so it clashes with shelves overflowing from floor to ceiling."
+      },
+      {
+        "text": "She ate a scant meal and was too full to move.",
+        "why": "Scant means barely enough, so a scant meal would not leave anyone too full."
+      }
+    ],
+    "partners": [
+      "scant evidence",
+      "scant regard",
+      "scant attention",
+      "scant information",
+      "scant resources"
+    ],
+    "phrases": [
+      "...there is scant evidence that...",
+      "...pays scant regard to..."
+    ],
+    "family": [
+      "scantly",
+      "scanty",
+      "scantiness"
+    ],
+    "synonyms": [
+      {
+        "word": "meagre",
+        "vs": "Meagre suggests an amount that is disappointingly small, often of income or food; scant is more about evidence and attention."
+      },
+      {
+        "word": "sparse",
+        "vs": "Sparse describes things thinly spread out, like hair or population; scant describes an amount that is too small."
+      },
+      {
+        "word": "minimal",
+        "vs": "Minimal means the smallest possible and can be positive; scant implies not enough."
+      }
+    ],
+    "antonyms": [
+      "ample",
+      "abundant",
+      "copious",
+      "plentiful"
+    ],
+    "confusables": [
+      {
+        "word": "scarce",
+        "note": "Scarce means hard to find or in short supply; scant means barely enough in amount."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "judgement",
+      "degree"
+    ]
+  },
+  {
+    "id": "whimsical#adj",
+    "headword": "whimsical",
+    "pos": "adj",
+    "sense": "playfully odd, or led by sudden fancy",
+    "forms": [],
+    "definition": "Playfully strange or fanciful, often in a charming way, or changing according to sudden fancies.",
+    "register": "neutral",
+    "nuance": "Whimsical describes designs, humour and people that are playfully odd and unpredictable. It is usually warm or affectionate, as in a whimsical illustration. It can also describe sudden, unreasoned changes of mind, which is more critical.",
+    "everyday": "quirky",
+    "examples": [
+      {
+        "text": "The cafe has a whimsical design, with teacups hanging from the ceiling and a door shaped like a keyhole.",
+        "form": "whimsical",
+        "setting": "conversation"
+      },
+      {
+        "text": "Critics praise the author's whimsical imagination, which turns ordinary objects into talking characters.",
+        "form": "whimsical",
+        "setting": "academic"
+      },
+      {
+        "text": "The festival is known for its whimsical parade, in which giant paper animals dance through the streets.",
+        "form": "whimsical",
+        "setting": "news"
+      },
+      {
+        "text": "The old inventor had a whimsical sense of humour and named his machines after his favourite puddings.",
+        "form": "whimsical",
+        "setting": "fiction"
+      },
+      {
+        "text": "The brochure describes the hotel's whimsical decor, which includes a library of fairy tales in every room.",
+        "form": "whimsical",
+        "setting": "formal"
+      },
+      {
+        "text": "Rulers who govern by whimsical decisions, changing laws on a sudden fancy, make planning impossible for their people.",
+        "form": "whimsical",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The illustrator's ___ drawings show cats in top hats and fish riding bicycles.",
+        "answer": "whimsical"
+      },
+      {
+        "text": "Her ___ sense of humour meant that no one could guess what she would say or do next.",
+        "answer": "whimsical"
+      },
+      {
+        "text": "He made a ___ choice, picking the house only because he liked the colour of the front door.",
+        "answer": "whimsical"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The whimsical engineer followed the safety manual exactly.",
+        "why": "Whimsical suggests playful or unpredictable, while following a manual exactly is careful and predictable."
+      },
+      {
+        "text": "It was a whimsical funeral, full of sorrow and silence.",
+        "why": "Whimsical suggests playfulness; sorrow and silence do not fit."
+      }
+    ],
+    "partners": [
+      "a whimsical sense of humour",
+      "whimsical design",
+      "whimsical charm",
+      "a whimsical idea"
+    ],
+    "phrases": [
+      "...with a whimsical touch...",
+      "...a whimsical blend of..."
+    ],
+    "family": [
+      "whimsy",
+      "whimsically",
+      "whimsicality"
+    ],
+    "synonyms": [
+      {
+        "word": "quirky",
+        "vs": "Quirky is everyday and about charming oddness; whimsical adds playfulness and fancy."
+      },
+      {
+        "word": "capricious",
+        "vs": "Capricious is critical and about sudden unreasoned changes; whimsical is usually warm."
+      },
+      {
+        "word": "fanciful",
+        "vs": "Fanciful stresses imagination that is unrealistic; whimsical stresses playful charm."
+      }
+    ],
+    "antonyms": [
+      "serious",
+      "sober",
+      "practical",
+      "predictable"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "style"
+    ]
+  }
+]
