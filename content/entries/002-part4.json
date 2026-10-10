@@ -21,7 +21,7 @@
         "setting": "academic"
       },
       {
-        "text": "The prime minister was resolute in her refusal to call an early election.",
+        "text": "The prime minister struck a resolute tone, promising that the reforms would go ahead despite the protests.",
         "form": "resolute",
         "setting": "news"
       },
@@ -43,15 +43,15 @@
     ],
     "cloze": [
       {
-        "text": "Faced with fierce pressure to compromise, she remained ___ in her aim and would not give way.",
+        "text": "Faced with fierce pressure to compromise, the general stayed ___, a more formal word for determined, and would not give way.",
         "answer": "resolute"
       },
       {
-        "text": "Facing ruin, the small firm showed ___ determination and refused to close even in its worst year.",
+        "text": "Facing ruin, the small firm showed ___ determination, firm in purpose, and refused to close even in its worst year.",
         "answer": "resolute"
       },
       {
-        "text": "He was not hesitant or wavering but ___: the board stood by its decision despite angry protests.",
+        "text": "She was not hesitant or wavering but ___: she held firmly to her decision despite the angry protests.",
         "answer": "resolute"
       }
     ],
@@ -172,11 +172,11 @@
     ],
     "cloze": [
       {
-        "text": "Words like 'podcast' and 'emoji' have recently joined the English ___, and dictionaries now include them.",
+        "text": "Linguists use the word ___, from the Greek for 'of words', for the whole stock of words in a language such as English.",
         "answer": "lexicon"
       },
       {
-        "text": "A doctor's specialised ___ includes hundreds of technical terms that patients rarely hear in everyday speech.",
+        "text": "Medicine has its own ___, a technical word for a field's whole stock of terms, most of which patients rarely hear.",
         "answer": "lexicon"
       },
       {
@@ -262,7 +262,7 @@
         "setting": "academic"
       },
       {
-        "text": "My new neighbours were really cordial and brought round a cake on the first day.",
+        "text": "We weren't close, but things with my ex stayed cordial after the break-up.",
         "form": "cordial",
         "setting": "conversation"
       },
@@ -284,22 +284,22 @@
     ],
     "cloze": [
       {
-        "text": "The meeting was warm and ___, though the two sides were still far from reaching an agreement.",
+        "text": "The meeting was polite and ___, warm in a formal way, though the two sides were still far from an agreement.",
         "answer": "cordial"
       },
       {
-        "text": "Ambassadors work to keep relations ___, courteous and warm, even when their countries disagree.",
+        "text": "Ambassadors work to keep relations ___, a diplomat's word for friendly but formal, even when their countries disagree.",
         "answer": "cordial"
       },
       {
-        "text": "Although they disagreed on almost everything, the rivals kept a ___ tone, always greeting each other politely.",
+        "text": "Although they disagreed on almost everything, the rivals stayed ___ in public: not close friends, but always warm and polite.",
         "answer": "cordial"
       }
     ],
     "misuse": [
       {
-        "text": "The cordial dog bit the postman and chased him down the road.",
-        "why": "Cordial means warm and polite, so a biting dog is the opposite."
+        "text": "My grandmother and I have a cordial relationship; she is the person I love most in the world.",
+        "why": "Cordial means polite and friendly but not close; for a deeply loving bond, say 'close' or 'loving'."
       },
       {
         "text": "Their cordial argument ended with shouting and slammed doors.",
@@ -354,7 +354,7 @@
       "concord",
       "discord"
     ],
-    "origin": "From Latin cor, 'heart': a cordial welcome comes from the heart.",
+    "origin": "From Medieval Latin cordialis, 'of the heart', from Latin cor, 'heart'.",
     "tags": [
       "character"
     ]
@@ -367,7 +367,7 @@
     "forms": [],
     "definition": "Left empty and uncared for, and in a poor, run-down state.",
     "register": "neutral",
-    "nuance": "Derelict usually describes buildings, land or ships that have been abandoned and left to decay. In formal writing it can also mean neglectful of a duty, as in 'derelict in his duty'. It is stronger than 'empty' because it suggests long neglect.",
+    "nuance": "Derelict usually describes buildings, land or ships that have been abandoned and left to decay. It is stronger than 'empty' because it suggests long neglect. In formal writing it can also mean failing in a duty ('derelict in his duty'), a separate sense not taught here.",
     "everyday": "abandoned",
     "examples": [
       {
@@ -396,22 +396,22 @@
         "setting": "fiction"
       },
       {
-        "text": "The inquiry found the officer derelict in his duty when he ignored the warnings.",
+        "text": "Surveys of the coalfields recorded hundreds of derelict mines and spoil heaps left behind when the pits closed.",
         "form": "derelict",
-        "setting": "formal"
+        "setting": "academic"
       }
     ],
     "cloze": [
       {
-        "text": "The ___ warehouse had been empty for decades: its roof had collapsed and its windows were smashed.",
+        "text": "The warehouse was not merely empty but ___: nobody had cared for it in decades, its roof had collapsed and its windows were smashed.",
         "answer": "derelict"
       },
       {
-        "text": "Squatters moved into the ___ block of flats that the owners had long since left to fall apart.",
+        "text": "Squatters moved into a ___ block of flats, abandoned years ago and now crumbling for lack of any repairs.",
         "answer": "derelict"
       },
       {
-        "text": "Campaigners want ___ land in the city turned into parks instead of being left to rot.",
+        "text": "Campaigners want the city's ___ land, abandoned for decades and now full of rubble and weeds, turned into parks.",
         "answer": "derelict"
       }
     ],
@@ -430,11 +430,11 @@
       "derelict land",
       "a derelict site",
       "lie derelict",
-      "derelict in his duty"
+      "stand derelict"
     ],
     "phrases": [
       "...left derelict for years...",
-      "...derelict in their duty to..."
+      "...the redevelopment of derelict land..."
     ],
     "family": [
       "dereliction"
@@ -527,15 +527,15 @@
     ],
     "cloze": [
       {
-        "text": "The company hopes the new safety checks will ___ customers' fears that the product could be dangerous.",
+        "text": "The company hopes the new safety checks will ___ customers' fears, calming them with clear facts rather than simply ignoring them.",
         "answer": "allay"
       },
       {
-        "text": "Her calm, honest answers ___ the committee's doubts and won them over.",
+        "text": "Her calm, honest answers ___ the committee's doubts, putting their worries to rest and winning them over.",
         "answer": "allayed"
       },
       {
-        "text": "Nothing he said could ___ her suspicion that he was hiding something, however kindly he spoke.",
+        "text": "Nothing he said could ___ her suspicion that he was hiding something; however kindly he spoke, her worry would not be put to rest.",
         "answer": "allay"
       }
     ],
@@ -545,8 +545,8 @@
         "why": "Allay is used with fears or worries, not with people."
       },
       {
-        "text": "The new tax allayed the public's anger by making it far worse.",
-        "why": "Allay means to calm or reduce; making anger worse is the opposite."
+        "text": "The new timetable allayed the problem of overcrowding on trains.",
+        "why": "Allay is used with fears, doubts and worries, not practical problems; say 'eased' or 'reduced'."
       }
     ],
     "partners": [
@@ -583,7 +583,7 @@
     "confusables": [
       {
         "word": "alley",
-        "note": "An alley is a narrow passage between buildings; it sounds the same as allay."
+        "note": "An alley is a narrow passage between buildings; it looks similar but is said differently."
       },
       {
         "word": "ally",
@@ -641,15 +641,15 @@
     ],
     "cloze": [
       {
-        "text": "At the state dinner, guests were expected to show proper ___ and speak quietly and politely.",
+        "text": "At the state dinner, guests were expected to show proper ___: the dignified, correct behaviour such a formal occasion demands.",
         "answer": "decorum"
       },
       {
-        "text": "Shouting at the umpire was a serious breach of ___ in the polite, gentlemanly world of cricket.",
+        "text": "Shouting at the umpire was a serious breach of ___, the dignified behaviour expected in the polite world of cricket.",
         "answer": "decorum"
       },
       {
-        "text": "The funeral demanded solemn ___, so the children were told to sit still and stay silent.",
+        "text": "The Speaker called for ___ when members began jeering, reminding them that the House expects dignified, orderly conduct.",
         "answer": "decorum"
       }
     ],
@@ -723,11 +723,11 @@
     "id": "inasmuch#conj",
     "headword": "inasmuch",
     "pos": "conj",
-    "sense": "because, or to the extent that, in 'inasmuch as'",
+    "sense": "because; since (in 'inasmuch as')",
     "forms": [],
-    "definition": "Used before 'as' to introduce a reason, or to say how far something is true.",
+    "definition": "Used before 'as' to give the reason for something, much like 'since' or 'because'.",
     "register": "formal",
-    "nuance": "Inasmuch is almost always followed by 'as', in the phrase 'inasmuch as'. It is formal and slightly old-fashioned, common in law, theology and academic prose. It can give a reason or limit a claim, so check which meaning you intend.",
+    "nuance": "Inasmuch is almost always followed by 'as', in the phrase 'inasmuch as'. It is formal and slightly old-fashioned, common in law, official letters and academic prose. It can also mean 'to the extent that', but there 'insofar as' is clearer.",
     "everyday": "because",
     "examples": [
       {
@@ -736,42 +736,42 @@
         "setting": "formal"
       },
       {
-        "text": "The theory is useful inasmuch as it predicts short-term behaviour, but it fails over longer periods.",
-        "form": "inasmuch",
+        "text": "Inasmuch as the sample was small, the authors treat their conclusions as provisional.",
+        "form": "Inasmuch",
         "setting": "academic"
       },
       {
-        "text": "The strike was unusual inasmuch as it united workers from three rival unions.",
+        "text": "The court ruled the contract void, inasmuch as one party had signed it under pressure.",
         "form": "inasmuch",
         "setting": "news"
       },
       {
-        "text": "Honestly, the trip was worth it inasmuch as we finally got some rest.",
-        "form": "inasmuch",
-        "setting": "conversation"
-      },
-      {
-        "text": "He was guilty only inasmuch as he had stayed silent while others lied.",
+        "text": "She forgave him, inasmuch as he had confessed before anyone could accuse him.",
         "form": "inasmuch",
         "setting": "fiction"
       },
       {
-        "text": "The author's argument is persuasive inasmuch as it rests on evidence from several countries.",
+        "text": "Inasmuch as the tenant has not paid rent for three months, the agreement is now terminated.",
+        "form": "Inasmuch",
+        "setting": "formal"
+      },
+      {
+        "text": "The policy failed, inasmuch as its designers ignored the conditions in rural areas.",
         "form": "inasmuch",
         "setting": "academic"
       }
     ],
     "cloze": [
       {
-        "text": "The experiment was useful only ___ as it showed which of the two methods was unreliable.",
+        "text": "Lawyers often write '___ as' where most people would simply say 'because' or 'since'.",
         "answer": "inasmuch"
       },
       {
-        "text": "Legal documents often use the formal phrase '___ as' to mean 'because' or 'to the extent that'.",
+        "text": "The board dismissed the manager ___ as he had broken the rules three times; that was the only reason given.",
         "answer": "inasmuch"
       },
       {
-        "text": "We cannot approve the budget ___ as the figures have not yet been checked by an independent auditor.",
+        "text": "The council closed the bridge ___ as engineers had found cracks in it; put simply, it closed because of the cracks.",
         "answer": "inasmuch"
       }
     ],
@@ -782,25 +782,23 @@
       },
       {
         "text": "I went to the shop inasmuch as to buy some milk.",
-        "why": "Inasmuch as gives a reason or limits a claim; it cannot mean 'in order to'."
+        "why": "Inasmuch as gives a reason before a full clause; it cannot mean 'in order to'."
       }
     ],
     "partners": [
       "inasmuch as",
-      "only inasmuch as",
-      "valid inasmuch as",
-      "useful inasmuch as",
-      "inasmuch as it"
+      "inasmuch as it",
+      "inasmuch as they"
     ],
     "phrases": [
-      "This is true only inasmuch as...",
-      "...inasmuch as the evidence suggests..."
+      "Inasmuch as the evidence is limited, ...",
+      "...is void, inasmuch as..."
     ],
     "family": [],
     "synonyms": [
       {
         "word": "because",
-        "vs": "Because is plain and everyday; inasmuch as is formal and can also mean 'to the extent that'."
+        "vs": "Because is plain and everyday; inasmuch as is formal and sounds legal or official."
       },
       {
         "word": "since",
@@ -808,7 +806,7 @@
       },
       {
         "word": "insofar as",
-        "vs": "Insofar as means to the extent that; inasmuch as more often gives a reason."
+        "vs": "Insofar as means 'to the extent that'; inasmuch as usually gives a reason, like 'since'."
       }
     ],
     "antonyms": [],
@@ -818,14 +816,9 @@
         "note": "Insomuch is a similar old word, mostly used as 'insomuch that', meaning 'to such a degree that'."
       }
     ],
-    "roots": [
-      {
-        "part": "in as much as",
-        "meaning": "in so much as (Middle English)"
-      }
-    ],
+    "roots": [],
     "siblings": [],
-    "origin": "Written as one word from the older three-word phrase 'in as much as'.",
+    "origin": "Made by running together the words 'in as much', which are still sometimes written separately.",
     "tags": [
       "connecting"
     ]
@@ -874,15 +867,15 @@
     ],
     "cloze": [
       {
-        "text": "The instructions were so ___ that nobody could tell which step was supposed to come first.",
+        "text": "The instructions were so ___, as clear as muddy water, that nobody could tell which step came first.",
         "answer": "muddled"
       },
       {
-        "text": "After the long flight, his thinking was ___ and he kept forgetting what he had just said.",
+        "text": "After the long flight his thinking was ___, all mixed up, and he kept forgetting what he had just said.",
         "answer": "muddled"
       },
       {
-        "text": "Teachers often write 'unclear' next to ___ paragraphs in which several ideas are jumbled together.",
+        "text": "Teachers often write 'unclear' next to ___ paragraphs in which several ideas are jumbled together like a messy drawer.",
         "answer": "muddled"
       }
     ],
@@ -892,8 +885,8 @@
         "why": "Muddled means confused, so it clashes with clear purpose and confidence."
       },
       {
-        "text": "She felt muddled and sad after hearing the news of her friend's death.",
-        "why": "Muddled means confused, not sad or grieving."
+        "text": "After the football match his boots were completely muddled.",
+        "why": "Muddled means confused or mixed up; boots covered in mud are muddy."
       }
     ],
     "partners": [
@@ -952,7 +945,7 @@
     "definition": "Strong, often unfair support for one political party, group or cause over all others.",
     "register": "formal",
     "nuance": "Partisanship is strong loyalty to one side, especially in politics, and it is usually used critically. It suggests that people judge ideas by who says them rather than on their merits. It is common in news and political science.",
-    "everyday": "bias",
+    "everyday": "taking sides",
     "examples": [
       {
         "text": "Bitter partisanship in parliament meant that sensible proposals were rejected simply because the other side made them.",
@@ -991,7 +984,7 @@
         "answer": "partisanship"
       },
       {
-        "text": "The judge must be free of political ___ and decide cases on the law alone.",
+        "text": "The judge must be free of political ___, loyalty to one party over another, and decide cases on the law alone.",
         "answer": "partisanship"
       },
       {
@@ -1005,8 +998,8 @@
         "why": "Partisanship is one-sided loyalty; sharing a prize equally is fair and neutral."
       },
       {
-        "text": "He admired the artist's partisanship with colour and light.",
-        "why": "Partisanship is about taking sides, not artistic skill."
+        "text": "The two firms signed a partisanship agreement to share their research.",
+        "why": "This confuses partisanship with partnership; partisanship is one-sided loyalty, not working together."
       }
     ],
     "partners": [
@@ -1108,15 +1101,15 @@
     ],
     "cloze": [
       {
-        "text": "Lies repeated for years can have a ___ effect: the damage is slow, hidden and hard to undo.",
+        "text": "Lies repeated for years can have a ___ effect: deeply destructive, though the damage is slow, hidden and hard to undo.",
         "answer": "pernicious"
       },
       {
-        "text": "Experts warn that ___ ideas spread quietly through a society and corrupt its values before anyone notices.",
+        "text": "Not merely unhelpful but ___, the myth slowly wrecks people's health and ruins lives before anyone notices.",
         "answer": "pernicious"
       },
       {
-        "text": "The drug's ___ side effects, which appeared only after years of use, were far worse than the original illness.",
+        "text": "Before vitamin B12 was discovered, ___ anaemia was usually fatal, which is how this deadly illness got its name.",
         "answer": "pernicious"
       }
     ],
@@ -1195,7 +1188,7 @@
     "definition": "Bitter, cruel and hateful criticism or abuse expressed in harsh language.",
     "register": "formal",
     "nuance": "Vitriol describes language, writing or speech full of bitter hatred, especially in public debate or online. It is strongly critical and often appears in news about politics and social media. It is normally used without 'a' or 'the'.",
-    "everyday": "venom",
+    "everyday": "hateful abuse",
     "examples": [
       {
         "text": "The comment section was full of vitriol, with strangers insulting each other over a simple recipe.",
@@ -1230,22 +1223,22 @@
     ],
     "cloze": [
       {
-        "text": "The politician's speech was full of ___, with cruel personal insults aimed at every rival.",
+        "text": "The politician's speech was pure ___, insults so bitter they seemed to burn like acid.",
         "answer": "vitriol"
       },
       {
-        "text": "She replied to the mild criticism with such bitter ___ that her friends were shocked.",
+        "text": "The word for this hateful language once named a burning acid: the minister faced a flood of ___ online.",
         "answer": "vitriol"
       },
       {
-        "text": "Instead of calm debate, the online argument quickly turned into hateful ___ and name-calling.",
+        "text": "Instead of calm debate, the forum filled with ___, a corrosive stream of bitter, hateful name-calling.",
         "answer": "vitriol"
       }
     ],
     "misuse": [
       {
-        "text": "The recipe called for two spoonfuls of vitriol and a pinch of salt.",
-        "why": "In modern English vitriol means bitter, abusive language, not an ingredient."
+        "text": "He wrote a vitriol about the new mayor and posted it online.",
+        "why": "Vitriol is uncountable; you write a vitriolic attack, or an attack full of vitriol, not 'a vitriol'."
       },
       {
         "text": "He spoke with gentle vitriol that made everyone feel welcome.",
@@ -1277,7 +1270,7 @@
       },
       {
         "word": "venom",
-        "vs": "Venom is closely similar but more figurative; vitriol often describes public, written or online attacks."
+        "vs": "Venom stresses spite aimed at a person; vitriol stresses corrosive bitterness, especially in public, written or online attacks."
       }
     ],
     "antonyms": [
@@ -1344,7 +1337,7 @@
     ],
     "cloze": [
       {
-        "text": "Years of scandals had bred deep ___ among voters, who now assumed every politician was out for themselves.",
+        "text": "Years of scandals had turned voters' distrust into ___: they now assumed every politician was in it only for themselves.",
         "answer": "cynicism"
       },
       {
@@ -1358,8 +1351,8 @@
     ],
     "misuse": [
       {
-        "text": "Her cynicism about the project was shown by her generous donation and joyful speech.",
-        "why": "Cynicism is distrust of people's motives, which does not fit generous, joyful support."
+        "text": "Her cynicism was obvious when she said 'Oh, great!' after dropping her phone in the bath.",
+        "why": "That is sarcasm, saying the opposite of what you mean; cynicism is distrust of people's motives."
       },
       {
         "text": "He showed great cynicism by trusting every stranger who asked for money.",
@@ -1401,7 +1394,12 @@
       "idealism",
       "optimism"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "sarcasm",
+        "note": "Sarcasm is saying the opposite of what you mean in order to mock."
+      }
+    ],
     "roots": [
       {
         "part": "kyon",
@@ -1466,7 +1464,7 @@
         "answer": "inconclusive"
       },
       {
-        "text": "Police released the man because the evidence was ___ and could not prove he was guilty.",
+        "text": "Police released the man because the evidence was ___: it neither cleared him nor proved him guilty.",
         "answer": "inconclusive"
       }
     ],
@@ -1476,8 +1474,8 @@
         "why": "Inconclusive means failing to settle the question; proof beyond doubt is the opposite."
       },
       {
-        "text": "She gave an inconclusive speech that was far too loud.",
-        "why": "Inconclusive is about results or arguments that settle nothing, not volume."
+        "text": "The school wants to be more inconclusive, so that every child feels welcome.",
+        "why": "This confuses inconclusive with inclusive; inconclusive means failing to settle a question."
       }
     ],
     "partners": [
@@ -1516,7 +1514,12 @@
       "decisive",
       "definitive"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "inclusive",
+        "note": "Inclusive means including everyone or everything."
+      }
+    ],
     "roots": [
       {
         "part": "in-",
@@ -1533,7 +1536,7 @@
       "seclude",
       "clause"
     ],
-    "origin": "From Latin concludere, 'to shut up', so a conclusive result shuts the question; inconclusive leaves it open.",
+    "origin": "From Latin concludere, 'to shut in, close', so a conclusive result closes the question; an inconclusive one leaves it open.",
     "tags": [
       "reasoning"
     ]
@@ -1547,7 +1550,7 @@
     "definition": "Not strict, especially in punishing someone or applying rules.",
     "register": "neutral",
     "nuance": "Lenient describes people, punishments and rules that are milder or more forgiving than expected. It can be approving, as in kindly, but it is often critical, suggesting too little discipline. It is common about judges, teachers, parents and sentences.",
-    "everyday": "easygoing",
+    "everyday": "not strict",
     "examples": [
       {
         "text": "The judge was lenient with the young offender and gave him a warning instead of sending him to prison.",
@@ -1582,7 +1585,7 @@
     ],
     "cloze": [
       {
-        "text": "Some say the court was too ___ and should have given the thief a much tougher punishment.",
+        "text": "The victim's family said the two-year sentence was far too ___: a mild punishment for such a serious crime.",
         "answer": "lenient"
       },
       {
@@ -1600,8 +1603,8 @@
         "why": "Lenient means mild and forgiving, so strict punishment for small mistakes is the opposite."
       },
       {
-        "text": "He was lenient at the finishing line and won the race by a metre.",
-        "why": "Lenient is about being mild in judging or punishing, not about speed."
+        "text": "The weather was lenient all week, so we had a picnic every day.",
+        "why": "Lenient describes people, rules or punishments that are not strict; for weather, say 'mild'."
       }
     ],
     "partners": [
@@ -1661,7 +1664,7 @@
     "definition": "Moving from place to place rather than living in one settled home.",
     "register": "neutral",
     "nuance": "Nomadic describes peoples, herders and lifestyles that move regularly, usually following food, water or grazing land. It is neutral in history and anthropology. It can also describe modern workers who change place often.",
-    "everyday": "roaming",
+    "everyday": "wandering",
     "examples": [
       {
         "text": "The nomadic herders move their sheep to new pastures each season and live in tents.",
@@ -1674,7 +1677,7 @@
         "setting": "academic"
       },
       {
-        "text": "I've had a nomadic life since graduating, with a new flat every year.",
+        "text": "I've had a pretty nomadic life since graduating: three cities and five flats in four years.",
         "form": "nomadic",
         "setting": "conversation"
       },
@@ -1714,8 +1717,8 @@
         "why": "Nomadic means moving from place to place, so staying in one house all his life is the opposite."
       },
       {
-        "text": "The nomadic soup tasted of herbs and garlic.",
-        "why": "Nomadic describes people or ways of life that move around, not food."
+        "text": "The nomadic geese fly south every autumn and return in spring.",
+        "why": "For animals that move between regions each season, the usual word is 'migratory'; nomadic is mostly used for people."
       }
     ],
     "partners": [
@@ -1809,7 +1812,7 @@
     ],
     "cloze": [
       {
-        "text": "The claim that a goldfish could run the company is so ___ that nobody took it seriously.",
+        "text": "The claim that a goldfish could run the company was not merely absurd but utterly ___, and the whole room burst out laughing.",
         "answer": "preposterous"
       },
       {
@@ -1827,8 +1830,8 @@
         "why": "Preposterous means absurd, which clashes with clear, sensible advice."
       },
       {
-        "text": "We had a preposterous holiday and wished it had been longer.",
-        "why": "Preposterous means absurd and unreasonable, not pleasant or enjoyable."
+        "text": "Thanks to its oil exports, the country became preposterous in the 1970s.",
+        "why": "This confuses preposterous with prosperous; preposterous means absurd."
       }
     ],
     "partners": [
@@ -1864,7 +1867,12 @@
       "sensible",
       "plausible"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "prosperous",
+        "note": "Prosperous means rich and successful."
+      }
+    ],
     "roots": [
       {
         "part": "prae-",
@@ -1885,83 +1893,81 @@
     ]
   },
   {
-    "id": "elitist#n",
+    "id": "elitist#adj",
     "headword": "elitist",
-    "pos": "n",
-    "sense": "a person who thinks a select few should rule",
-    "forms": [
-      "elitists"
-    ],
-    "definition": "A person who believes a small, privileged or highly skilled group should hold power or be treated as superior.",
+    "pos": "adj",
+    "sense": "favouring a privileged few over everyone else",
+    "forms": [],
+    "definition": "Believing that a small, privileged group is superior and deserves more power or advantages than others.",
     "register": "formal",
-    "nuance": "Elitist as a noun names someone who thinks a select few deserve special status or control. It is strongly critical and often used as an accusation in debates about education, culture and politics. The adjective elitist is more common than the noun.",
-    "everyday": "snob",
+    "nuance": "Elitist describes people, attitudes, systems and institutions that favour a select few, such as the rich or highly educated. It is almost always critical, often an accusation in debates about education, culture and politics. It is also a noun: 'an elitist'.",
+    "everyday": "snobbish",
     "examples": [
       {
-        "text": "Critics called him an elitist because he believed only graduates of top universities should advise the government.",
+        "text": "Critics called the golf club elitist because membership cost thousands and new members needed two wealthy sponsors.",
         "form": "elitist",
         "setting": "news"
       },
       {
-        "text": "The historian portrays the founders as elitists who feared the power of ordinary voters.",
-        "form": "elitists",
+        "text": "Some historians argue that early voting laws were elitist, giving power only to men who owned property.",
+        "form": "elitist",
         "setting": "academic"
       },
       {
-        "text": "Don't be such an elitist; plenty of brilliant people never went to university.",
+        "text": "It's a bit elitist to say pop music isn't real music, don't you think?",
         "form": "elitist",
         "setting": "conversation"
       },
       {
-        "text": "The committee rejected the charge that it was a group of elitists out of touch with ordinary people.",
-        "form": "elitists",
+        "text": "The university has pledged to reform its elitist admissions process and widen access for state-school pupils.",
+        "form": "elitist",
         "setting": "formal"
       },
       {
-        "text": "The old professor was an elitist who looked down on anyone who read popular novels.",
+        "text": "Her elitist parents were horrified when she announced that she was leaving university to become a plumber.",
         "form": "elitist",
         "setting": "fiction"
       },
       {
-        "text": "Populist movements often present themselves as the enemy of elitists in the capital.",
-        "form": "elitists",
+        "text": "The author rejects the elitist view that only trained experts can judge great art.",
+        "form": "elitist",
         "setting": "academic"
       }
     ],
     "cloze": [
       {
-        "text": "Populists often attack so-called ___ who they say think ordinary people are unfit to govern.",
-        "answer": "elitists"
-      },
-      {
-        "text": "To his critics he was the worst kind of ___, convinced that a gifted minority should rule the rest.",
+        "text": "Not just snobbish but openly ___, the club's leaders believed a privileged few should run the whole town.",
         "answer": "elitist"
       },
       {
-        "text": "Newspapers branded the club's owners ___, saying they wanted to keep ordinary people out of power and privilege.",
-        "answer": "elitists"
+        "text": "Critics say the scheme is ___, designed by a privileged minority to benefit people like themselves and shut others out.",
+        "answer": "elitist"
+      },
+      {
+        "text": "Populists attack the ___ attitudes of experts who, they say, think only a select few are fit to make decisions.",
+        "answer": "elitist"
       }
     ],
     "misuse": [
       {
-        "text": "The elitist shared his bread equally and treated everyone as equals.",
-        "why": "An elitist believes a select few are superior, so treating everyone as equals is the opposite."
+        "text": "The school is very elitist: anyone can join, and it is free for every child.",
+        "why": "Elitist means favouring a privileged few; open, free entry for everyone is the opposite."
       },
       {
-        "text": "She is an elitist because she runs marathons every weekend.",
-        "why": "An elitist is defined by beliefs about privilege and power, not by fitness or hobbies."
+        "text": "She is an elitist tennis player and has won every match this year.",
+        "why": "This confuses elitist with elite; an elite player is top-level, while elitist is about attitudes to privilege."
       }
     ],
     "partners": [
-      "accused of being an elitist",
-      "a cultural elitist",
-      "a self-confessed elitist",
-      "out-of-touch elitists",
-      "an intellectual elitist"
+      "elitist attitudes",
+      "an elitist system",
+      "accused of being elitist",
+      "deeply elitist",
+      "elitist institutions"
     ],
     "phrases": [
-      "...dismissed as elitists by...",
-      "...critics label him an elitist."
+      "...has been criticised as elitist because...",
+      "...an elitist view of..."
     ],
     "family": [
       "elite",
@@ -1969,19 +1975,29 @@
     ],
     "synonyms": [
       {
-        "word": "snob",
-        "vs": "Snob is informal and focuses on looking down on others' taste or class; elitist is about believing a select group should lead."
+        "word": "snobbish",
+        "vs": "Snobbish is everyday and about looking down on others' taste or class; elitist is about believing a select group deserves power or privilege."
       },
       {
-        "word": "aristocrat",
-        "vs": "An aristocrat is a noble by birth; an elitist is anyone with the belief, whatever their background."
+        "word": "exclusive",
+        "vs": "Exclusive can be neutral or approving (an exclusive resort); elitist is critical and points to unfair privilege."
+      },
+      {
+        "word": "highbrow",
+        "vs": "Highbrow describes demanding, intellectual culture and can be neutral; elitist criticises looking down on people who prefer something else."
       }
     ],
     "antonyms": [
       "egalitarian",
-      "democrat"
+      "inclusive",
+      "democratic"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "elite",
+        "note": "As an adjective, elite means top-level or the best (elite athletes), with no criticism."
+      }
+    ],
     "roots": [
       {
         "part": "eligere",
@@ -1993,7 +2009,7 @@
       "select",
       "eligible"
     ],
-    "origin": "From French elite, 'the chosen', from elire, 'to choose'.",
+    "origin": "From elite, French for 'chosen', from elire, 'to choose'.",
     "tags": [
       "society"
     ]
@@ -2003,13 +2019,11 @@
     "headword": "infamy",
     "pos": "n",
     "sense": "being widely known for something shameful",
-    "forms": [
-      "infamies"
-    ],
+    "forms": [],
     "definition": "The state of being widely known for something shameful or wicked.",
     "register": "formal",
-    "nuance": "Infamy is public fame for something shameful, such as a crime, betrayal or disaster. It is formal and strong, and often has a historical or dramatic ring. Unlike 'fame', it is always negative, and 'notoriety' is its closest everyday word.",
-    "everyday": "disgrace",
+    "nuance": "Infamy is public fame for something shameful, such as a crime, betrayal or disaster. It is formal and strong, and often has a historical or dramatic ring. Unlike 'fame', it is always negative; 'notoriety' is close in meaning but a little milder.",
+    "everyday": "bad reputation",
     "examples": [
       {
         "text": "The general earned lasting infamy for burning the city and betraying his own allies.",
@@ -2027,7 +2041,7 @@
         "setting": "conversation"
       },
       {
-        "text": "The company's name has become a byword for infamy since the scandal.",
+        "text": "The scandal brought the firm lasting infamy, and its name is still used as a warning in business schools.",
         "form": "infamy",
         "setting": "formal"
       },
@@ -2037,14 +2051,14 @@
         "setting": "fiction"
       },
       {
-        "text": "The infamies of the regime, from secret prisons to censorship, are documented in the archive.",
-        "form": "infamies",
+        "text": "The ship's name passed into infamy after the mutiny, and historians still argue about who was to blame.",
+        "form": "infamy",
         "setting": "academic"
       }
     ],
     "cloze": [
       {
-        "text": "He wanted to be remembered as a hero, but his crimes gave him lasting ___ instead.",
+        "text": "The prison camp's name has passed into ___: everyone knows it, but only for the horrors done there.",
         "answer": "infamy"
       },
       {
@@ -2170,15 +2184,15 @@
     ],
     "cloze": [
       {
-        "text": "Many ___ businesses fail in their first year because they have little money and no track record.",
+        "text": "Like young birds just learning to fly, many ___ businesses crash in their first year because they have little money and no track record.",
         "answer": "fledgling"
       },
       {
-        "text": "The country's ___ democracy was only two years old and its institutions were still fragile.",
+        "text": "The country's ___ democracy, still finding its wings after decades of dictatorship, had fragile institutions.",
         "answer": "fledgling"
       },
       {
-        "text": "Small grants help ___ artists who have just begun their careers and have no reputation yet.",
+        "text": "Small grants help ___ artists, just out of the nest of art school, who have no reputation yet.",
         "answer": "fledgling"
       }
     ],
@@ -2188,8 +2202,8 @@
         "why": "Fledgling means new and inexperienced, which contradicts forty years of teaching."
       },
       {
-        "text": "The fledgling building was a century old and full of history.",
-        "why": "Fledgling means new and still developing, not old."
+        "text": "Sales were fledgling, falling every month as customers lost interest.",
+        "why": "This confuses fledgling with flagging; fledgling means new and still developing, not weakening."
       }
     ],
     "partners": [
@@ -2226,7 +2240,12 @@
       "mature",
       "veteran"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "flagging",
+        "note": "Flagging means becoming tired or weaker."
+      }
+    ],
     "roots": [],
     "siblings": [],
     "origin": "From 'fledge', to grow the feathers needed to fly: a fledgling is a young bird just learning to fly.",
@@ -2282,7 +2301,7 @@
     ],
     "cloze": [
       {
-        "text": "Parliament voted to ___ the enslaved people in its colonies and end their legal ownership by others.",
+        "text": "The act did more than free them in practice; it was meant to ___ the enslaved people in law, ending their legal ownership by others.",
         "answer": "emancipate"
       },
       {
@@ -2296,8 +2315,8 @@
     ],
     "misuse": [
       {
-        "text": "The teacher emancipated the class by giving them a difficult test.",
-        "why": "Emancipate means freeing people from restriction, not testing or challenging them."
+        "text": "After weeks without food, the stray dog looked badly emancipated.",
+        "why": "This confuses emancipated with emaciated, which means very thin from hunger or illness."
       },
       {
         "text": "She emancipated her old coat to the charity shop.",
@@ -2381,7 +2400,7 @@
     "definition": "Something or someone that came before and helped prepare the way for a later, similar thing.",
     "register": "neutral",
     "nuance": "Forerunner is used for earlier versions, ideas and people that point towards something later, such as the forerunner of the modern bicycle. It is common in history, science and technology writing. It suggests a clear link to what followed, not just something older.",
-    "everyday": "precursor",
+    "everyday": "early version",
     "examples": [
       {
         "text": "The telegraph was a forerunner of the modern phone, carrying messages across long distances.",
@@ -2420,7 +2439,7 @@
         "answer": "forerunners"
       },
       {
-        "text": "Historians call the small, earlier protest the ___ of the larger movement that swept the country.",
+        "text": "Like a messenger running ahead of an army, the small protest was the ___ of the much larger movement that followed.",
         "answer": "forerunner"
       },
       {
@@ -2453,7 +2472,7 @@
     "synonyms": [
       {
         "word": "precursor",
-        "vs": "Precursor is more formal and technical; forerunner is slightly more everyday and can also be a person."
+        "vs": "Precursor is more formal and common in science (a precursor chemical); forerunner is a little more everyday."
       },
       {
         "word": "predecessor",
@@ -2468,7 +2487,12 @@
       "successor",
       "descendant"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "front-runner",
+        "note": "A front-runner is the leader in a race or contest."
+      }
+    ],
     "roots": [
       {
         "part": "fore",
@@ -2529,7 +2553,7 @@
     ],
     "cloze": [
       {
-        "text": "Laughing at the victim's tears was a ___ thing to do, showing no sympathy at all.",
+        "text": "Like skin thickened by rough work, his heart had grown ___: the victims' tears no longer moved him at all.",
         "answer": "callous"
       },
       {
@@ -2652,22 +2676,22 @@
     ],
     "cloze": [
       {
-        "text": "After the war, one superpower enjoyed ___ over the world's trade, finance and military affairs.",
+        "text": "Gramsci used the word ___ for rule by consent: a ruling class leads by making its ideas seem like common sense.",
         "answer": "hegemony"
       },
       {
-        "text": "The alliance aimed to stop any single nation from gaining ___ over its neighbours.",
+        "text": "From the Greek for 'leadership', ___ is what the alliance feared any single nation might gain over its neighbours.",
         "answer": "hegemony"
       },
       {
-        "text": "Critics say a few giant firms exercise ___ over the market, setting prices and shaping tastes.",
+        "text": "Critics speak of American cultural ___: not rule by force, but the quiet worldwide spread of its films, brands and values.",
         "answer": "hegemony"
       }
     ],
     "misuse": [
       {
-        "text": "The hegemony of the small village was based on its lovely gardens.",
-        "why": "Hegemony means dominance over others, not beauty or charm."
+        "text": "The choir sang in perfect hegemony, every voice blending beautifully.",
+        "why": "This confuses hegemony with harmony; hegemony means dominance of one power over others."
       },
       {
         "text": "The two countries shared equal hegemony and neither ruled the other.",
@@ -2703,11 +2727,16 @@
       }
     ],
     "antonyms": [
-      "independence",
       "equality",
-      "subordination"
+      "independence",
+      "balance of power"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "harmony",
+        "note": "Harmony means agreement, or notes that sound good together."
+      }
+    ],
     "roots": [
       {
         "part": "hegemon",
@@ -2729,7 +2758,7 @@
     "definition": "Believing in high standards or noble goals, often without paying enough attention to practical limits.",
     "register": "neutral",
     "nuance": "Idealistic describes people and plans guided by lofty principles and hopes for a better world. It can praise sincerity and commitment, but it is also often used to suggest naivety about practical difficulties. It is the opposite of pragmatic.",
-    "everyday": "high-minded",
+    "everyday": "starry-eyed",
     "examples": [
       {
         "text": "She was an idealistic young lawyer who believed the law could end poverty, though she soon met harsh reality.",
@@ -2768,7 +2797,7 @@
         "answer": "idealistic"
       },
       {
-        "text": "Her plan to abolish all homework was admirable but ___, and it ignored how schools actually work.",
+        "text": "Her plan to abolish all homework was ___: guided by noble principles, but blind to how schools actually work.",
         "answer": "idealistic"
       },
       {
@@ -2787,7 +2816,7 @@
       }
     ],
     "partners": [
-      "an idealistic young",
+      "idealistic young people",
       "an idealistic view",
       "an idealistic vision",
       "naively idealistic",
@@ -2847,9 +2876,9 @@
     "pos": "n",
     "sense": "the theory and philosophy of law",
     "forms": [],
-    "definition": "The study and theory of law, or the body of legal decisions and principles in a country.",
+    "definition": "The study and philosophy of law: what law is, where its authority comes from, and why it binds us.",
     "register": "formal",
-    "nuance": "Jurisprudence is the academic study of what law is and how it works, and it is also used for the body of decisions made by courts. It is a formal term used in universities and legal writing. Do not use it as a simple word for 'law'.",
+    "nuance": "Jurisprudence is the academic study of what law is and how it works, a formal term used in universities and legal writing. Lawyers also use it for a court's body of past decisions. Do not use it as a simple word for 'law'.",
     "everyday": "legal theory",
     "examples": [
       {
@@ -2858,17 +2887,17 @@
         "setting": "academic"
       },
       {
-        "text": "The ruling will shape the court's jurisprudence on privacy for decades.",
+        "text": "The new professor of jurisprudence says her lectures will tackle questions such as whether unjust laws must be obeyed.",
         "form": "jurisprudence",
         "setting": "news"
       },
       {
-        "text": "My cousin is doing a degree in jurisprudence, which sounds scary but is basically legal philosophy.",
+        "text": "My cousin is taking a module in jurisprudence, which sounds scary but is basically legal philosophy.",
         "form": "jurisprudence",
         "setting": "conversation"
       },
       {
-        "text": "The judge cited earlier jurisprudence from the supreme court in support of her decision.",
+        "text": "Candidates must pass papers in contract law, criminal law and jurisprudence before qualifying.",
         "form": "jurisprudence",
         "setting": "formal"
       },
@@ -2889,11 +2918,11 @@
         "answer": "jurisprudence"
       },
       {
-        "text": "The supreme court's earlier ___ on free speech guided how the judge decided the new case.",
+        "text": "Alongside practical subjects like contract law, students take ___, the philosophy of what law is and why it binds us.",
         "answer": "jurisprudence"
       },
       {
-        "text": "Philosophers of ___ debate whether an unjust rule can truly count as law.",
+        "text": "A classic question in ___, the philosophy of law, is whether an unjust rule can truly count as law at all.",
         "answer": "jurisprudence"
       }
     ],
@@ -2911,11 +2940,11 @@
       "constitutional jurisprudence",
       "a school of jurisprudence",
       "professor of jurisprudence",
-      "the court's jurisprudence",
+      "modern jurisprudence",
       "feminist jurisprudence"
     ],
     "phrases": [
-      "...in the court's jurisprudence on...",
+      "A central question in jurisprudence is whether...",
       "Modern jurisprudence holds that..."
     ],
     "family": [
@@ -2932,7 +2961,7 @@
       },
       {
         "word": "case law",
-        "vs": "Case law means rulings by past judges; jurisprudence is wider and includes legal theory as well."
+        "vs": "Case law means past judges' rulings; jurisprudence is the theory of law, though lawyers also use it for a court's rulings."
       }
     ],
     "antonyms": [],
@@ -2971,7 +3000,7 @@
     "forms": [],
     "definition": "Involving a lot of sitting and little physical movement or exercise.",
     "register": "neutral",
-    "nuance": "Sedentary describes lifestyles, jobs and habits that involve little exercise, and it is common in health and science writing. It is neutral but usually implies a health risk. Zoologists also use it for animals that stay in one place instead of migrating.",
+    "nuance": "Sedentary describes lifestyles, jobs and habits that involve a lot of sitting and little exercise, and it is common in health and science writing. It is neutral but usually implies a health risk. In history and zoology it can also mean settled in one place rather than travelling, a separate sense.",
     "everyday": "inactive",
     "examples": [
       {
@@ -3000,7 +3029,7 @@
         "setting": "fiction"
       },
       {
-        "text": "Unlike migratory birds, the sedentary species remain in the same area all year round.",
+        "text": "Researchers found that replacing one sedentary hour a day with light walking lowered blood pressure.",
         "form": "sedentary",
         "setting": "academic"
       }
@@ -3011,11 +3040,11 @@
         "answer": "sedentary"
       },
       {
-        "text": "To counter their ___ jobs, many office workers now take short walking breaks every hour.",
+        "text": "From the Latin for 'to sit', ___ jobs such as data entry keep people in a chair for most of the day.",
         "answer": "sedentary"
       },
       {
-        "text": "Hunters and gatherers moved with the seasons, but farmers settled in villages and led a more ___ life.",
+        "text": "Health experts call long hours spent sitting at a desk and then on the sofa ___ behaviour.",
         "answer": "sedentary"
       }
     ],
@@ -3025,8 +3054,8 @@
         "why": "Sedentary means involving little movement, so intense daily training is the opposite."
       },
       {
-        "text": "The sedentary river flowed fast down the mountain.",
-        "why": "Sedentary describes people or animals that sit or stay put, not rivers or fast movement."
+        "text": "The doctor gave him a sedentary to help him sleep.",
+        "why": "This confuses sedentary with sedative, a drug that calms you; sedentary is an adjective about sitting."
       }
     ],
     "partners": [
@@ -3125,7 +3154,7 @@
     ],
     "cloze": [
       {
-        "text": "She remained ___ in her loyalty to her friend, even after others turned against him.",
+        "text": "Fixed in place like an anchor, her loyalty stayed ___: she stood by her friend even after everyone else turned against him.",
         "answer": "steadfast"
       },
       {
@@ -3133,7 +3162,7 @@
         "answer": "steadfast"
       },
       {
-        "text": "Faithful and unwavering, he was a ___ ally who never abandoned the cause in hard times.",
+        "text": "Not just determined but loyal and unwavering for forty years, he was a ___ ally who never abandoned the cause.",
         "answer": "steadfast"
       }
     ],
@@ -3143,8 +3172,8 @@
         "why": "Steadfast means firm and unchanging, so changing your mind constantly is the opposite."
       },
       {
-        "text": "The steadfast ice melted quickly in the sun.",
-        "why": "Steadfast describes loyalty or purpose that does not waver, not physical things that melt."
+        "text": "She was steadfast to finish the race, so she ran faster than ever.",
+        "why": "Steadfast is not followed by 'to' and a verb; say 'determined to finish', or 'steadfast in her aim'."
       }
     ],
     "partners": [
@@ -3245,7 +3274,7 @@
     ],
     "cloze": [
       {
-        "text": "After a noisy week in the city, she longed for the ___ calm of the countryside.",
+        "text": "After a noisy week in the city, she longed for somewhere calm, quiet and ___, a lake where nothing disturbed the peace.",
         "answer": "tranquil"
       },
       {
@@ -3263,8 +3292,8 @@
         "why": "Tranquil means calm and undisturbed, so screaming and panic are the opposite."
       },
       {
-        "text": "The tranquil storm shook the roof all night.",
-        "why": "A storm that shakes the roof is violent, the opposite of tranquil."
+        "text": "The vet gave the horse a tranquil before the operation.",
+        "why": "The calming drug is a tranquilliser; tranquil is an adjective meaning calm and peaceful."
       }
     ],
     "partners": [
@@ -3345,7 +3374,7 @@
         "setting": "academic"
       },
       {
-        "text": "Honestly, texting your boss's wife at midnight would be an impropriety.",
+        "text": "Mum says accepting free concert tickets from a client looks like an impropriety, even if it isn't.",
         "form": "impropriety",
         "setting": "conversation"
       },
@@ -3367,7 +3396,7 @@
     ],
     "cloze": [
       {
-        "text": "An audit found no financial ___ in the charity's accounts, only some careless record keeping.",
+        "text": "An audit found no financial ___ in the charity's accounts: no dishonest or unsuitable use of money, only careless record keeping.",
         "answer": "impropriety"
       },
       {
@@ -3375,18 +3404,18 @@
         "answer": "impropriety"
       },
       {
-        "text": "The judge warned the lawyer that talking privately to a juror was a serious ___ that could end the trial.",
+        "text": "The judge called the lawyer's private chat with a juror a serious ___, a breach of the proper conduct expected in court.",
         "answer": "impropriety"
       }
     ],
     "misuse": [
       {
-        "text": "It was an impropriety that the house was well kept and tidy.",
-        "why": "Impropriety means improper behaviour, not the condition of a house."
+        "text": "The impropriety of winning the lottery twice is extremely high.",
+        "why": "This confuses impropriety with improbability; impropriety means improper conduct."
       },
       {
-        "text": "The impropriety of the new road reduced travel time by ten minutes.",
-        "why": "Impropriety is wrong or unsuitable conduct, not a feature of things like roads."
+        "text": "The minister was accused of impropriety for giving a long and boring speech.",
+        "why": "Impropriety is a breach of proper conduct, such as misusing a position; a dull speech breaks no standard."
       }
     ],
     "partners": [
@@ -3420,13 +3449,14 @@
       }
     ],
     "antonyms": [
+      "propriety",
       "decorum",
       "integrity"
     ],
     "confusables": [
       {
-        "word": "improbity",
-        "note": "Improbity means dishonesty."
+        "word": "improbability",
+        "note": "Improbability means how unlikely something is."
       }
     ],
     "roots": [
@@ -3491,7 +3521,7 @@
     ],
     "cloze": [
       {
-        "text": "The typing slip was so small and ___ that nobody even bothered to correct it.",
+        "text": "The typing slip was ___: it changed nothing in the results and led to nothing, so nobody bothered to correct it.",
         "answer": "inconsequential"
       },
       {
@@ -3509,8 +3539,8 @@
         "why": "Inconsequential means having no real effect, which clashes with destroying half a city."
       },
       {
-        "text": "He made an inconsequential decision that led to a huge, lasting change.",
-        "why": "Inconsequential means leading to nothing important; a huge, lasting change is the opposite."
+        "text": "Her exam results were inconsequential: high one term and low the next.",
+        "why": "This confuses inconsequential with inconsistent; inconsequential means unimportant."
       }
     ],
     "partners": [
@@ -3618,7 +3648,7 @@
     ],
     "cloze": [
       {
-        "text": "After a string of failures, the company's fortunes hit their ___ last winter and began to recover only this spring.",
+        "text": "After a string of failures, the company's fortunes hit their ___, the very opposite of the zenith they had reached a decade earlier.",
         "answer": "nadir"
       },
       {
@@ -3679,9 +3709,7 @@
         "meaning": "opposite (Arabic)"
       }
     ],
-    "siblings": [
-      "zenith"
-    ],
+    "siblings": [],
     "origin": "From Arabic nazir, 'opposite', as the point in the sky opposite the zenith.",
     "tags": [
       "degree"
@@ -3696,7 +3724,7 @@
     "definition": "Very small and disappointing, far less than is fair or expected.",
     "register": "neutral",
     "nuance": "Paltry is critical and describes amounts, sums, offers and efforts that are shamefully small. It often implies unfairness, as in a paltry wage or a paltry excuse. It is common in news and opinion writing.",
-    "everyday": "meagre",
+    "everyday": "pitifully small",
     "examples": [
       {
         "text": "Workers who spend long hours in the cold earn a paltry wage that barely covers their rent.",
@@ -3731,7 +3759,7 @@
     ],
     "cloze": [
       {
-        "text": "The council's ___ offer of fifty pounds did not even cover the cost of repairing the damage.",
+        "text": "The council's ___ offer of fifty pounds, insultingly small, did not even cover the cost of repairing the damage.",
         "answer": "paltry"
       },
       {
@@ -3749,8 +3777,8 @@
         "why": "Paltry means shamefully small, which clashes with a generous feast."
       },
       {
-        "text": "He won a paltry fortune that made him a millionaire overnight.",
-        "why": "Paltry means insultingly small; a fortune that makes someone a millionaire is the opposite."
+        "text": "The farmer keeps paltry, mostly chickens and a few ducks.",
+        "why": "This confuses paltry with poultry; paltry is an adjective meaning shamefully small."
       }
     ],
     "partners": [
@@ -3807,7 +3835,7 @@
     "definition": "The limits of someone's authority, responsibility or interest; the area they are concerned with.",
     "register": "formal",
     "nuance": "Purview is the range within which a person, body or subject has authority or responsibility. It is formal and common in law, government and academic writing, usually in 'within the purview of' or 'outside the purview of'. It is about scope and authority, not literally about seeing.",
-    "everyday": "remit",
+    "everyday": "scope",
     "examples": [
       {
         "text": "Setting the school budget is outside the headteacher's purview; only the governors can decide it.",
@@ -3850,7 +3878,7 @@
         "answer": "purview"
       },
       {
-        "text": "The report has a wide ___, covering not just schools but also libraries, museums and parks.",
+        "text": "The word looks as if it is about seeing, but a body's ___ is the range of matters it has authority over.",
         "answer": "purview"
       }
     ],
@@ -3860,8 +3888,8 @@
         "why": "In modern use purview means range of authority or interest, not a view; for scenery use 'view' or 'panorama'."
       },
       {
-        "text": "He bought a new purview for his computer.",
-        "why": "Purview is an area of authority or concern, not a physical object you can buy."
+        "text": "Please send me a purview of the report before it goes to print.",
+        "why": "This confuses purview with preview, an early look; purview means range of authority."
       }
     ],
     "partners": [
@@ -3948,15 +3976,15 @@
     ],
     "cloze": [
       {
-        "text": "The crowd roared with ___ excitement the moment the winning goal hit the net.",
+        "text": "Like a horse running free with no reins, the crowd's ___ excitement burst out the moment the winning goal hit the net.",
         "answer": "unbridled"
       },
       {
-        "text": "Critics blamed the crisis on ___ greed, with bankers taking huge risks and nobody holding them back.",
+        "text": "Critics blamed the crisis on ___ greed, with bankers taking huge risks and no one reining them in.",
         "answer": "unbridled"
       },
       {
-        "text": "Parents warned that ___ use of screens, with no rules or limits at all, would harm children's sleep.",
+        "text": "Not restrained in the least, the fans' ___ joy spilled onto the pitch after the final whistle.",
         "answer": "unbridled"
       }
     ],
@@ -3966,8 +3994,8 @@
         "why": "Unbridled means without restraint, which does not fit careful, cautious behaviour."
       },
       {
-        "text": "The strict teacher ran an unbridled classroom where every rule was enforced.",
-        "why": "Unbridled means without restraint, the opposite of a strictly controlled classroom."
+        "text": "She is still unbridled, though her sister married last year.",
+        "why": "Unbridled has nothing to do with brides or marriage; it means not held back, like a horse without a bridle."
       }
     ],
     "partners": [
@@ -4020,7 +4048,7 @@
     "definition": "Showing dry, mildly mocking humour, often with a slightly twisted smile.",
     "register": "neutral",
     "nuance": "Wry describes humour, smiles and remarks that are dry, ironic and slightly mocking, often about a disappointing truth. It is quiet and understated, not loud or cruel. It is common in book reviews and descriptions of people.",
-    "everyday": "ironic",
+    "everyday": "dry",
     "examples": [
       {
         "text": "He gave a wry smile when he lost, joking that at least his socks had won.",
@@ -4055,11 +4083,11 @@
     ],
     "cloze": [
       {
-        "text": "She raised an eyebrow and gave a ___ smile, quietly mocking the grand promises of the speech.",
+        "text": "She gave a ___ smile, her mouth twisted at one corner, as if quietly amused by her own bad luck.",
         "answer": "wry"
       },
       {
-        "text": "His dry, understated and ___ humour made the dull lecture bearable.",
+        "text": "With ___ humour, dry and a little rueful, he joked that his flooded kitchen was now an indoor pool.",
         "answer": "wry"
       },
       {

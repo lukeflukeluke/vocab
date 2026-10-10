@@ -45,11 +45,11 @@
     ],
     "cloze": [
       {
-        "text": "One poor result in ten years is a temporary ___, not a sign that the whole school is failing.",
+        "text": "One poor result in ten years is an ___, a brief departure from the normal pattern, not a sign that the whole school is failing.",
         "answer": "aberration"
       },
       {
-        "text": "The coach insisted that the heavy defeat was a one-off ___ and that his team was still the best in the league.",
+        "text": "The coach insisted that the heavy defeat was a temporary ___ from the norm and that his team was still the best in the league.",
         "answer": "aberration"
       },
       {
@@ -63,8 +63,8 @@
         "why": "An aberration is a rare departure from the normal; something done every day is the norm."
       },
       {
-        "text": "The aberration of the two plans was clear, since they were almost identical.",
-        "why": "An aberration is an odd departure from what is normal, not a difference between two things; 'similarity' or 'overlap' would fit."
+        "text": "I made an aberration in my maths homework, so I lost two marks.",
+        "why": "An aberration is a strange departure from a usual pattern, not an ordinary mistake; use 'error' or 'mistake'."
       }
     ],
     "partners": [
@@ -168,7 +168,7 @@
         "answer": "despot"
       },
       {
-        "text": "A ___ answers to no parliament and no court: his word alone is law, and nobody may question it.",
+        "text": "Frederick the Great is often called an enlightened ___: he held absolute power but supported schools, science and religious tolerance.",
         "answer": "despot"
       },
       {
@@ -182,8 +182,8 @@
         "why": "A despot holds absolute power and rules harshly, so sharing it fairly is the opposite."
       },
       {
-        "text": "She was a despot who gave her staff plenty of freedom and always asked for their opinions.",
-        "why": "Despot suggests harsh, unchecked control, so it does not suit a friendly, open leader."
+        "text": "Every evening the buses return to the despot on the edge of town.",
+        "why": "A despot is a ruler with absolute power; a place where buses or goods are kept is a 'depot'."
       }
     ],
     "partners": [
@@ -208,7 +208,7 @@
       },
       {
         "word": "dictator",
-        "vs": "Dictator is the usual political term for a ruler who seized power and keeps it; despot is more literary and stresses harshness."
+        "vs": "Dictator is the usual modern political term, often for someone who seized power; despot is more literary and often used of rulers in history."
       },
       {
         "word": "autocrat",
@@ -266,7 +266,7 @@
         "setting": "news"
       },
       {
-        "text": "The annual report ends with a short epilogue thanking the volunteers who made the year possible.",
+        "text": "The paperback edition includes a new epilogue describing what happened in the two years after the trial.",
         "form": "epilogue",
         "setting": "formal"
       },
@@ -283,7 +283,7 @@
     ],
     "cloze": [
       {
-        "text": "The story had finished, but the final ___ told us who married whom and who went to prison.",
+        "text": "The last chapter ends the story, and then an ___, set ten years later, tells us who married whom and who went to prison.",
         "answer": "epilogue"
       },
       {
@@ -291,7 +291,7 @@
         "answer": "epilogue"
       },
       {
-        "text": "After the credits began, a short ___ explained what happened to the real family many years afterwards.",
+        "text": "The film ends with a short ___ set twenty years later, mirroring the prologue that opened it.",
         "answer": "epilogue"
       }
     ],
@@ -301,8 +301,8 @@
         "why": "An epilogue comes at the end; a section that introduces the story is a prologue."
       },
       {
-        "text": "The speech began with an epilogue about the history of the town.",
-        "why": "An epilogue comes at the end of a work, so it cannot open a speech."
+        "text": "In my epilogue, I sum up the three main arguments of the essay.",
+        "why": "An essay ends with a conclusion; an epilogue is a section after the end of a story, telling what happened later."
       }
     ],
     "partners": [
@@ -394,7 +394,7 @@
         "setting": "conversation"
       },
       {
-        "text": "The old woman told the children an allegory about a river that tried to flow uphill, and they understood her meaning.",
+        "text": "Reading the old fairy tale again as an adult, she suddenly saw it as an allegory of her own unhappy marriage.",
         "form": "allegory",
         "setting": "fiction"
       },
@@ -429,8 +429,8 @@
         "why": "An allegory tells a story with a hidden meaning; a plain report of methods and results is not one."
       },
       {
-        "text": "Tomorrow's weather forecast is a clear allegory of what will happen.",
-        "why": "An allegory is a story whose parts stand for ideas, not a prediction; 'indication' or 'prediction' would fit."
+        "text": "The minister denied the allegory that he had lied to parliament.",
+        "why": "A claim that someone has done wrong is an 'allegation'; an allegory is a story whose parts stand for ideas."
       }
     ],
     "partners": [
@@ -469,6 +469,10 @@
       {
         "word": "allergy",
         "note": "An allergy is a bad reaction of the body to a substance; it sounds similar but is unrelated."
+      },
+      {
+        "word": "allegation",
+        "note": "An allegation is a claim that someone has done something wrong, not yet proved."
       }
     ],
     "roots": [
@@ -537,18 +541,18 @@
         "answer": "pedagogy"
       },
       {
-        "text": "The training college teaches both the subject and the ___ of passing it on to young pupils.",
+        "text": "The training college teaches both the subject itself and ___, the theory and craft of teaching it to young pupils.",
         "answer": "pedagogy"
       },
       {
-        "text": "Critics argue that the new ___ of rote repetition suits exam practice but does little for curiosity.",
+        "text": "Courses in ___ give future teachers the science behind their work: how children learn and which classroom methods help them most.",
         "answer": "pedagogy"
       }
     ],
     "misuse": [
       {
-        "text": "The pedagogy built the school's new library and sports hall.",
-        "why": "Pedagogy is the method or study of teaching, not a person or a builder."
+        "text": "Our new pedagogy is very strict about homework and never accepts late work.",
+        "why": "Pedagogy is the method or study of teaching, not a teacher; for the person, say 'teacher'."
       },
       {
         "text": "He studied pedagogy to become a doctor.",
@@ -642,7 +646,7 @@
         "setting": "formal"
       },
       {
-        "text": "At a school full of bankers' children, she was the outlier, arriving each day in her brother's old coat.",
+        "text": "The detective stared at the map: every victim lived near the river, except one outlier on the far side of town.",
         "form": "outlier",
         "setting": "fiction"
       },
@@ -662,14 +666,14 @@
         "answer": "outlier"
       },
       {
-        "text": "Among so many ordinary results, the one extreme score stood out as a clear ___.",
+        "text": "On the scatter graph, one dot sat far from the cloud of others: a clear ___ that pulled the trend line upwards.",
         "answer": "outlier"
       }
     ],
     "misuse": [
       {
-        "text": "The outlier of the team is the captain, because he stands in the centre of the group.",
-        "why": "An outlier lies far from the rest, not in the middle."
+        "text": "To find the outlier, add up all ten scores and divide by ten.",
+        "why": "That calculates the average; an outlier is a single value that lies far from the rest."
       },
       {
         "text": "She was an outlier on the committee because she agreed with everyone on every point.",
@@ -755,7 +759,7 @@
     ],
     "cloze": [
       {
-        "text": "Not a sudden act of daring but quiet ___ carried her through three long years of treatment.",
+        "text": "Not a sudden act of daring but quiet ___, the strength of mind to bear pain patiently, carried her through three long years of treatment.",
         "answer": "fortitude"
       },
       {
@@ -763,7 +767,7 @@
         "answer": "fortitude"
       },
       {
-        "text": "The nurses showed remarkable ___, working calmly and patiently through months of grief and exhaustion.",
+        "text": "The nurses showed remarkable ___, bearing months of grief and exhaustion calmly and without complaint.",
         "answer": "fortitude"
       }
     ],
@@ -773,8 +777,8 @@
         "why": "Fortitude is courage in enduring hardship; running away in a panic is not that."
       },
       {
-        "text": "The fortitude of the soup was thick and creamy.",
-        "why": "Fortitude names a quality of character, not the texture of food; 'consistency' would fit."
+        "text": "By sheer fortitude, she found a winning lottery ticket on the pavement.",
+        "why": "Fortitude is courage in bearing hardship, not luck; 'good fortune' would fit here."
       }
     ],
     "partners": [
@@ -815,6 +819,10 @@
       {
         "word": "forte",
         "note": "A forte is a person's strong point or talent."
+      },
+      {
+        "word": "fortune",
+        "note": "Fortune means luck, or a large amount of money."
       }
     ],
     "roots": [
@@ -878,11 +886,11 @@
     ],
     "cloze": [
       {
-        "text": "The discovery revealed a ___ unknown species, one that no scientist had ever recorded before.",
+        "text": "The museum's formal announcement described a ___ unknown portrait: until this discovery, nobody had known it existed.",
         "answer": "hitherto"
       },
       {
-        "text": "His behaviour had ___ been polite and quiet, which made the sudden outburst all the more shocking.",
+        "text": "What had ___ been allowed would henceforth be forbidden: the decree drew a firm line between past and future.",
         "answer": "hitherto"
       },
       {
@@ -986,7 +994,7 @@
         "answer": "rife"
       },
       {
-        "text": "Corruption was ___ in the old regime: almost every official took bribes.",
+        "text": "Corruption was ___ in the old regime: it was everywhere, and almost every official took bribes.",
         "answer": "rife"
       },
       {
@@ -1008,7 +1016,7 @@
       "rife with",
       "rumours are rife",
       "corruption is rife",
-      "rife speculation",
+      "speculation is rife",
       "rife in"
     ],
     "phrases": [
@@ -1098,14 +1106,14 @@
         "answer": "expedient"
       },
       {
-        "text": "Lying seemed the ___ choice: quick and convenient, though plainly dishonest.",
+        "text": "Lying seemed the ___ choice, serving his immediate aim quickly and conveniently, though it was plainly against his principles.",
         "answer": "expedient"
       }
     ],
     "misuse": [
       {
-        "text": "The expedient delay of five years made the project slow and costly.",
-        "why": "Expedient means convenient or quick for a purpose; a long, costly delay is not that."
+        "text": "Thanks to the expedient delivery service, the parcel arrived a day early.",
+        "why": "Expedient means convenient for an aim, often at the cost of principle; for fast and efficient, use 'prompt' or 'expeditious'."
       },
       {
         "text": "She was a very expedient friend who always told the truth and helped others at her own cost.",
@@ -1225,7 +1233,7 @@
         "answer": "absolution"
       },
       {
-        "text": "He sought ___ from his family, hoping they would release him from guilt and shame.",
+        "text": "The official report gave the ministers no ___: far from freeing them of blame, it named each one who had ignored the warnings.",
         "answer": "absolution"
       }
     ],
@@ -1235,8 +1243,8 @@
         "why": "Absolution frees someone from blame or sin; a prison sentence is a punishment."
       },
       {
-        "text": "She felt great absolution when she lost her keys again.",
-        "why": "Absolution means forgiveness or freedom from blame, not annoyance at a loss."
+        "text": "My New Year's absolution is to go running every morning.",
+        "why": "A promise to yourself is a 'resolution'; absolution is forgiveness or release from blame."
       }
     ],
     "partners": [
@@ -1275,6 +1283,10 @@
       {
         "word": "absolute",
         "note": "Absolute means complete or total; it shares a Latin root but its meaning is different."
+      },
+      {
+        "word": "resolution",
+        "note": "A resolution is a firm decision or promise, or the solving of a problem."
       }
     ],
     "roots": [
@@ -1307,7 +1319,7 @@
     "definition": "Going against the accepted beliefs of a religion or an established group.",
     "register": "formal",
     "nuance": "Heretical began as a religious charge of false belief. It is now also used, seriously or playfully, for ideas that challenge a field's accepted wisdom. Whether it sounds bold or dangerous depends on the writer.",
-    "everyday": "against doctrine",
+    "everyday": "against accepted belief",
     "examples": [
       {
         "text": "The church condemned his teachings as heretical and forbade anyone to read his books.",
@@ -1315,7 +1327,7 @@
         "setting": "fiction"
       },
       {
-        "text": "In 1633 Galileo's claim that the Earth moves round the sun was judged heretical by Church authorities.",
+        "text": "Galileo was put on trial in 1633 because the Church considered his views on the Earth and the sun heretical.",
         "form": "heretical",
         "setting": "academic"
       },
@@ -1350,14 +1362,14 @@
         "answer": "heretical"
       },
       {
-        "text": "Her ___ theory overturned the department's most sacred assumptions, and some colleagues refused to speak to her.",
+        "text": "Colleagues called her theory almost ___, as if she had sinned against a religion, because it rejected the field's most sacred assumptions.",
         "answer": "heretical"
       }
     ],
     "misuse": [
       {
-        "text": "The heretical bus arrived on time and nobody complained.",
-        "why": "Heretical describes ideas that go against accepted beliefs, not vehicles or events."
+        "text": "Heart disease is heretical in my family, so I have my blood pressure checked every year.",
+        "why": "Something passed down from parents is 'hereditary'; heretical describes beliefs that go against accepted teaching."
       },
       {
         "text": "He was praised for his heretical loyalty to the church.",
@@ -1401,6 +1413,10 @@
       {
         "word": "hysterical",
         "note": "Hysterical means wildly emotional or extremely funny."
+      },
+      {
+        "word": "hereditary",
+        "note": "Hereditary means passed down from parents to children, like a disease or a title."
       }
     ],
     "roots": [
@@ -1409,10 +1425,7 @@
         "meaning": "choice (Greek)"
       }
     ],
-    "siblings": [
-      "heresy",
-      "heretic"
-    ],
+    "siblings": [],
     "origin": "From Greek hairesis, 'choice': a heretic picks his own belief over the accepted teaching.",
     "tags": [
       "society"
@@ -1462,7 +1475,7 @@
     ],
     "cloze": [
       {
-        "text": "The rules of the game are ___: no player, however famous, can ever change them.",
+        "text": "Viruses mutate constantly, but the laws of chemistry they obey are ___: they cannot change at all.",
         "answer": "immutable"
       },
       {
@@ -1480,8 +1493,8 @@
         "why": "Immutable means impossible to change, the opposite of moods that change every few minutes."
       },
       {
-        "text": "The immutable paint peeled and faded within a year.",
-        "why": "Immutable means unable to change; paint that peels and fades is changing."
+        "text": "The wardrobe was so heavy that it was immutable, so we left it where it was.",
+        "why": "Something that cannot be moved is 'immovable'; immutable means unable to change."
       }
     ],
     "partners": [
@@ -1592,7 +1605,7 @@
     ],
     "cloze": [
       {
-        "text": "The DNA match left no room for doubt, so the evidence was ___.",
+        "text": "The DNA match left no room for argument: the evidence was ___, and even the defence did not challenge it.",
         "answer": "indisputable"
       },
       {
@@ -1633,7 +1646,7 @@
     "synonyms": [
       {
         "word": "undeniable",
-        "vs": "Undeniable is a little warmer and more common in speech; indisputable stresses that nobody can argue."
+        "vs": "Undeniable is commoner and often used of qualities (undeniable charm); indisputable is used more of facts and evidence that nobody can argue with."
       },
       {
         "word": "incontrovertible",
@@ -1733,8 +1746,8 @@
         "why": "A pariah is rejected and avoided by others, so being surrounded by friends is the opposite."
       },
       {
-        "text": "The mayor called the new park a pariah for the town.",
-        "why": "Pariah describes an outcast person, group or state, not a place that people enjoy."
+        "text": "Every Sunday the whole pariah gathered in the old stone church.",
+        "why": "The people served by a local church form a 'parish'; a pariah is an outcast whom others avoid."
       }
     ],
     "partners": [
@@ -1763,7 +1776,12 @@
       "favourite",
       "insider"
     ],
-    "confusables": [],
+    "confusables": [
+      {
+        "word": "parish",
+        "note": "A parish is a local church area and the people who live in it."
+      }
+    ],
     "roots": [],
     "siblings": [],
     "tags": [
@@ -1801,8 +1819,8 @@
         "setting": "conversation"
       },
       {
-        "text": "The ministry welcomed the burgeoning export trade, which had doubled in just four years.",
-        "form": "burgeoning",
+        "text": "The ministry expects the export trade to burgeon now that the tariffs have been removed.",
+        "form": "burgeon",
         "setting": "formal"
       },
       {
@@ -1811,18 +1829,18 @@
         "setting": "fiction"
       },
       {
-        "text": "The field of data science burgeons whenever new technology makes huge collections of information cheap to store.",
-        "form": "burgeons",
+        "text": "Research on the topic burgeoned after the discovery, and the number of published papers tripled within a decade.",
+        "form": "burgeoned",
         "setting": "academic"
       }
     ],
     "cloze": [
       {
-        "text": "In the warm weather the garden began to ___, and green shoots sprang up everywhere within days.",
+        "text": "In the warm spring weather the garden began to ___, putting out buds and new shoots everywhere within days.",
         "answer": "burgeon"
       },
       {
-        "text": "The ___ population of the new town put heavy pressure on its schools and roads.",
+        "text": "The town's fast-growing, ___ population, which had doubled in five years, put heavy pressure on its schools and roads.",
         "answer": "burgeoning"
       },
       {
@@ -1859,7 +1877,7 @@
       },
       {
         "word": "boom",
-        "vs": "Boom is informal and mainly about sudden economic growth; burgeon is more general and literary."
+        "vs": "Boom suggests sudden, often short-lived growth, especially in business; burgeon suggests steady, healthy growth and is more literary."
       },
       {
         "word": "proliferate",
@@ -1940,7 +1958,7 @@
         "answer": "indoctrinates"
       },
       {
-        "text": "Children brought up in the sect were ___ from an early age to fear the outside world.",
+        "text": "Children brought up in the sect were ___ from an early age, taught to accept its teachings without question and to fear the outside world.",
         "answer": "indoctrinated"
       }
     ],
@@ -1950,8 +1968,8 @@
         "why": "Indoctrinate means drilling beliefs in without question, so encouraging questions is the opposite."
       },
       {
-        "text": "He indoctrinated the cake with chocolate sauce.",
-        "why": "Indoctrinate is about teaching people beliefs, not covering an object with something."
+        "text": "The new members were indoctrinated into the club at a formal dinner.",
+        "why": "Being formally admitted to a club is being 'inducted'; indoctrinate means filling someone with beliefs they must not question."
       }
     ],
     "partners": [
@@ -2035,7 +2053,7 @@
         "setting": "formal"
       },
       {
-        "text": "The sun stood at its zenith, directly overhead, and the street was empty of shade.",
+        "text": "Looking back, he knew that summer had been the zenith of his life; nothing afterwards ever shone so brightly.",
         "form": "zenith",
         "setting": "fiction"
       },
@@ -2051,7 +2069,7 @@
         "answer": "zenith"
       },
       {
-        "text": "At noon the sun reaches its ___, the highest point in the sky, and shadows almost vanish.",
+        "text": "From the nadir of defeat in 1940 to the ___ of victory in 1945, the country's fortunes changed completely.",
         "answer": "zenith"
       },
       {
@@ -2100,9 +2118,7 @@
     ],
     "confusables": [],
     "roots": [],
-    "siblings": [
-      "nadir"
-    ],
+    "siblings": [],
     "origin": "From Arabic samt ar-ra's, 'the path over the head', through medieval Latin.",
     "tags": [
       "degree"
@@ -2174,8 +2190,8 @@
         "why": "To usurp is to take power without the right; a lawful handover is not usurping."
       },
       {
-        "text": "She usurped her grandmother a lovely birthday present.",
-        "why": "Usurp means to seize a position or power wrongly; it cannot mean to give something."
+        "text": "A thief usurped my wallet on the crowded bus.",
+        "why": "Usurp is for taking power, a position or a right without a claim to it; for stealing objects, say 'stole'."
       }
     ],
     "partners": [
@@ -2273,7 +2289,7 @@
         "answer": "exemplar"
       },
       {
-        "text": "For young cooks, the chef is an ___ to follow: calm, careful and endlessly patient.",
+        "text": "For young cooks, the chef is not merely an example but a perfect ___, a model to copy: calm, careful and endlessly patient.",
         "answer": "exemplar"
       },
       {
@@ -2283,7 +2299,7 @@
     ],
     "misuse": [
       {
-        "text": "He exemplar honesty to all his pupils.",
+        "text": "Our captain tries to exemplar good sportsmanship in every match.",
         "why": "Exemplar is a noun meaning a model; the verb is 'exemplify'."
       },
       {
@@ -2336,7 +2352,7 @@
     ],
     "siblings": [
       "example",
-      "exemplify"
+      "sample"
     ],
     "tags": [
       "judgement"
@@ -2394,7 +2410,7 @@
     ],
     "cloze": [
       {
-        "text": "Instead of admitting he was lazy, he tried to ___ missing the deadline by blaming the weather and the traffic.",
+        "text": "Instead of admitting he was lazy, he tried to ___ missing the deadline, convincing himself with sensible-sounding reasons that were not the real ones.",
         "answer": "rationalise"
       },
       {
@@ -2506,7 +2522,7 @@
         "setting": "academic"
       },
       {
-        "text": "The two delegations held an amiable discussion and parted on good terms.",
+        "text": "The ambassador was amiable in private, but tough and unyielding at the negotiating table.",
         "form": "amiable",
         "setting": "formal"
       },
@@ -2518,15 +2534,15 @@
     ],
     "cloze": [
       {
-        "text": "Everyone liked the ___ shop owner, who greeted every customer with a warm smile and remembered their names.",
+        "text": "Everyone liked the shop owner, an ___ man who greeted every customer with a warm smile and remembered their names.",
         "answer": "amiable"
       },
       {
-        "text": "The meeting was ___ rather than tense; people laughed, listened and parted as friends.",
+        "text": "Unlike his gruff, moody brother, Tom was easy-going and ___, the good-natured sort of person everyone likes to sit next to.",
         "answer": "amiable"
       },
       {
-        "text": "Despite their different politics, the two neighbours kept up an ___ relationship over the garden fence.",
+        "text": "Her grandfather was an ___ old fellow, good-natured and smiling, happy to chat with anyone in the queue.",
         "answer": "amiable"
       }
     ],
@@ -2536,8 +2552,8 @@
         "why": "Amiable means friendly and good-natured, which clashes with harshly arresting critics."
       },
       {
-        "text": "The amiable argument ended with shouting and slammed doors.",
-        "why": "An amiable exchange is friendly and calm, so shouting and slamming doors is the opposite."
+        "text": "After months of talks, the couple reached an amiable divorce settlement.",
+        "why": "For friendly relations or agreements between people, use 'amicable'; amiable describes a person's nature or manner."
       }
     ],
     "partners": [
@@ -2638,15 +2654,15 @@
     ],
     "cloze": [
       {
-        "text": "Historians value diaries written at the time because they are ___ records, not memories written years later.",
+        "text": "The officer's ___ notes, written at the scene as events unfolded, were accepted as evidence in court.",
         "answer": "contemporaneous"
       },
       {
-        "text": "The two kingdoms were ___ and shared the same century, though they never met.",
+        "text": "The historian chose the word ___ rather than 'contemporary', which readers might take to mean modern: the two kingdoms simply existed in the same century.",
         "answer": "contemporaneous"
       },
       {
-        "text": "The rise in ice-cream sales was ___ with an increase in sunburn, though the hot sun was the cause of both.",
+        "text": "Over the same summer, the rise in ice-cream sales was ___ with a rise in sunburn: both happened in the same period, though the hot sun was behind them.",
         "answer": "contemporaneous"
       }
     ],
@@ -2673,8 +2689,7 @@
     ],
     "family": [
       "contemporaneously",
-      "contemporaneity",
-      "contemporary"
+      "contemporaneity"
     ],
     "synonyms": [
       {
@@ -2696,7 +2711,7 @@
     "confusables": [
       {
         "word": "contemporary",
-        "note": "Contemporary usually means modern or of today; contemporaneous only means at the same time as something named."
+        "note": "Contemporary usually means modern; it can also mean 'of the same time', but contemporaneous only ever means that, so it avoids confusion."
       }
     ],
     "roots": [
@@ -2762,7 +2777,7 @@
     ],
     "cloze": [
       {
-        "text": "After weeks of rain and bad news, a heavy ___ hung over the town, though nobody could say exactly why.",
+        "text": "After weeks of strikes and bad news, a heavy ___ hung over the country: a vague, lingering sense that something was wrong, though nobody could say what.",
         "answer": "malaise"
       },
       {
@@ -2776,8 +2791,8 @@
     ],
     "misuse": [
       {
-        "text": "The malaise exploded with a loud bang and shattered the windows.",
-        "why": "Malaise is a vague, spreading feeling of unease, not a sudden event."
+        "text": "He tripped her up on purpose, out of pure malaise.",
+        "why": "The wish to harm someone is 'malice'; malaise is a vague feeling of unease or dissatisfaction."
       },
       {
         "text": "She felt a joyful malaise when she won the lottery.",
@@ -2857,7 +2872,7 @@
         "setting": "news"
       },
       {
-        "text": "An itinerant tinker arrived each spring, mending pots and trading stories for a night's lodging.",
+        "text": "An itinerant knife-grinder arrived each spring, sharpening blades and trading stories for a night's lodging.",
         "form": "itinerant",
         "setting": "fiction"
       },
@@ -2892,7 +2907,7 @@
         "answer": "itinerant"
       },
       {
-        "text": "Her ___ childhood, with a new school every year because her father kept changing jobs, left few lasting friendships.",
+        "text": "As the daughter of an ___ preacher who moved from town to town, she changed schools almost every year.",
         "answer": "itinerant"
       }
     ],
@@ -2903,7 +2918,7 @@
       },
       {
         "text": "She gave an itinerant speech that went on for hours.",
-        "why": "Itinerant describes moving around for work, not speaking at length; use 'long' or 'rambling'."
+        "why": "Itinerant describes moving from place to place, not speaking at length; for a speech that never seems to end, use 'interminable'."
       }
     ],
     "partners": [
@@ -2952,9 +2967,7 @@
         "meaning": "journey, way (Latin)"
       }
     ],
-    "siblings": [
-      "itinerary"
-    ],
+    "siblings": [],
     "origin": "From Latin iter, 'journey, way'.",
     "tags": [
       "describing"
@@ -3026,8 +3039,8 @@
         "why": "Exonerate means to clear of blame; fingerprints on every window would prove guilt, not clear him."
       },
       {
-        "text": "He exonerated the winner with a gold medal.",
-        "why": "Exonerate means to clear someone of blame; it has nothing to do with rewarding someone."
+        "text": "Every summer the school exonerates its best pupils with prizes and certificates.",
+        "why": "Exonerate means to clear someone of blame, not to honour or reward them; use 'honours'."
       }
     ],
     "partners": [
@@ -3110,7 +3123,7 @@
         "setting": "conversation"
       },
       {
-        "text": "Ski resorts depend on cyclical demand, with their busiest period every winter.",
+        "text": "Steel and car makers are cyclical businesses whose profits rise and fall with the wider economy.",
         "form": "cyclical",
         "setting": "formal"
       },
@@ -3131,7 +3144,7 @@
         "answer": "cyclical"
       },
       {
-        "text": "Economists say that recessions are ___, since good years and bad years keep taking turns.",
+        "text": "Economists say that recessions are ___: good years and bad years keep taking turns in a pattern that comes round again and again.",
         "answer": "cyclical"
       },
       {
@@ -3141,8 +3154,8 @@
     ],
     "misuse": [
       {
-        "text": "The cyclical road goes straight from the town to the coast.",
-        "why": "Cyclical describes patterns that repeat over time, not the shape of a road."
+        "text": "His cyclical argument kept assuming the very thing it was trying to prove.",
+        "why": "An argument that assumes its own conclusion is 'circular'; cyclical describes patterns that repeat over time."
       },
       {
         "text": "The cyclical change happened just once and never again.",
@@ -3196,7 +3209,6 @@
       }
     ],
     "siblings": [
-      "cycle",
       "bicycle",
       "encyclopedia",
       "cyclone"
@@ -3250,7 +3262,7 @@
     ],
     "cloze": [
       {
-        "text": "Thanks to her ___, she had saved money for a rainy day long before the factory closed.",
+        "text": "With ___ rather than hindsight, she saw the trouble coming and saved money long before the factory closed.",
         "answer": "foresight"
       },
       {
@@ -3268,8 +3280,8 @@
         "why": "Foresight is about preparing for the future, not looking back at the past; that would be hindsight."
       },
       {
-        "text": "He admired her foresight in solving yesterday's crossword.",
-        "why": "Foresight is the ability to anticipate and prepare for what is coming, not skill at solving puzzles."
+        "text": "After the eye operation, his foresight was so good that he no longer needed glasses.",
+        "why": "Foresight is the ability to plan for the future, not the ability to see; here use 'eyesight'."
       }
     ],
     "partners": [
@@ -3287,6 +3299,7 @@
       "foresee",
       "foreseen",
       "foresaw",
+      "foreseeable",
       "foresighted"
     ],
     "synonyms": [
@@ -3305,7 +3318,7 @@
     ],
     "antonyms": [
       "hindsight",
-      "shortsightedness"
+      "short-sightedness"
     ],
     "confusables": [],
     "roots": [
@@ -3352,8 +3365,8 @@
         "setting": "news"
       },
       {
-        "text": "The festival will premiere three new opuses by young composers, each lasting under ten minutes.",
-        "form": "opuses",
+        "text": "The catalogue lists every opus the composer published, from her first songs to her final symphony.",
+        "form": "opus",
         "setting": "formal"
       },
       {
@@ -3377,14 +3390,14 @@
         "answer": "opus"
       },
       {
-        "text": "The conductor announced that the next ___ would be a short piece for solo violin by a living composer.",
+        "text": "In concert programmes, Beethoven's pieces are identified by their ___ number, which shows roughly the order in which they were published.",
         "answer": "opus"
       }
     ],
     "misuse": [
       {
-        "text": "The opus of the garden was full of flowers and butterflies.",
-        "why": "An opus is a creative work such as a piece of music or a book, not a place."
+        "text": "We went to the opus last night and heard a famous tenor sing.",
+        "why": "A drama set to music and sung on stage is an 'opera'; an opus is a single work, often numbered."
       },
       {
         "text": "He composed ten opus in his career.",
@@ -3448,7 +3461,7 @@
     "forms": [],
     "definition": "Different from what is usual, accepted or traditional, especially in methods or opinions.",
     "register": "neutral",
-    "nuance": "Unorthodox describes methods, ideas and lifestyles that depart from tradition. It is neutral: it can be admiring or doubtful, depending on whether the result works. It is wider than 'orthodox' in religion and is often used of teachers, doctors and managers.",
+    "nuance": "Unorthodox describes methods, ideas and lifestyles that depart from accepted practice. It is neutral: it can be admiring or doubtful, depending on whether the result works. Unlike 'heretical', it rarely has a religious sense, and it is often used of teachers, doctors, managers and sports tactics.",
     "everyday": "unusual",
     "examples": [
       {
@@ -3502,8 +3515,8 @@
         "why": "Unorthodox means not following the traditional way, so a century-old method is the opposite."
       },
       {
-        "text": "He was unorthodox, always following the rules exactly.",
-        "why": "Unorthodox people break from convention; strictly following the rules is the opposite."
+        "text": "The weather was very unorthodox for June, with snow on the hills.",
+        "why": "Unorthodox describes methods, ideas or ways of living that break with tradition, not natural events; use 'unusual'."
       }
     ],
     "partners": [
@@ -3553,9 +3566,9 @@
       }
     ],
     "siblings": [
-      "orthodox",
       "paradox",
-      "orthography"
+      "orthography",
+      "orthodontist"
     ],
     "origin": "From Greek orthodoxos, 'having the right opinion', from orthos, 'straight, correct', and doxa, 'opinion'.",
     "tags": [
@@ -3610,7 +3623,7 @@
     ],
     "cloze": [
       {
-        "text": "The lecturer began to ___ and spent ten minutes on a story about his dog, before returning to the lesson.",
+        "text": "'But I ___,' the professor said with a smile, as he always did when he noticed he had wandered off his subject.",
         "answer": "digress"
       },
       {
@@ -3728,7 +3741,7 @@
         "setting": "formal"
       },
       {
-        "text": "She sighed, shrugged and acquiesce, as she always did when her mother used that tone.",
+        "text": "She sighed and shrugged; she would acquiesce, as she always did when her mother used that tone.",
         "form": "acquiesce",
         "setting": "fiction"
       },
@@ -3740,7 +3753,7 @@
     ],
     "cloze": [
       {
-        "text": "He did not agree with the plan, but rather than argue, he ___ and went along with it.",
+        "text": "Most citizens disliked the new law, but they ___ in it, accepting it quietly without any protest.",
         "answer": "acquiesced"
       },
       {
@@ -3874,7 +3887,7 @@
         "answer": "censure"
       },
       {
-        "text": "It is unfair to ___ a writer for failing to do something that he never set out to do.",
+        "text": "The motion to ___ the prime minister, a formal statement of Parliament's disapproval, failed by ten votes.",
         "answer": "censure"
       }
     ],
@@ -3884,8 +3897,8 @@
         "why": "That describes censoring; censure means to criticise severely, not to remove material."
       },
       {
-        "text": "The teacher censured the pupil with a gold star.",
-        "why": "Censure means to criticise severely, so it cannot be a reward."
+        "text": "The report censured against the managers for ignoring the warnings.",
+        "why": "Censure takes a direct object with no 'against': the report censured the managers."
       }
     ],
     "partners": [
@@ -3935,12 +3948,11 @@
     ],
     "siblings": [
       "census",
-      "censor",
-      "censorious"
+      "censor"
     ],
     "origin": "From Latin censura, 'judgement', from censere, 'to assess'.",
     "tags": [
-      "feeling"
+      "judgement"
     ]
   },
   {
@@ -3993,7 +4005,7 @@
         "answer": "platitude"
       },
       {
-        "text": "The speech was a string of empty ___ about hard work and teamwork, with no actual plan.",
+        "text": "The speech was a string of comforting ___ that sounded deep but were obvious, like 'together we are stronger', with no actual plan.",
         "answer": "platitudes"
       },
       {
@@ -4007,8 +4019,8 @@
         "why": "A platitude is a dull, obvious remark; a wise and original idea is the opposite."
       },
       {
-        "text": "She wore a beautiful platitude on her wedding day.",
-        "why": "A platitude is a stale remark, not an object or an outfit."
+        "text": "The new manager gave the team plenty of platitude to work as they liked.",
+        "why": "Freedom to act as you choose is 'latitude'; a platitude is a stale, obvious remark."
       }
     ],
     "partners": [
@@ -4075,7 +4087,7 @@
     ],
     "definition": "A forceful written or spoken attack that argues strongly against someone else's beliefs or policies.",
     "register": "formal",
-    "nuance": "A polemic is a passionate, one-sided argument aimed at winning, not at weighing both sides. It can be praised as powerful writing or criticised as unfair. The adjective is 'polemical', and the word is common in book and article reviews.",
+    "nuance": "A polemic is a passionate, one-sided argument aimed at winning, not at weighing both sides. It can be praised as powerful writing or criticised as unfair. The usual adjective is 'polemical', and the word is common in book and article reviews.",
     "everyday": "attack",
     "examples": [
       {
@@ -4089,7 +4101,7 @@
         "setting": "news"
       },
       {
-        "text": "He started with a simple question about parking and ended up delivering a ten-minute polemic against the council.",
+        "text": "Have you read his blog post? It's a full-blown polemic against homework, with no room for the other side.",
         "form": "polemic",
         "setting": "conversation"
       },
@@ -4129,8 +4141,8 @@
         "why": "A polemic is a forceful one-sided attack, the opposite of a balanced survey."
       },
       {
-        "text": "The essay had a polemic tone.",
-        "why": "Polemic is a noun for the attack itself; the adjective is 'polemical'."
+        "text": "There was a long polemic among the staff about the new timetable.",
+        "why": "In English a polemic is one forceful attack on someone's views, not a dispute among people; use 'controversy' or 'argument'."
       }
     ],
     "partners": [
