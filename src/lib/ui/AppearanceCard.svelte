@@ -20,7 +20,7 @@
         role="radio"
         aria-checked={theme.choice === c.value}
         data-theme-choice={c.value}
-        onclick={() => theme.set(c.value)}
+        onclick={(event) => theme.set(c.value, event.currentTarget)}
       >
         <span class="swatch {c.value}" aria-hidden="true"></span>
         <span class="label">{c.label}</span>

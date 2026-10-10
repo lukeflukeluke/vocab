@@ -41,7 +41,7 @@
     class:alone={!(syncer.key && syncer.status.phase !== 'test-mode') && !children}
     data-testid="theme-toggle"
     aria-label={theme.current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-    onclick={() => theme.toggle()}
+    onclick={(event) => theme.toggle(event.currentTarget)}
   >
     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
       {#if theme.current === 'dark'}

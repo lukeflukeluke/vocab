@@ -300,3 +300,15 @@ kbd {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Theme switch (src/lib/theme.svelte.ts): no cross-fade, the new theme is revealed in a
+   growing circle instead. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+}

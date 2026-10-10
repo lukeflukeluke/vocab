@@ -16,6 +16,10 @@ switch (the app looked flat and monotone, and Dark Reader turned it grey).
 - **Two themes**, "Paper" (light) and "Ink" (dark), plus Automatic. Switch with the
   sun/moon button in the top bar or Settings, Appearance. Kept per device, applied before
   the first paint. `darkreader-lock` tells Dark Reader to leave the app alone.
+- **Switch animation** (owner's request): the new theme spreads in a circle from the
+  button you tapped, then gold stars twinkle in when it turns dark, or a warm glow
+  spreads when it turns light. Instant for reduced-motion users and where the browser
+  lacks view transitions (iPhone needs iOS 18).
 - **Design system** in `src/app.css`: colour tokens per theme, Fraunces for headings and
   headwords (bundled, works offline), gold call-to-action buttons, soft shadows, a
   colour per ladder stage (cool to gold), and small animations (switched off for

@@ -211,6 +211,9 @@ The owner wants usage spent where it matters:
 - The theme choice (Automatic, Paper, Ink) is per device in localStorage
   `wordhoard.theme`; `index.html` applies it before the first paint and sets
   `darkreader-lock` so the Dark Reader extension leaves the app alone.
+- A tapped theme switch is animated (`theme.set(choice, element)`): the new theme grows in
+  a circle from the button (View Transitions API, instant where unsupported), then
+  `ThemeFx.svelte` adds twinkling stars (to dark) or a warm glow (to light).
 - Shared pieces in `app.css`: `.btn` (`.primary`, `.gold` for the one main action,
   `.quiet`, `.wide`), `.eyebrow`, and the `rise`, `pop`, `shake` animations. Motion stays
   small and is switched off for reduced-motion users.
