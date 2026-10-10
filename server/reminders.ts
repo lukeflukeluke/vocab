@@ -102,7 +102,7 @@ export function isDue(
 }
 
 const REMINDER = {
-  title: 'Vocab',
+  title: 'Wordhoard',
   body: "Today's words are waiting. A few minutes keeps them.",
   url: '/',
 };
@@ -316,7 +316,7 @@ export async function handlePush(
       .all<PushTarget>();
     const target = results[0];
     if (!target) return json({ error: 'not-subscribed' }, 404);
-    const message = { title: 'Vocab', body: 'Reminders are working.', url: '/' };
+    const message = { title: 'Wordhoard', body: 'Reminders are working.', url: '/' };
     const result = await send(
       target,
       message,

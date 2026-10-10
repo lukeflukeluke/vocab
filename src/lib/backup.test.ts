@@ -17,7 +17,7 @@ describe('backup', () => {
 
   it('rejects files that are not backups, in plain words', () => {
     expect(() => parseBackup('hello')).toThrow("isn't JSON");
-    expect(() => parseBackup('{"events": []}')).toThrow("isn't a Vocab backup");
+    expect(() => parseBackup('{"events": []}')).toThrow("isn't a Wordhoard backup");
     const broken = JSON.stringify({ format: 'vocab-backup', events: [{ id: 1 }] });
     expect(() => parseBackup(broken)).toThrow('damaged');
   });

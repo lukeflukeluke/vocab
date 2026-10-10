@@ -105,7 +105,7 @@ test('the iOS Shortcut: a shared sentence lands in the Inbox on both devices', a
     db,
     Date.now(),
   );
-  expect(await res.text()).toBe('Added to your Vocab Inbox. Pick the word there.');
+  expect(await res.text()).toBe('Added to your Wordhoard Inbox. Pick the word there.');
 
   // The PC joins and sees it too.
   const pcContext = await browser.newContext({ ...devices['Desktop Chrome'] });

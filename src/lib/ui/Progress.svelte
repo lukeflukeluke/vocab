@@ -57,9 +57,21 @@
 </script>
 
 <section class="card hero">
-  <p class="label">Words owned</p>
-  <p class="big" data-testid="owned">{counts.owned}</p>
-  <p class="muted">
+  <div class="hero-row">
+    <div>
+      <p class="label">Words owned</p>
+      <p class="big" data-testid="owned">{counts.owned}</p>
+    </div>
+    <svg class="gem-big" viewBox="136 96 276 292" aria-hidden="true">
+      <polygon points="136,200 196,136 216,200" fill="#f6cf6a" />
+      <polygon points="196,136 316,136 296,200 216,200" fill="#fbe3a0" />
+      <polygon points="316,136 376,200 296,200" fill="#e8b143" />
+      <polygon points="136,200 216,200 256,388" fill="#e6a730" />
+      <polygon points="216,200 296,200 256,388" fill="#f2bd4b" />
+      <polygon points="296,200 376,200 256,388" fill="#c98a1c" />
+    </svg>
+  </div>
+  <p class="soft">
     Owned words have been used in a sentence and remembered for months. Everything else is on its
     way up.
   </p>
@@ -75,7 +87,11 @@
           {#if STAGE_HINT[stage]}<span class="hint">{STAGE_HINT[stage]}</span>{/if}
         </span>
         <span class="bar" aria-hidden="true">
-          <span class="fill" style:width="{(counts[stage] / ladderMax) * 100}%"></span>
+          <span
+            class="fill"
+            style:background="var(--stage-{stage})"
+            style:width="{(counts[stage] / ladderMax) * 100}%"
+          ></span>
         </span>
         <span class="count" data-testid="stage-{stage}">{counts[stage]}</span>
       </li>
@@ -174,6 +190,35 @@
     margin: 0;
   }
 
+  .hero {
+    background:
+      radial-gradient(100% 120% at 100% 0%, rgb(235 181 75 / 25%), transparent 60%),
+      linear-gradient(150deg, var(--hero-1), var(--hero-2));
+    border: 0;
+    color: var(--on-hero);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero .label {
+    color: #f2c766;
+  }
+
+  .gem-big {
+    width: 64px;
+    height: 68px;
+    filter: drop-shadow(0 6px 14px rgb(235 181 75 / 45%));
+  }
+
+  .soft {
+    color: rgb(248 239 220 / 75%);
+  }
+
   .label {
     color: var(--muted);
     font-size: 0.8rem;
@@ -184,8 +229,8 @@
 
   .big {
     font-family: var(--serif);
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3.4rem;
+    font-weight: 600;
     line-height: 1;
   }
 
@@ -237,14 +282,15 @@
     grid-column: 1;
     height: 10px;
     border-radius: 999px;
-    background: var(--bg);
+    background: var(--surface-2);
+    overflow: hidden;
   }
 
   .ladder .fill {
     display: block;
     height: 100%;
-    border-radius: 4px;
-    background: var(--accent);
+    border-radius: 999px;
+    transition: width 0.6s var(--ease);
   }
 
   .count {
@@ -293,7 +339,11 @@
   .forecast .fill {
     width: 100%;
     border-radius: 4px 4px 0 0;
-    background: color-mix(in srgb, var(--brand) 55%, var(--surface));
+    background: linear-gradient(
+      180deg,
+      var(--accent),
+      color-mix(in srgb, var(--accent) 45%, var(--surface))
+    );
   }
 
   .forecast .day {
@@ -302,11 +352,5 @@
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .forecast .fill {
-      background: color-mix(in srgb, #a5b4fc 55%, var(--surface));
-    }
   }
 </style>

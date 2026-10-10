@@ -12,12 +12,12 @@ sync server.
 
 ---
 
-## iPhone: the "Add to Vocab" Shortcut (about 5 minutes)
+## iPhone: the "Add to Wordhoard" Shortcut (about 5 minutes)
 
 The app shows these steps too, with copy buttons: **Settings**, **Capture words**, **How to
 make it**. Use those, because they hold your own key.
 
-1. Open the **Shortcuts** app, tap **+**, and name it **Add to Vocab**.
+1. Open the **Shortcuts** app, tap **+**, and name it **Add to Wordhoard**.
 2. Tap **i** (Details) and turn on **Show in Share Sheet**. In the first line, "Receive ...
    from Share Sheet", keep only **Text**, and set "If there's no input" to **Ask For Text**.
 3. Add the action **Get Contents of URL**. Address: `https://vocab-build.pages.dev/api/capture`
@@ -27,8 +27,8 @@ make it**. Use those, because they hold your own key.
    pick **Shortcut Input**.
 6. Add the action **Show Notification** and set its text to **Contents of URL**.
 
-To use it: select a word in Safari (or any app), tap **Share**, then **Add to Vocab**. A
-notification says "Added ... to your Vocab Inbox". You can also select a whole sentence;
+To use it: select a word in Safari (or any app), tap **Share**, then **Add to Wordhoard**. A
+notification says "Added ... to your Wordhoard Inbox". You can also select a whole sentence;
 the Inbox then asks which word you meant. Running the Shortcut from the Shortcuts app (or
 a home-screen icon) asks you to type a word.
 
@@ -36,13 +36,13 @@ Why a Shortcut and not a link: on iPhone, a link opens Safari, which keeps separ
 storage from the home-screen app. The Shortcut sends the word to the sync server, which
 adds it to your history, and both devices pick it up on their next sync.
 
-## PC: the +Vocab bookmark (about 1 minute)
+## PC: the +Hoard bookmark (about 1 minute)
 
 1. Open the installed app (or `vocab-build.pages.dev` in the same browser), go to
    **Settings**, **Capture words**.
-2. Show the bookmarks bar (**Ctrl+Shift+B**) and drag the **+Vocab** button onto it.
+2. Show the bookmarks bar (**Ctrl+Shift+B**) and drag the **+Hoard** button onto it.
 
-To use it: select a word on any web page and click **+Vocab**. A small window saves the
+To use it: select a word on any web page and click **+Hoard**. A small window saves the
 word, the sentence around it, and the page's title, then closes. It is in the Inbox
 straight away on the PC, and on the iPhone after the next sync.
 
@@ -59,5 +59,5 @@ straight away on the PC, and on the iPhone after the next sync.
 - **The Shortcut says the key is missing or mistyped**: check the Authorization header is
   `Bearer ` plus the key from Settings, Sync (dashes and spaces don't matter).
 - **The Shortcut says the sync server isn't set up**: see `docs/SETUP-SYNC.md`.
-- **Nothing happens when you click +Vocab**: allow pop-ups for that site (the icon at the
+- **Nothing happens when you click +Hoard**: allow pop-ups for that site (the icon at the
   right of the address bar), then try again.

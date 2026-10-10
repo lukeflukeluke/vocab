@@ -13,7 +13,7 @@ const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 
 const commit = (process.env.CF_PAGES_COMMIT_SHA ?? 'local').slice(0, 7);
 const branch = process.env.CF_PAGES_BRANCH ?? 'local';
 
-const BRAND = '#1e1b4b';
+const BRAND = '#1b2240';
 
 export default defineConfig({
   define: {
@@ -31,9 +31,9 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
         id: '/',
-        name: 'Vocab',
-        short_name: 'Vocab',
-        description: 'Build a vocabulary you can actually use.',
+        name: 'Wordhoard',
+        short_name: 'Wordhoard',
+        description: 'Words worth keeping: build a vocabulary you can actually use.',
         start_url: '/',
         scope: '/',
         display: 'standalone',
@@ -58,7 +58,7 @@ export default defineConfig({
         // its own registration, which we don't.
         skipWaiting: true,
         clientsClaim: true,
-        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest,json}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest,json,woff2}'],
         // The word bank is one JSON file that grows with every content batch. The
         // dictionary for captured words adds 26 files, 4.6 MB in all.
         maximumFileSizeToCacheInBytes: 30 * 1024 * 1024,

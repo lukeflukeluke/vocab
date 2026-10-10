@@ -370,8 +370,9 @@
     gap: 14px;
     padding: calc(env(safe-area-inset-top) + 8px) calc(env(safe-area-inset-right) + 16px) 10px
       calc(env(safe-area-inset-left) + 8px);
-    background: var(--brand);
-    color: var(--on-brand);
+    background: var(--bar);
+    color: var(--on-bar);
+    box-shadow: 0 6px 18px -10px rgb(0 0 0 / 50%);
   }
 
   .pause {
@@ -390,17 +391,18 @@
 
   .progress {
     flex: 1;
-    height: 8px;
+    height: 10px;
     border-radius: 999px;
-    background: rgb(255 255 255 / 0.2);
+    background: rgb(255 255 255 / 0.14);
     overflow: hidden;
   }
 
   .fill {
     height: 100%;
     border-radius: inherit;
-    background: var(--accent);
-    transition: width 0.3s ease;
+    background: linear-gradient(90deg, #e2a52a, #f6d27a);
+    box-shadow: 0 0 10px rgb(242 199 102 / 60%);
+    transition: width 0.5s var(--ease);
   }
 
   .stage {
@@ -413,19 +415,25 @@
     margin: 0 auto;
     padding: 20px calc(env(safe-area-inset-right) + 16px) calc(env(safe-area-inset-bottom) + 16px)
       calc(env(safe-area-inset-left) + 16px);
+    animation: rise 0.3s var(--ease) both;
   }
 
   .tag {
+    align-self: flex-start;
     margin: 0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--surface-2);
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .tag.new {
-    color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-text);
   }
 
   .good {

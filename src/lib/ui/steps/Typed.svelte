@@ -282,17 +282,20 @@
   }
 
   input:focus {
-    border-color: var(--brand);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
   }
 
   input.right,
   input.retyped {
     border-color: var(--good);
     background: var(--good-bg);
+    animation: pop 0.35s var(--ease);
   }
 
   input.wrong {
     border-color: var(--bad);
+    animation: shake 0.35s ease-in-out;
   }
 
   .feedback p {

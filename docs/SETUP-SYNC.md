@@ -47,7 +47,7 @@ deployment is older than the binding.
 
 ## 4. Link your iPhone
 
-1. Open Vocab from the home screen, go to **Settings**, then **Sync**.
+1. Open Wordhoard from the home screen, go to **Settings**, then **Sync**.
 2. Tap **Make a sync key**, then **Turn on sync**. The top bar should say **Synced**.
 3. **Show key** under **Sync** brings the key back whenever you need it. Treat it like a password:
    anyone with it can read and add to your study history.
@@ -56,8 +56,8 @@ deployment is older than the binding.
 
 1. Open `https://vocab-build.pages.dev` in **Chrome** or **Edge**.
 2. Click the **Install** icon at the right of the address bar (a screen with a down
-   arrow), then **Install**. Vocab opens in its own window and gets a Start menu entry.
-3. On the welcome screen, choose **I already use Vocab on another device** and type the
+   arrow), then **Install**. Wordhoard opens in its own window and gets a Start menu entry.
+3. On the welcome screen, choose **I already use Wordhoard on another device** and type the
    key from your iPhone (capitals, spaces and dashes don't matter). Your words appear.
    If you already went past the welcome screen, use **Settings**, **Sync**,
    **I have a key** instead.

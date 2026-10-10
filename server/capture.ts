@@ -1,4 +1,4 @@
-// POST /api/capture: the iOS Shortcut "Add to Vocab" sends what you shared here (PLAN
+// POST /api/capture: the iOS Shortcut "Add to Wordhoard" sends what you shared here (PLAN
 // 13.5). On iPhone a shared word cannot go straight into the home-screen app (a link
 // would open Safari, which keeps separate storage), so the server writes it into your
 // event log as a `word_captured` event and every device picks it up on its next sync.
@@ -47,7 +47,7 @@ export async function handleCapture(
   now: number,
   newId: () => string = () => crypto.randomUUID(),
 ): Promise<Response> {
-  if (!db) return text("Vocab's sync server isn't set up yet (see docs/SETUP-SYNC.md).", 503);
+  if (!db) return text("Wordhoard's sync server isn't set up yet (see docs/SETUP-SYNC.md).", 503);
   const key = keyFrom(request);
   if (!key) {
     return text(
@@ -79,7 +79,7 @@ export async function handleCapture(
   await storeEvents(db, await accountOf(key), [event], now);
   return text(
     word
-      ? `Added "${word}" to your Vocab Inbox.`
-      : 'Added to your Vocab Inbox. Pick the word there.',
+      ? `Added "${word}" to your Wordhoard Inbox.`
+      : 'Added to your Wordhoard Inbox. Pick the word there.',
   );
 }

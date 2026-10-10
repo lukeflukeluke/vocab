@@ -48,11 +48,11 @@ export function parseBackup(text: string): VocabEvent[] {
   try {
     data = JSON.parse(text);
   } catch {
-    throw new Error("That file isn't a Vocab backup (it isn't JSON).");
+    throw new Error("That file isn't a Wordhoard backup (it isn't JSON).");
   }
   const backup = data as Partial<Backup> | null;
   if (!backup || backup.format !== BACKUP_FORMAT || !Array.isArray(backup.events)) {
-    throw new Error("That file isn't a Vocab backup.");
+    throw new Error("That file isn't a Wordhoard backup.");
   }
   if (!backup.events.every(isEvent)) {
     throw new Error('That backup file is damaged: some events are not readable.');

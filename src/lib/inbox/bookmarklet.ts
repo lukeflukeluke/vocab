@@ -1,4 +1,4 @@
-// The PC bookmarklet (PLAN 13.5): select a word on any web page, click the "+Vocab"
+// The PC bookmarklet (PLAN 13.5): select a word on any web page, click the "+Hoard"
 // bookmark, and a small window of the app opens with the word, the sentence around it,
 // and the page's title and address. That window saves the capture on the PC (the
 // installed app shares its storage) and syncs it to your other devices.

@@ -157,8 +157,10 @@
   .headword {
     margin: 0;
     font-family: var(--serif);
-    font-size: 2.3rem;
-    line-height: 1.1;
+    font-size: 2.7rem;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
     overflow-wrap: anywhere;
   }
 
@@ -170,8 +172,8 @@
     height: 44px;
     border: 1px solid var(--border);
     border-radius: 50%;
-    background: var(--surface);
-    color: var(--text);
+    background: var(--accent-soft);
+    color: var(--accent-text);
     cursor: pointer;
   }
 
@@ -198,7 +200,12 @@
 
   .definition {
     margin: 0;
-    font-size: 1.2rem;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border-left: 4px solid var(--accent);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    font-size: 1.15rem;
     font-weight: 500;
   }
 
@@ -213,8 +220,8 @@
   .examples li {
     display: grid;
     gap: 2px;
-    padding-left: 12px;
-    border-left: 3px solid var(--border);
+    padding-left: 14px;
+    border-left: 2px solid var(--accent-soft);
   }
 
   .examples :global(.sentence) {
@@ -223,19 +230,23 @@
 
   .setting {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .vs {
     padding: 12px 14px;
     border-radius: 14px;
-    background: var(--surface);
+    background: var(--surface-2);
     border: 1px solid var(--border);
   }
 
   .vs h2 {
     margin: 0 0 6px;
-    color: var(--muted);
+    color: var(--accent-text);
+    font-family: var(--sans);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;

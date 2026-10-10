@@ -21,6 +21,7 @@
   import { prepareSpeech } from './lib/ui/speech';
   import Summary from './lib/ui/Summary.svelte';
   import TabBar, { type Tab } from './lib/ui/TabBar.svelte';
+  import ThemeFx from './lib/ui/ThemeFx.svelte';
   import Today from './lib/ui/Today.svelte';
   import TopBar from './lib/ui/TopBar.svelte';
 
@@ -125,6 +126,8 @@
     }
   }
 </script>
+
+<ThemeFx />
 
 {#if travel !== null}
   <p class="test-mode" data-testid="test-mode">Test mode, day +{travel}. Real data untouched.</p>
@@ -282,7 +285,7 @@
     padding: 4px 12px;
     border-radius: 999px;
     background: var(--accent);
-    color: #1b1a2b;
+    color: var(--on-accent);
     font-size: 0.8rem;
     font-weight: 700;
     pointer-events: none;

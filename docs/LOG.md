@@ -4,6 +4,113 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-11 · Design: Wordhoard
+
+The owner asked for a name, a distinct feel, an engaging but practical UI, and a dark mode
+switch (the app looked flat and monotone, and Dark Reader turned it grey).
+
+**Done**
+- **Name: Wordhoard** (Old English "word-hord", a store of words; Seamus Heaney's
+  "unlock my word-hoard"). Tagline "Words worth keeping". New mark: a gold cut gem on
+  ink, in the top bar, favicon and home-screen icons.
+- **Two themes**, "Paper" (light) and "Ink" (dark), plus Automatic. Switch with the
+  sun/moon button in the top bar or Settings, Appearance. Kept per device, applied before
+  the first paint. `darkreader-lock` tells Dark Reader to leave the app alone.
+- **Switch animation** (owner's request): the new theme spreads in a circle from the
+  button you tapped, then gold stars twinkle in when it turns dark, or a warm glow
+  spreads when it turns light. Instant for reduced-motion users and where the browser
+  lacks view transitions (iPhone needs iOS 18).
+- **Design system** in `src/app.css`: colour tokens per theme, Fraunces for headings and
+  headwords (bundled, works offline), gold call-to-action buttons, soft shadows, a
+  colour per ladder stage (cool to gold), and small animations (switched off for
+  reduced motion).
+- **Today**: a hero card with a greeting, a ring for how much of today is done, plan
+  chips, a gold Start button, and the week as gems that light up on study days. A "Your
+  hoard" strip shows words learning and owned, with the ladder as a coloured bar.
+- **Sessions**: a gold progress bar, pill tags, options that pop when right and shake
+  when wrong, a feedback card, a highlighter mark under the word, and a word page with
+  the definition in a gold-ruled card.
+- **Summary**: "Superb session" / "Nicely done" with the score, "+N words in your hoard",
+  and a few gems floating up.
+- **Progress**: "Words owned" in a hero with the gem; the ladder bars in stage colours.
+- **Welcome** screen, tab bar (active pill, blurred background), Settings choices and
+  the top bar restyled. All old hard-coded colours and per-screen dark tweaks removed.
+- Visible "Vocab" text renamed: the Shortcut is now "Add to Wordhoard", the PC bookmark
+  "+Hoard", notifications and capture replies say Wordhoard.
+- Tests: an e2e test for the theme button, Settings, Automatic following the device,
+  and the choice surviving a reload. 214 unit tests and 58 e2e runs pass.
+
+**Decisions**
+- The repo, Cloudflare project, address, databases and storage keys keep "vocab": the
+  iPhone's data is tied to them.
+- The theme is a device setting (localStorage), not a synced event: a phone and a PC may
+  want different ones.
+- The top bar and hero cards stay dark in both themes (the iPhone status bar text is
+  white over them).
+
+**Notes for later sessions**
+- Use the tokens in `src/app.css`; no hard-coded colours or `prefers-color-scheme` in
+  components (CLAUDE.md, Design).
+- The home-screen icon and name on the iPhone only change after removing and re-adding
+  the app to the Home Screen, which would lose its data unless synced first. With sync
+  on it is safe: re-add, then "I already use Wordhoard on another device".
+
+**Owner to-do**
+1. Open the preview link, try both themes (the sun/moon button), a session, Progress.
+2. If you keep Dark Reader on, it should now leave the app alone; if it still dims it,
+   turn it off for this site.
+3. Say "merge" (this PR also holds C2's 175 words).
+
+**Next:** F1 feedback, S9, or C3.
+
+---
+
+## 2026-10-10 · C2: Content batch 2
+
+**Done**
+- 175 new entries in `content/entries/002-batch.json`: candidate positions 157-336 (all
+  editorial words), so the bank now has 345. All pass the checker.
+- Made as the guide says: 5 Sonnet writers in parallel (35 words each), then one Opus
+  reviewer per part at high effort, started as each writer finished. Reviewers changed
+  26 to 35 entries per part. The commonest fixes:
+  - blanks where a near-synonym fitted just as well (now with a clue, a contrast or a
+    typical partner);
+  - entries mixing two senses, cut to one (quash, impervious, intractable, antecedent,
+    unfathomable, whimsical, derelict, jurisprudence, sedentary, inasmuch);
+  - misuse sentences that were actually correct English or too silly to teach anything,
+    replaced with real learner mix-ups (egregious/gregarious, sedentary/sedative,
+    amiable/amicable, impervious/imperious);
+  - a few facts and origins corrected (connoisseur, taxonomy, heretical and Galileo,
+    zenith at noon, allay/alley), and doubtful origins removed.
+- `elitist` is taught as the adjective (`elitist#adj`), the more useful form.
+- One skip recorded in `content/skipped.txt`: burgeoning (same family as burgeon, whose
+  entry uses "burgeoning" as its commonest form).
+- `npm run validate:content -- --only FILE` reports problems in one file only, so
+  parallel writers each check their own part (in `content/GUIDE.md`).
+
+**Decisions**
+- Close near-twins (moniker/nickname, paltry/meagre, pariah/outcast) can still fit some
+  blanks despite clues; the first-letter hint settles them. Same standard as C1.
+- `inasmuch` teaches only "because"; "insofar as" is named in its nuance for "to the
+  extent that".
+
+**Notes for later sessions**
+- Give each writer and reviewer its own scratch folder by name. In C2 two writers shared
+  one, overwrote each other's drafts, and one part briefly held another part's words;
+  it was caught by checking each file's headwords against its list, and redone. The
+  guide now says so.
+- C3 takes positions 337-516 into `003-batch.json`.
+- The F1 idea from C1 still stands: accept a listed near-synonym as "close" (Hard, not
+  Again) in typed blanks.
+
+**Owner to-do**
+1. Skim the sample entries in the pull request. Say "merge" if they read well, or name
+   any that seem off.
+
+**Next:** F1/F2 feedback once you have used the app for a few days, S9, or C3.
+
+---
+
 ## 2026-10-10 · S8: Reminders and backups
 
 **Done**

@@ -4,7 +4,7 @@
 
 Needs sync on (`docs/SETUP-SYNC.md`) and iOS 16.4 or later.
 
-1. Open Vocab **from the Home Screen** (reminders don't work in Safari itself).
+1. Open Wordhoard **from the Home Screen** (reminders don't work in Safari itself).
 2. **Settings**, **Daily reminder**: pick a time, tap **Turn on reminders**, then
    **Allow** when the iPhone asks.
 3. Tap **Send a test**. A notification should arrive within a few seconds.

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Logo from '../Logo.svelte';
   import { vocab } from '../state/store.svelte';
   import { isValidKey } from '../sync/key';
   import { syncer } from '../sync/sync.svelte';
@@ -58,15 +59,29 @@
   <TopBar />
   <main class="page" data-testid="onboarding">
     {#if step === 'welcome'}
-      <h1>Welcome to Vocab</h1>
-      <p>
-        A few minutes a day to learn the words of strong academic reading and writing, and to
-        actually use them.
-      </p>
+      <section class="welcome">
+        <Logo size={64} />
+        <p class="eyebrow">Words worth keeping</p>
+        <h1>Welcome to Wordhoard</h1>
+        <p class="lead">
+          A few minutes a day to gather the words of strong academic reading and writing, and to
+          actually use them.
+        </p>
+      </section>
       <ul class="points">
-        <li>Each word is met properly: a guess, its page, then quick checks.</li>
-        <li>Reviews come back just before you would forget.</li>
-        <li>Words move up a ladder from <em>seen</em> to <em>owned</em>.</li>
+        <li>
+          <span class="pip">1</span><span
+            >Each word is met properly: a guess, its page, then quick checks.</span
+          >
+        </li>
+        <li>
+          <span class="pip">2</span><span>Reviews come back just before you would forget.</span>
+        </li>
+        <li>
+          <span class="pip">3</span><span
+            >Words climb from <em>seen</em> to <em>owned</em>, and fill your hoard.</span
+          >
+        </li>
       </ul>
       <p>First, a 2-minute test finds your level, so you only learn words worth learning.</p>
       <div class="actions">
@@ -77,7 +92,7 @@
           Skip the test for now
         </button>
         <button class="btn quiet wide" data-testid="join" onclick={() => (step = 'join')}>
-          I already use Vocab on another device
+          I already use Wordhoard on another device
         </button>
       </div>
     {:else if step === 'join'}
@@ -166,11 +181,59 @@
     margin: 0;
   }
 
+  .welcome {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+    padding: 24px 20px;
+    border-radius: 24px;
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgb(235 181 75 / 25%), transparent 55%),
+      linear-gradient(150deg, var(--hero-1), var(--hero-2));
+    color: var(--on-hero);
+    box-shadow: var(--shadow-lift);
+    animation: rise 0.4s var(--ease) both;
+  }
+
+  .welcome .eyebrow {
+    margin-top: 8px;
+    color: #f2c766;
+  }
+
+  .welcome h1 {
+    font-size: 2.1rem;
+    line-height: 1.05;
+  }
+
+  .lead {
+    opacity: 0.85;
+  }
+
   .points {
     display: grid;
-    gap: 6px;
+    gap: 10px;
     margin: 0;
-    padding-left: 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .points li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .pip {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-text);
+    font-size: 0.8rem;
+    font-weight: 700;
   }
 
   .muted {

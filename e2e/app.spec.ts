@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('first launch shows the welcome, then Today', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Welcome to Vocab' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Welcome to Wordhoard' })).toBeVisible();
   await page.getByTestId('skip-test').click();
   await expect(page.getByRole('heading', { name: 'Your daily time' })).toBeVisible();
   await page.getByRole('button', { name: 'Not now' }).click();
@@ -31,7 +31,7 @@ test('serves an installable web app manifest', async ({ request }) => {
   const response = await request.get('/manifest.webmanifest');
   expect(response.ok()).toBe(true);
   const manifest = await response.json();
-  expect(manifest).toMatchObject({ name: 'Vocab', display: 'standalone', start_url: '/' });
+  expect(manifest).toMatchObject({ name: 'Wordhoard', display: 'standalone', start_url: '/' });
   const sizes = (manifest.icons as { sizes: string }[]).map((icon) => icon.sizes);
   expect(sizes).toEqual(expect.arrayContaining(['192x192', '512x512']));
   for (const path of ['/apple-touch-icon.png', '/icons/icon-192.png', '/icons/icon-512.png']) {
@@ -69,4 +69,31 @@ test('the service worker shows reminders and leaves the server alone', async ({ 
   expect(push).toContain("addEventListener('notificationclick'");
   // /api/ page loads are never answered with the app.
   expect(sw).toMatch(/denylist:\[\/\^\\\/api\\\/\/\]/);
+});
+
+test('light and dark: the top-bar button and Settings, remembered on this device', async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.addInitScript(() => localStorage.setItem('vocab.onboarded', '1'));
+  await page.goto('/');
+  const html = page.locator('html');
+  await expect(html).toHaveAttribute('data-theme', 'light');
+  // Dark Reader is asked to leave the app's own colours alone.
+  await expect(page.locator('meta[name="darkreader-lock"]')).toHaveCount(1);
+
+  await page.getByTestId('theme-toggle').click();
+  await expect(html).toHaveAttribute('data-theme', 'dark');
+  await page.reload();
+  await expect(html).toHaveAttribute('data-theme', 'dark');
+
+  // Automatic follows the device.
+  await page.getByTestId('tab-settings').click();
+  await page.locator('[data-theme-choice="system"]').click();
+  await expect(html).toHaveAttribute('data-theme', 'light');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect(html).toHaveAttribute('data-theme', 'dark');
+  await page.locator('[data-theme-choice="light"]').click();
+  await expect(html).toHaveAttribute('data-theme', 'light');
+  await expect(page.locator('[data-theme-choice="light"]')).toHaveAttribute('aria-checked', 'true');
 });

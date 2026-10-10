@@ -5,6 +5,7 @@
   import { vocab } from '../state/store.svelte';
   import { syncer } from '../sync/sync.svelte';
   import MinutesPicker from './MinutesPicker.svelte';
+  import AppearanceCard from './AppearanceCard.svelte';
   import CaptureCard from './CaptureCard.svelte';
   import ReminderCard from './ReminderCard.svelte';
   import SyncCard from './SyncCard.svelte';
@@ -109,6 +110,8 @@
     location.reload();
   }
 </script>
+
+<AppearanceCard />
 
 <section class="card">
   <h2>Daily time</h2>
@@ -324,8 +327,8 @@
   }
 
   .choice.on {
-    border-color: var(--brand);
-    box-shadow: inset 0 0 0 1px var(--brand);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
   }
 
   .dates {
@@ -407,12 +410,5 @@
 
   .travel {
     border-color: var(--accent);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .choice.on {
-      border-color: #818cf8;
-      box-shadow: inset 0 0 0 1px #818cf8;
-    }
   }
 </style>
