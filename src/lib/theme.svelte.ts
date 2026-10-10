@@ -19,7 +19,7 @@ export interface ThemeFlash {
   y: number;
 }
 
-/** How long the circle takes to cover the screen. */
+/** How long the circle takes to cover the screen. Must match the duration in src/app.css. */
 export const REVEAL_MS = 700;
 
 /** Kept in localStorage; index.html reads the same key. */
@@ -88,28 +88,18 @@ class ThemeController {
       this.flash = flash;
       return;
     }
-    // The browser pictures the page before and after, then we grow the new picture in a
-    // circle. flushSync draws the new theme's screen (icons included) before the picture.
+    // The browser pictures the page before and after. The new picture is revealed by a CSS
+    // circle (theme-reveal in src/app.css) that starts from the tapped point, so it is
+    // clipped from the first frame. The circle's centre and final radius are set first.
+    const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    const style = document.documentElement.style;
+    style.setProperty('--reveal-x', `${x}px`);
+    style.setProperty('--reveal-y', `${y}px`);
+    style.setProperty('--reveal-r', `${radius}px`);
+    // flushSync draws the new theme's screen (icons included) before the picture.
     const transition = document.startViewTransition(() => flushSync(commit));
-    transition.ready
-      .then(() => {
-        const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
-        document.documentElement.animate(
-          {
-            clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`],
-          },
-          {
-            duration: REVEAL_MS,
-            easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
-            pseudoElement: '::view-transition-new(root)',
-          },
-        );
-      })
-      .catch(() => {
-        // Skipped (another transition started): the theme has still changed.
-      });
     // The page is a still picture while the circle grows, so the stars or glow come after.
-    void transition.finished.then(() => (this.flash = flash));
+    void transition.finished.then(() => (this.flash = flash)).catch(() => undefined);
   }
 
   /** The top-bar button: switch to the other theme. */
