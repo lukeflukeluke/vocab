@@ -2,6 +2,9 @@
 //
 //   npm run validate:content                    check all entries
 //   npm run validate:content -- --preview FILE  also print FILE as readable Markdown
+//   npm run validate:content -- --only FILE     report problems in FILE's entries only
+//                                               (checks still see every file, e.g. for
+//                                               duplicate ids)
 //
 // Exits with 1 if any entry fails a check.
 
@@ -34,7 +37,18 @@ for (const file of files) {
   entries.push(...(data as Entry[]));
 }
 
-const issues = validateEntries(entries, candidates);
+const onlyAt = process.argv.indexOf('--only');
+const onlyFile = onlyAt === -1 ? null : process.argv[onlyAt + 1];
+if (onlyAt !== -1 && !onlyFile) throw new Error('--only needs a file name');
+const onlyIds = onlyFile
+  ? new Set(
+      (JSON.parse(readFileSync(join(entriesDir, onlyFile), 'utf8')) as Entry[]).map((e) => e.id),
+    )
+  : null;
+
+const issues = validateEntries(entries, candidates).filter(
+  (issue) => !onlyIds || onlyIds.has(issue.id),
+);
 for (const issue of issues) console.error(`${issue.id}  ${issue.field}: ${issue.message}`);
 console.log(`${entries.length} entries in ${files.length} files, ${issues.length} problems`);
 
