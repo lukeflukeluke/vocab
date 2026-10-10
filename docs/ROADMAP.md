@@ -249,7 +249,7 @@ real words.
 Done when: a word shared from Safari on your iPhone appears in the Inbox on both
 devices.
 
-### [ ] S8: Reminders and backups
+### [x] S8: Reminders and backups
 Claude builds:
 - Push reminders for the home-screen app (iOS 16.4+). They arrive at your chosen time,
   and only if today's session isn't done.

@@ -9,6 +9,7 @@
   import { summarize, type Session, type SessionSummary } from './lib/session/runner';
   import { todaysSession } from './lib/session/today';
   import { vocab } from './lib/state/store.svelte';
+  import { reminders } from './lib/reminders/reminders.svelte';
   import { syncer } from './lib/sync/sync.svelte';
   import CaptureLanding from './lib/ui/CaptureLanding.svelte';
   import Inbox from './lib/ui/Inbox.svelte';
@@ -35,11 +36,8 @@
   let bankReady = $state(false);
   let bankError = $state<string | null>(null);
   let offlineReady = $state(false);
-  /** A new version of the app has taken over; reload when nothing is in progress. */
+  /** A new version of the app has taken over; it shows after a reload. */
   let updateReady = $state(false);
-  $effect(() => {
-    if (updateReady && view.name === 'tabs' && !onboarding) location.reload();
-  });
   let persistent = $state<boolean | null>(null);
   let installed = $state(true);
   let ios = $state(false);
@@ -48,6 +46,7 @@
   const capturing = captureParams(location.search);
   /** The event log is open and sync is set up. */
   const started = vocab.init().then(() => syncer.init());
+  if (!capturing) void started.then(() => reminders.init());
   const inboxCount = $derived(unsorted(vocab.state).length);
 
   /** First launch: nothing recorded yet and the welcome not dismissed on this device. */
@@ -61,6 +60,21 @@
     if (!ready || decided) return;
     decided = true;
     onboarding = !onboarded && vocab.state.eventCount === 0;
+  });
+
+  const canReload = $derived(updateReady && view.name === 'tabs' && !onboarding);
+  // Coming back to the app (from another app, or a locked phone) is a quiet moment to
+  // switch to the new version, unless you are mid-session or have typed something.
+  $effect(() => {
+    if (!canReload) return;
+    const onVisible = () => {
+      const typing = [...document.querySelectorAll('input, textarea')].some(
+        (el) => (el as HTMLInputElement).value,
+      );
+      if (document.visibilityState === 'visible' && !typing) location.reload();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => document.removeEventListener('visibilitychange', onVisible);
   });
 
   onMount(() => {
@@ -152,6 +166,12 @@
   <Summary summary={view.summary} onclose={() => home('today')} />
 {:else}
   <TopBar />
+  {#if canReload}
+    <p class="update" role="status" data-testid="update-ready">
+      A new version is ready.
+      <button class="btn quiet" onclick={() => location.reload()}>Reload</button>
+    </p>
+  {/if}
   <main class="page with-tabs">
     {#if tab === 'today'}
       <Today
@@ -229,6 +249,25 @@
 
   .error {
     color: var(--danger);
+  }
+
+  .update {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 8px;
+    margin: 0;
+    padding: 4px calc(env(safe-area-inset-right) + 16px) 4px calc(env(safe-area-inset-left) + 16px);
+    background: var(--mark);
+    font-size: 0.9rem;
+  }
+
+  .update .btn {
+    min-height: 36px;
+    padding: 4px 10px;
+    color: var(--text);
+    text-decoration: underline;
   }
 
   .test-mode {

@@ -1,0 +1,19 @@
+# Sends due reminders and makes weekly backups (server/reminders.ts). Cloudflare Pages
+# Functions cannot run on a timer, so GitHub calls the app's /api/tick every 10 minutes.
+# GitHub may start scheduled runs a few minutes late. The call is safe to repeat.
+name: Tick
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Call /api/tick
+        run: curl -fsS --max-time 60 -X POST https://vocab-build.pages.dev/api/tick

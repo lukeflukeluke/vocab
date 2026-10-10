@@ -8,7 +8,7 @@ server (Cloudflare Pages Functions with D1) relays events between devices.
 - Build order and progress: `docs/ROADMAP.md`
 - What each session did: `docs/LOG.md`
 - Hosting: `docs/SETUP-CLOUDFLARE.md`; sync database: `docs/SETUP-SYNC.md`; capture:
-  `docs/SETUP-CAPTURE.md`
+  `docs/SETUP-CAPTURE.md`; reminders and backups: `docs/SETUP-REMINDERS.md`
 
 ## Session routine
 
@@ -156,7 +156,7 @@ The owner wants usage spent where it matters:
   the app at `/?capture&w=&s=&t=&u=` in a small window (`CaptureLanding.svelte`) that
   records the event locally and syncs; the iOS Shortcut, which posts to
   `/api/capture` (`server/capture.ts`). That endpoint is the one place the server
-  writes an event itself (device `server`), because a link on iPhone would open Safari's
+  writes an event (device `server`), because a link on iPhone would open Safari's
   separate storage.
 - Words not in the bank get an entry made on the device (`entryFromSense`, id
   `my:headword#pos.hash`, same on every device), saved as an `entry_created` event in
@@ -169,6 +169,22 @@ The owner wants usage spent where it matters:
 - The compact dictionary is `virtual:dictionary` (26 JSON files by first letter, fetched
   when needed, cached by the service worker). `lookUp()` in `content/dictionary.ts`
   guesses dictionary forms (`lemmaCandidates`: "posited" to "posit").
+
+## Reminders and backups (`server/reminders.ts`, `src/lib/reminders/`)
+
+- Web Push, no packages: `server/webpush.ts` (RFC 8291 encryption, checked against the
+  RFC's test vector; VAPID). The VAPID key pair is made on first use and kept in the D1
+  `config` table, so there is no secret to set.
+- `/api/push/{key,subscribe,unsubscribe,done,test}`; `push_subs` holds each device's
+  subscription, time (6:00 to 23:30, half hours) and time zone (refreshed on every app
+  start). A device posts `done` with the study day when Today has nothing left.
+- `POST /api/tick` sends due reminders (once a day, up to 3 hours late, not when the day
+  is done) and, if an R2 bucket is bound as `BACKUPS`, a weekly backup per account in the
+  normal backup format. Pages cannot run timers, so `.github/workflows/tick.yml` calls it
+  every 10 minutes. The tick needs no key: repeating it is harmless.
+- The service worker loads `public/push-sw.js` (`workbox.importScripts`) to show pushes.
+- A new version shows a "Reload" banner on the main tabs, and reloads by itself when the
+  app comes back from the background (not mid-session, not with text typed).
 
 ## Word bank (`content/`)
 

@@ -609,8 +609,9 @@ use_logged, settings_changed, and so on. Each has a unique id, a timestamp and a
 
 ### 13.4 Backups
 
-- The server backs up the log weekly (a scheduled Worker job writing to Cloudflare R2,
-  also free at this size).
+- The server backs up the log weekly to Cloudflare R2 (free at this size), from the same
+  10-minute tick that sends reminders (a scheduled GitHub Action, because Pages
+  Functions cannot run on a timer). Cloudflare also keeps 30 days of database history.
 - A "Download everything" button gives JSON plus a CSV of your words. Your data is never
   trapped.
 
