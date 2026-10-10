@@ -1,0 +1,2474 @@
+[
+  {
+    "id": "belligerent#adj",
+    "headword": "belligerent",
+    "pos": "adj",
+    "sense": "hostile and aggressive, eager to fight",
+    "forms": [],
+    "definition": "Hostile and aggressive, always ready to start an argument or a fight.",
+    "register": "formal",
+    "nuance": "Belligerent describes people, tones and moods that are hostile and eager to quarrel. It is critical, and is often used about drunks, leaders and nations. In formal writing it can also mean 'at war', as in belligerent states.",
+    "everyday": "aggressive",
+    "examples": [
+      {
+        "text": "The belligerent drunk shouted at the waiter, shoved a chair aside and demanded a fight with anyone nearby.",
+        "form": "belligerent",
+        "setting": "fiction"
+      },
+      {
+        "text": "The two belligerent leaders traded insults on live television and refused to shake hands.",
+        "form": "belligerent",
+        "setting": "news"
+      },
+      {
+        "text": "Historians often describe the belligerent foreign policy of the 1930s as a major cause of the war.",
+        "form": "belligerent",
+        "setting": "academic"
+      },
+      {
+        "text": "Don't get belligerent with me; I only asked what time you got home.",
+        "form": "belligerent",
+        "setting": "conversation"
+      },
+      {
+        "text": "Staff reported that the customer had become belligerent when he was asked to leave the premises.",
+        "form": "belligerent",
+        "setting": "formal"
+      },
+      {
+        "text": "Some psychologists argue that belligerent behaviour in children often hides fear or insecurity.",
+        "form": "belligerent",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The ___ crowd outside the stadium, spoiling for a fight, had to be held back by police.",
+        "answer": "belligerent"
+      },
+      {
+        "text": "He grew loud and ___ after a few drinks, picking fights with strangers in the pub.",
+        "answer": "belligerent"
+      },
+      {
+        "text": "Not shy or nervous but openly ___, he glared at the panel and challenged every question they asked.",
+        "answer": "belligerent"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She gave a belligerent smile and thanked everyone for the lovely gift.",
+        "why": "Belligerent means hostile and aggressive, so it cannot describe a warm, grateful smile."
+      },
+      {
+        "text": "The belligerent guests sat quietly and politely all evening.",
+        "why": "Belligerent people are eager to argue or fight, not quiet and polite."
+      }
+    ],
+    "partners": [
+      "a belligerent tone",
+      "belligerent behaviour",
+      "become belligerent",
+      "a belligerent attitude"
+    ],
+    "phrases": [
+      "...adopted a belligerent stance towards...",
+      "His belligerent response suggested that..."
+    ],
+    "family": [
+      "belligerence",
+      "belligerently",
+      "belligerency"
+    ],
+    "synonyms": [
+      {
+        "word": "aggressive",
+        "vs": "Aggressive is general and can be positive in sport or business; belligerent is hostile and eager to fight."
+      },
+      {
+        "word": "hostile",
+        "vs": "Hostile shows unfriendliness; belligerent adds an active wish to quarrel or fight."
+      },
+      {
+        "word": "bellicose",
+        "vs": "Bellicose is a close, more formal synonym, often used about nations and leaders who favour war."
+      }
+    ],
+    "antonyms": [
+      "peaceable",
+      "conciliatory",
+      "mild"
+    ],
+    "confusables": [
+      {
+        "word": "rebellious",
+        "note": "Rebellious means resisting authority; belligerent means eager to fight anyone."
+      }
+    ],
+    "roots": [
+      {
+        "part": "bellum",
+        "meaning": "war (Latin)"
+      },
+      {
+        "part": "gerere",
+        "meaning": "to wage, carry on (Latin)"
+      }
+    ],
+    "siblings": [
+      "rebel",
+      "bellicose",
+      "antebellum"
+    ],
+    "origin": "From Latin belligerare, 'to wage war', built on bellum, 'war', and gerere, 'to carry on'.",
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "piety#n",
+    "headword": "piety",
+    "pos": "n",
+    "sense": "deep devotion to religion",
+    "forms": [
+      "pieties"
+    ],
+    "definition": "Deep devotion to a religion, shown through prayer, worship and a moral way of living.",
+    "register": "formal",
+    "nuance": "Piety is used for religious devotion shown in worship and conduct. It is usually respectful, though 'false piety' or 'sanctimonious piety' is critical. It can also mean dutiful respect for family, as in 'filial piety'.",
+    "everyday": "devotion",
+    "examples": [
+      {
+        "text": "Her piety was clear to everyone: she prayed daily, fasted on holy days and gave generously to the church.",
+        "form": "piety",
+        "setting": "fiction"
+      },
+      {
+        "text": "Medieval historians study how public piety shaped everyday life, from pilgrimages to the building of cathedrals.",
+        "form": "piety",
+        "setting": "academic"
+      },
+      {
+        "text": "The archbishop praised the community for its piety and its kindness to refugees.",
+        "form": "piety",
+        "setting": "news"
+      },
+      {
+        "text": "My grandmother's piety is quiet: she never lectures anyone, but she never misses a Sunday service.",
+        "form": "piety",
+        "setting": "conversation"
+      },
+      {
+        "text": "The charter praises the founder's piety, charity and loyalty to the Crown.",
+        "form": "piety",
+        "setting": "formal"
+      },
+      {
+        "text": "Critics argue that the novel mocks the false piety of characters who preach virtue but behave cruelly.",
+        "form": "piety",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The monks were admired for their ___, rising before dawn to pray and living by strict rules.",
+        "answer": "piety"
+      },
+      {
+        "text": "He wore his ___ openly, quoting scripture and attending church services twice a day.",
+        "answer": "piety"
+      },
+      {
+        "text": "The sermon was not about money or politics but about ___: faith, prayer and a life given to God.",
+        "answer": "piety"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "His piety for fast cars made him spend every weekend at the race track.",
+        "why": "Piety is about religious devotion, not enthusiasm for a hobby; for that use 'passion'."
+      },
+      {
+        "text": "She was famous for her piety, so she skipped every service and never prayed.",
+        "why": "Piety means devotion to religion, so someone who avoids all worship shows the opposite."
+      }
+    ],
+    "partners": [
+      "religious piety",
+      "a life of piety",
+      "public piety",
+      "filial piety"
+    ],
+    "phrases": [
+      "...a display of piety...",
+      "The piety of the age is reflected in..."
+    ],
+    "family": [
+      "pious",
+      "piously",
+      "impiety"
+    ],
+    "synonyms": [
+      {
+        "word": "devotion",
+        "vs": "Devotion is wider, covering love of a person or cause; piety is specifically religious."
+      },
+      {
+        "word": "holiness",
+        "vs": "Holiness describes being sacred or morally perfect; piety describes the believer's own devotion."
+      },
+      {
+        "word": "religiosity",
+        "vs": "Religiosity can sound critical, suggesting excessive show; piety is usually neutral or admiring."
+      }
+    ],
+    "antonyms": [
+      "impiety",
+      "irreverence",
+      "godlessness"
+    ],
+    "confusables": [
+      {
+        "word": "pity",
+        "note": "Pity is sympathy for suffering; the two words share a Latin source but differ in meaning today."
+      }
+    ],
+    "roots": [
+      {
+        "part": "pietas",
+        "meaning": "dutifulness, devotion (Latin)"
+      }
+    ],
+    "siblings": [
+      "pity",
+      "pious"
+    ],
+    "origin": "From Latin pietas, 'dutifulness', which covered respect for the gods, family and country.",
+    "tags": [
+      "ethics"
+    ]
+  },
+  {
+    "id": "flounder#v",
+    "headword": "flounder",
+    "pos": "v",
+    "sense": "struggle awkwardly and make little progress",
+    "forms": [
+      "flounders",
+      "floundered",
+      "floundering"
+    ],
+    "definition": "To struggle awkwardly and make little progress, because of confusion, difficulty or lack of a clear plan.",
+    "register": "neutral",
+    "nuance": "Flounder describes people, plans and organisations that struggle without making progress. It is mildly critical and often suggests confusion or a lack of direction. It can also describe thrashing about in water or mud.",
+    "everyday": "struggle",
+    "examples": [
+      {
+        "text": "Without a clear plan or enough money, the new airline floundered and lost passengers every month.",
+        "form": "floundered",
+        "setting": "news"
+      },
+      {
+        "text": "Students who lack basic note-taking skills often flounder when the course becomes more demanding.",
+        "form": "flounder",
+        "setting": "academic"
+      },
+      {
+        "text": "I totally floundered in the interview; I couldn't answer a single question properly.",
+        "form": "floundered",
+        "setting": "conversation"
+      },
+      {
+        "text": "He floundered for words, his face hot, while the whole room waited for his reply.",
+        "form": "floundered",
+        "setting": "fiction"
+      },
+      {
+        "text": "The negotiations are floundering because neither side will agree to the basic terms.",
+        "form": "floundering",
+        "setting": "formal"
+      },
+      {
+        "text": "Reform efforts flounder when they ignore the people who are expected to carry them out.",
+        "form": "flounder",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Thrown into the job without training, she ___ for weeks, unable to make any progress, before anyone showed her the system.",
+        "answer": "floundered"
+      },
+      {
+        "text": "The project began to ___ as soon as the funding ran out, lurching from one crisis to the next with no clear direction.",
+        "answer": "flounder"
+      },
+      {
+        "text": "Nervous and unprepared, he was ___ through his speech, stumbling, repeating himself and losing his place.",
+        "answer": "floundering"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The gymnast floundered gracefully across the beam and won gold.",
+        "why": "Flounder suggests an awkward struggle and confusion, so it cannot describe a graceful, successful performance."
+      },
+      {
+        "text": "Our sales floundered upwards and broke every record this year.",
+        "why": "Flounder means to struggle or fail to make progress; it cannot describe strong, rising success."
+      }
+    ],
+    "partners": [
+      "flounder helplessly",
+      "begin to flounder",
+      "flounder without guidance",
+      "a floundering economy"
+    ],
+    "phrases": [
+      "...began to flounder when...",
+      "Without clear guidance, students flounder..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "struggle",
+        "vs": "Struggle is general and can end in success; flounder suggests clumsy confusion and little progress."
+      },
+      {
+        "word": "falter",
+        "vs": "Falter means to lose strength or hesitate for a moment; flounder lasts longer and shows real confusion."
+      },
+      {
+        "word": "stumble",
+        "vs": "Stumble suggests a brief mistake; flounder is a longer, helpless struggle."
+      }
+    ],
+    "antonyms": [
+      "thrive",
+      "flourish",
+      "prosper"
+    ],
+    "confusables": [
+      {
+        "word": "founder",
+        "note": "Founder means to fail or sink, as in 'the plan foundered'; it is close in meaning but a different word."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "change"
+    ]
+  },
+  {
+    "id": "litigate#v",
+    "headword": "litigate",
+    "pos": "v",
+    "sense": "take a dispute to court",
+    "forms": [
+      "litigates",
+      "litigated",
+      "litigating"
+    ],
+    "definition": "To take a disagreement to a court of law so that a judge can decide it.",
+    "register": "formal",
+    "nuance": "Litigate is used for taking or fighting a dispute in court, usually a civil one such as a contract or property case. It is formal and common in law and business writing. It can be used with or without an object: 'litigate a claim' or 'litigate over a boundary'.",
+    "everyday": "take to court",
+    "examples": [
+      {
+        "text": "If the landlord refuses to return my deposit, I'm prepared to litigate and let a judge decide.",
+        "form": "litigate",
+        "setting": "conversation"
+      },
+      {
+        "text": "The two companies have been litigating over the patent for six years, and neither has won.",
+        "form": "litigating",
+        "setting": "news"
+      },
+      {
+        "text": "Under the contract, neither party may litigate before trying mediation for at least ninety days.",
+        "form": "litigate",
+        "setting": "formal"
+      },
+      {
+        "text": "Legal scholars note that wealthy corporations can afford to litigate for years, while individuals often settle.",
+        "form": "litigate",
+        "setting": "academic"
+      },
+      {
+        "text": "He had spent his life litigating other people's quarrels and had no wish to be dragged into his own.",
+        "form": "litigating",
+        "setting": "fiction"
+      },
+      {
+        "text": "Disputes over land ownership were litigated in the colonial courts for generations.",
+        "form": "litigated",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Rather than settle quietly, the author decided to ___ the case in front of a judge and a jury.",
+        "answer": "litigate"
+      },
+      {
+        "text": "The neighbours have been ___ over the boundary fence for years, paying their lawyers more than the land is worth.",
+        "answer": "litigating"
+      },
+      {
+        "text": "Many small businesses cannot afford to ___ against large firms, because a lawsuit means huge legal fees.",
+        "answer": "litigate"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The two friends litigated over dinner and then agreed to split the bill.",
+        "why": "Litigate means to take a dispute to court, not to discuss or argue informally."
+      },
+      {
+        "text": "He litigated the judge until she changed her mind.",
+        "why": "You litigate a dispute or a claim, not a person; to try to pressure someone you would 'lobby' or 'press' them."
+      }
+    ],
+    "partners": [
+      "litigate a claim",
+      "litigate a case",
+      "litigate over",
+      "threaten to litigate"
+    ],
+    "phrases": [
+      "...had to litigate the question of...",
+      "Rather than litigate, the parties agreed to..."
+    ],
+    "family": [
+      "litigation",
+      "litigant",
+      "litigious"
+    ],
+    "synonyms": [
+      {
+        "word": "sue",
+        "vs": "Sue means to start a case against a person or firm; litigate covers the whole process of fighting a case in court."
+      },
+      {
+        "word": "contest",
+        "vs": "Contest is wider and can be done in any forum; litigate always happens in court."
+      },
+      {
+        "word": "prosecute",
+        "vs": "Prosecute is about bringing criminal charges; litigate is mostly for civil disputes."
+      }
+    ],
+    "antonyms": [
+      "settle",
+      "reconcile"
+    ],
+    "confusables": [
+      {
+        "word": "mitigate",
+        "note": "Mitigate means to make less severe; it sounds similar but is unrelated."
+      }
+    ],
+    "roots": [
+      {
+        "part": "lis",
+        "meaning": "lawsuit (Latin)"
+      },
+      {
+        "part": "agere",
+        "meaning": "to drive, do (Latin)"
+      }
+    ],
+    "siblings": [],
+    "origin": "From Latin litigare, 'to bring a lawsuit', from lis, 'lawsuit'.",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "id": "berate#v",
+    "headword": "berate",
+    "pos": "v",
+    "sense": "criticise angrily and at length",
+    "forms": [
+      "berates",
+      "berated",
+      "berating"
+    ],
+    "definition": "To criticise someone angrily and at length for something they have done wrong.",
+    "register": "formal",
+    "nuance": "Berate is a fairly formal verb for scolding someone angrily, usually at length. It often suggests the scolding is harsh or one-sided. It takes a person as its object, followed by 'for' and the fault.",
+    "everyday": "scold",
+    "examples": [
+      {
+        "text": "Our boss berated me in front of the whole office because I was ten minutes late.",
+        "form": "berated",
+        "setting": "conversation"
+      },
+      {
+        "text": "The referee was berated by furious fans as he left the pitch after the controversial decision.",
+        "form": "berated",
+        "setting": "news"
+      },
+      {
+        "text": "Early reformers berated factory owners in print, accusing them of ignoring child labour.",
+        "form": "berated",
+        "setting": "academic"
+      },
+      {
+        "text": "She stood at the door berating the delivery driver, who stared at his boots.",
+        "form": "berating",
+        "setting": "fiction"
+      },
+      {
+        "text": "Staff must not berate customers, however difficult the situation becomes.",
+        "form": "berate",
+        "setting": "formal"
+      },
+      {
+        "text": "Teachers who berate pupils for mistakes may discourage them from taking risks in class.",
+        "form": "berate",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The headteacher ___ the boys for a loud, angry hour about the broken window.",
+        "answer": "berated"
+      },
+      {
+        "text": "Instead of encouraging the team, the manager would ___ them in public, listing every single error.",
+        "answer": "berate"
+      },
+      {
+        "text": "Parents who constantly ___ their children for small mistakes can damage their confidence.",
+        "answer": "berate"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "She berated her friend warmly for the lovely birthday surprise.",
+        "why": "Berate means to criticise angrily, so it cannot be used for thanking or praising someone."
+      },
+      {
+        "text": "The audience berated the singer with a standing ovation.",
+        "why": "To berate is to scold harshly; a standing ovation is praise."
+      }
+    ],
+    "partners": [
+      "berate someone for",
+      "berated in public",
+      "harshly berate",
+      "berate staff"
+    ],
+    "phrases": [
+      "...berated the government for its failure to...",
+      "The author berates critics for..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "scold",
+        "vs": "Scold is everyday and can be mild or parental; berate is more formal and suggests harsher, longer criticism."
+      },
+      {
+        "word": "rebuke",
+        "vs": "Rebuke is formal and short, often from someone with authority; berate is longer and angrier."
+      },
+      {
+        "word": "reprimand",
+        "vs": "Reprimand is an official, formal telling-off; berate is personal and angry."
+      }
+    ],
+    "antonyms": [
+      "praise",
+      "commend",
+      "compliment"
+    ],
+    "confusables": [
+      {
+        "word": "debate",
+        "note": "Debate is a discussion of opposing views; berate is one-sided criticism."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "feeling"
+    ]
+  },
+  {
+    "id": "acme#n",
+    "headword": "acme",
+    "pos": "n",
+    "sense": "the highest point of something",
+    "forms": [],
+    "definition": "The highest point of achievement or quality, beyond which nothing better can be reached.",
+    "register": "formal",
+    "nuance": "Acme is a formal, slightly literary noun for the very highest point of achievement, quality or development. It is nearly always followed by 'of' and is approving. It suggests that nothing could be better.",
+    "everyday": "peak",
+    "examples": [
+      {
+        "text": "For many athletes, winning an Olympic gold medal is the acme of their careers.",
+        "form": "acme",
+        "setting": "news"
+      },
+      {
+        "text": "Critics regard the late symphonies as the acme of Classical music, never surpassed by later composers.",
+        "form": "acme",
+        "setting": "academic"
+      },
+      {
+        "text": "At the acme of his power, the emperor ruled lands from the sea to the mountains.",
+        "form": "acme",
+        "setting": "fiction"
+      },
+      {
+        "text": "That chocolate cake was the acme of dessert; I can't imagine anything better.",
+        "form": "acme",
+        "setting": "conversation"
+      },
+      {
+        "text": "The cathedral represents the acme of medieval craftsmanship in the region.",
+        "form": "acme",
+        "setting": "formal"
+      },
+      {
+        "text": "Some historians see the 1960s as the acme of the postwar economic boom.",
+        "form": "acme",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Reaching the summit was the ___ of her climbing career, and she never tried anything higher.",
+        "answer": "acme"
+      },
+      {
+        "text": "To the critics, the film was the ___ of the genre: the best it could ever be.",
+        "answer": "acme"
+      },
+      {
+        "text": "He reached the ___ of his fame in 1998, the highest point of his career, and then slowly faded from view.",
+        "answer": "acme"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The team finished in last place, which was the acme of their season.",
+        "why": "Acme means the highest point, so last place cannot be one; the lowest point would be the 'nadir'."
+      },
+      {
+        "text": "He is an acme at chess.",
+        "why": "Acme is not a word for a skilled person; it names the highest point of something, as in 'the acme of his career'."
+      }
+    ],
+    "partners": [
+      "the acme of perfection",
+      "the acme of elegance",
+      "reach the acme",
+      "the acme of a career"
+    ],
+    "phrases": [
+      "...represents the acme of...",
+      "At the acme of its power, the empire..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "peak",
+        "vs": "Peak is everyday and can be literal; acme is formal and usually figurative."
+      },
+      {
+        "word": "pinnacle",
+        "vs": "Pinnacle is a very close synonym with a mountain-top image; acme is more formal and rarer."
+      },
+      {
+        "word": "zenith",
+        "vs": "Zenith suggests a high point from which decline follows; acme stresses perfection."
+      }
+    ],
+    "antonyms": [
+      "nadir",
+      "depths"
+    ],
+    "confusables": [
+      {
+        "word": "acne",
+        "note": "Acne is a skin condition; the two words look alike."
+      }
+    ],
+    "roots": [
+      {
+        "part": "akme",
+        "meaning": "point, peak (Greek)"
+      }
+    ],
+    "siblings": [],
+    "origin": "From Greek akme, 'point' or 'peak'.",
+    "tags": [
+      "degree"
+    ]
+  },
+  {
+    "id": "culpable#adj",
+    "headword": "culpable",
+    "pos": "adj",
+    "sense": "deserving blame for a wrong",
+    "forms": [],
+    "definition": "Deserving blame for a wrong or harmful act, especially because of carelessness or bad intent.",
+    "register": "formal",
+    "nuance": "Culpable is a formal word used in law and ethics for someone who deserves blame for a wrong or a harm. It is stronger than 'responsible' because it always implies fault. 'Culpable negligence' is a fixed legal phrase for blameworthy carelessness.",
+    "everyday": "to blame",
+    "examples": [
+      {
+        "text": "The report found the company culpable for ignoring safety warnings that led to the explosion.",
+        "form": "culpable",
+        "setting": "news"
+      },
+      {
+        "text": "The court held that the driver was culpable, since he had been texting at the time of the crash.",
+        "form": "culpable",
+        "setting": "formal"
+      },
+      {
+        "text": "Ethicists debate whether a person is culpable for harm that they could not have foreseen.",
+        "form": "culpable",
+        "setting": "academic"
+      },
+      {
+        "text": "I know I forgot the tickets, but you're equally culpable; you never reminded me.",
+        "form": "culpable",
+        "setting": "conversation"
+      },
+      {
+        "text": "He felt culpable for the fire, though he had only left the candle burning for a moment.",
+        "form": "culpable",
+        "setting": "fiction"
+      },
+      {
+        "text": "Philosophers distinguish between those who cause harm and those who are morally culpable for it.",
+        "form": "culpable",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "A driver who knowingly ignores a red light is ___ for the crash, not the victim.",
+        "answer": "culpable"
+      },
+      {
+        "text": "The inquiry will decide who is ___ for the failure: the managers, the engineers or the suppliers.",
+        "answer": "culpable"
+      },
+      {
+        "text": "Although he did not start the fire, he was found ___ of negligence for leaving the stove on all night.",
+        "answer": "culpable"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The jury found the innocent man culpable and set him free.",
+        "why": "Culpable means deserving blame, so it clashes with innocent and with being set free."
+      },
+      {
+        "text": "She was culpable for her brilliant exam results.",
+        "why": "Culpable is for blame over something bad; for good results you would say 'responsible' or 'deserving of credit'."
+      }
+    ],
+    "partners": [
+      "culpable negligence",
+      "morally culpable",
+      "hold someone culpable",
+      "culpable for"
+    ],
+    "phrases": [
+      "...is culpable for...",
+      "Those who are culpable must..."
+    ],
+    "family": [
+      "culpability",
+      "culpably"
+    ],
+    "synonyms": [
+      {
+        "word": "guilty",
+        "vs": "Guilty is the legal or emotional word for having done wrong; culpable stresses deserving blame and responsibility."
+      },
+      {
+        "word": "blameworthy",
+        "vs": "Blameworthy is plainer and less common; culpable sounds more formal and legal."
+      },
+      {
+        "word": "responsible",
+        "vs": "Responsible can be neutral or positive; culpable always involves blame."
+      }
+    ],
+    "antonyms": [
+      "blameless",
+      "innocent",
+      "faultless"
+    ],
+    "confusables": [
+      {
+        "word": "culprit",
+        "note": "A culprit is the person who did wrong; culpable describes someone who deserves blame."
+      }
+    ],
+    "roots": [
+      {
+        "part": "culpa",
+        "meaning": "fault, blame (Latin)"
+      }
+    ],
+    "siblings": [
+      "culprit",
+      "exculpate",
+      "inculpate"
+    ],
+    "origin": "From Latin culpa, 'fault' or 'blame'.",
+    "tags": [
+      "judgement"
+    ]
+  },
+  {
+    "id": "unfettered#adj",
+    "headword": "unfettered",
+    "pos": "adj",
+    "sense": "free from any restrictions",
+    "forms": [],
+    "definition": "Free from restrictions or limits, able to act or develop without anything holding it back.",
+    "register": "formal",
+    "nuance": "Unfettered describes freedom, access, power or growth with nothing to hold it back. It can be approving, as in unfettered creativity, or worrying, as in unfettered power. It is common in politics, economics and journalism.",
+    "everyday": "unrestricted",
+    "examples": [
+      {
+        "text": "Critics of the law fear it gives the police unfettered power to search homes without a warrant.",
+        "form": "unfettered",
+        "setting": "news"
+      },
+      {
+        "text": "Economists disagree about whether unfettered competition always benefits consumers.",
+        "form": "unfettered",
+        "setting": "academic"
+      },
+      {
+        "text": "After years in the office, she felt unfettered at last, free to wander wherever the road led.",
+        "form": "unfettered",
+        "setting": "fiction"
+      },
+      {
+        "text": "Give a toddler unfettered access to a box of paints and you'll regret it.",
+        "form": "unfettered",
+        "setting": "conversation"
+      },
+      {
+        "text": "The constitution does not grant unfettered freedom of speech; some limits apply.",
+        "form": "unfettered",
+        "setting": "formal"
+      },
+      {
+        "text": "Unfettered growth in tourism has strained water supplies on many small islands.",
+        "form": "unfettered",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The minister was accused of wanting ___ power, free from any court, parliament or watchdog.",
+        "answer": "unfettered"
+      },
+      {
+        "text": "Scientists argue that ___ access to data, with no paywalls or permissions, speeds up research.",
+        "answer": "unfettered"
+      },
+      {
+        "text": "With no rules and no supervisor, the young artist enjoyed ___ freedom to paint whatever she liked.",
+        "answer": "unfettered"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The prisoner walked out of the courtroom in unfettered chains.",
+        "why": "Unfettered means free of restraints, so it clashes with being in chains."
+      },
+      {
+        "text": "The unfettered rules limited what everyone could do.",
+        "why": "Unfettered means unrestricted, so it cannot describe rules that limit people; use 'strict' instead."
+      }
+    ],
+    "partners": [
+      "unfettered access",
+      "unfettered power",
+      "unfettered freedom",
+      "unfettered growth"
+    ],
+    "phrases": [
+      "...with unfettered access to...",
+      "...unfettered by tradition or law..."
+    ],
+    "family": [
+      "fetter",
+      "fetters",
+      "fettered"
+    ],
+    "synonyms": [
+      {
+        "word": "unrestricted",
+        "vs": "Unrestricted is plain and neutral; unfettered suggests being freed from chains or controls, with a stronger image."
+      },
+      {
+        "word": "unlimited",
+        "vs": "Unlimited is about amount; unfettered is about freedom from restraint."
+      },
+      {
+        "word": "unchecked",
+        "vs": "Unchecked suggests something spreading without control, often with a worry; unfettered can be positive or negative."
+      }
+    ],
+    "antonyms": [
+      "restricted",
+      "restrained",
+      "limited"
+    ],
+    "confusables": [],
+    "roots": [
+      {
+        "part": "un-",
+        "meaning": "not, without"
+      },
+      {
+        "part": "fetter",
+        "meaning": "a chain for the feet"
+      }
+    ],
+    "siblings": [],
+    "origin": "A fetter is a chain for the feet, from Old English feter, related to foot; unfettered means free of such chains.",
+    "tags": [
+      "describing"
+    ]
+  },
+  {
+    "id": "enigmatic#adj",
+    "headword": "enigmatic",
+    "pos": "adj",
+    "sense": "mysterious and hard to interpret",
+    "forms": [],
+    "definition": "Mysterious and difficult to understand or interpret, so that people are left puzzled.",
+    "register": "formal",
+    "nuance": "Enigmatic describes people, smiles, remarks and works of art that are mysterious and hard to read. It is often mildly admiring, suggesting something intriguing rather than simply confusing. It is common in literary and art criticism.",
+    "everyday": "mysterious",
+    "examples": [
+      {
+        "text": "Nobody could tell whether she was pleased or angry; her enigmatic smile gave nothing away.",
+        "form": "enigmatic",
+        "setting": "fiction"
+      },
+      {
+        "text": "The band released an enigmatic video with no title, no words and no clues about the new album.",
+        "form": "enigmatic",
+        "setting": "news"
+      },
+      {
+        "text": "Scholars still debate the enigmatic final chapter, which seems to contradict the rest of the novel.",
+        "form": "enigmatic",
+        "setting": "academic"
+      },
+      {
+        "text": "He left me an enigmatic message: 'You'll understand when you see it.'",
+        "form": "enigmatic",
+        "setting": "conversation"
+      },
+      {
+        "text": "The committee found the clause enigmatic and asked the drafters to clarify it.",
+        "form": "enigmatic",
+        "setting": "formal"
+      },
+      {
+        "text": "Many of the poet's enigmatic images resist any single interpretation.",
+        "form": "enigmatic",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The detective stared at the ___ note, which seemed to mean something but gave no clear clue.",
+        "answer": "enigmatic"
+      },
+      {
+        "text": "She remained an ___ figure, a living riddle whose past nobody could explain.",
+        "answer": "enigmatic"
+      },
+      {
+        "text": "The oracle gave an ___ answer, so vague and puzzling that both kings thought it promised victory.",
+        "answer": "enigmatic"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The enigmatic instructions were so clear that anyone could follow them.",
+        "why": "Enigmatic means puzzling and hard to understand, the opposite of clear."
+      },
+      {
+        "text": "He is an enigmatic man, always chatting openly about everything in his life.",
+        "why": "Enigmatic people stay mysterious; someone who talks openly about everything is not."
+      }
+    ],
+    "partners": [
+      "an enigmatic smile",
+      "an enigmatic figure",
+      "enigmatic remarks",
+      "deliberately enigmatic"
+    ],
+    "phrases": [
+      "...remains an enigmatic figure in...",
+      "The poem's enigmatic ending..."
+    ],
+    "family": [
+      "enigma",
+      "enigmatically"
+    ],
+    "synonyms": [
+      {
+        "word": "mysterious",
+        "vs": "Mysterious is general; enigmatic suggests a puzzle that invites interpretation."
+      },
+      {
+        "word": "cryptic",
+        "vs": "Cryptic suggests a hidden or coded meaning, often on purpose; enigmatic is more about an air of mystery."
+      },
+      {
+        "word": "puzzling",
+        "vs": "Puzzling is plain and everyday; enigmatic is more formal and often intriguing."
+      }
+    ],
+    "antonyms": [
+      "clear",
+      "straightforward",
+      "transparent"
+    ],
+    "confusables": [
+      {
+        "word": "energetic",
+        "note": "Energetic means full of energy; it is only similar in sound."
+      }
+    ],
+    "roots": [
+      {
+        "part": "ainigma",
+        "meaning": "riddle (Greek)"
+      }
+    ],
+    "siblings": [],
+    "origin": "From Greek ainigma, 'riddle'.",
+    "tags": [
+      "thought"
+    ]
+  },
+  {
+    "id": "frugal#adj",
+    "headword": "frugal",
+    "pos": "adj",
+    "sense": "careful with money, avoiding waste",
+    "forms": [],
+    "definition": "Careful about spending money or using resources, and avoiding waste.",
+    "register": "neutral",
+    "nuance": "Frugal describes people, habits and meals that avoid waste and unnecessary spending. It is usually approving, suggesting sensible self-control, unlike 'stingy'. A frugal meal is simple and cheap.",
+    "everyday": "thrifty",
+    "examples": [
+      {
+        "text": "Growing up poor, she became frugal, saving every coin and mending clothes instead of buying new ones.",
+        "form": "frugal",
+        "setting": "fiction"
+      },
+      {
+        "text": "My dad is so frugal that he reuses tea bags and turns the heating off at six.",
+        "form": "frugal",
+        "setting": "conversation"
+      },
+      {
+        "text": "Frugal households are cutting back on takeaways and holidays as prices rise.",
+        "form": "frugal",
+        "setting": "news"
+      },
+      {
+        "text": "Studies suggest that people raised during economic crises tend to remain frugal for life.",
+        "form": "frugal",
+        "setting": "academic"
+      },
+      {
+        "text": "The charity is known for its frugal approach, spending over ninety per cent of donations on its projects.",
+        "form": "frugal",
+        "setting": "formal"
+      },
+      {
+        "text": "A frugal diet of grain and vegetables was normal for most peasants in medieval Europe.",
+        "form": "frugal",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Although he was a millionaire, he lived a ___ life, never wasting money on luxuries.",
+        "answer": "frugal"
+      },
+      {
+        "text": "Being ___ with her budget, she planned every meal and never threw any food away.",
+        "answer": "frugal"
+      },
+      {
+        "text": "The college's ___ style, with no waste and no extravagance, kept fees low for its students.",
+        "answer": "frugal"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "He was so frugal that he spent a fortune on a gold watch every month.",
+        "why": "Frugal means careful with money, so lavish spending is the opposite."
+      },
+      {
+        "text": "She gave a frugal speech lasting just two minutes.",
+        "why": "Frugal is about money and resources, not words; for a short speech say 'brief' or 'concise'."
+      }
+    ],
+    "partners": [
+      "a frugal lifestyle",
+      "frugal habits",
+      "frugal with money",
+      "a frugal meal"
+    ],
+    "phrases": [
+      "...a frugal approach to...",
+      "Frugal in his habits,..."
+    ],
+    "family": [
+      "frugality",
+      "frugally"
+    ],
+    "synonyms": [
+      {
+        "word": "thrifty",
+        "vs": "Thrifty is warmer and suggests good management of money; frugal can sound stricter."
+      },
+      {
+        "word": "economical",
+        "vs": "Economical describes things that give good value; frugal describes people's careful habits."
+      },
+      {
+        "word": "stingy",
+        "vs": "Stingy is critical and means unwilling to spend or share; frugal is neutral or approving."
+      }
+    ],
+    "antonyms": [
+      "wasteful",
+      "extravagant",
+      "lavish"
+    ],
+    "confusables": [
+      {
+        "word": "fragile",
+        "note": "Fragile means easily broken; it looks similar to frugal."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "degree"
+    ]
+  },
+  {
+    "id": "momentous#adj",
+    "headword": "momentous",
+    "pos": "adj",
+    "sense": "of great importance and consequence",
+    "forms": [],
+    "definition": "Of great importance, especially because it will have serious or lasting effects.",
+    "register": "formal",
+    "nuance": "Momentous describes events, decisions and occasions of great importance, usually with serious or lasting results. It is formal and often used in history and news. Do not confuse it with 'momentary', which means very brief.",
+    "everyday": "very important",
+    "examples": [
+      {
+        "text": "The signing of the treaty was a momentous event that ended thirty years of war.",
+        "form": "momentous",
+        "setting": "news"
+      },
+      {
+        "text": "Historians call 1989 a momentous year, as one political system after another collapsed in Europe.",
+        "form": "momentous",
+        "setting": "academic"
+      },
+      {
+        "text": "Today's a momentous day: I'm finally getting my driving licence!",
+        "form": "momentous",
+        "setting": "conversation"
+      },
+      {
+        "text": "She sensed that the choice before her was momentous, and her hands began to shake.",
+        "form": "momentous",
+        "setting": "fiction"
+      },
+      {
+        "text": "The board faces a momentous decision about the future of the company.",
+        "form": "momentous",
+        "setting": "formal"
+      },
+      {
+        "text": "The invention of the printing press had momentous consequences for religion, science and politics.",
+        "form": "momentous",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Moving to another country is a ___ decision that will change every part of your life.",
+        "answer": "momentous"
+      },
+      {
+        "text": "Looking back, the vote proved ___: it shaped the nation's laws for the next hundred years.",
+        "answer": "momentous"
+      },
+      {
+        "text": "Historians treat the fall of the wall as a ___ event, not an ordinary piece of news.",
+        "answer": "momentous"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "I had a momentous breakfast of toast and tea.",
+        "why": "Momentous is for events and decisions of great importance, not for trivial things like breakfast."
+      },
+      {
+        "text": "The momentous change was so small that nobody noticed it.",
+        "why": "Momentous means very important, which clashes with a change that nobody noticed."
+      }
+    ],
+    "partners": [
+      "a momentous decision",
+      "a momentous occasion",
+      "a momentous event",
+      "a momentous year"
+    ],
+    "phrases": [
+      "...a momentous turning point in...",
+      "The momentous events of..."
+    ],
+    "family": [
+      "momentously",
+      "momentousness"
+    ],
+    "synonyms": [
+      {
+        "word": "significant",
+        "vs": "Significant is general and can describe small things; momentous is much stronger and suggests lasting consequences."
+      },
+      {
+        "word": "historic",
+        "vs": "Historic means important in history; momentous can also apply to personal or future-shaping events."
+      },
+      {
+        "word": "pivotal",
+        "vs": "Pivotal means that everything turns on it; momentous stresses its size and weight."
+      }
+    ],
+    "antonyms": [
+      "trivial",
+      "minor",
+      "unimportant"
+    ],
+    "confusables": [
+      {
+        "word": "momentary",
+        "note": "Momentary means lasting a very short time; momentous means very important."
+      }
+    ],
+    "roots": [
+      {
+        "part": "momentum",
+        "meaning": "movement, importance (Latin)"
+      }
+    ],
+    "siblings": [
+      "moment",
+      "momentum"
+    ],
+    "origin": "From Latin momentum, which meant 'movement' and later 'importance'.",
+    "tags": [
+      "degree"
+    ]
+  },
+  {
+    "id": "renown#n",
+    "headword": "renown",
+    "pos": "n",
+    "sense": "wide fame and respect",
+    "forms": [],
+    "definition": "The state of being widely known and admired for an achievement or skill.",
+    "register": "formal",
+    "nuance": "Renown is wide fame, with respect, for something a person or place has achieved. It is formal and approving, and is usually used with 'of' ('a scholar of great renown') or 'for'. It lasts longer and is more earned than celebrity.",
+    "everyday": "fame",
+    "examples": [
+      {
+        "text": "The surgeon was a doctor of great renown, and patients travelled from abroad to see her.",
+        "form": "renown",
+        "setting": "news"
+      },
+      {
+        "text": "Galileo's renown spread across Europe, even among those who rejected his ideas.",
+        "form": "renown",
+        "setting": "academic"
+      },
+      {
+        "text": "The knight won such renown that bards in distant lands sang of his deeds.",
+        "form": "renown",
+        "setting": "fiction"
+      },
+      {
+        "text": "The university is a place of international renown for its research in medicine.",
+        "form": "renown",
+        "setting": "formal"
+      },
+      {
+        "text": "She's a chef of some renown, though I'd never heard of her before tonight.",
+        "form": "renown",
+        "setting": "conversation"
+      },
+      {
+        "text": "Scholars of lesser renown were often overlooked by the royal academies.",
+        "form": "renown",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The village was known across the country for its pottery, and the potters enjoyed great ___ for their skill.",
+        "answer": "renown"
+      },
+      {
+        "text": "A violinist of world ___, she is invited to play in concert halls on every continent.",
+        "answer": "renown"
+      },
+      {
+        "text": "He won lasting ___ not through money but through the courage that people admired during the war.",
+        "answer": "renown"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "He gained great renown for being completely unknown.",
+        "why": "Renown means being widely known and admired, so it clashes with being unknown."
+      },
+      {
+        "text": "The criminal's renown shocked the town because of his terrible crimes.",
+        "why": "Renown is admiring fame; for fame earned by bad deeds use 'notoriety'."
+      }
+    ],
+    "partners": [
+      "a writer of renown",
+      "international renown",
+      "win renown",
+      "of great renown"
+    ],
+    "phrases": [
+      "...a scholar of international renown...",
+      "...earned renown for..."
+    ],
+    "family": [
+      "renowned"
+    ],
+    "synonyms": [
+      {
+        "word": "fame",
+        "vs": "Fame is general; renown is more formal and stresses respect for a particular achievement."
+      },
+      {
+        "word": "celebrity",
+        "vs": "Celebrity is about being famous in the media, often briefly; renown is longer lasting and earned."
+      },
+      {
+        "word": "prestige",
+        "vs": "Prestige is the respect a person or institution has; renown is how widely known they are."
+      }
+    ],
+    "antonyms": [
+      "obscurity",
+      "anonymity"
+    ],
+    "confusables": [
+      {
+        "word": "renew",
+        "note": "Renew means to make new again; it looks similar to renown."
+      }
+    ],
+    "roots": [
+      {
+        "part": "re-",
+        "meaning": "again"
+      },
+      {
+        "part": "nomen",
+        "meaning": "name (Latin)"
+      }
+    ],
+    "siblings": [
+      "nominate",
+      "nomenclature"
+    ],
+    "origin": "From Old French renom, 'fame', related to Latin nomen, 'name'.",
+    "tags": [
+      "feeling"
+    ]
+  },
+  {
+    "id": "shrewd#adj",
+    "headword": "shrewd",
+    "pos": "adj",
+    "sense": "clever at judging people and situations",
+    "forms": [],
+    "definition": "Clever at judging people and situations, especially in ways that bring practical advantage.",
+    "register": "neutral",
+    "nuance": "Shrewd praises sharp practical judgement, especially in money, politics and dealing with people. It is usually approving, though it can hint at calculation. It often describes a decision, a judge of character or an observer.",
+    "everyday": "sharp",
+    "examples": [
+      {
+        "text": "A shrewd businesswoman, she bought the land just before the new railway line was announced.",
+        "form": "shrewd",
+        "setting": "news"
+      },
+      {
+        "text": "My nan is shrewd; she always knows when someone is trying to cheat her.",
+        "form": "shrewd",
+        "setting": "conversation"
+      },
+      {
+        "text": "Machiavelli advised rulers to be shrewd judges of character before choosing their ministers.",
+        "form": "shrewd",
+        "setting": "academic"
+      },
+      {
+        "text": "The old trader gave a shrewd glance at the stranger's boots and named a high price.",
+        "form": "shrewd",
+        "setting": "fiction"
+      },
+      {
+        "text": "The investor made a shrewd decision to sell before prices began to fall.",
+        "form": "shrewd",
+        "setting": "formal"
+      },
+      {
+        "text": "Shrewd negotiators study the other side's interests before they make any offer.",
+        "form": "shrewd",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Her ___ eye for people's real motives, practical and hardheaded, meant she could never be easily tricked.",
+        "answer": "shrewd"
+      },
+      {
+        "text": "It was a ___ move to sell the shares before the crash, showing a keen, practical grasp of the market.",
+        "answer": "shrewd"
+      },
+      {
+        "text": "The ___ old lawyer saw through every excuse and quickly spotted the weakness in the other side's case.",
+        "answer": "shrewd"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "He was too shrewd to understand even the simplest instruction.",
+        "why": "Shrewd means clever and practical in judging situations, so it clashes with failing to understand."
+      },
+      {
+        "text": "She made a shrewd mistake and lost all her savings.",
+        "why": "Shrewd describes a clever, well-judged choice, not a mistake."
+      }
+    ],
+    "partners": [
+      "a shrewd businessman",
+      "a shrewd judge of",
+      "a shrewd move",
+      "a shrewd observer"
+    ],
+    "phrases": [
+      "...a shrewd judge of character...",
+      "It was a shrewd move to..."
+    ],
+    "family": [
+      "shrewdly",
+      "shrewdness"
+    ],
+    "synonyms": [
+      {
+        "word": "astute",
+        "vs": "Astute is more formal and praises quick understanding; shrewd stresses practical, sometimes calculating, advantage."
+      },
+      {
+        "word": "canny",
+        "vs": "Canny is more informal and suggests careful, sensible caution."
+      },
+      {
+        "word": "cunning",
+        "vs": "Cunning suggests deceit and trickery; shrewd is usually approving."
+      }
+    ],
+    "antonyms": [
+      "naive",
+      "foolish",
+      "gullible"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "tenacity#n",
+    "headword": "tenacity",
+    "pos": "n",
+    "sense": "determination not to give up",
+    "forms": [],
+    "definition": "The determination to keep going and never give up, even when things are difficult.",
+    "register": "formal",
+    "nuance": "Tenacity is the quality of holding on and refusing to give up, however hard things get. It is approving and common in descriptions of athletes, campaigners and researchers. It is often paired with courage or determination.",
+    "everyday": "persistence",
+    "examples": [
+      {
+        "text": "She showed remarkable tenacity, refusing to give up even after twenty rejections.",
+        "form": "tenacity",
+        "setting": "news"
+      },
+      {
+        "text": "Success in long research projects depends less on talent than on tenacity.",
+        "form": "tenacity",
+        "setting": "academic"
+      },
+      {
+        "text": "You have to admire his tenacity; he's applied for that job four times.",
+        "form": "tenacity",
+        "setting": "conversation"
+      },
+      {
+        "text": "The old fisherman's tenacity was legendary; he stayed out in storms that sent others home.",
+        "form": "tenacity",
+        "setting": "fiction"
+      },
+      {
+        "text": "The committee praised the team for its tenacity in the face of repeated setbacks.",
+        "form": "tenacity",
+        "setting": "formal"
+      },
+      {
+        "text": "Studies of elite athletes show that tenacity is often a better predictor of success than natural ability.",
+        "form": "tenacity",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "With great ___, the campaigners kept writing letters for ten years until the law was changed.",
+        "answer": "tenacity"
+      },
+      {
+        "text": "It took ___ rather than brilliance to finish the degree: she simply refused to give up.",
+        "answer": "tenacity"
+      },
+      {
+        "text": "The team's ___ in the final minutes, fighting for every ball, won them the match.",
+        "answer": "tenacity"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "His tenacity made him give up at the first obstacle.",
+        "why": "Tenacity means refusing to give up, so quitting at the first obstacle is the opposite."
+      },
+      {
+        "text": "She admired the tenacity of the thin silk scarf.",
+        "why": "Tenacity is determination in a person or group; for a strong material say 'toughness'."
+      }
+    ],
+    "partners": [
+      "sheer tenacity",
+      "dogged tenacity",
+      "show tenacity",
+      "tenacity and courage"
+    ],
+    "phrases": [
+      "...with characteristic tenacity...",
+      "...the tenacity to..."
+    ],
+    "family": [
+      "tenacious",
+      "tenaciously"
+    ],
+    "synonyms": [
+      {
+        "word": "perseverance",
+        "vs": "Perseverance stresses steady effort over time; tenacity stresses holding on firmly."
+      },
+      {
+        "word": "persistence",
+        "vs": "Persistence can be neutral or annoying; tenacity is nearly always admiring."
+      },
+      {
+        "word": "determination",
+        "vs": "Determination is general; tenacity suggests holding on against pressure."
+      }
+    ],
+    "antonyms": [
+      "irresolution",
+      "indecision",
+      "apathy"
+    ],
+    "confusables": [
+      {
+        "word": "tenuous",
+        "note": "Tenuous means very weak or thin, almost the opposite of the strength in tenacity."
+      },
+      {
+        "word": "tenancy",
+        "note": "Tenancy is the right to rent a property."
+      }
+    ],
+    "roots": [
+      {
+        "part": "tenere",
+        "meaning": "to hold (Latin)"
+      }
+    ],
+    "siblings": [
+      "tenant",
+      "tenable",
+      "retain",
+      "tenet"
+    ],
+    "origin": "From Latin tenax, 'holding fast', from tenere, 'to hold'.",
+    "tags": [
+      "feeling"
+    ]
+  },
+  {
+    "id": "understated#adj",
+    "headword": "understated",
+    "pos": "adj",
+    "sense": "simple and restrained, not showy",
+    "forms": [],
+    "definition": "Simple and restrained in style, with no showy or exaggerated features.",
+    "register": "neutral",
+    "nuance": "Understated describes style, design, humour and performances that are simple and restrained rather than showy. It is usually approving and suggests quiet confidence and good taste. It can also describe a statement made to sound less serious than the facts, as in an understated warning.",
+    "everyday": "simple",
+    "examples": [
+      {
+        "text": "The hotel's understated rooms had plain white walls, wooden floors and a single painting each.",
+        "form": "understated",
+        "setting": "news"
+      },
+      {
+        "text": "I love her style: understated, a plain jacket and good boots, nothing flashy.",
+        "form": "understated",
+        "setting": "conversation"
+      },
+      {
+        "text": "Scandinavian design is often praised as understated, favouring clean lines over decoration.",
+        "form": "understated",
+        "setting": "academic"
+      },
+      {
+        "text": "He gave an understated nod of thanks, and that was all the ceremony the old soldier wanted.",
+        "form": "understated",
+        "setting": "fiction"
+      },
+      {
+        "text": "The brochure adopts an understated tone, letting the research results speak for themselves.",
+        "form": "understated",
+        "setting": "formal"
+      },
+      {
+        "text": "The actor's understated performance conveys grief through small gestures rather than speeches.",
+        "form": "understated",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "She preferred ___ elegance: a simple black dress and one small ring, with no flashy jewellery.",
+        "answer": "understated"
+      },
+      {
+        "text": "The ___ ceremony, with no speeches, music or fuss, was exactly what the quiet couple wanted.",
+        "answer": "understated"
+      },
+      {
+        "text": "Where other brands shout, the company's ___ advertising lets the product speak quietly for itself.",
+        "answer": "understated"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The understated mansion had gold statues, huge chandeliers and a fountain in every room.",
+        "why": "Understated means simple and restrained, the opposite of a showy, lavish house."
+      },
+      {
+        "text": "He gave an understated, shouting speech full of dramatic gestures.",
+        "why": "Understated means quiet and restrained, so shouting and dramatic gestures contradict it."
+      }
+    ],
+    "partners": [
+      "understated elegance",
+      "an understated style",
+      "understated humour",
+      "quietly understated"
+    ],
+    "phrases": [
+      "...an understated yet powerful...",
+      "The film's understated approach to..."
+    ],
+    "family": [
+      "understate",
+      "understatement",
+      "understatedly"
+    ],
+    "synonyms": [
+      {
+        "word": "subtle",
+        "vs": "Subtle is about fine, hard-to-notice detail; understated is about deliberate restraint."
+      },
+      {
+        "word": "restrained",
+        "vs": "Restrained is about self-control; understated is about a style that does not show off."
+      },
+      {
+        "word": "modest",
+        "vs": "Modest is about humble attitudes; understated can be stylish and deliberate."
+      }
+    ],
+    "antonyms": [
+      "flamboyant",
+      "ostentatious",
+      "showy"
+    ],
+    "confusables": [
+      {
+        "word": "overstated",
+        "note": "Overstated means exaggerated, the opposite of understated."
+      }
+    ],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "style"
+    ]
+  },
+  {
+    "id": "unwarranted#adj",
+    "headword": "unwarranted",
+    "pos": "adj",
+    "sense": "without good reason or justification",
+    "forms": [],
+    "definition": "Not justified by the facts or by any good reason; unfair or unnecessary.",
+    "register": "formal",
+    "nuance": "Unwarranted describes claims, fears, interference and criticism that the facts do not justify. It is a formal, critical word, common in academic writing about weak conclusions. It often appears in phrases such as 'unwarranted assumption' and 'unwarranted intrusion'.",
+    "everyday": "unjustified",
+    "examples": [
+      {
+        "text": "Critics called the police response unwarranted, since the protest had been entirely peaceful.",
+        "form": "unwarranted",
+        "setting": "news"
+      },
+      {
+        "text": "The study draws unwarranted conclusions from a sample of only twelve people.",
+        "form": "unwarranted",
+        "setting": "academic"
+      },
+      {
+        "text": "Your anger is totally unwarranted; I never said anything about your cooking.",
+        "form": "unwarranted",
+        "setting": "conversation"
+      },
+      {
+        "text": "She felt a sudden, unwarranted dislike for the stranger, though he had done nothing wrong.",
+        "form": "unwarranted",
+        "setting": "fiction"
+      },
+      {
+        "text": "The tribunal ruled that the search was an unwarranted intrusion into private life.",
+        "form": "unwarranted",
+        "setting": "formal"
+      },
+      {
+        "text": "Generalising from a single case is unwarranted and can lead researchers astray.",
+        "form": "unwarranted",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The council's fears were ___: the survey showed no evidence of any danger at all.",
+        "answer": "unwarranted"
+      },
+      {
+        "text": "Praising the drug as a cure on such thin evidence would be ___ and potentially harmful.",
+        "answer": "unwarranted"
+      },
+      {
+        "text": "He felt his boss's criticism was ___, since the facts gave no reason for it at all.",
+        "answer": "unwarranted"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The scientist's careful, well-evidenced conclusion was unwarranted.",
+        "why": "Unwarranted means not justified by evidence, so it cannot describe a conclusion backed by careful evidence."
+      },
+      {
+        "text": "Her praise was unwarranted, as she had worked harder than anyone and deserved every word.",
+        "why": "Unwarranted means not justified; praise that was fully deserved is justified."
+      }
+    ],
+    "partners": [
+      "unwarranted assumptions",
+      "unwarranted interference",
+      "an unwarranted intrusion",
+      "unwarranted fears"
+    ],
+    "phrases": [
+      "...draws unwarranted conclusions from...",
+      "It would be unwarranted to assume that..."
+    ],
+    "family": [
+      "warrant",
+      "warranted"
+    ],
+    "synonyms": [
+      {
+        "word": "unjustified",
+        "vs": "Unjustified is plain and common; unwarranted is more formal and often about claims, fears or interference."
+      },
+      {
+        "word": "groundless",
+        "vs": "Groundless means lacking any basis in fact; unwarranted also covers things that go beyond what is justified."
+      },
+      {
+        "word": "undue",
+        "vs": "Undue means more than is necessary; unwarranted means there was no good reason at all."
+      }
+    ],
+    "antonyms": [
+      "justified",
+      "reasonable",
+      "legitimate"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "tags": [
+      "describing"
+    ]
+  },
+  {
+    "id": "taxonomy#n",
+    "headword": "taxonomy",
+    "pos": "n",
+    "sense": "a system of classification",
+    "forms": [
+      "taxonomies"
+    ],
+    "definition": "A system for sorting things, especially living things, into groups and levels according to shared features.",
+    "register": "formal",
+    "nuance": "Taxonomy is a formal system for sorting things into groups and sub-groups, most famously living things. In academic writing it is also used for any careful classification, such as a taxonomy of arguments. It suggests an ordered, layered scheme, not just a list.",
+    "everyday": "classification",
+    "examples": [
+      {
+        "text": "Biologists use a taxonomy that sorts living things into kingdoms, classes, families and species.",
+        "form": "taxonomy",
+        "setting": "academic"
+      },
+      {
+        "text": "A new taxonomy of video games has been proposed, sorting them by player behaviour rather than genre.",
+        "form": "taxonomy",
+        "setting": "news"
+      },
+      {
+        "text": "My librarian friend has a taxonomy for everything, even for her socks and spices.",
+        "form": "taxonomy",
+        "setting": "conversation"
+      },
+      {
+        "text": "The old naturalist spent forty years refining his taxonomy of beetles, each one named and numbered.",
+        "form": "taxonomy",
+        "setting": "fiction"
+      },
+      {
+        "text": "The report offers a taxonomy of cyber threats, grouped by their source and their target.",
+        "form": "taxonomy",
+        "setting": "formal"
+      },
+      {
+        "text": "Critics argue that older taxonomies of personality types are too rigid to describe real people.",
+        "form": "taxonomies",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Linnaeus created a ___ of plants and animals, with ranked groups, that scientists still build on today.",
+        "answer": "taxonomy"
+      },
+      {
+        "text": "Her thesis proposes a new ___ of protest movements, dividing them into five types by their methods.",
+        "answer": "taxonomy"
+      },
+      {
+        "text": "Without a clear ___, the archive's thousands of documents could not be sorted into groups and sub-groups.",
+        "answer": "taxonomy"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The tax office sent me a taxonomy of the money I owe.",
+        "why": "Taxonomy is a system of classification, not a bill; it has nothing to do with tax."
+      },
+      {
+        "text": "The taxonomy was an unorganised heap of facts with no categories.",
+        "why": "A taxonomy sorts things into categories and levels; a heap with no categories is not one."
+      }
+    ],
+    "partners": [
+      "a taxonomy of",
+      "a taxonomy of species",
+      "develop a taxonomy",
+      "a standard taxonomy"
+    ],
+    "phrases": [
+      "...proposes a new taxonomy of...",
+      "In this taxonomy, X is classed as..."
+    ],
+    "family": [
+      "taxonomic",
+      "taxonomist",
+      "taxonomically"
+    ],
+    "synonyms": [
+      {
+        "word": "classification",
+        "vs": "Classification is the general act or result of sorting; taxonomy is a full, ordered system, often scientific."
+      },
+      {
+        "word": "typology",
+        "vs": "Typology sorts things into types, mostly in social science; taxonomy usually has several levels."
+      },
+      {
+        "word": "categorisation",
+        "vs": "Categorisation is everyday sorting into groups; taxonomy is formal and layered."
+      }
+    ],
+    "antonyms": [],
+    "confusables": [
+      {
+        "word": "taxidermy",
+        "note": "Taxidermy is stuffing and mounting dead animals; it looks similar but is a different subject."
+      }
+    ],
+    "roots": [
+      {
+        "part": "taxis",
+        "meaning": "arrangement, order (Greek)"
+      },
+      {
+        "part": "nomos",
+        "meaning": "law, rule (Greek)"
+      }
+    ],
+    "siblings": [
+      "syntax",
+      "tactics"
+    ],
+    "origin": "From Greek taxis, 'arrangement', and nomos, 'law'.",
+    "tags": [
+      "research"
+    ]
+  },
+  {
+    "id": "charlatan#n",
+    "headword": "charlatan",
+    "pos": "n",
+    "sense": "someone who fakes skill or knowledge",
+    "forms": [
+      "charlatans"
+    ],
+    "definition": "A person who falsely claims to have special skill or knowledge, especially in order to cheat others.",
+    "register": "formal",
+    "nuance": "Charlatan is a strongly critical word for someone who pretends to have skill or knowledge they lack, often to make money. It was first used for sellers of fake medicines and is still common for doctors, gurus and advisers. It usually suggests deliberate trickery.",
+    "everyday": "fraud",
+    "examples": [
+      {
+        "text": "The so-called doctor was a charlatan who sold bottles of coloured water as a cure for every illness.",
+        "form": "charlatan",
+        "setting": "news"
+      },
+      {
+        "text": "Historians describe him as a charlatan who invented his qualifications and fooled the court for years.",
+        "form": "charlatan",
+        "setting": "academic"
+      },
+      {
+        "text": "That guru is a charlatan; he charges a fortune and just repeats things from the internet.",
+        "form": "charlatan",
+        "setting": "conversation"
+      },
+      {
+        "text": "The charlatan bowed low, produced a dove from his sleeve and promised the king eternal life.",
+        "form": "charlatan",
+        "setting": "fiction"
+      },
+      {
+        "text": "The regulator warned the public against charlatans who offer miracle investments.",
+        "form": "charlatans",
+        "setting": "formal"
+      },
+      {
+        "text": "In the nineteenth century, charlatans toured towns selling medicines that contained little but alcohol.",
+        "form": "charlatans",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Anyone who promises to make you rich in a week, with no effort, is probably a ___.",
+        "answer": "charlatan"
+      },
+      {
+        "text": "The fortune teller turned out to be a ___ who had studied nothing and simply tricked her clients.",
+        "answer": "charlatan"
+      },
+      {
+        "text": "Real experts admit what they do not know, while a ___ pretends to know everything.",
+        "answer": "charlatan"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The charlatan was a gifted surgeon who saved hundreds of lives.",
+        "why": "A charlatan only pretends to have skill, so a truly gifted surgeon is the opposite."
+      },
+      {
+        "text": "He was a charlatan because he was rude to waiters.",
+        "why": "Charlatan is about faking skills or knowledge, not about rudeness."
+      }
+    ],
+    "partners": [
+      "a charlatan and a fraud",
+      "expose a charlatan",
+      "medical charlatans",
+      "a political charlatan"
+    ],
+    "phrases": [
+      "...dismissed as a charlatan...",
+      "...charlatans who claim to..."
+    ],
+    "family": [
+      "charlatanism",
+      "charlatanry"
+    ],
+    "synonyms": [
+      {
+        "word": "fraud",
+        "vs": "Fraud is a general word for a person or act of deception; charlatan stresses false claims of skill or expertise."
+      },
+      {
+        "word": "quack",
+        "vs": "Quack is informal and mostly about fake doctors; charlatan covers any false expert."
+      },
+      {
+        "word": "impostor",
+        "vs": "An impostor pretends to be someone else; a charlatan pretends to have skills he lacks."
+      }
+    ],
+    "antonyms": [
+      "expert",
+      "specialist"
+    ],
+    "confusables": [],
+    "roots": [],
+    "siblings": [],
+    "origin": "From Italian ciarlatano, a seller of medicines who talked loudly to attract a crowd, linked to ciarlare, 'to chatter'.",
+    "tags": [
+      "character"
+    ]
+  },
+  {
+    "id": "burlesque#n",
+    "headword": "burlesque",
+    "pos": "n",
+    "sense": "comic imitation that mocks a serious work",
+    "forms": [
+      "burlesques"
+    ],
+    "definition": "A comic imitation of a serious work or style that mocks it through exaggeration.",
+    "register": "formal",
+    "nuance": "Burlesque is a literary and theatrical term for a work that mocks a serious subject or style by exaggerating it. It is often used for stage comedy and for parody in writing. In popular use today the word can also mean a variety stage show.",
+    "everyday": "parody",
+    "examples": [
+      {
+        "text": "The comedy is a burlesque of royal ceremonies, with actors in cardboard crowns tripping over their robes.",
+        "form": "burlesque",
+        "setting": "news"
+      },
+      {
+        "text": "Fielding wrote a burlesque of Richardson's novel, mocking its endless praise of virtue.",
+        "form": "burlesque",
+        "setting": "academic"
+      },
+      {
+        "text": "Our school panto was a total burlesque of the teachers; everyone recognised the headmaster.",
+        "form": "burlesque",
+        "setting": "conversation"
+      },
+      {
+        "text": "The comedian's burlesque of the mayor, with a pillow stuffed under his coat, made the crowd roar.",
+        "form": "burlesque",
+        "setting": "fiction"
+      },
+      {
+        "text": "The theatre will stage a burlesque of Shakespeare's tragedies as part of its summer festival.",
+        "form": "burlesque",
+        "setting": "formal"
+      },
+      {
+        "text": "Nineteenth-century audiences enjoyed burlesques that mocked fashionable tragedies and famous actors.",
+        "form": "burlesques",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "Her sketch was a ___ of the evening news, mocking the serious presenters by exaggerating every gesture.",
+        "answer": "burlesque"
+      },
+      {
+        "text": "The cartoon is a ___ of heroic myths, in which the great warriors argue about who forgot the sandwiches.",
+        "answer": "burlesque"
+      },
+      {
+        "text": "Victorian theatres staged a ___ of each new tragedy within weeks, exaggerating the plot to make people laugh.",
+        "answer": "burlesque"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The burlesque was a solemn and respectful tribute to the war dead.",
+        "why": "Burlesque mocks its subject through comic exaggeration, so it cannot be a solemn tribute."
+      },
+      {
+        "text": "The burlesque was a serious scientific report on soil.",
+        "why": "A burlesque is a comic imitation, not a serious factual report."
+      }
+    ],
+    "partners": [
+      "a burlesque of",
+      "a literary burlesque",
+      "a burlesque performance",
+      "burlesque humour"
+    ],
+    "phrases": [
+      "...is a burlesque of...",
+      "...reads as a burlesque of..."
+    ],
+    "family": [],
+    "synonyms": [
+      {
+        "word": "parody",
+        "vs": "Parody imitates a specific work or style to mock it; burlesque tends to be broader and more exaggerated."
+      },
+      {
+        "word": "satire",
+        "vs": "Satire criticises society or people, often seriously; burlesque is about comic imitation."
+      },
+      {
+        "word": "spoof",
+        "vs": "Spoof is informal and light; burlesque is a more literary or theatrical term."
+      }
+    ],
+    "antonyms": [
+      "homage"
+    ],
+    "confusables": [
+      {
+        "word": "grotesque",
+        "note": "Grotesque means strangely ugly or distorted; it is similar in sound and in its feeling of exaggeration."
+      }
+    ],
+    "roots": [
+      {
+        "part": "burla",
+        "meaning": "joke (Italian)"
+      }
+    ],
+    "siblings": [],
+    "origin": "From Italian burlesco, from burla, 'joke'.",
+    "tags": [
+      "style"
+    ]
+  },
+  {
+    "id": "oligarchy#n",
+    "headword": "oligarchy",
+    "pos": "n",
+    "sense": "rule by a small powerful group",
+    "forms": [
+      "oligarchies"
+    ],
+    "definition": "A system of government, or a country, ruled by a small group of powerful people.",
+    "register": "formal",
+    "nuance": "Oligarchy is rule by a small group, usually wealthy, powerful or well connected. It is a critical term in political science and journalism, often contrasted with democracy. The ruling group itself is made up of oligarchs.",
+    "everyday": "rule by few",
+    "examples": [
+      {
+        "text": "In an oligarchy, a handful of rich families make the laws and ordinary citizens have almost no say.",
+        "form": "oligarchy",
+        "setting": "academic"
+      },
+      {
+        "text": "Critics say the country has become an oligarchy, run by a few billionaires who own the media.",
+        "form": "oligarchy",
+        "setting": "news"
+      },
+      {
+        "text": "Some people joke that the committee is an oligarchy: three members decide everything.",
+        "form": "oligarchy",
+        "setting": "conversation"
+      },
+      {
+        "text": "The city was an oligarchy of old merchant houses, each guarding its power behind closed doors.",
+        "form": "oligarchy",
+        "setting": "fiction"
+      },
+      {
+        "text": "The constitution was written to prevent the state from becoming an oligarchy dominated by wealthy families.",
+        "form": "oligarchy",
+        "setting": "formal"
+      },
+      {
+        "text": "Many early republics slowly turned into oligarchies as power gathered in a few wealthy families.",
+        "form": "oligarchies",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "When all real power rests with a few rich families, the country is an ___, not a democracy.",
+        "answer": "oligarchy"
+      },
+      {
+        "text": "Venice was long ruled by a small circle of noble families, a classic example of an ___.",
+        "answer": "oligarchy"
+      },
+      {
+        "text": "Unlike a monarchy, which has one ruler, an ___ is governed by a handful of leaders sharing power.",
+        "answer": "oligarchy"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The oligarchy gave every citizen an equal vote on each law.",
+        "why": "Oligarchy means rule by a few, whereas an equal vote for all describes a democracy."
+      },
+      {
+        "text": "He was the oligarchy of the country, ruling alone as king.",
+        "why": "An oligarchy is rule by a small group, not a single ruler; one ruler is a monarchy or dictatorship."
+      }
+    ],
+    "partners": [
+      "a ruling oligarchy",
+      "a wealthy oligarchy",
+      "rule by oligarchy",
+      "an oligarchy of"
+    ],
+    "phrases": [
+      "...degenerated into an oligarchy...",
+      "...an oligarchy of wealth and..."
+    ],
+    "family": [
+      "oligarch",
+      "oligarchic",
+      "oligarchical"
+    ],
+    "synonyms": [
+      {
+        "word": "aristocracy",
+        "vs": "Aristocracy is rule by a noble class by birth; oligarchy can be based on wealth, power or birth."
+      },
+      {
+        "word": "plutocracy",
+        "vs": "Plutocracy is rule by the rich specifically; oligarchy is rule by a few for any reason."
+      },
+      {
+        "word": "junta",
+        "vs": "A junta is a military group ruling after seizing power; an oligarchy is not necessarily military."
+      }
+    ],
+    "antonyms": [
+      "democracy"
+    ],
+    "confusables": [
+      {
+        "word": "monarchy",
+        "note": "Monarchy is rule by one person, usually a king or queen."
+      },
+      {
+        "word": "hierarchy",
+        "note": "Hierarchy is a system of ranks in an organisation."
+      }
+    ],
+    "roots": [
+      {
+        "part": "oligos",
+        "meaning": "few (Greek)"
+      },
+      {
+        "part": "arkhein",
+        "meaning": "to rule (Greek)"
+      }
+    ],
+    "siblings": [
+      "monarchy",
+      "anarchy",
+      "patriarchy",
+      "hierarchy"
+    ],
+    "origin": "From Greek oligarkhia, from oligoi, 'few', and arkhein, 'to rule'.",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "id": "annul#v",
+    "headword": "annul",
+    "pos": "v",
+    "sense": "declare officially invalid",
+    "forms": [
+      "annuls",
+      "annulled",
+      "annulling"
+    ],
+    "definition": "To declare officially that a law, contract or marriage is no longer valid.",
+    "register": "formal",
+    "nuance": "Annul is a formal verb used for officially declaring a marriage, contract, law or result invalid. It means treating it as though it had never been valid, not just ending it from now on. It is common in law, politics and election news.",
+    "everyday": "cancel",
+    "examples": [
+      {
+        "text": "The court annulled the contract after discovering that one side had signed under false pretences.",
+        "form": "annulled",
+        "setting": "news"
+      },
+      {
+        "text": "They had the marriage annulled after only two weeks, as if it had never happened.",
+        "form": "annulled",
+        "setting": "conversation"
+      },
+      {
+        "text": "Historians note that the king annulled his predecessor's laws as soon as he took the throne.",
+        "form": "annulled",
+        "setting": "academic"
+      },
+      {
+        "text": "The old queen annulled the decree with a single stroke of her pen, and the crowd fell silent.",
+        "form": "annulled",
+        "setting": "fiction"
+      },
+      {
+        "text": "Under the statute, a judge may annul any agreement that was obtained by fraud.",
+        "form": "annul",
+        "setting": "formal"
+      },
+      {
+        "text": "The election results were annulled by the constitutional court, which cited serious irregularities.",
+        "form": "annulled",
+        "setting": "academic"
+      }
+    ],
+    "cloze": [
+      {
+        "text": "The judge agreed to ___ the contract because it had been signed under threat, as if it had never existed.",
+        "answer": "annul"
+      },
+      {
+        "text": "After the vote-rigging scandal, officials decided to ___ the result and hold the election again.",
+        "answer": "annul"
+      },
+      {
+        "text": "The church refused to ___ the marriage, ruling that it remained valid despite the couple's request.",
+        "answer": "annul"
+      }
+    ],
+    "misuse": [
+      {
+        "text": "The company annulled its profits by hiring more staff.",
+        "why": "Annul means to declare a law, contract or similar agreement invalid, not to reduce an amount; for that use 'cancel out' or 'wipe out'."
+      },
+      {
+        "text": "The judge annulled the contract and said it was perfectly valid.",
+        "why": "To annul is to declare something invalid, so it clashes with calling it valid."
+      }
+    ],
+    "partners": [
+      "annul a marriage",
+      "annul a contract",
+      "annul an election",
+      "legally annulled"
+    ],
+    "phrases": [
+      "The court may annul...",
+      "...was annulled on the grounds that..."
+    ],
+    "family": [
+      "annulment"
+    ],
+    "synonyms": [
+      {
+        "word": "cancel",
+        "vs": "Cancel is everyday and works for events and bookings; annul is formal and treats something as never valid."
+      },
+      {
+        "word": "revoke",
+        "vs": "Revoke withdraws something granted, like a licence, from now on; annul says it was never valid."
+      },
+      {
+        "word": "void",
+        "vs": "Void as a verb is similar and formal; annul is the usual verb for marriages and official decisions."
+      }
+    ],
+    "antonyms": [
+      "validate",
+      "uphold",
+      "ratify"
+    ],
+    "confusables": [
+      {
+        "word": "annual",
+        "note": "Annual means happening every year."
+      }
+    ],
+    "roots": [
+      {
+        "part": "ad-",
+        "meaning": "to (Latin)"
+      },
+      {
+        "part": "nullus",
+        "meaning": "none, nothing (Latin)"
+      }
+    ],
+    "siblings": [
+      "null",
+      "nullify"
+    ],
+    "origin": "From Latin annullare, 'to bring to nothing', from nullus, 'none'.",
+    "tags": [
+      "change"
+    ]
+  }
+]
