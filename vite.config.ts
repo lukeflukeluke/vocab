@@ -13,7 +13,7 @@ const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 
 const commit = (process.env.CF_PAGES_COMMIT_SHA ?? 'local').slice(0, 7);
 const branch = process.env.CF_PAGES_BRANCH ?? 'local';
 
-const BRAND = '#1b2240';
+const BRAND = '#0b0c12';
 
 export default defineConfig({
   define: {
