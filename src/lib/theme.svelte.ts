@@ -26,7 +26,7 @@ export const REVEAL_MS = 700;
 export const THEME_KEY = 'wordhoard.theme';
 
 /** The top bar's colour in each theme, for the browser's own toolbar (theme-color). */
-const BAR: Record<Theme, string> = { light: '#1b2240', dark: '#121629' };
+const BAR: Record<Theme, string> = { light: '#0b0c12', dark: '#0b0c12' };
 
 function stored(): ThemeChoice {
   try {
