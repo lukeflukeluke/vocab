@@ -1,12 +1,17 @@
 <script lang="ts">
   import { flushSync, onMount } from 'svelte';
+  import { now as clockNow } from '../clock';
   import { getBank } from '../content/wordBank';
   import { yourBank } from '../content/yourBank';
   import type { EventBody, Rating } from '../events/types';
   import { rateAnswer, usualResponseMs, type Answer, type SelfGrade } from '../scheduler/rating';
   import { enteredWord, type TypedResult } from '../session/answers';
+  import { PARK_DAYS } from '../session/build';
   import {
+    contrastItems,
+    everydayOptions,
     meaningOptions,
+    misuseOptions,
     splitAtGap,
     splitAtWord,
     wordOptions,
@@ -18,6 +23,7 @@
     claimKnown,
     completeStep,
     currentStep,
+    dropWord,
     isFinished,
     progress,
     type Session,
@@ -28,6 +34,8 @@
   import Sentence from './Sentence.svelte';
   import { speak } from './speech';
   import Choice from './steps/Choice.svelte';
+  import Contrast from './steps/Contrast.svelte';
+  import Leech from './steps/Leech.svelte';
   import Recall from './steps/Recall.svelte';
   import Typed from './steps/Typed.svelte';
   import WordPage from './WordPage.svelte';
@@ -130,6 +138,37 @@
       { kind: 'typed', correct: result.correct, hintsUsed, nearMiss: result.verdict === 'near' },
       { answer: result.typed, ...(chose && { chose }) },
     );
+  }
+
+  /** P4: all sentences right, and whether the other word was picked where this one belonged. */
+  function reportContrast(current: ExerciseStep, allRight: boolean, choseOther: boolean) {
+    report(
+      current,
+      { kind: 'choice', correct: allRight, hintsUsed: 0 },
+      { ...(choseOther && current.partner && { chose: current.partner }) },
+    );
+  }
+
+  /** Leaving the "keeps slipping" step: save the hook if it changed, and note it was seen. */
+  function leaveLeech(
+    entryId: string,
+    track: 'recognition' | 'production',
+    lapses: number,
+    hook: string,
+  ) {
+    ensureAdded(entryId);
+    if (hook && hook !== (vocab.state.words[entryId]?.notes.mnemonic ?? '')) {
+      record({ type: 'note_set', entryId, field: 'mnemonic', text: hook });
+    }
+    record({ type: 'leech_seen', entryId, track, lapses });
+  }
+
+  function park(entryId: string, track: 'recognition' | 'production', lapses: number) {
+    const current = step;
+    if (!current || current.kind !== 'leech') return;
+    record({ type: 'leech_seen', entryId, track, lapses });
+    record({ type: 'word_parked', entryId, until: clockNow() + PARK_DAYS * 86_400_000 });
+    show(dropWord(session, entryId));
   }
 
   function reportRecall(current: ExerciseStep, grade: SelfGrade) {
@@ -238,7 +277,7 @@
         data-kind={step.kind === 'exercise' ? step.exercise : step.kind}
         data-role={step.kind === 'exercise' ? step.role : step.kind}
         data-entry-id={step.entryId}
-        data-prompt-id={step.kind === 'page' ? '' : step.promptId}
+        data-prompt-id={step.kind === 'page' || step.kind === 'leech' ? '' : step.promptId}
       >
         {#if step.kind === 'guess'}
           {@const example = exampleFor(entry, step.promptId)}
@@ -265,13 +304,30 @@
           </Choice>
         {:else if step.kind === 'page'}
           <p class="tag new">New word</p>
-          <WordPage {entry} promptIds={step.promptIds} />
+          <WordPage
+            {entry}
+            promptIds={step.promptIds}
+            mnemonic={vocab.state.words[entry.id]?.notes.mnemonic}
+          />
           <div class="sticky">
             <button class="btn primary wide" data-testid="continue" onclick={() => next(step.key)}>
               Got it
             </button>
             <p class="keys"><kbd>Enter</kbd> continue · <kbd>P</kbd> pronounce</p>
           </div>
+        {:else if step.kind === 'leech'}
+          <Leech
+            {entry}
+            promptIds={step.promptIds}
+            lapses={step.lapses}
+            park={step.park}
+            mnemonic={vocab.state.words[entry.id]?.notes.mnemonic}
+            oncontinue={(hook) => {
+              leaveLeech(entry.id, step.track, step.lapses, hook);
+              next(step.key);
+            }}
+            onpark={() => park(entry.id, step.track, step.lapses)}
+          />
         {:else if step.exercise === 'R1'}
           {@const example = exampleFor(entry, step.promptId)}
           <p class="tag">
@@ -298,6 +354,73 @@
               </p>
             {/snippet}
           </Choice>
+        {:else if step.exercise === 'R2'}
+          {@const example = exampleFor(entry, step.promptId)}
+          {@const r2 = misuseOptions(entry, example.text, step.key)}
+          <p class="tag">{step.role === 'repeat' ? 'Once more' : 'Review'}</p>
+          <Choice
+            question="Which sentence uses {entry.headword} correctly?"
+            options={r2.options}
+            correctId={entry.id}
+            onanswer={(picked) =>
+              report(
+                step,
+                { kind: 'choice', correct: picked?.id === entry.id, hintsUsed: 0 },
+                { answer: picked?.id ?? '' },
+              )}
+            oncontinue={() => next(step.key)}
+          >
+            {#snippet prompt()}
+              <p class="lead">Spot the misuse.</p>
+            {/snippet}
+            {#snippet after(correct)}
+              <p class:good={correct}>{correct ? 'Right!' : 'Not this time.'}</p>
+              <p class="note">The other one is wrong: {r2.why}</p>
+            {/snippet}
+          </Choice>
+        {:else if step.exercise === 'R4'}
+          {@const example = exampleFor(entry, step.promptId)}
+          <p class="tag">{step.role === 'repeat' ? 'Once more' : 'Review'}</p>
+          <Choice
+            question="Which everyday word is closest to {entry.headword}?"
+            options={everydayOptions(entry, bank, step.key)}
+            correctId={entry.id}
+            onanswer={(picked) => reportChoice(step, picked)}
+            oncontinue={() => next(step.key)}
+          >
+            {#snippet prompt()}
+              <Sentence split={splitAtWord(example.text, example.form)} mode="word" />
+            {/snippet}
+            {#snippet after(correct)}
+              <p class:good={correct}>
+                {correct ? 'Right!' : 'Not this time.'}
+                <strong>{entry.headword}</strong>: {entry.definition}
+              </p>
+            {/snippet}
+          </Choice>
+        {:else if step.exercise === 'P2'}
+          <p class="tag">{step.role === 'repeat' ? 'Once more' : 'Review'}</p>
+          <Typed
+            {entry}
+            cloze={{ text: '___', answer: entry.headword }}
+            firstLetter={step.firstLetter}
+            fromDefinition
+            question="Which word means this? Type it."
+            onanswer={(result, hints) => reportTyped(step, result, hints)}
+            oncontinue={() => next(step.key)}
+          />
+        {:else if step.exercise === 'P4'}
+          {@const other = step.partner ? bank.byId.get(step.partner) : undefined}
+          <p class="tag">Contrast drill</p>
+          {#if other}
+            <Contrast
+              word={entry}
+              {other}
+              items={contrastItems(entry, other, step.key)}
+              onanswer={(allRight, choseOther) => reportContrast(step, allRight, choseOther)}
+              oncontinue={() => next(step.key)}
+            />
+          {/if}
         {:else if step.exercise === 'R3'}
           <p class="tag">Review</p>
           <Recall
@@ -443,6 +566,12 @@
 
   .stage :global(.feedback p) {
     margin: 0;
+  }
+
+  .lead {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.3rem;
   }
 
   .note {

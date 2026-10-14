@@ -2,7 +2,17 @@ import { describe, expect, it } from 'vitest';
 import { replay } from '../state/reducer';
 import { sampleBank } from '../testing/bank';
 import { introduced } from '../testing/history';
-import { gapHint, meaningOptions, splitAtGap, splitAtWord, wordOptions } from './exercises';
+import {
+  contrastItems,
+  everydayOptions,
+  gapHint,
+  meaningOptions,
+  MISUSE_SUFFIX,
+  misuseOptions,
+  splitAtGap,
+  splitAtWord,
+  wordOptions,
+} from './exercises';
 
 const bank = sampleBank();
 const laconic = bank.byId.get('laconic#adj')!;
@@ -76,5 +86,31 @@ describe('gapHint', () => {
     expect(gapHint('laconic', true, true)).toBe('l _ _ _ _ _ _');
     expect(gapHint('laconic', false, true)).toBe('_ _ _ _ _ _ _');
     expect(gapHint('laconic', false, false)).toBe('');
+  });
+});
+
+describe('R2, R4 and P4', () => {
+  const bank = sampleBank();
+  const entry = bank.entries.find((e) => e.misuse.length && e.everyday)!;
+
+  it('R2 pairs a right example with a misuse, in either order', () => {
+    const { options, why } = misuseOptions(entry, entry.examples[1]!.text, 'k1');
+    expect(options.map((o) => o.id).sort()).toEqual([entry.id, entry.id + MISUSE_SUFFIX].sort());
+    expect(entry.misuse.map((m) => m.why)).toContain(why);
+  });
+
+  it('R4 offers four different everyday words, one of them right', () => {
+    const options = everydayOptions(entry, bank, 'k2');
+    expect(options).toHaveLength(4);
+    expect(options.find((o) => o.id === entry.id)!.text).toBe(entry.everyday);
+    expect(new Set(options.map((o) => o.text.toLowerCase())).size).toBe(4);
+  });
+
+  it('P4 mixes two blanks from each word', () => {
+    const other = bank.entries.find((e) => e.id !== entry.id)!;
+    const items = contrastItems(entry, other, 'k3');
+    expect(items).toHaveLength(4);
+    expect(items.filter((i) => i.answerId === entry.id)).toHaveLength(2);
+    for (const item of items) expect(item.text).toContain('___');
   });
 });

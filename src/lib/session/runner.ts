@@ -175,3 +175,10 @@ export function summarize(session: Session): SessionSummary {
     missed: unique(exercises.filter((r) => !r.correct).map((r) => r.entryId)),
   };
 }
+
+/** Finishes the current step and drops the word's other steps (a parked leech). */
+export function dropWord(session: Session, entryId: string): Session {
+  const next = completeStep(session, { correct: true });
+  const steps = next.steps.filter((s, i) => i < next.index || s.entryId !== entryId);
+  return { ...next, steps };
+}

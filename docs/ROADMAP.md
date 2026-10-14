@@ -267,7 +267,7 @@ Done when: a reminder arrives on your phone.
 
 ## Week 3: Depth (Phase 3)
 
-### [ ] S9: More exercises and smarter corrections
+### [x] S9: More exercises and smarter corrections
 Claude builds:
 - Exercises R2 (spot the misuse), R4 (closest meaning), P2 (definition to word) and P4
   (contrast drill).

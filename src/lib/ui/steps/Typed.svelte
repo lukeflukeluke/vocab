@@ -19,6 +19,8 @@
     /** Make you type the answer once after a miss. */
     retype?: boolean;
     question?: string;
+    /** P2: the prompt is the definition, and the gap stands for the whole word. */
+    fromDefinition?: boolean;
     onanswer: (result: TypedResult, hintsUsed: number) => void;
     oncontinue: () => void;
   }
@@ -30,6 +32,7 @@
     hints: offerHints = true,
     retype: needRetype = true,
     question = 'Type the missing word.',
+    fromDefinition = false,
     onanswer,
     oncontinue,
   }: Props = $props();
@@ -41,7 +44,9 @@
 
   const split = $derived(splitAtGap(cloze.text));
   const ladder = $derived<Hint[]>(
-    firstLetter ? ['count', 'meaning'] : ['first', 'count', 'meaning'],
+    (firstLetter ? ['count', 'meaning'] : ['first', 'count', 'meaning']).filter(
+      (h) => !(fromDefinition && h === 'meaning'),
+    ) as Hint[],
   );
   const nextHint = $derived(ladder.find((h) => !used.includes(h)));
   const answered = $derived(result !== null);
@@ -144,8 +149,15 @@
 <svelte:window {onkeydown} />
 
 <div class="prompt">
-  <Sentence {split} mode="gap" fill={gapText} filled={answered} />
-  {#if used.includes('meaning') || (answered && !result?.correct)}
+  {#if fromDefinition}
+    <p class="definition" data-testid="definition">{entry.definition}</p>
+    {#if gapText || answered}
+      <p class="word-gap"><Sentence {split} mode="gap" fill={gapText} filled={answered} /></p>
+    {/if}
+  {:else}
+    <Sentence {split} mode="gap" fill={gapText} filled={answered} />
+  {/if}
+  {#if !fromDefinition && (used.includes('meaning') || (answered && !result?.correct))}
     <p class="meaning"><span class="label">Meaning</span> {entry.definition}</p>
   {/if}
   <h2 class="question">{question}</h2>
@@ -232,6 +244,22 @@
 </div>
 
 <style>
+  .definition {
+    margin: 0;
+    padding: 16px 18px;
+    border-radius: 14px;
+    border-left: 4px solid var(--accent);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .word-gap {
+    margin: 0;
+  }
+
   .prompt {
     display: grid;
     gap: 14px;

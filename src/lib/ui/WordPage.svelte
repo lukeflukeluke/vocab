@@ -11,9 +11,11 @@
     entry: BankEntry;
     /** Example sentences to show. */
     promptIds: string[];
+    /** Your own memory hook for the word, if you wrote one. */
+    mnemonic?: string;
   }
 
-  let { entry, promptIds }: Props = $props();
+  let { entry, promptIds, mnemonic }: Props = $props();
 
   const POS: Record<BankEntry['pos'], string> = {
     n: 'noun',
@@ -72,6 +74,10 @@
   </header>
 
   <p class="definition">{entry.definition}</p>
+
+  {#if mnemonic}
+    <p class="hook" data-testid="hook"><span>Your hook</span> {mnemonic}</p>
+  {/if}
 
   {#if examples.length}
     <ul class="examples">
@@ -207,6 +213,24 @@
     box-shadow: var(--shadow);
     font-size: 1.15rem;
     font-weight: 500;
+  }
+
+  .hook {
+    margin: 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    font-style: italic;
+  }
+
+  .hook span {
+    display: block;
+    color: var(--accent-text);
+    font-size: 0.72rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .examples {

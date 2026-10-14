@@ -128,3 +128,61 @@ export function gapHint(answer: string, firstLetter: boolean, letterCount: boole
   }
   return firstLetter ? `${answer[0]}...` : '';
 }
+
+/** R2's wrong option has this id: the entry id plus a suffix. */
+export const MISUSE_SUFFIX = ':misuse';
+
+/**
+ * R2, spot the misuse: one of the word's examples and one of its misuse sentences, in
+ * random order. The right option's id is the entry id. `why` explains the misuse.
+ */
+export function misuseOptions(entry: BankEntry, exampleText: string, seed: string) {
+  const random = seededRandom(seedOf(seed));
+  const misuse = entry.misuse[Math.floor(random() * entry.misuse.length)]!;
+  const options: Option[] = shuffle(
+    [
+      { id: entry.id, text: exampleText },
+      { id: entry.id + MISUSE_SUFFIX, text: misuse.text },
+    ],
+    random,
+  );
+  return { options, why: misuse.why };
+}
+
+/**
+ * R4, closest meaning: the word's everyday equivalent and three others', in random order.
+ * Distractors come from the same part of speech where possible, never repeating a text.
+ */
+export function everydayOptions(target: BankEntry, bank: Bank, seed: string): Option[] {
+  const random = seededRandom(seedOf(seed));
+  const pool = bank.entries.filter(
+    (e) => e.everyday && e.everyday.toLowerCase() !== target.everyday.toLowerCase(),
+  );
+  const seen = new Set([target.everyday.toLowerCase()]);
+  const wrong = pickDistractors(target, pool, 12, random)
+    .filter((e) => !seen.has(e.everyday.toLowerCase()) && seen.add(e.everyday.toLowerCase()))
+    .slice(0, 3);
+  const options = [target, ...wrong].map((e) => ({ id: e.id, text: e.everyday }));
+  return shuffle(options, random);
+}
+
+/** One sentence of a contrast drill, and which of the two words fills its gap. */
+export interface ContrastItem {
+  text: string;
+  answerId: string;
+  /** The form that fills the gap. */
+  fill: string;
+}
+
+/**
+ * P4, contrast drill (PLAN 5): two fill-in-the-blank sentences of each word, shuffled.
+ * The learner says which of the two words fits each one.
+ */
+export function contrastItems(a: BankEntry, b: BankEntry, seed: string): ContrastItem[] {
+  const random = seededRandom(seedOf(seed));
+  const take = (e: BankEntry) =>
+    shuffle(e.cloze, random)
+      .slice(0, 2)
+      .map((c) => ({ text: c.text, answerId: e.id, fill: c.answer }));
+  return shuffle([...take(a), ...take(b)], random);
+}

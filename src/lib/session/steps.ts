@@ -5,7 +5,7 @@ import type { Track } from '../events/types';
 // coming back later simply builds a new session from what is left of today.
 
 /** Exercises built so far (PLAN 5). */
-export type ExerciseId = 'R1' | 'R3' | 'P1' | 'P3';
+export type ExerciseId = 'R1' | 'R2' | 'R3' | 'R4' | 'P1' | 'P2' | 'P3' | 'P4';
 
 /**
  * Why an exercise is in the session:
@@ -47,6 +47,22 @@ export interface ExerciseStep extends StepBase {
   promptId: string;
   /** Typed exercises: show the first letter from the start (not counted as a hint). */
   firstLetter: boolean;
+  /** P4: the word this one is drilled against. */
+  partner?: string;
 }
 
-export type Step = GuessStep | PageStep | ExerciseStep;
+/**
+ * "This one keeps slipping" (PLAN 6.5): the word page again and a prompt to write your own
+ * memory hook, before the review of a track with 5 or more lapses. From 8 lapses it also
+ * offers to park the word for a month.
+ */
+export interface LeechStep extends StepBase {
+  kind: 'leech';
+  track: Track;
+  lapses: number;
+  /** Offer to park the word. */
+  park: boolean;
+  promptIds: string[];
+}
+
+export type Step = GuessStep | PageStep | ExerciseStep | LeechStep;
