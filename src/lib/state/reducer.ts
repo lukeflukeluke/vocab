@@ -77,6 +77,22 @@ function applyInPlace(state: State, event: VocabEvent): void {
       state.placements = [...state.placements, record];
       return;
     }
+    case 'leech_seen': {
+      const word = state.words[event.entryId];
+      if (word) {
+        const seen = Math.max(word.leechSeen?.[event.track] ?? 0, event.lapses);
+        state.words[event.entryId] = {
+          ...word,
+          leechSeen: { ...word.leechSeen, [event.track]: seen },
+        };
+      }
+      return;
+    }
+    case 'word_parked': {
+      const word = state.words[event.entryId];
+      if (word) state.words[event.entryId] = { ...word, parkedUntil: event.until };
+      return;
+    }
     case 'word_captured': {
       state.captures = {
         ...state.captures,

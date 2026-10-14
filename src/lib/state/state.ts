@@ -43,6 +43,10 @@ export interface UserWord {
   memory: Record<Track, Memory | null>;
   /** Sentences written for usage tasks, oldest first. */
   sentences: SentenceRecord[];
+  /** Lapses each track had when its leech step was last shown (PLAN 6.5). */
+  leechSeen?: Partial<Record<Track, number>>;
+  /** Parked (no reviews) until this time, if set. */
+  parkedUntil?: number;
 }
 
 export interface ReviewRecord {

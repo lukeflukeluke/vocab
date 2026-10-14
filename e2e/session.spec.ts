@@ -7,6 +7,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 interface BankEntry {
   id: string;
+  headword: string;
   cloze: { text: string; answer: string }[];
 }
 const entriesDir = new URL('../content/entries/', import.meta.url);
@@ -47,7 +48,20 @@ function answerFor(step: StepInfo): string {
 
 /** Answers the current step correctly by tapping. */
 async function answerRight(page: Page, step: StepInfo) {
-  if (step.kind === 'page') {
+  if (step.kind === 'page' || step.kind === 'leech') {
+    await page.getByTestId('continue').click();
+  } else if (step.kind === 'P2') {
+    await page.locator('[data-answer]').fill(entries.get(step.entryId)!.headword);
+    await page.getByRole('button', { name: 'Check' }).click();
+    await page.getByTestId('continue').click();
+  } else if (step.kind === 'P4') {
+    const items = page.locator('[data-item]');
+    for (let i = 0; i < (await items.count()); i++) {
+      const item = items.nth(i);
+      const id = await item.getAttribute('data-answer-id');
+      await item.locator(`[data-option-id="${id}"]`).click();
+    }
+    await page.getByTestId('check').click();
     await page.getByTestId('continue').click();
   } else if (step.kind === 'P1') {
     await page.locator('[data-answer]').fill(answerFor(step));
@@ -311,14 +325,18 @@ function laterDayEvents() {
   return events;
 }
 
-test('later days: quick recall (R3) and "which word fits?" (P3)', async ({ page }) => {
+test('later days: varied recognition (R2, R4) and "which word fits?" (P3)', async ({ page }) => {
   await seed(page, laterDayEvents());
 
   await expect(page.getByTestId('today-plan')).toContainText('5 reviews');
   await page.getByTestId('start').click();
   const seen = await finish(page);
   const reviews = seen.filter((s) => s.role === 'review');
-  expect(reviews.map((s) => s.kind).sort()).toEqual(['P3', 'P3', 'R3', 'R3', 'R3']);
+  // The introduction checks were R1, so recognition moves on to another type (PLAN 5).
+  const recognition = reviews.filter((s) => s.kind.startsWith('R')).map((s) => s.kind);
+  expect(recognition).toHaveLength(3);
+  for (const kind of recognition) expect(['R2', 'R4']).toContain(kind);
+  expect(reviews.filter((s) => s.kind === 'P3')).toHaveLength(2);
   expect(
     reviews
       .filter((s) => s.kind === 'P3')
@@ -334,4 +352,82 @@ test('2-minute mode: only the most at-risk reviews', async ({ page }) => {
   expect(seen.length).toBe(5);
   expect(seen.every((s) => s.role === 'review')).toBe(true);
   await expect(page.getByTestId('summary')).toContainText('5 of 5 right');
+});
+
+/** Events for words met 30 days ago; `extra` adds reviews (t in days ago). */
+function history(words: string[], extra: { entryId: string; daysAgo: number; body?: object }[]) {
+  const day = 86_400_000;
+  const now = Date.now();
+  let n = 0;
+  const event = (t: number, body: Record<string, unknown>) => ({
+    id: `hist-${String(++n).padStart(4, '0')}`,
+    t,
+    device: 'seed',
+    v: 1,
+    ...body,
+  });
+  const review = (entryId: string, t: number, more: object = {}) =>
+    event(t, {
+      type: 'review',
+      entryId,
+      track: 'recognition',
+      exercise: 'R1',
+      correct: true,
+      rating: 3,
+      ms: 4000,
+      hintsUsed: 0,
+      ...more,
+    });
+  const events = words.flatMap((entryId, i) => {
+    const t = now - 30 * day + i * 1000;
+    return [
+      event(t, { type: 'word_added', entryId, source: 'bank' }),
+      review(entryId, t + 100),
+      review(entryId, t + 200),
+      review(entryId, t + 300),
+    ];
+  });
+  for (const x of extra) events.push(review(x.entryId, now - x.daysAgo * day, x.body));
+  return events;
+}
+
+const miss = { correct: false, rating: 1 };
+
+test('a word that keeps slipping: your own hook, then the review', async ({ page }) => {
+  // Five failed reviews days apart: five lapses.
+  const lapses = [25, 20, 15, 10, 5].map((daysAgo) => ({
+    entryId: 'tenuous#adj',
+    daysAgo,
+    body: miss,
+  }));
+  await seed(page, history(['tenuous#adj'], lapses));
+  await page.getByTestId('start').click();
+  const step = page.getByTestId('step');
+  await expect(step).toHaveAttribute('data-kind', 'leech');
+  await expect(step).toContainText('This one keeps slipping');
+  await page.getByTestId('mnemonic').fill('Tenuous: ten threads, all thin.');
+  await page.getByTestId('continue').click();
+  await expect(step).toHaveAttribute('data-kind', 'R1');
+  await page.locator('[data-option-id="tenuous#adj"]').click();
+  await page.getByTestId('continue').click();
+  // Today's new words come next; stop here.
+  await expect(step).not.toHaveAttribute('data-entry-id', 'tenuous#adj');
+  await page.getByTestId('pause').click();
+
+  // Saved: the hook, that the step was shown, and the review.
+  await page.getByTestId('tab-settings').click();
+  await expect(page.getByTestId('event-count')).toHaveText(String(4 + 5 + 3));
+});
+
+test('two words you mix up get a contrast drill', async ({ page }) => {
+  const mixups = [
+    { entryId: 'laconic#adj', daysAgo: 3, body: { ...miss, chose: 'tacit#adj' } },
+    { entryId: 'tacit#adj', daysAgo: 3, body: { ...miss, chose: 'laconic#adj' } },
+  ];
+  await seed(page, history(['laconic#adj', 'tacit#adj'], mixups));
+  await page.getByTestId('start').click();
+  const seen = await finish(page);
+  const drill = seen.find((s) => s.kind === 'P4');
+  expect(drill).toBeDefined();
+  expect(drill!.promptId).toMatch(/^vs:(laconic|tacit)#adj$/);
 });

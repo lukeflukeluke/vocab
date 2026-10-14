@@ -92,7 +92,17 @@ The owner wants usage spent where it matters:
 
 - `build.ts` turns `planDay()` into a list of steps (PLAN 7): about 10 reviews, then each
   new word (guess, page, check) with reviews between, its fill-in-the-blank about 5 items
-  later, and a final check at the end. `reviewExercise()` picks R1/R3/P1/P3 per review.
+  later, and a final check at the end. `reviewExercise()` picks the exercise per review
+  (PLAN 5): recognition varies R1/R2/R4 (R3 only in 2-minute mode), never the same type
+  twice in a row, a recently failed type first; production is P3 or P1 with first letter
+  at first, P1 under 21 days' stability, then P1/P2 mixed. A confused pair gets P4.
+- `confusion.ts`: picking B for A (either way) twice makes a pair (from reviews' `chose`);
+  it is drilled (P4, promptId `vs:<other>`) every other review until two drills pass
+  after the latest mix-up.
+- Leeches (PLAN 6.5): a track with 5 lapses (again at 8) gets a `leech` step first: word
+  page, your memory hook (`note_set` mnemonic, shown on the word page), a contrast drill
+  if confused, then R1/P1. Shown once per threshold (`leech_seen`). At 8, "Park it for a
+  month" records `word_parked`; the planner skips parked words.
 - `runner.ts` moves through the steps (pure functions returning a new `Session`): repeats
   after a miss, "I know this word". A session is never stored; every answer is an event,
   so pausing and coming back rebuilds it from what is left (`unfinishedIntros`).

@@ -4,6 +4,48 @@ Newest first. Every session adds an entry at the top.
 
 ---
 
+## 2026-10-14 · S9: More exercises and smarter corrections
+
+**Done**
+- New exercises (PLAN 5): **R2** spot the misuse (a real example against one of the
+  entry's misuse sentences, then why it is wrong), **R4** closest everyday word, **P2**
+  definition to word (typed, hints: first letter, number of letters), **P4** contrast
+  drill (two blanks of each word, pick which fits, checked together).
+- **Variety and stability**: recognition rotates R1, R2 and R4, never the same type twice
+  in a row, a type failed in the last few reviews first, otherwise the least used. R3
+  (self-graded) is now only in 2-minute mode. Production: P3 or P1 with the first letter
+  at first, P1 until 21 days' stability, then P1 and P2 mixed.
+- **Confusion tracking**: two mix-ups between the same two words (from what you picked
+  or typed instead) make a pair; it gets a contrast drill every other review until two
+  drills are passed after the latest mix-up.
+- **Leeches**: a track with 5 lapses gets "This one keeps slipping" next time it is due:
+  the word page, a box for your own memory hook (shown on the word page from then on), a
+  contrast drill if it is a confusion problem, then the review. At 8 lapses it offers
+  "Park it for a month". New events `leech_seen` and `word_parked`.
+- Tests: 222 unit tests; e2e for varied later-day reviews, the leech step and hook, and
+  a contrast drill.
+
+**Decisions**
+- P4 is a review of the word (on the track that was due), not a separately scheduled
+  item: simpler, and the pair still gets drilled until settled.
+- The leech restart is the review that follows (R1, or P1 with the first letter); FSRS
+  already shortened the interval after the lapses.
+- The planner change (parked words skipped) does not affect the simulation, so it was
+  not rerun.
+
+**Notes for later sessions**
+- PLAN 6.6's tagged classic confusables (affect/effect) introduced 7 days apart is not
+  built; the interference rule in candidate order covers most of it.
+- P1 preferring your own sentences waits for S10's sentence journal.
+
+**Owner to-do**
+1. Merge, then use the app as normal. New exercise types appear from a word's second
+   review on; drills and "keeps slipping" only when earned.
+
+**Next:** S10 (writing and using words), C3, or F1 feedback.
+
+---
+
 ## 2026-10-11 · Design: Wordhoard
 
 The owner asked for a name, a distinct feel, an engaging but practical UI, and a dark mode

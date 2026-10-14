@@ -3,12 +3,14 @@ import type { DayPlan } from '../scheduler/planner';
 import { planDay } from '../scheduler/planner';
 import { replay } from '../state/reducer';
 import { sampleBank } from '../testing/bank';
+import { makeEvent } from '../testing/factories';
 import { added, at, introduced, reviewed } from '../testing/history';
 import {
   BLANK_GAP,
   buildSession,
   OPENING_REVIEWS,
   QUICK_REVIEWS,
+  leechDue,
   reviewExercise,
   unfinishedIntros,
 } from './build';
@@ -87,7 +89,7 @@ describe('buildSession', () => {
     for (const id of today.newWords) {
       const prompts = steps
         .filter((s) => s.entryId === id)
-        .flatMap((s) => (s.kind === 'page' ? s.promptIds : [s.promptId]));
+        .flatMap((s) => (s.kind === 'page' || s.kind === 'leech' ? s.promptIds : [s.promptId]));
       expect(new Set(prompts).size).toBe(prompts.length);
     }
   });
@@ -186,11 +188,73 @@ describe('buildSession', () => {
 describe('reviewExercise', () => {
   const id = ids[0]!;
 
-  it('alternates R1 and R3 for recognition, repeating a failed R1', () => {
-    const word = (rating: 1 | 3) =>
-      replay([...introduced(id, 0), reviewed(id, 'recognition', at(2), rating)]).words[id]!;
-    expect(reviewExercise(word(3), 'recognition', 5).exercise).toBe('R3');
-    expect(reviewExercise(word(1), 'recognition', 5).exercise).toBe('R1');
+  const entry = bank.byId.get(id)!;
+
+  it('varies recognition among R1, R2 and R4, never the same twice in a row', () => {
+    const word = replay(introduced(id, 0)).words[id]!;
+    // The introduction checks were all R1, so another type comes next.
+    const first = reviewExercise(word, 'recognition', 5, { entry }).exercise;
+    expect(['R2', 'R4']).toContain(first);
+    expect(reviewExercise(word, 'recognition', 5).exercise).toBe('R1'); // no entry: R1 only
+    expect(reviewExercise(word, 'recognition', 5, { entry, quick: true }).exercise).toBe('R3');
+  });
+
+  it('brings back a recently failed type first', () => {
+    const failedR4 = replay([
+      ...introduced(id, 0),
+      makeEvent(
+        {
+          type: 'review',
+          entryId: id,
+          track: 'recognition',
+          exercise: 'R4',
+          correct: false,
+          rating: 1,
+          ms: 4000,
+          hintsUsed: 0,
+        },
+        { t: at(3) },
+      ),
+      reviewed(id, 'recognition', at(3) + 60_000, 3),
+    ]).words[id]!;
+    expect(reviewExercise(failedR4, 'recognition', 5, { entry }).exercise).toBe('R4');
+  });
+
+  it('mixes in P2 once production is stable, and drills a confused pair', () => {
+    const word = replay(introduced(id, 0)).words[id]!;
+    const stable = {
+      ...word,
+      reviews: {
+        ...word.reviews,
+        production: [
+          {
+            t: 1,
+            device: 'd',
+            exercise: 'P1',
+            correct: true,
+            rating: 3 as const,
+            ms: 1,
+            hintsUsed: 0,
+          },
+          {
+            t: 2,
+            device: 'd',
+            exercise: 'P1',
+            correct: true,
+            rating: 3 as const,
+            ms: 1,
+            hintsUsed: 0,
+          },
+        ],
+      },
+      memory: { ...word.memory, production: { ...word.memory.recognition!, stability: 30 } },
+    };
+    expect(reviewExercise(stable, 'production', 9).exercise).toBe('P2');
+    expect(reviewExercise(stable, 'production', 9, { partner: 'x#n' })).toEqual({
+      exercise: 'P4',
+      firstLetter: false,
+      partner: 'x#n',
+    });
   });
 
   it('starts production with P3 when you have enough words, then P1 with a first letter', () => {
@@ -205,5 +269,22 @@ describe('reviewExercise', () => {
       reviewed(id, 'production', at(9), 3),
     ]).words[id]!;
     expect(reviewExercise(twice, 'production', 9)).toEqual({ exercise: 'P1', firstLetter: false });
+  });
+});
+
+describe('leeches', () => {
+  it('a track with 5 lapses gets the "keeps slipping" step once, and again at 8', () => {
+    const id = ids[1]!;
+    const word = replay(introduced(id, 0)).words[id]!;
+    const withLapses = (lapses: number, seen?: number) => ({
+      ...word,
+      memory: { ...word.memory, recognition: { ...word.memory.recognition!, lapses } },
+      ...(seen !== undefined && { leechSeen: { recognition: seen } }),
+    });
+    expect(leechDue(withLapses(4), 'recognition')).toBe(0);
+    expect(leechDue(withLapses(5), 'recognition')).toBe(5);
+    expect(leechDue(withLapses(6, 5), 'recognition')).toBe(0);
+    expect(leechDue(withLapses(8, 5), 'recognition')).toBe(8);
+    expect(leechDue(withLapses(9, 8), 'recognition')).toBe(0);
   });
 });

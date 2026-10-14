@@ -93,6 +93,8 @@ export function planDay(input: PlanInput): DayPlan {
   for (const word of words) {
     const recognition = word.memory.recognition;
     if (word.status !== 'active' || !recognition || done.reviewed.has(word.entryId)) continue;
+    // Parked after it kept slipping (PLAN 6.5): left alone until the date passes.
+    if (word.parkedUntil !== undefined && word.parkedUntil > now) continue;
     const production = word.memory.production;
     const productionDue = production
       ? dueDay(production, retention, tz) <= today

@@ -134,6 +134,24 @@ export interface PlacementDone {
   result: PlacementResult;
 }
 
+/**
+ * The "This one keeps slipping" step was shown for a track with this many lapses
+ * (PLAN 6.5), so it is not shown again until the next threshold.
+ */
+export interface LeechSeen {
+  type: 'leech_seen';
+  entryId: string;
+  track: Track;
+  lapses: number;
+}
+
+/** A stubborn word set aside (PLAN 6.5): no reviews until `until` (ms since epoch). */
+export interface WordParked {
+  type: 'word_parked';
+  entryId: string;
+  until: number;
+}
+
 /** Where a captured word came from (PLAN 13.5). */
 export type CaptureSource = 'app' | 'shortcut' | 'bookmarklet';
 
@@ -190,7 +208,9 @@ export type EventBody =
   | PlacementDone
   | WordCaptured
   | CaptureSorted
-  | EntryCreated;
+  | EntryCreated
+  | LeechSeen
+  | WordParked;
 
 export type VocabEvent = EventMeta & EventBody;
 

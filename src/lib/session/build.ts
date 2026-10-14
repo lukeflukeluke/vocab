@@ -2,7 +2,8 @@ import type { Bank, BankEntry } from '../content/bank';
 import type { Track } from '../events/types';
 import type { DayPlan } from '../scheduler/planner';
 import { studyDay } from '../scheduler/day';
-import type { State, UserWord } from '../state/state';
+import type { ReviewRecord, State, UserWord } from '../state/state';
+import { confusionPairs, drillPartner, drillPrompt } from './confusion';
 import {
   capturedPrompt,
   pageExamples,
@@ -26,6 +27,13 @@ export const BLANK_GAP = 5;
 export const REPEAT_GAP = 3;
 /** P3 needs this many of your own words besides the one being tested. */
 export const P3_MIN_OTHERS = 3;
+/** Production stability (days) from which P2 joins P1 (PLAN 5). */
+export const P2_FROM_STABILITY = 21;
+/** Lapses on a track that make it a leech, and that bring the offer to park it (PLAN 6.5). */
+export const LEECH_LAPSES = 5;
+export const PARK_LAPSES = 8;
+/** How long a parked word is left alone. */
+export const PARK_DAYS = 30;
 
 /** Builds steps and keeps track of the sentences each word has used this session. */
 export class StepMaker {
@@ -97,10 +105,17 @@ export class StepMaker {
     role: Role,
     firstLetter: boolean,
     block?: string,
+    partner?: string,
   ): ExerciseStep {
     const entry = this.#entry(entryId);
     const typed = exercise === 'P1' || exercise === 'P3';
     const key = this.#key(exercise, entryId);
+    const promptId =
+      exercise === 'P2'
+        ? 'def'
+        : exercise === 'P4' && partner
+          ? drillPrompt(partner)
+          : this.#prompt(entry, typed ? 'cloze' : 'example');
     return {
       kind: 'exercise',
       key,
@@ -109,15 +124,101 @@ export class StepMaker {
       track,
       exercise,
       role,
-      promptId: this.#prompt(entry, typed ? 'cloze' : 'example'),
+      promptId,
       firstLetter,
+      ...(partner && { partner }),
     };
   }
 
   /** The same exercise again with a different sentence, after a miss. */
   repeat(step: ExerciseStep): ExerciseStep {
-    return this.exercise(step.entryId, step.track, step.exercise, 'repeat', step.firstLetter);
+    return this.exercise(
+      step.entryId,
+      step.track,
+      step.exercise,
+      'repeat',
+      step.firstLetter,
+      undefined,
+      step.partner,
+    );
   }
+
+  /**
+   * A track that keeps slipping (PLAN 6.5): the leech step, a contrast drill if the word
+   * is mixed up with another, then the review itself, kept together.
+   */
+  leech(
+    entryId: string,
+    track: Track,
+    lapses: number,
+    review: { exercise: ExerciseId; firstLetter: boolean },
+    partner: string | null,
+  ): Step[] {
+    const entry = this.#entry(entryId);
+    const block = this.#key('leech', entryId);
+    const steps: Step[] = [
+      {
+        kind: 'leech',
+        key: this.#key('slipping', entryId),
+        entryId,
+        block,
+        track,
+        lapses,
+        park: lapses >= PARK_LAPSES,
+        promptIds: pageExamples(entry),
+      },
+    ];
+    if (partner) {
+      steps.push(this.exercise(entryId, track, 'P4', 'review', false, block, partner));
+    }
+    steps.push(this.exercise(entryId, track, review.exercise, 'review', review.firstLetter, block));
+    return steps;
+  }
+}
+
+export interface ExerciseChoice {
+  exercise: ExerciseId;
+  firstLetter: boolean;
+  /** P4: the word to drill against. */
+  partner?: string;
+}
+
+export interface ChoiceContext {
+  /** The word's entry, to know which exercises it can support. */
+  entry?: BankEntry;
+  /** 2-minute mode: quick recall (R3) for recognition. */
+  quick?: boolean;
+  /** A word this one is mixed up with and still needs drilling against (PLAN 6.6). */
+  partner?: string | null;
+}
+
+/**
+ * Variety (PLAN 5): never the same type twice in a row, and a type failed in the word's
+ * last few reviews comes back first; otherwise the type used least so far.
+ */
+export function varied(options: readonly ExerciseId[], history: readonly ReviewRecord[]) {
+  if (options.length === 1) return options[0]!;
+  const last = history.at(-1)?.exercise;
+  const pool = options.filter((o) => o !== last);
+  const failed = history
+    .slice(-5)
+    .filter((r) => !r.correct)
+    .map((r) => r.exercise)
+    .reverse()
+    .find((e) => pool.includes(e as ExerciseId));
+  if (failed) return failed as ExerciseId;
+  const used = (e: ExerciseId) => history.filter((r) => r.exercise === e).length;
+  return [...pool].sort((a, b) => used(a) - used(b))[0]!;
+}
+
+/** Recognition exercises an entry can support: R2 needs misuse sentences, R4 an everyday word. */
+export function recognitionOptions(entry?: BankEntry): ExerciseId[] {
+  const options: ExerciseId[] = ['R1'];
+  if (entry?.misuse.length && entry.examples.some((x) => x.setting !== 'captured')) {
+    options.push('R2');
+  }
+  if (entry?.everyday) options.push('R4');
+  return options;
 }
 
 /** Which exercise a review uses (PLAN 5, "Which exercise a review uses"). */
@@ -125,16 +226,31 @@ export function reviewExercise(
   word: UserWord,
   track: Track,
   ownWords: number,
-): { exercise: ExerciseId; firstLetter: boolean } {
-  if (track === 'recognition') {
-    // R1 and R3 take turns, but a failed R1 comes up again.
-    const last = word.reviews.recognition.at(-1);
-    return { exercise: last?.exercise === 'R1' && last.correct ? 'R3' : 'R1', firstLetter: false };
+  context: ChoiceContext = {},
+): ExerciseChoice {
+  const history = word.reviews[track];
+  // A pair you mix up gets a contrast drill, every other review until it is settled.
+  if (context.partner && history.at(-1)?.exercise !== 'P4') {
+    return { exercise: 'P4', firstLetter: false, partner: context.partner };
   }
-  const done = word.reviews.production.length;
+  if (track === 'recognition') {
+    if (context.quick) return { exercise: 'R3', firstLetter: false };
+    return { exercise: varied(recognitionOptions(context.entry), history), firstLetter: false };
+  }
+  const done = history.length;
   if (done === 0 && ownWords - 1 >= P3_MIN_OTHERS) return { exercise: 'P3', firstLetter: false };
   // The first one or two production reviews show the first letter.
-  return { exercise: 'P1', firstLetter: done < 2 };
+  if (done < 2) return { exercise: 'P1', firstLetter: true };
+  const stability = word.memory.production?.stability ?? 0;
+  if (stability < P2_FROM_STABILITY) return { exercise: 'P1', firstLetter: false };
+  return { exercise: varied(['P1', 'P2'], history), firstLetter: false };
+}
+
+/** The leech threshold a track has reached and not yet had its step for, or 0. */
+export function leechDue(word: UserWord, track: Track): number {
+  const lapses = word.memory[track]?.lapses ?? 0;
+  const threshold = lapses >= PARK_LAPSES ? PARK_LAPSES : lapses >= LEECH_LAPSES ? LEECH_LAPSES : 0;
+  return threshold && (word.leechSeen?.[track] ?? 0) < threshold ? threshold : 0;
 }
 
 /** Words met today whose introduction was left unfinished (the session was paused). */
@@ -207,12 +323,38 @@ export function buildSession(input: BuildInput): Built {
     (w) => w.status === 'active' && w.memory.recognition && inBank(w.entryId),
   ).length;
 
+  const pairs = confusionPairs(state);
   const reviews: Step[] = [];
   for (const item of input.quick ? plan.reviews.slice(0, QUICK_REVIEWS) : plan.reviews) {
     const word = state.words[item.entryId];
     if (!word || !inBank(item.entryId)) continue;
-    const { exercise, firstLetter } = reviewExercise(word, item.track, ownWords);
-    reviews.push(maker.exercise(item.entryId, item.track, exercise, 'review', firstLetter));
+    const partner = drillPartner(state, item.entryId, pairs);
+    const usable = partner && inBank(partner) ? partner : null;
+    if (!input.quick && leechDue(word, item.track)) {
+      const restart =
+        item.track === 'recognition'
+          ? { exercise: 'R1' as const, firstLetter: false }
+          : { exercise: 'P1' as const, firstLetter: true };
+      const lapses = word.memory[item.track]?.lapses ?? 0;
+      reviews.push(...maker.leech(item.entryId, item.track, lapses, restart, usable));
+      continue;
+    }
+    const choice = reviewExercise(word, item.track, ownWords, {
+      entry: bank.byId.get(item.entryId),
+      quick: input.quick,
+      partner: usable,
+    });
+    reviews.push(
+      maker.exercise(
+        item.entryId,
+        item.track,
+        choice.exercise,
+        'review',
+        choice.firstLetter,
+        undefined,
+        choice.partner,
+      ),
+    );
   }
 
   const steps: Step[] = [];
